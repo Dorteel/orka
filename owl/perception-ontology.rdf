@@ -55,6 +55,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent"/>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Area -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Area"/>
