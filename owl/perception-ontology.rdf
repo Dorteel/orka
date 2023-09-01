@@ -61,9 +61,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Algorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Algorithm"/>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Area -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Area"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Biological -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Biological">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
     
 
 
@@ -87,6 +101,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Camera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#LightwaveSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Chemical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Chemical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
     </owl:Class>
     
 
@@ -148,6 +170,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic"/>
+        <rdfs:comment>It contains the different classes of operating principles, or detection means that characterise the functioning of the sensor</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DeteriorationRate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DeteriorationRate">
@@ -180,6 +211,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Electromagnetic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Electromagnetic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Encoder -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Encoder">
@@ -202,6 +241,14 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ExternalSensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Field-of-View -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Field-of-View">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic"/>
     </owl:Class>
     
 
@@ -238,10 +285,26 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GreaterThan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GreaterThan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#RelativeQuantity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Gyroscope -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Gyroscope">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OrientationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Heat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Heat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
     </owl:Class>
     
 
@@ -318,6 +381,22 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MechanicalWave -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MechanicalWave">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Meter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Meter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AbsoluteQuantity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Microphone -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Microphone">
@@ -368,6 +447,22 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OrientationSensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Other -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Other">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OtherAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OtherAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent"/>
     </owl:Class>
     
 
@@ -424,6 +519,22 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Radioactivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Radioactivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Range -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Range">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#RelativeQuantity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#RelativeQuantity">
@@ -433,11 +544,33 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Resolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Resolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Self -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Self">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Sensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Sensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Object"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorCharacteristic"/>
     
 
 
