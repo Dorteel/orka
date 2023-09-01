@@ -47,10 +47,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Accuracy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Accuracy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Age -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Age">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalProperty"/>
     </owl:Class>
     
 
@@ -64,6 +72,22 @@
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Algorithm -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Algorithm"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmVersion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmVersion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
     
 
 
@@ -116,7 +140,7 @@
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Color -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Color">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualProperty"/>
     </owl:Class>
     
 
@@ -141,7 +165,7 @@
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Conductivity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Conductivity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
     </owl:Class>
     
 
@@ -165,7 +189,15 @@
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Density -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Density">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Depth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Depth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty"/>
     </owl:Class>
     
 
@@ -182,7 +214,7 @@
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DeteriorationRate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DeteriorationRate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalProperty"/>
     </owl:Class>
     
 
@@ -227,6 +259,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#EnergyEfficiency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#EnergyEfficiency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#EnvironmentProperty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#EnvironmentProperty">
@@ -256,7 +296,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Flexibility -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Flexibility">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
     </owl:Class>
     
 
@@ -264,7 +304,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Fragility -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Fragility">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
     </owl:Class>
     
 
@@ -277,10 +317,10 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualQuality"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualProperty"/>
     </owl:Class>
     
 
@@ -349,6 +389,14 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Length -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Length">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#LightwaveSensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#LightwaveSensor">
@@ -360,7 +408,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Location -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Location">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialProperty"/>
     </owl:Class>
     
 
@@ -368,15 +416,23 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialName -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialName">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality">
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MeasurementProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MeasurementProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Property"/>
     </owl:Class>
     
 
@@ -385,6 +441,22 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MechanicalWave">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MemoryConsumtion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MemoryConsumtion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MemorySize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MemorySize">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
     </owl:Class>
     
 
@@ -401,6 +473,14 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Microphone">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SoundwaveSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ModelName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ModelName">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorProperty"/>
     </owl:Class>
     
 
@@ -438,7 +518,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Orientation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Orientation">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialProperty"/>
     </owl:Class>
     
 
@@ -459,10 +539,10 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OtherAgent -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Output -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#OtherAgent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Output">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
     </owl:Class>
     
 
@@ -470,7 +550,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Pattern -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Pattern">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualProperty"/>
     </owl:Class>
     
 
@@ -488,6 +568,14 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#PotentioMeter">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#CurrentSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#PowerConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#PowerConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SensorProperty"/>
     </owl:Class>
     
 
@@ -553,6 +641,14 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#RequiredInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#RequiredInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Resolution -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Resolution">
@@ -561,10 +657,10 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Self -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Runtime -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Self">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Agent"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Runtime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#AlgorithmProperty"/>
     </owl:Class>
     
 
@@ -589,7 +685,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Shape -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Shape">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricProperty"/>
     </owl:Class>
     
 
@@ -602,10 +698,10 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Size -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Size">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricProperty"/>
     </owl:Class>
     
 
@@ -626,9 +722,9 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialQuality -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialQuality">
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SpatialProperty">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ObjectProperty"/>
     </owl:Class>
     
@@ -653,7 +749,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Structure -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Structure">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricProperty"/>
     </owl:Class>
     
 
@@ -661,7 +757,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SurfaceArea -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SurfaceArea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty"/>
     </owl:Class>
     
 
@@ -683,9 +779,9 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalQuality -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalQuality">
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#TemporalProperty">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ObjectProperty"/>
     </owl:Class>
     
@@ -710,14 +806,14 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Transparency -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Transparency">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualQuality -->
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualProperty -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualQuality">
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#VisualProperty">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#ObjectProperty"/>
     </owl:Class>
     
@@ -726,7 +822,7 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Volume -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Volume">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#GeometricQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty"/>
     </owl:Class>
     
 
@@ -734,7 +830,15 @@ The environment is defined as an area.</rdfs:comment>
     <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Weight -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Weight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialQuality"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Width -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#Width">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/ontologies/2023/7/perception-ontology#SizeProperty"/>
     </owl:Class>
 </rdf:RDF>
 
