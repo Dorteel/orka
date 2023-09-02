@@ -13,6 +13,49 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#detectableBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#detectableBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#detectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#detectedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasCertainty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasCertainty">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +155,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#Certainty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Certainty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#MeasurementProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Chemical -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Chemical">
@@ -141,6 +192,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ComplexStructure">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Algorithm"/>
     </owl:Class>
     
 
@@ -193,11 +252,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#DetectionClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#DetectionClass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#DetectionMean -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#DetectionMean">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SensorProperty"/>
         <rdfs:comment>It contains the different classes of operating principles, or detection means that characterise the functioning of the sensor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#DetectionTreshHold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#DetectionTreshHold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#AlgorithmProperty"/>
     </owl:Class>
     
 
@@ -284,6 +359,14 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#FilteringAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#FilteringAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Algorithm"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Flexibility -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Flexibility">
@@ -361,6 +444,14 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Humidity">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#EnvironmentProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#ImageSegmentationAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ImageSegmentationAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm"/>
     </owl:Class>
     
 
@@ -539,6 +630,14 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#ObjectDetectionAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ObjectDetectionAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty">
@@ -567,6 +666,14 @@ The environment is defined as an area.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Other">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#DetectionMean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#OtherAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#OtherAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Algorithm"/>
     </owl:Class>
     
 
@@ -880,6 +987,759 @@ The environment is defined as an area.</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Width">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SizeProperty"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#Yolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Yolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ObjectDetectionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#aeroplane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#aeroplane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#apple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#apple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#backpack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#backpack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#banana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#banana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#baseball_bat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#baseball_bat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#baseball_glove -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#baseball_glove">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bench -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bench">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bicycle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bicycle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bird -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bird">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#boat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#boat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#book -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#book">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bottle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bottle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bowl -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bowl">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#broccoli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#broccoli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#cake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#car -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#car">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#carrot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#carrot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#cat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#cell_phone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cell_phone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#chair -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#chair">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#clock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#clock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#cow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#cup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#diningtable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#diningtable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#dog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#dog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#donut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#donut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#elephant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#elephant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#fire_hydrant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#fire_hydrant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#fork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#fork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#frisbee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#frisbee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#giraffe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#giraffe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hair_drier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hair_drier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#handbag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#handbag">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#horse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#horse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hot_dog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hot_dog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#keyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#keyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#kite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#kite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#knife -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#knife">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#laptop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#laptop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#microwave -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#microwave">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#motorbike -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#motorbike">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#mouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#mouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#orange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#orange">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#oven -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#oven">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#parking_meter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#parking_meter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#pizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#pottedplant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#pottedplant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#refrigerator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#refrigerator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#remote -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#remote">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#sandwich -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sandwich">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#scissors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#scissors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#sheep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sheep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#sink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#skateboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#skateboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#skis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#skis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#snowboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#snowboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#sofa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sofa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#spoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#spoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#sports_ball -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sports_ball">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#stop_sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#stop_sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#suitcase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#suitcase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#surfboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#surfboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#teddy_bear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#teddy_bear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#tennis_racket -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tennis_racket">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#tie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#toaster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toaster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#toilet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toilet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#toothbrush -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toothbrush">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#traffic_light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#traffic_light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#train -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#train">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#truck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#truck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#tvmonitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tvmonitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#umbrella -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#umbrella">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#vase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#vase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#wine_glass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#wine_glass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#zebra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#zebra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#FilteringAlgorithm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#OtherAlgorithm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Sensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#aeroplane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#apple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#backpack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#banana"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#baseball_bat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#baseball_glove"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bear"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bench"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bicycle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bird"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#boat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#book"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bottle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bowl"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#broccoli"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#bus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cake"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#car"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#carrot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cell_phone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#chair"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#clock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#cup"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#diningtable"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#dog"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#donut"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#elephant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#fire_hydrant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#fork"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#frisbee"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#giraffe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hair_drier"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#handbag"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#horse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hot_dog"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#keyboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#kite"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#knife"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#laptop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#microwave"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#motorbike"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#mouse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#orange"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#oven"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#parking_meter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#pizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#pottedplant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#refrigerator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#remote"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sandwich"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#scissors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sheep"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sink"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#skateboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#skis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#snowboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sofa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#spoon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#sports_ball"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#stop_sign"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#suitcase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#surfboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#teddy_bear"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tennis_racket"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toaster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toilet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#toothbrush"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#traffic_light"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#train"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#truck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#tvmonitor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#umbrella"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#vase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#wine_glass"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dorte/perception-ontology#zebra"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
