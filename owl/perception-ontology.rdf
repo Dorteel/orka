@@ -95,6 +95,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#enablesObservationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#enablesObservationOf"/>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#estimatedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#estimatedBy">
@@ -106,6 +112,14 @@
     <!-- http://www.semanticweb.org/dorte/perception-ontology#estimates -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#estimates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasAbilityToObserve -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasAbilityToObserve">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -127,10 +141,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#hasLocation -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasLocation">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -156,6 +194,12 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#operatesOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#operatesOn"/>
     
 
 
@@ -375,6 +419,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#DetectionCertainty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#DetectionCertainty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#AlgorithmProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#DetectionMean -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#DetectionMean">
@@ -459,7 +511,7 @@
     <!-- http://www.semanticweb.org/dorte/perception-ontology#EnvironmentProperty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#EnvironmentProperty">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#PhysicalPropety"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ObservablePropety"/>
         <rdfs:comment>It defines the measureable properties that cannot be associated to any of the objects, but are the properties of the surrounding environment at large.
 The environment is defined as an area.</rdfs:comment>
     </owl:Class>
@@ -685,30 +737,6 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#MeasurementAccuracy -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#MeasurementAccuracy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#MeasurementProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#MeasurementCertainty -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#MeasurementCertainty">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#MeasurementProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#MeasurementProperty -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#MeasurementProperty">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Property"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dorte/perception-ontology#MechanicalWave -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#MechanicalWave">
@@ -784,7 +812,16 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     <!-- http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#PhysicalPropety"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ObservablePropety"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#ObservablePropety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#ObservablePropety">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Property"/>
+        <rdfs:comment>Physical properties refer to the properties that are the consequence of, or are derived from measurable properties.</rdfs:comment>
     </owl:Class>
     
 
@@ -861,15 +898,6 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#PhysicalPropety -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#PhysicalPropety">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Property"/>
-        <rdfs:comment>Physical properties refer to the properties that are the consequence of, or are derived from measurable properties.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dorte/perception-ontology#PositionSensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#PositionSensor">
@@ -890,6 +918,15 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#PowerConsumption">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SensorProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#PowerState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#PowerState">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SensorProperty"/>
+        <rdfs:comment>The status variable of the sensor is a binary value that can be either online or offline</rdfs:comment>
     </owl:Class>
     
 
@@ -1045,15 +1082,6 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#Status -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Status">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SensorProperty"/>
-        <rdfs:comment>The status variable of the sensor is a binary value that can be either online or offline</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dorte/perception-ontology#StereoCamera -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#StereoCamera">
@@ -1177,7 +1205,7 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Weight -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Weight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#MaterialProperty"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty"/>
     </owl:Class>
     
 
