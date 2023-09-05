@@ -534,6 +534,14 @@ The environment is defined as an area.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#FeatureDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#FeatureDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#FieldOfView -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#FieldOfView">
@@ -625,10 +633,26 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#HumanPoseEstimation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#HumanPoseEstimation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Humidity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Humidity">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#EnvironmentProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#Identity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Identity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ObjectProperty"/>
     </owl:Class>
     
 
@@ -681,6 +705,14 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#KalmanFilter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#KalmanFilter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#FilteringAlgorithm"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#LaserScanner -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LaserScanner">
@@ -701,6 +733,14 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LightwaveSensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#LocalisationAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LocalisationAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Algorithm"/>
     </owl:Class>
     
 
@@ -1005,6 +1045,22 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#RotationalSpeed">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#SensorProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#SIFT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#SIFT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#FeatureDescriptor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#SLAM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#SLAM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#LocalisationAlgorithm"/>
     </owl:Class>
     
 
