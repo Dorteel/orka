@@ -165,6 +165,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasSensorCharacteristics -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasSensorCharacteristics">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#hasValue -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasValue">
@@ -1299,6 +1307,18 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Intel_RealSense_Depth_Camera_D435"/>
         <rdfs:comment>This is an example sensor, used to showcase the capabilities of the ontology</rdfs:comment>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#Millimeter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Millimeter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#RGB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#RGB"/>
     
 
 
