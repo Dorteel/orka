@@ -1,4 +1,4 @@
-# Unified Robotic Perception Ontology
+# Robotic Perception Ontology (RPO)
 
 This is a first attempt to create a Unified Robot Perception Ontology. The current version of the ontology is mainly concerned with four distinct classes:
 
