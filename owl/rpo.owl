@@ -1,0 +1,1566 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/dorte/perception-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/dorte/perception-ontology">
+    <Prefix name="om" IRI="http://www.ontology-of-units-of-measure.org/resource/om-2/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rpo" IRI="http://www.semanticweb.org/dorte/perception-ontology/"/>
+    <Prefix name="ssn" IRI="http://www.w3.org/ns/ssn/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Age"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlgorithmProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlgorithmVersion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AngularRange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AngularResolutionProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AngularUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Biological"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brightness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bumper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chemical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Compass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComplexStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conductivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContactSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CurrentSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Density"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Depth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepthCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectableClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectionCertainty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectionMean"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DetectionTreshHold"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeteriorationRate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiagonalFieldOfView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DistanceSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectricalConductivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectroMagneticRadiation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electromagnetic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Encoder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FeatureDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FieldOfView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FilteringAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flexibility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fragility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FrameRate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frequency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeometricProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gyroscope"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Heat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HorizontalFieldOfView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanPoseEstimation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Identity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageResolutionProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageSegmentationAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InertialSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InfraredCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Intel_RealSense_Depth_Camera_D435"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KalmanFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LaserScanner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Length"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightwaveSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalisationAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaxRange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MechanicalWave"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MemoryConsumtion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MemorySize"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microphone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinRange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ModelName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Monochrome-Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservablePropety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingHumidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingTemperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orientation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrientationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Other"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Output"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PositionSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PotentioMeter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PowerConsumption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PowerState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PressureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RGB-Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RPLiDAR_A2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RadiationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Radioactivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Range"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequiredInput"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResolutionProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RotationalSpeed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SIFT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SLAM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SamplingFrequency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Self"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SizeProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sonar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoundwaveSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StereoCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SurfaceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThermalConductivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThermalProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TiltSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transparency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnitOFMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VerticalFieldOfView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Width"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YOLO"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#capableOfObservationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#detectableBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#detectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enablesObservationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estimatedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estimates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAbilityToObserve"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBoundingBox"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCertainty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutputUnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hosts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHostedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSensorCharacteristicOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measuredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measuresProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observesProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAccuracy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaximumValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMinimumValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumericalValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPoweredOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Distance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435DFoV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435HFoV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435OperTempRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435OperatingTemperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LocoBotWx250S"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RGB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#celsius"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#degree"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#meter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#millimeter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pixel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Accuracy"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Age"/>
+        <Class IRI="#TemporalProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlgorithmProperty"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlgorithmVersion"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AngularRange"/>
+        <Class IRI="#Range"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AngularResolutionProperty"/>
+        <Class IRI="#ResolutionProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AngularUnit"/>
+        <Class IRI="#UnitOFMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Biological"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brightness"/>
+        <Class IRI="#EnvironmentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bumper"/>
+        <Class IRI="#ContactSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#LightwaveSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chemical"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="#VisualProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Compass"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComplexStructure"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+        <Class IRI="#Algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conductivity"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContactSensor"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CurrentSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Density"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Depth"/>
+        <Class IRI="#SizeProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepthCamera"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectableClass"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectionCertainty"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectionMean"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DetectionTreshHold"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeteriorationRate"/>
+        <Class IRI="#TemporalProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiagonalFieldOfView"/>
+        <Class IRI="#FieldOfView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DistanceSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectricalConductivity"/>
+        <Class IRI="#Conductivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectroMagneticRadiation"/>
+        <Class IRI="#EnvironmentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electromagnetic"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Encoder"/>
+        <Class IRI="#CurrentSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyEfficiency"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentProperty"/>
+        <Class IRI="#ObservablePropety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FeatureDescriptor"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FieldOfView"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilteringAlgorithm"/>
+        <Class IRI="#Algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Flexibility"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fragility"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FrameRate"/>
+        <Class IRI="#Frequency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frequency"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPS"/>
+        <Class IRI="#PositionSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeometricProperty"/>
+        <Class IRI="#VisualProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gyroscope"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heat"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HorizontalFieldOfView"/>
+        <Class IRI="#FieldOfView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanPoseEstimation"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#EnvironmentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Identity"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageResolutionProperty"/>
+        <Class IRI="#ResolutionProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageSegmentationAlgorithm"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InertialSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InfraredCamera"/>
+        <Class IRI="#RadiationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intel_RealSense_Depth_Camera_D435"/>
+        <Class IRI="#DepthCamera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KalmanFilter"/>
+        <Class IRI="#FilteringAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LaserScanner"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Length"/>
+        <Class IRI="#SizeProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightwaveSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalisationAlgorithm"/>
+        <Class IRI="#Algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#SpatialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialName"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialProperty"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaxRange"/>
+        <Class IRI="#Range"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MechanicalWave"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MemoryConsumtion"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MemorySize"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#SoundwaveSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinRange"/>
+        <Class IRI="#Range"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ModelName"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Monochrome-Camera"/>
+        <Class IRI="#Camera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObjectProperty"/>
+        <Class IRI="#ObservablePropety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObservablePropety"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatingCondition"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatingHumidity"/>
+        <Class IRI="#OperatingCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatingTemperature"/>
+        <Class IRI="#OperatingCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orientation"/>
+        <Class IRI="#SpatialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrientationSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Other"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OtherAlgorithm"/>
+        <Class IRI="#Algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Output"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pattern"/>
+        <Class IRI="#VisualProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositionSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PotentioMeter"/>
+        <Class IRI="#CurrentSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PowerConsumption"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PowerState"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PressureSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RGB-Camera"/>
+        <Class IRI="#Camera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RPLiDAR_A2"/>
+        <Class IRI="#LaserScanner"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RadiationSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Radioactivity"/>
+        <Class IRI="#DetectionMean"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Range"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequiredInput"/>
+        <Class IRI="#AlgorithmProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResolutionProperty"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotationalSpeed"/>
+        <Class IRI="#SensorProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SIFT"/>
+        <Class IRI="#FeatureDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SLAM"/>
+        <Class IRI="#LocalisationAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SamplingFrequency"/>
+        <Class IRI="#Frequency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Self"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorProperty"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shape"/>
+        <Class IRI="#GeometricProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleStructure"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SizeProperty"/>
+        <Class IRI="#GeometricProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sonar"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoundwaveSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialProperty"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialUnit"/>
+        <Class IRI="#UnitOFMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StereoCamera"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Structure"/>
+        <Class IRI="#GeometricProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SurfaceArea"/>
+        <Class IRI="#SizeProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#EnvironmentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#ThermalProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <Class IRI="#UnitOFMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalProperty"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThermalConductivity"/>
+        <Class IRI="#Conductivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThermalProperty"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TiltSensor"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transparency"/>
+        <Class IRI="#MaterialProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VerticalFieldOfView"/>
+        <Class IRI="#FieldOfView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualProperty"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volume"/>
+        <Class IRI="#SizeProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weight"/>
+        <Class IRI="#ObjectProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Width"/>
+        <Class IRI="#SizeProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YOLO"/>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+        <Class IRI="#FilteringAlgorithm"/>
+        <Class IRI="#OtherAlgorithm"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#VisualProperty"/>
+        <NamedIndividual IRI="#Color"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Distance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialProperty"/>
+        <NamedIndividual IRI="#Distance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DiagonalFieldOfView"/>
+        <NamedIndividual IRI="#IntelD435DFoV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Range"/>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HorizontalFieldOfView"/>
+        <NamedIndividual IRI="#IntelD435HFoV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OperatingTemperature"/>
+        <NamedIndividual IRI="#IntelD435OperTempRange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OperatingTemperature"/>
+        <NamedIndividual IRI="#IntelD435OperatingTemperature"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#VerticalFieldOfView"/>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Intel_RealSense_Depth_Camera_D435"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Agent"/>
+        <NamedIndividual IRI="#LocoBotWx250S"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Self"/>
+        <NamedIndividual IRI="#LocoBotWx250S"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureUnit"/>
+        <NamedIndividual IRI="#celsius"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AngularUnit"/>
+        <NamedIndividual IRI="#degree"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialUnit"/>
+        <NamedIndividual IRI="#meter"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <NamedIndividual IRI="#IntelD435DFoV"/>
+        <NamedIndividual IRI="#degree"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+        <NamedIndividual IRI="#meter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <NamedIndividual IRI="#IntelD435HFoV"/>
+        <NamedIndividual IRI="#degree"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <NamedIndividual IRI="#IntelD435OperTempRange"/>
+        <NamedIndividual IRI="#celsius"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+        <NamedIndividual IRI="#degree"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enablesObservationOf"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#Color"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enablesObservationOf"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#Distance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutputUnitOfMeasure"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#RGB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutputUnitOfMeasure"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#meter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutputUnitOfMeasure"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#pixel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#IntelD435DFoV"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#IntelD435HFoV"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#IntelD435OperatingTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <NamedIndividual IRI="#LocoBotWx250S"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumericalValue"/>
+        <NamedIndividual IRI="#IntelD435DFoV"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">95.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMaximumValue"/>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMinimumValue"/>
+        <NamedIndividual IRI="#IntelD435DepthRange"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumericalValue"/>
+        <NamedIndividual IRI="#IntelD435HFoV"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">87.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMaximumValue"/>
+        <NamedIndividual IRI="#IntelD435OperTempRange"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">40.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMinimumValue"/>
+        <NamedIndividual IRI="#IntelD435OperTempRange"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAccuracy"/>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">3.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumericalValue"/>
+        <NamedIndividual IRI="#IntelD435VFoV"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">58.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isPoweredOn"/>
+        <NamedIndividual IRI="#LocoBot1DepthCamera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#affectedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#affects"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#capableOfObservationOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#describedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#describes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#detectableBy"/>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#detectedBy"/>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#enablesObservationOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#estimatedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#estimates"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAbilityToObserve"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBoundingBox"/>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCertainty"/>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInput"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOutput"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hosts"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#measuredBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#measuresProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#objectDetectionProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#observesProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSensorCharacteristics"/>
+        <ObjectProperty IRI="#isSensorCharacteristicOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hosts"/>
+        <ObjectProperty IRI="#isHostedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#measuredBy"/>
+        <ObjectProperty IRI="#measuresProperty"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <ObjectUnionOf>
+            <Class IRI="#Measurement"/>
+            <Class IRI="#SensorProperty"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUnitofMeasure"/>
+        <Class IRI="#UnitOFMeasure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMaximumValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasNumericalValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isPoweredOn"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNumericalValue"/>
+        <Class IRI="#Measurement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPoweredOn"/>
+        <Class IRI="#Sensor"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPoweredOn"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Accuracy</IRI>
+        <Literal>Accuracy is a property of a measurement itself, rather than a specific domain. It is related to certainty.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Compass</IRI>
+        <Literal>Could also be considered a NavigationSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DetectableClass</IRI>
+        <Literal>A list of the classes of objects detectable by the algorithm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DetectionMean</IRI>
+        <Literal>It contains the different classes of operating principles, or detection means that characterise the functioning of the sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnvironmentProperty</IRI>
+        <Literal>It defines the measureable properties that cannot be associated to any of the objects, but are the properties of the surrounding environment at large.
+The environment is defined as an area.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#FieldOfView</IRI>
+        <Literal>Field Of View (FOV) describes the extent in terms of angles of which a given screen is captured by a camera.
+It can be measured horizontally, vertically, or diagonally.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FrameRate</IRI>
+        <Literal>Relates to the speed of providing sensor data. In some cases it is influenced by the resolution the data is provided in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocoBot1DepthCamera</IRI>
+        <Literal>This is an example sensor, used to showcase the capabilities of the ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+        <IRI>#Measurement</IRI>
+        <Literal>http://www.ontology-of-units-of-measure.org/resource/om-2#measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Object</IRI>
+        <Literal>For illustration purposes, the objects from the 80 objects from the COCO dataset that the You Only Look Once (YOLO) algorithm is trained to detect are contained within the class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ObservablePropety</IRI>
+        <Literal>Physical properties refer to the properties that are the consequence of, or are derived from measurable properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PowerState</IRI>
+        <Literal>The status variable of the sensor is a binary value that can be either online or offline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Self</IRI>
+        <Literal>Refers to the agent that has control over the senor devices and executes the processes of perception</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorProperty</IRI>
+        <Literal>These properties refer to properties of sensors as they could be described in a specification sheet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureSensor</IRI>
+        <Literal>Could also be considered InternalSensor if the placement of the sensor is within the robot body.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+        <IRI>#UnitOFMeasure</IRI>
+        <Literal>http://www.ontology-of-units-of-measure.org/resource/om-2/Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAccuracy</IRI>
+        <Literal>has accuracy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasNumericalValue</IRI>
+        <Literal>has numerical value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensorCharacteristics</IRI>
+        <Literal>has sensor charactertic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitofMeasure</IRI>
+        <Literal>Decribes the unit of measure (quality) of the measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasUnitofMeasure</IRI>
+        <Literal>has unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+        <IRI>#hasUnitofMeasure</IRI>
+        <Literal>http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isHostedBy</IRI>
+        <Literal>is hosted by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+        <IRI>#isHostedBy</IRI>
+        <Literal>http://www.w3.ord/ns/sosa/isHostedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPoweredOn</IRI>
+        <Literal>is powered on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#meter</IRI>
+        <Literal>meter</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
