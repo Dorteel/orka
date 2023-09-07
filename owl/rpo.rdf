@@ -338,6 +338,14 @@
     
 
 
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2#measure -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2#measure">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Measurement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Accuracy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Accuracy">
@@ -895,9 +903,7 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <!-- http://www.semanticweb.org/dorte/perception-ontology#Measurement -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Measurement">
-        <owl:sameAs>http://www.ontology-of-units-of-measure.org/resource/om-2#measure</owl:sameAs>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Measurement"/>
     
 
 
@@ -1518,9 +1524,9 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LocoBot1DepthCamera">
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Intel_RealSense_Depth_Camera_D435"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Sensor"/>
         <enablesObservationOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Color"/>
         <enablesObservationOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Distance"/>
+        <hasOutput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#image"/>
         <hasOutputUnitOfMeasure rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#RGB"/>
         <hasOutputUnitOfMeasure rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#meter"/>
         <hasOutputUnitOfMeasure rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#pixel"/>
@@ -1545,9 +1551,28 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#LocoBotYoloV4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LocoBotYoloV4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#YOLO"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#image"/>
+        <hasOutput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#boundingbox"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#RGB -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#RGB"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#boundingbox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#boundingbox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Output"/>
+        <hasOutput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#label"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1563,6 +1588,23 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#degree">
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#AngularUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#image -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#image">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Output"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#RequiredInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#label -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#label">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Output"/>
     </owl:NamedIndividual>
     
 

@@ -15,6 +15,9 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="http://www.ontology-of-units-of-measure.org/resource/om-2#measure"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Accuracy"/>
     </Declaration>
     <Declaration>
@@ -546,6 +549,9 @@
         <NamedIndividual IRI="#LocoBotWx250S"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#LocoBotYoloV4"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#RGB"/>
     </Declaration>
     <Declaration>
@@ -566,6 +572,10 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.ontology-of-units-of-measure.org/resource/om-2#measure"/>
+        <Class IRI="#Measurement"/>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Accuracy"/>
         <Class IRI="#SensorProperty"/>
@@ -1136,6 +1146,10 @@
         <NamedIndividual IRI="#LocoBotWx250S"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#YOLO"/>
+        <NamedIndividual IRI="#LocoBotYoloV4"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#TemperatureUnit"/>
         <NamedIndividual IRI="#celsius"/>
     </ClassAssertion>
@@ -1467,11 +1481,6 @@ It can be measured horizontally, vertically, or diagonally.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#LocoBot1DepthCamera</IRI>
         <Literal>This is an example sensor, used to showcase the capabilities of the ontology</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
-        <IRI>#Measurement</IRI>
-        <Literal>http://www.ontology-of-units-of-measure.org/resource/om-2#measure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
