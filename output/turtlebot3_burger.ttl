@@ -1,0 +1,131 @@
+@prefix joints: <http://example.org/turtlebot3_burger/joints/> .
+@prefix knowrob: <http://knowrob.org/kb/knowrob.owl#> .
+@prefix links: <http://example.org/turtlebot3_burger/links/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix self: <http://example.org/turtlebot3_burger/> .
+@prefix soma: <http://www.ease-crc.org/ont/SOMA.owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix urdf: <http://knowrob.org/kb/urdf.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/turtlebot3_burger> a urdf:Robot,
+        sosa:Platform ;
+    urdf:hasJoint joints:base_joint,
+        joints:caster_back_joint,
+        joints:imu_joint,
+        joints:scan_joint,
+        joints:wheel_left_joint,
+        joints:wheel_right_joint ;
+    urdf:hasLink links:base_footprint,
+        links:base_link,
+        links:base_scan,
+        links:caster_back_link,
+        links:imu_link,
+        links:wheel_left_link,
+        links:wheel_right_link ;
+    urdf:hasURDFName "turtlebot3_burger" ;
+    sosa:hosts <http://example.org/turtlebot3_burger/sensors/imu>,
+        <http://example.org/turtlebot3_burger/sensors/lds_lfcd_sensor> .
+
+self:cameraSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:contactSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:depthSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:imuSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:raySensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+joints:base_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:base_link ;
+    urdf:hasParentLink self:base_footprint ;
+    urdf:hasURDFName "base_joint" .
+
+joints:caster_back_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:caster_back_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "caster_back_joint" .
+
+joints:imu_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:imu_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "imu_joint" .
+
+joints:scan_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:base_scan ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "scan_joint" .
+
+joints:wheel_left_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:wheel_left_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "wheel_left_joint" .
+
+joints:wheel_right_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:wheel_right_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "wheel_right_joint" .
+
+links:base_footprint a urdf:Link ;
+    urdf:hasURDFName "base_footprint" .
+
+links:base_link a urdf:Link ;
+    urdf:hasURDFName "base_link" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.143"^^xsd:float ;
+    soma:hasLength "0.14"^^xsd:float ;
+    soma:hasMassValue 8.25735e-01 ;
+    soma:hasWidth "0.14"^^xsd:float .
+
+links:base_scan a urdf:Link ;
+    urdf:hasURDFName "base_scan" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.15e-02 ;
+    soma:hasMassValue 1.14e-01 ;
+    soma:hasRadius 5.5e-02 .
+
+links:caster_back_link a urdf:Link ;
+    urdf:hasURDFName "caster_back_link" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.02"^^xsd:float ;
+    soma:hasLength "0.03"^^xsd:float ;
+    soma:hasMassValue 5e-03 ;
+    soma:hasWidth "0.009"^^xsd:float .
+
+links:imu_link a urdf:Link ;
+    urdf:hasURDFName "imu_link" .
+
+links:wheel_left_link a urdf:Link ;
+    urdf:hasURDFName "wheel_left_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 1.8e-02 ;
+    soma:hasMassValue 2.849894e-02 ;
+    soma:hasRadius 3.3e-02 .
+
+links:wheel_right_link a urdf:Link ;
+    urdf:hasURDFName "wheel_right_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 1.8e-02 ;
+    soma:hasMassValue 2.849894e-02 ;
+    soma:hasRadius 3.3e-02 .
+
+<http://example.org/turtlebot3_burger/sensors/imu> a knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/turtlebot3_burger/sensors/lds_lfcd_sensor> a <http://example.org/turtlebot3_burger/sensors/ray>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    knowrob:hasSensorRange "0.120",
+        "3.5" .
+
+urdf:Robot rdfs:subClassOf sosa:Platform .
+
+knowrob:SensorDevice owl:sameAs sosa:Sensor .
+

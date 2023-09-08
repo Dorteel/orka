@@ -1,0 +1,1503 @@
+@prefix joints: <http://example.org/pr2/joints/> .
+@prefix knowrob: <http://knowrob.org/kb/knowrob.owl#> .
+@prefix links: <http://example.org/pr2/links/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix self: <http://example.org/pr2/> .
+@prefix sensorProperty: <http://example.org/pr2/sensorProperties/> .
+@prefix soma: <http://www.ease-crc.org/ont/SOMA.owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix urdf: <http://knowrob.org/kb/urdf.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/pr2> a urdf:Robot,
+        sosa:Platform ;
+    urdf:hasJoint joints:base_bellow_joint,
+        joints:base_footprint_joint,
+        joints:base_laser_joint,
+        joints:bl_caster_l_wheel_joint,
+        joints:bl_caster_r_wheel_joint,
+        joints:bl_caster_rotation_joint,
+        joints:br_caster_l_wheel_joint,
+        joints:br_caster_r_wheel_joint,
+        joints:br_caster_rotation_joint,
+        joints:double_stereo_frame_joint,
+        joints:fl_caster_l_wheel_joint,
+        joints:fl_caster_r_wheel_joint,
+        joints:fl_caster_rotation_joint,
+        joints:fr_caster_l_wheel_joint,
+        joints:fr_caster_r_wheel_joint,
+        joints:fr_caster_rotation_joint,
+        joints:head_mount_joint,
+        joints:head_mount_kinect_ir_joint,
+        joints:head_mount_kinect_ir_optical_frame_joint,
+        joints:head_mount_kinect_rgb_joint,
+        joints:head_mount_kinect_rgb_optical_frame_joint,
+        joints:head_mount_prosilica_joint,
+        joints:head_mount_prosilica_optical_frame_joint,
+        joints:head_pan_joint,
+        joints:head_plate_frame_joint,
+        joints:head_tilt_joint,
+        joints:high_def_frame_joint,
+        joints:high_def_optical_frame_joint,
+        joints:imu_joint,
+        joints:l_elbow_flex_joint,
+        joints:l_forearm_cam_frame_joint,
+        joints:l_forearm_cam_optical_frame_joint,
+        joints:l_forearm_joint,
+        joints:l_forearm_roll_joint,
+        joints:l_gripper_joint,
+        joints:l_gripper_l_finger_joint,
+        joints:l_gripper_l_finger_tip_joint,
+        joints:l_gripper_led_joint,
+        joints:l_gripper_motor_accelerometer_joint,
+        joints:l_gripper_motor_screw_joint,
+        joints:l_gripper_motor_slider_joint,
+        joints:l_gripper_palm_joint,
+        joints:l_gripper_r_finger_joint,
+        joints:l_gripper_r_finger_tip_joint,
+        joints:l_gripper_tool_joint,
+        joints:l_shoulder_lift_joint,
+        joints:l_shoulder_pan_joint,
+        joints:l_torso_lift_side_plate_joint,
+        joints:l_upper_arm_joint,
+        joints:l_upper_arm_roll_joint,
+        joints:l_wrist_flex_joint,
+        joints:l_wrist_roll_joint,
+        joints:laser_tilt_joint,
+        joints:laser_tilt_mount_joint,
+        joints:narrow_stereo_frame_joint,
+        joints:narrow_stereo_l_stereo_camera_frame_joint,
+        joints:narrow_stereo_l_stereo_camera_optical_frame_joint,
+        joints:narrow_stereo_optical_frame_joint,
+        joints:narrow_stereo_r_stereo_camera_frame_joint,
+        joints:narrow_stereo_r_stereo_camera_optical_frame_joint,
+        joints:projector_wg6802418_child_frame_joint,
+        joints:projector_wg6802418_frame_joint,
+        joints:r_elbow_flex_joint,
+        joints:r_forearm_cam_frame_joint,
+        joints:r_forearm_cam_optical_frame_joint,
+        joints:r_forearm_joint,
+        joints:r_forearm_roll_joint,
+        joints:r_gripper_joint,
+        joints:r_gripper_l_finger_joint,
+        joints:r_gripper_l_finger_tip_joint,
+        joints:r_gripper_led_joint,
+        joints:r_gripper_motor_accelerometer_joint,
+        joints:r_gripper_motor_screw_joint,
+        joints:r_gripper_motor_slider_joint,
+        joints:r_gripper_palm_joint,
+        joints:r_gripper_r_finger_joint,
+        joints:r_gripper_r_finger_tip_joint,
+        joints:r_gripper_tool_joint,
+        joints:r_shoulder_lift_joint,
+        joints:r_shoulder_pan_joint,
+        joints:r_torso_lift_side_plate_joint,
+        joints:r_upper_arm_joint,
+        joints:r_upper_arm_roll_joint,
+        joints:r_wrist_flex_joint,
+        joints:r_wrist_roll_joint,
+        joints:sensor_mount_frame_joint,
+        joints:torso_lift_joint,
+        joints:torso_lift_motor_screw_joint,
+        joints:wide_stereo_frame_joint,
+        joints:wide_stereo_l_stereo_camera_frame_joint,
+        joints:wide_stereo_l_stereo_camera_optical_frame_joint,
+        joints:wide_stereo_optical_frame_joint,
+        joints:wide_stereo_r_stereo_camera_frame_joint,
+        joints:wide_stereo_r_stereo_camera_optical_frame_joint ;
+    urdf:hasLink links:base_bellow_link,
+        links:base_footprint,
+        links:base_laser_link,
+        links:base_link,
+        links:bl_caster_l_wheel_link,
+        links:bl_caster_r_wheel_link,
+        links:bl_caster_rotation_link,
+        links:br_caster_l_wheel_link,
+        links:br_caster_r_wheel_link,
+        links:br_caster_rotation_link,
+        links:double_stereo_link,
+        links:fl_caster_l_wheel_link,
+        links:fl_caster_r_wheel_link,
+        links:fl_caster_rotation_link,
+        links:fr_caster_l_wheel_link,
+        links:fr_caster_r_wheel_link,
+        links:fr_caster_rotation_link,
+        links:head_mount_kinect_ir_link,
+        links:head_mount_kinect_ir_optical_frame,
+        links:head_mount_kinect_rgb_link,
+        links:head_mount_kinect_rgb_optical_frame,
+        links:head_mount_link,
+        links:head_mount_prosilica_link,
+        links:head_mount_prosilica_optical_frame,
+        links:head_pan_link,
+        links:head_plate_frame,
+        links:head_tilt_link,
+        links:high_def_frame,
+        links:high_def_optical_frame,
+        links:imu_link,
+        links:l_elbow_flex_link,
+        links:l_forearm_cam_frame,
+        links:l_forearm_cam_optical_frame,
+        links:l_forearm_link,
+        links:l_forearm_roll_link,
+        links:l_gripper_l_finger_link,
+        links:l_gripper_l_finger_tip_frame,
+        links:l_gripper_l_finger_tip_link,
+        links:l_gripper_led_frame,
+        links:l_gripper_motor_accelerometer_link,
+        links:l_gripper_motor_screw_link,
+        links:l_gripper_motor_slider_link,
+        links:l_gripper_palm_link,
+        links:l_gripper_r_finger_link,
+        links:l_gripper_r_finger_tip_link,
+        links:l_gripper_tool_frame,
+        links:l_shoulder_lift_link,
+        links:l_shoulder_pan_link,
+        links:l_torso_lift_side_plate_link,
+        links:l_upper_arm_link,
+        links:l_upper_arm_roll_link,
+        links:l_wrist_flex_link,
+        links:l_wrist_roll_link,
+        links:laser_tilt_link,
+        links:laser_tilt_mount_link,
+        links:narrow_stereo_l_stereo_camera_frame,
+        links:narrow_stereo_l_stereo_camera_optical_frame,
+        links:narrow_stereo_link,
+        links:narrow_stereo_optical_frame,
+        links:narrow_stereo_r_stereo_camera_frame,
+        links:narrow_stereo_r_stereo_camera_optical_frame,
+        links:projector_wg6802418_child_frame,
+        links:projector_wg6802418_frame,
+        links:r_elbow_flex_link,
+        links:r_forearm_cam_frame,
+        links:r_forearm_cam_optical_frame,
+        links:r_forearm_link,
+        links:r_forearm_roll_link,
+        links:r_gripper_l_finger_link,
+        links:r_gripper_l_finger_tip_frame,
+        links:r_gripper_l_finger_tip_link,
+        links:r_gripper_led_frame,
+        links:r_gripper_motor_accelerometer_link,
+        links:r_gripper_motor_screw_link,
+        links:r_gripper_motor_slider_link,
+        links:r_gripper_palm_link,
+        links:r_gripper_r_finger_link,
+        links:r_gripper_r_finger_tip_link,
+        links:r_gripper_tool_frame,
+        links:r_shoulder_lift_link,
+        links:r_shoulder_pan_link,
+        links:r_torso_lift_side_plate_link,
+        links:r_upper_arm_link,
+        links:r_upper_arm_roll_link,
+        links:r_wrist_flex_link,
+        links:r_wrist_roll_link,
+        links:sensor_mount_link,
+        links:torso_lift_link,
+        links:torso_lift_motor_screw_link,
+        links:wide_stereo_l_stereo_camera_frame,
+        links:wide_stereo_l_stereo_camera_optical_frame,
+        links:wide_stereo_link,
+        links:wide_stereo_optical_frame,
+        links:wide_stereo_r_stereo_camera_frame,
+        links:wide_stereo_r_stereo_camera_optical_frame ;
+    urdf:hasURDFName "pr2" ;
+    sosa:hosts <http://example.org/pr2/actuators/bl_caster_l_wheel_motor>,
+        <http://example.org/pr2/actuators/bl_caster_r_wheel_motor>,
+        <http://example.org/pr2/actuators/bl_caster_rotation_motor>,
+        <http://example.org/pr2/actuators/br_caster_l_wheel_motor>,
+        <http://example.org/pr2/actuators/br_caster_r_wheel_motor>,
+        <http://example.org/pr2/actuators/br_caster_rotation_motor>,
+        <http://example.org/pr2/actuators/fl_caster_l_wheel_motor>,
+        <http://example.org/pr2/actuators/fl_caster_r_wheel_motor>,
+        <http://example.org/pr2/actuators/fl_caster_rotation_motor>,
+        <http://example.org/pr2/actuators/fr_caster_l_wheel_motor>,
+        <http://example.org/pr2/actuators/fr_caster_r_wheel_motor>,
+        <http://example.org/pr2/actuators/fr_caster_rotation_motor>,
+        <http://example.org/pr2/actuators/head_pan_motor>,
+        <http://example.org/pr2/actuators/head_tilt_motor>,
+        <http://example.org/pr2/actuators/l_elbow_flex_motor>,
+        <http://example.org/pr2/actuators/l_forearm_roll_motor>,
+        <http://example.org/pr2/actuators/l_gripper_motor>,
+        <http://example.org/pr2/actuators/l_shoulder_lift_motor>,
+        <http://example.org/pr2/actuators/l_shoulder_pan_motor>,
+        <http://example.org/pr2/actuators/l_upper_arm_roll_motor>,
+        <http://example.org/pr2/actuators/laser_tilt_mount_motor>,
+        <http://example.org/pr2/actuators/r_elbow_flex_motor>,
+        <http://example.org/pr2/actuators/r_forearm_roll_motor>,
+        <http://example.org/pr2/actuators/r_gripper_motor>,
+        <http://example.org/pr2/actuators/r_shoulder_lift_motor>,
+        <http://example.org/pr2/actuators/r_shoulder_pan_motor>,
+        <http://example.org/pr2/actuators/r_upper_arm_roll_motor>,
+        <http://example.org/pr2/actuators/torso_lift_motor>,
+        <http://example.org/pr2/sensors/base_contact_sensor>,
+        <http://example.org/pr2/sensors/base_laser>,
+        <http://example.org/pr2/sensors/head_mount_ir_sensor>,
+        <http://example.org/pr2/sensors/head_mount_prosilica_link_sensor>,
+        <http://example.org/pr2/sensors/head_mount_prosilica_link_sim_pcd_sensor>,
+        <http://example.org/pr2/sensors/head_mount_rgb_sensor>,
+        <http://example.org/pr2/sensors/high_def_sensor>,
+        <http://example.org/pr2/sensors/l_forearm_cam_sensor>,
+        <http://example.org/pr2/sensors/l_gripper_l_finger_tip_contact_sensor>,
+        <http://example.org/pr2/sensors/l_gripper_r_finger_tip_contact_sensor>,
+        <http://example.org/pr2/sensors/laser_tilt>,
+        <http://example.org/pr2/sensors/narrow_stereo_l_stereo_camera_sensor>,
+        <http://example.org/pr2/sensors/narrow_stereo_r_stereo_camera_sensor>,
+        <http://example.org/pr2/sensors/r_forearm_cam_sensor>,
+        <http://example.org/pr2/sensors/r_gripper_l_finger_tip_contact_sensor>,
+        <http://example.org/pr2/sensors/r_gripper_r_finger_tip_contact_sensor>,
+        <http://example.org/pr2/sensors/torso_lift_contact_sensor>,
+        <http://example.org/pr2/sensors/wide_stereo_l_stereo_camera_sensor>,
+        <http://example.org/pr2/sensors/wide_stereo_r_stereo_camera_sensor> .
+
+self:cameraSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:contactSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:depthSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:imuSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:raySensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/actuators/bl_caster_l_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/bl_caster_r_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/bl_caster_rotation_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/br_caster_l_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/br_caster_r_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/br_caster_rotation_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fl_caster_l_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fl_caster_r_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fl_caster_rotation_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fr_caster_l_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fr_caster_r_wheel_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/fr_caster_rotation_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/head_pan_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/head_tilt_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_elbow_flex_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_forearm_roll_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_gripper_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_shoulder_lift_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_shoulder_pan_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/l_upper_arm_roll_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/laser_tilt_mount_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_elbow_flex_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_forearm_roll_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_gripper_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_shoulder_lift_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_shoulder_pan_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/r_upper_arm_roll_motor> a sosa:Actuator .
+
+<http://example.org/pr2/actuators/torso_lift_motor> a sosa:Actuator .
+
+joints:base_bellow_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:base_bellow_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "base_bellow_joint" .
+
+joints:base_footprint_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:base_link ;
+    urdf:hasParentLink self:base_footprint ;
+    urdf:hasURDFName "base_footprint_joint" .
+
+joints:base_laser_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:base_laser_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "base_laser_joint" .
+
+joints:bl_caster_l_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:bl_caster_l_wheel_link ;
+    urdf:hasParentLink self:bl_caster_rotation_link ;
+    urdf:hasURDFName "bl_caster_l_wheel_joint" .
+
+joints:bl_caster_r_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:bl_caster_r_wheel_link ;
+    urdf:hasParentLink self:bl_caster_rotation_link ;
+    urdf:hasURDFName "bl_caster_r_wheel_joint" .
+
+joints:bl_caster_rotation_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:bl_caster_rotation_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "bl_caster_rotation_joint" .
+
+joints:br_caster_l_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:br_caster_l_wheel_link ;
+    urdf:hasParentLink self:br_caster_rotation_link ;
+    urdf:hasURDFName "br_caster_l_wheel_joint" .
+
+joints:br_caster_r_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:br_caster_r_wheel_link ;
+    urdf:hasParentLink self:br_caster_rotation_link ;
+    urdf:hasURDFName "br_caster_r_wheel_joint" .
+
+joints:br_caster_rotation_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:br_caster_rotation_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "br_caster_rotation_joint" .
+
+joints:double_stereo_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:double_stereo_link ;
+    urdf:hasParentLink self:sensor_mount_link ;
+    urdf:hasURDFName "double_stereo_frame_joint" .
+
+joints:fl_caster_l_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fl_caster_l_wheel_link ;
+    urdf:hasParentLink self:fl_caster_rotation_link ;
+    urdf:hasURDFName "fl_caster_l_wheel_joint" .
+
+joints:fl_caster_r_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fl_caster_r_wheel_link ;
+    urdf:hasParentLink self:fl_caster_rotation_link ;
+    urdf:hasURDFName "fl_caster_r_wheel_joint" .
+
+joints:fl_caster_rotation_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fl_caster_rotation_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "fl_caster_rotation_joint" .
+
+joints:fr_caster_l_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fr_caster_l_wheel_link ;
+    urdf:hasParentLink self:fr_caster_rotation_link ;
+    urdf:hasURDFName "fr_caster_l_wheel_joint" .
+
+joints:fr_caster_r_wheel_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fr_caster_r_wheel_link ;
+    urdf:hasParentLink self:fr_caster_rotation_link ;
+    urdf:hasURDFName "fr_caster_r_wheel_joint" .
+
+joints:fr_caster_rotation_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:fr_caster_rotation_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "fr_caster_rotation_joint" .
+
+joints:head_mount_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_link ;
+    urdf:hasParentLink self:head_plate_frame ;
+    urdf:hasURDFName "head_mount_joint" .
+
+joints:head_mount_kinect_ir_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_kinect_ir_link ;
+    urdf:hasParentLink self:head_mount_link ;
+    urdf:hasURDFName "head_mount_kinect_ir_joint" .
+
+joints:head_mount_kinect_ir_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_kinect_ir_optical_frame ;
+    urdf:hasParentLink self:head_mount_kinect_ir_link ;
+    urdf:hasURDFName "head_mount_kinect_ir_optical_frame_joint" .
+
+joints:head_mount_kinect_rgb_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_kinect_rgb_link ;
+    urdf:hasParentLink self:head_mount_kinect_ir_link ;
+    urdf:hasURDFName "head_mount_kinect_rgb_joint" .
+
+joints:head_mount_kinect_rgb_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_kinect_rgb_optical_frame ;
+    urdf:hasParentLink self:head_mount_kinect_rgb_link ;
+    urdf:hasURDFName "head_mount_kinect_rgb_optical_frame_joint" .
+
+joints:head_mount_prosilica_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_prosilica_link ;
+    urdf:hasParentLink self:head_mount_link ;
+    urdf:hasURDFName "head_mount_prosilica_joint" .
+
+joints:head_mount_prosilica_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_mount_prosilica_optical_frame ;
+    urdf:hasParentLink self:head_mount_prosilica_link ;
+    urdf:hasURDFName "head_mount_prosilica_optical_frame_joint" .
+
+joints:head_pan_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:head_pan_link ;
+    urdf:hasLowerLimit "-3.007"^^xsd:float ;
+    urdf:hasMaxJointVelocity "6.0"^^xsd:float ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "head_pan_joint" ;
+    urdf:hasUpperLimit "3.007"^^xsd:float .
+
+joints:head_plate_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:head_plate_frame ;
+    urdf:hasParentLink self:head_tilt_link ;
+    urdf:hasURDFName "head_plate_frame_joint" .
+
+joints:head_tilt_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:head_tilt_link ;
+    urdf:hasLowerLimit "-0.471238"^^xsd:float ;
+    urdf:hasMaxJointVelocity "5.0"^^xsd:float ;
+    urdf:hasParentLink self:head_pan_link ;
+    urdf:hasURDFName "head_tilt_joint" ;
+    urdf:hasUpperLimit "1.39626"^^xsd:float .
+
+joints:high_def_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:high_def_frame ;
+    urdf:hasParentLink self:sensor_mount_link ;
+    urdf:hasURDFName "high_def_frame_joint" .
+
+joints:high_def_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:high_def_optical_frame ;
+    urdf:hasParentLink self:high_def_frame ;
+    urdf:hasURDFName "high_def_optical_frame_joint" .
+
+joints:imu_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:imu_link ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "imu_joint" .
+
+joints:l_elbow_flex_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:l_elbow_flex_link ;
+    urdf:hasLowerLimit "-2.3213"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.3"^^xsd:float ;
+    urdf:hasParentLink self:l_upper_arm_link ;
+    urdf:hasURDFName "l_elbow_flex_joint" ;
+    urdf:hasUpperLimit "0.0"^^xsd:float .
+
+joints:l_forearm_cam_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_forearm_cam_frame ;
+    urdf:hasParentLink self:l_forearm_roll_link ;
+    urdf:hasURDFName "l_forearm_cam_frame_joint" .
+
+joints:l_forearm_cam_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_forearm_cam_optical_frame ;
+    urdf:hasParentLink self:l_forearm_cam_frame ;
+    urdf:hasURDFName "l_forearm_cam_optical_frame_joint" .
+
+joints:l_forearm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_forearm_link ;
+    urdf:hasParentLink self:l_forearm_roll_link ;
+    urdf:hasURDFName "l_forearm_joint" .
+
+joints:l_forearm_roll_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:l_forearm_roll_link ;
+    urdf:hasParentLink self:l_elbow_flex_link ;
+    urdf:hasURDFName "l_forearm_roll_joint" .
+
+joints:l_gripper_joint a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:l_gripper_l_finger_tip_frame ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.2"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_r_finger_tip_link ;
+    urdf:hasURDFName "l_gripper_joint" ;
+    urdf:hasUpperLimit "0.09"^^xsd:float .
+
+joints:l_gripper_l_finger_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:l_gripper_l_finger_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_l_finger_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:l_gripper_l_finger_tip_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 -1" ;
+    urdf:hasChildLink self:l_gripper_l_finger_tip_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_l_finger_link ;
+    urdf:hasURDFName "l_gripper_l_finger_tip_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:l_gripper_led_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_gripper_led_frame ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_led_joint" .
+
+joints:l_gripper_motor_accelerometer_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_gripper_motor_accelerometer_link ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_motor_accelerometer_joint" .
+
+joints:l_gripper_motor_screw_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:l_gripper_motor_screw_link ;
+    urdf:hasParentLink self:l_gripper_motor_slider_link ;
+    urdf:hasURDFName "l_gripper_motor_screw_joint" .
+
+joints:l_gripper_motor_slider_joint a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink self:l_gripper_motor_slider_link ;
+    urdf:hasLowerLimit "-0.1"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.2"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_motor_slider_joint" ;
+    urdf:hasUpperLimit "0.1"^^xsd:float .
+
+joints:l_gripper_palm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_gripper_palm_link ;
+    urdf:hasParentLink self:l_wrist_roll_link ;
+    urdf:hasURDFName "l_gripper_palm_joint" .
+
+joints:l_gripper_r_finger_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 -1" ;
+    urdf:hasChildLink self:l_gripper_r_finger_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_r_finger_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:l_gripper_r_finger_tip_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:l_gripper_r_finger_tip_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:l_gripper_r_finger_link ;
+    urdf:hasURDFName "l_gripper_r_finger_tip_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:l_gripper_tool_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_gripper_tool_frame ;
+    urdf:hasParentLink self:l_gripper_palm_link ;
+    urdf:hasURDFName "l_gripper_tool_joint" .
+
+joints:l_shoulder_lift_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:l_shoulder_lift_link ;
+    urdf:hasLowerLimit "-0.5236"^^xsd:float ;
+    urdf:hasMaxJointVelocity "2.082"^^xsd:float ;
+    urdf:hasParentLink self:l_shoulder_pan_link ;
+    urdf:hasURDFName "l_shoulder_lift_joint" ;
+    urdf:hasUpperLimit "1.3963"^^xsd:float .
+
+joints:l_shoulder_pan_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:l_shoulder_pan_link ;
+    urdf:hasLowerLimit "-0.714601836603"^^xsd:float ;
+    urdf:hasMaxJointVelocity "2.088"^^xsd:float ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "l_shoulder_pan_joint" ;
+    urdf:hasUpperLimit "2.2853981634"^^xsd:float .
+
+joints:l_torso_lift_side_plate_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_torso_lift_side_plate_link ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "l_torso_lift_side_plate_joint" .
+
+joints:l_upper_arm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:l_upper_arm_link ;
+    urdf:hasParentLink self:l_upper_arm_roll_link ;
+    urdf:hasURDFName "l_upper_arm_joint" .
+
+joints:l_upper_arm_roll_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink self:l_upper_arm_roll_link ;
+    urdf:hasLowerLimit "-0.8"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.27"^^xsd:float ;
+    urdf:hasParentLink self:l_shoulder_lift_link ;
+    urdf:hasURDFName "l_upper_arm_roll_joint" ;
+    urdf:hasUpperLimit "3.9"^^xsd:float .
+
+joints:l_wrist_flex_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:l_wrist_flex_link ;
+    urdf:hasLowerLimit "-2.18"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.078"^^xsd:float ;
+    urdf:hasParentLink self:l_forearm_link ;
+    urdf:hasURDFName "l_wrist_flex_joint" ;
+    urdf:hasUpperLimit "0.0"^^xsd:float .
+
+joints:l_wrist_roll_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:l_wrist_roll_link ;
+    urdf:hasParentLink self:l_wrist_flex_link ;
+    urdf:hasURDFName "l_wrist_roll_joint" .
+
+joints:laser_tilt_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:laser_tilt_link ;
+    urdf:hasParentLink self:laser_tilt_mount_link ;
+    urdf:hasURDFName "laser_tilt_joint" .
+
+joints:laser_tilt_mount_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:laser_tilt_mount_link ;
+    urdf:hasLowerLimit "-0.7854"^^xsd:float ;
+    urdf:hasMaxJointVelocity "10.0"^^xsd:float ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "laser_tilt_mount_joint" ;
+    urdf:hasUpperLimit "1.48353"^^xsd:float .
+
+joints:narrow_stereo_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_link ;
+    urdf:hasParentLink self:double_stereo_link ;
+    urdf:hasURDFName "narrow_stereo_frame_joint" .
+
+joints:narrow_stereo_l_stereo_camera_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_l_stereo_camera_frame ;
+    urdf:hasParentLink self:narrow_stereo_link ;
+    urdf:hasURDFName "narrow_stereo_l_stereo_camera_frame_joint" .
+
+joints:narrow_stereo_l_stereo_camera_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_l_stereo_camera_optical_frame ;
+    urdf:hasParentLink self:narrow_stereo_l_stereo_camera_frame ;
+    urdf:hasURDFName "narrow_stereo_l_stereo_camera_optical_frame_joint" .
+
+joints:narrow_stereo_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_optical_frame ;
+    urdf:hasParentLink self:narrow_stereo_link ;
+    urdf:hasURDFName "narrow_stereo_optical_frame_joint" .
+
+joints:narrow_stereo_r_stereo_camera_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_r_stereo_camera_frame ;
+    urdf:hasParentLink self:narrow_stereo_l_stereo_camera_frame ;
+    urdf:hasURDFName "narrow_stereo_r_stereo_camera_frame_joint" .
+
+joints:narrow_stereo_r_stereo_camera_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:narrow_stereo_r_stereo_camera_optical_frame ;
+    urdf:hasParentLink self:narrow_stereo_r_stereo_camera_frame ;
+    urdf:hasURDFName "narrow_stereo_r_stereo_camera_optical_frame_joint" .
+
+joints:projector_wg6802418_child_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:projector_wg6802418_child_frame ;
+    urdf:hasParentLink self:projector_wg6802418_frame ;
+    urdf:hasURDFName "projector_wg6802418_child_frame_joint" .
+
+joints:projector_wg6802418_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:projector_wg6802418_frame ;
+    urdf:hasParentLink self:head_plate_frame ;
+    urdf:hasURDFName "projector_wg6802418_frame_joint" .
+
+joints:r_elbow_flex_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:r_elbow_flex_link ;
+    urdf:hasLowerLimit "-2.3213"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.3"^^xsd:float ;
+    urdf:hasParentLink self:r_upper_arm_link ;
+    urdf:hasURDFName "r_elbow_flex_joint" ;
+    urdf:hasUpperLimit "0.0"^^xsd:float .
+
+joints:r_forearm_cam_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_forearm_cam_frame ;
+    urdf:hasParentLink self:r_forearm_roll_link ;
+    urdf:hasURDFName "r_forearm_cam_frame_joint" .
+
+joints:r_forearm_cam_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_forearm_cam_optical_frame ;
+    urdf:hasParentLink self:r_forearm_cam_frame ;
+    urdf:hasURDFName "r_forearm_cam_optical_frame_joint" .
+
+joints:r_forearm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_forearm_link ;
+    urdf:hasParentLink self:r_forearm_roll_link ;
+    urdf:hasURDFName "r_forearm_joint" .
+
+joints:r_forearm_roll_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:r_forearm_roll_link ;
+    urdf:hasParentLink self:r_elbow_flex_link ;
+    urdf:hasURDFName "r_forearm_roll_joint" .
+
+joints:r_gripper_joint a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:r_gripper_l_finger_tip_frame ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.2"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_r_finger_tip_link ;
+    urdf:hasURDFName "r_gripper_joint" ;
+    urdf:hasUpperLimit "0.09"^^xsd:float .
+
+joints:r_gripper_l_finger_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:r_gripper_l_finger_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_l_finger_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:r_gripper_l_finger_tip_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 -1" ;
+    urdf:hasChildLink self:r_gripper_l_finger_tip_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_l_finger_link ;
+    urdf:hasURDFName "r_gripper_l_finger_tip_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:r_gripper_led_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_gripper_led_frame ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_led_joint" .
+
+joints:r_gripper_motor_accelerometer_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_gripper_motor_accelerometer_link ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_motor_accelerometer_joint" .
+
+joints:r_gripper_motor_screw_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:r_gripper_motor_screw_link ;
+    urdf:hasParentLink self:r_gripper_motor_slider_link ;
+    urdf:hasURDFName "r_gripper_motor_screw_joint" .
+
+joints:r_gripper_motor_slider_joint a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink self:r_gripper_motor_slider_link ;
+    urdf:hasLowerLimit "-0.1"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.2"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_motor_slider_joint" ;
+    urdf:hasUpperLimit "0.1"^^xsd:float .
+
+joints:r_gripper_palm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_gripper_palm_link ;
+    urdf:hasParentLink self:r_wrist_roll_link ;
+    urdf:hasURDFName "r_gripper_palm_joint" .
+
+joints:r_gripper_r_finger_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 -1" ;
+    urdf:hasChildLink self:r_gripper_r_finger_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_r_finger_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:r_gripper_r_finger_tip_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:r_gripper_r_finger_tip_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.5"^^xsd:float ;
+    urdf:hasParentLink self:r_gripper_r_finger_link ;
+    urdf:hasURDFName "r_gripper_r_finger_tip_joint" ;
+    urdf:hasUpperLimit "0.548"^^xsd:float .
+
+joints:r_gripper_tool_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_gripper_tool_frame ;
+    urdf:hasParentLink self:r_gripper_palm_link ;
+    urdf:hasURDFName "r_gripper_tool_joint" .
+
+joints:r_shoulder_lift_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:r_shoulder_lift_link ;
+    urdf:hasLowerLimit "-0.5236"^^xsd:float ;
+    urdf:hasMaxJointVelocity "2.082"^^xsd:float ;
+    urdf:hasParentLink self:r_shoulder_pan_link ;
+    urdf:hasURDFName "r_shoulder_lift_joint" ;
+    urdf:hasUpperLimit "1.3963"^^xsd:float .
+
+joints:r_shoulder_pan_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:r_shoulder_pan_link ;
+    urdf:hasLowerLimit "-2.2853981634"^^xsd:float ;
+    urdf:hasMaxJointVelocity "2.088"^^xsd:float ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "r_shoulder_pan_joint" ;
+    urdf:hasUpperLimit "0.714601836603"^^xsd:float .
+
+joints:r_torso_lift_side_plate_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_torso_lift_side_plate_link ;
+    urdf:hasParentLink self:torso_lift_link ;
+    urdf:hasURDFName "r_torso_lift_side_plate_joint" .
+
+joints:r_upper_arm_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:r_upper_arm_link ;
+    urdf:hasParentLink self:r_upper_arm_roll_link ;
+    urdf:hasURDFName "r_upper_arm_joint" .
+
+joints:r_upper_arm_roll_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink self:r_upper_arm_roll_link ;
+    urdf:hasLowerLimit "-3.9"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.27"^^xsd:float ;
+    urdf:hasParentLink self:r_shoulder_lift_link ;
+    urdf:hasURDFName "r_upper_arm_roll_joint" ;
+    urdf:hasUpperLimit "0.8"^^xsd:float .
+
+joints:r_wrist_flex_joint a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink self:r_wrist_flex_link ;
+    urdf:hasLowerLimit "-2.18"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.078"^^xsd:float ;
+    urdf:hasParentLink self:r_forearm_link ;
+    urdf:hasURDFName "r_wrist_flex_joint" ;
+    urdf:hasUpperLimit "0.0"^^xsd:float .
+
+joints:r_wrist_roll_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:r_wrist_roll_link ;
+    urdf:hasParentLink self:r_wrist_flex_link ;
+    urdf:hasURDFName "r_wrist_roll_joint" .
+
+joints:sensor_mount_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:sensor_mount_link ;
+    urdf:hasParentLink self:head_plate_frame ;
+    urdf:hasURDFName "sensor_mount_frame_joint" .
+
+joints:torso_lift_joint a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink self:torso_lift_link ;
+    urdf:hasLowerLimit "0.0"^^xsd:float ;
+    urdf:hasMaxJointVelocity "0.013"^^xsd:float ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "torso_lift_joint" ;
+    urdf:hasUpperLimit "0.33"^^xsd:float .
+
+joints:torso_lift_motor_screw_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink self:torso_lift_motor_screw_link ;
+    urdf:hasParentLink self:base_link ;
+    urdf:hasURDFName "torso_lift_motor_screw_joint" .
+
+joints:wide_stereo_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_link ;
+    urdf:hasParentLink self:double_stereo_link ;
+    urdf:hasURDFName "wide_stereo_frame_joint" .
+
+joints:wide_stereo_l_stereo_camera_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_l_stereo_camera_frame ;
+    urdf:hasParentLink self:wide_stereo_link ;
+    urdf:hasURDFName "wide_stereo_l_stereo_camera_frame_joint" .
+
+joints:wide_stereo_l_stereo_camera_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_l_stereo_camera_optical_frame ;
+    urdf:hasParentLink self:wide_stereo_l_stereo_camera_frame ;
+    urdf:hasURDFName "wide_stereo_l_stereo_camera_optical_frame_joint" .
+
+joints:wide_stereo_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_optical_frame ;
+    urdf:hasParentLink self:wide_stereo_link ;
+    urdf:hasURDFName "wide_stereo_optical_frame_joint" .
+
+joints:wide_stereo_r_stereo_camera_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_r_stereo_camera_frame ;
+    urdf:hasParentLink self:wide_stereo_l_stereo_camera_frame ;
+    urdf:hasURDFName "wide_stereo_r_stereo_camera_frame_joint" .
+
+joints:wide_stereo_r_stereo_camera_optical_frame_joint a urdf:FixedJoint ;
+    urdf:hasChildLink self:wide_stereo_r_stereo_camera_optical_frame ;
+    urdf:hasParentLink self:wide_stereo_r_stereo_camera_frame ;
+    urdf:hasURDFName "wide_stereo_r_stereo_camera_optical_frame_joint" .
+
+links:base_bellow_link a urdf:Link ;
+    urdf:hasURDFName "base_bellow_link" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.3"^^xsd:float ;
+    soma:hasLength "0.05"^^xsd:float ;
+    soma:hasMassValue 1e+00 ;
+    soma:hasWidth "0.37"^^xsd:float .
+
+links:base_footprint a urdf:Link ;
+    urdf:hasURDFName "base_footprint" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.001"^^xsd:float ;
+    soma:hasLength "0.001"^^xsd:float ;
+    soma:hasMassValue 1e+00 ;
+    soma:hasWidth "0.001"^^xsd:float .
+
+links:base_laser_link a urdf:Link ;
+    urdf:hasURDFName "base_laser_link" ;
+    soma:hasMassValue 1e-03 .
+
+links:base_link a urdf:Link ;
+    urdf:hasURDFName "base_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/base_v0/base_L.stl" ;
+    soma:hasMassValue 1.16e+02 .
+
+links:bl_caster_l_wheel_link a urdf:Link ;
+    urdf:hasURDFName "bl_caster_l_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:bl_caster_r_wheel_link a urdf:Link ;
+    urdf:hasURDFName "bl_caster_r_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:bl_caster_rotation_link a urdf:Link ;
+    urdf:hasURDFName "bl_caster_rotation_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/base_v0/caster_L.stl" ;
+    soma:hasMassValue 3.473082e+00 .
+
+links:br_caster_l_wheel_link a urdf:Link ;
+    urdf:hasURDFName "br_caster_l_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:br_caster_r_wheel_link a urdf:Link ;
+    urdf:hasURDFName "br_caster_r_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:br_caster_rotation_link a urdf:Link ;
+    urdf:hasURDFName "br_caster_rotation_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/base_v0/caster_L.stl" ;
+    soma:hasMassValue 3.473082e+00 .
+
+links:double_stereo_link a urdf:Link ;
+    urdf:hasURDFName "double_stereo_link" ;
+    soma:hasMassValue 1e-01 .
+
+links:fl_caster_l_wheel_link a urdf:Link ;
+    urdf:hasURDFName "fl_caster_l_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:fl_caster_r_wheel_link a urdf:Link ;
+    urdf:hasURDFName "fl_caster_r_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:fl_caster_rotation_link a urdf:Link ;
+    urdf:hasURDFName "fl_caster_rotation_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/base_v0/caster_L.stl" ;
+    soma:hasMassValue 3.473082e+00 .
+
+links:fr_caster_l_wheel_link a urdf:Link ;
+    urdf:hasURDFName "fr_caster_l_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:fr_caster_r_wheel_link a urdf:Link ;
+    urdf:hasURDFName "fr_caster_r_wheel_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 3.4e-02 ;
+    soma:hasMassValue 4.4036e-01 ;
+    soma:hasRadius 7.4792e-02 .
+
+links:fr_caster_rotation_link a urdf:Link ;
+    urdf:hasURDFName "fr_caster_rotation_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/base_v0/caster_L.stl" ;
+    soma:hasMassValue 3.473082e+00 .
+
+links:head_mount_kinect_ir_link a urdf:Link ;
+    urdf:hasURDFName "head_mount_kinect_ir_link" ;
+    soma:hasCollisionShape soma:SphereShape ;
+    soma:hasMassValue 1e-01 ;
+    soma:hasRadius 5e-04 .
+
+links:head_mount_kinect_ir_optical_frame a urdf:Link ;
+    urdf:hasURDFName "head_mount_kinect_ir_optical_frame" .
+
+links:head_mount_kinect_rgb_link a urdf:Link ;
+    urdf:hasURDFName "head_mount_kinect_rgb_link" ;
+    soma:hasCollisionShape soma:SphereShape ;
+    soma:hasMassValue 1e-01 ;
+    soma:hasRadius 5e-04 .
+
+links:head_mount_kinect_rgb_optical_frame a urdf:Link ;
+    urdf:hasURDFName "head_mount_kinect_rgb_optical_frame" .
+
+links:head_mount_link a urdf:Link ;
+    urdf:hasURDFName "head_mount_link" ;
+    soma:hasCollisionShape soma:SphereShape ;
+    soma:hasMassValue 1e-01 ;
+    soma:hasRadius 5e-04 .
+
+links:head_mount_prosilica_link a urdf:Link ;
+    urdf:hasURDFName "head_mount_prosilica_link" ;
+    soma:hasCollisionShape soma:SphereShape ;
+    soma:hasMassValue 1e-01 ;
+    soma:hasRadius 5e-04 .
+
+links:head_mount_prosilica_optical_frame a urdf:Link ;
+    urdf:hasURDFName "head_mount_prosilica_optical_frame" .
+
+links:head_pan_link a urdf:Link ;
+    urdf:hasURDFName "head_pan_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/head_v0/head_pan_L.stl" ;
+    soma:hasMassValue 6.339e+00 .
+
+links:head_plate_frame a urdf:Link ;
+    urdf:hasURDFName "head_plate_frame" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.01"^^xsd:float ;
+    soma:hasLength "0.01"^^xsd:float ;
+    soma:hasMassValue 1e-02 ;
+    soma:hasWidth "0.01"^^xsd:float .
+
+links:head_tilt_link a urdf:Link ;
+    urdf:hasURDFName "head_tilt_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/head_v0/head_tilt_L.stl" ;
+    soma:hasMassValue 4.479e+00 .
+
+links:high_def_frame a urdf:Link ;
+    urdf:hasURDFName "high_def_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:high_def_optical_frame a urdf:Link ;
+    urdf:hasURDFName "high_def_optical_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:imu_link a urdf:Link ;
+    urdf:hasURDFName "imu_link" ;
+    soma:hasMassValue 1e-03 .
+
+links:l_elbow_flex_link a urdf:Link ;
+    urdf:hasURDFName "l_elbow_flex_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/elbow_flex.stl" ;
+    soma:hasMassValue 1.90327e+00 .
+
+links:l_forearm_cam_frame a urdf:Link ;
+    urdf:hasURDFName "l_forearm_cam_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:l_forearm_cam_optical_frame a urdf:Link ;
+    urdf:hasURDFName "l_forearm_cam_optical_frame" .
+
+links:l_forearm_link a urdf:Link ;
+    urdf:hasURDFName "l_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/forearm.stl" ;
+    soma:hasMassValue 2.57968e+00 .
+
+links:l_forearm_roll_link a urdf:Link ;
+    urdf:hasURDFName "l_forearm_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/forearm_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:l_gripper_l_finger_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_l_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger.stl" ;
+    soma:hasMassValue 1.7126e-01 .
+
+links:l_gripper_l_finger_tip_frame a urdf:Link ;
+    urdf:hasURDFName "l_gripper_l_finger_tip_frame" .
+
+links:l_gripper_l_finger_tip_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_l_finger_tip_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger_tip.stl" ;
+    soma:hasMassValue 4.419e-02 .
+
+links:l_gripper_led_frame a urdf:Link ;
+    urdf:hasURDFName "l_gripper_led_frame" .
+
+links:l_gripper_motor_accelerometer_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_motor_accelerometer_link" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.001"^^xsd:float ;
+    soma:hasLength "0.001"^^xsd:float ;
+    soma:hasMassValue 1e-03 ;
+    soma:hasWidth "0.001"^^xsd:float .
+
+links:l_gripper_motor_screw_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_motor_screw_link" ;
+    soma:hasMassValue 1e-02 .
+
+links:l_gripper_motor_slider_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_motor_slider_link" ;
+    soma:hasMassValue 1e-02 .
+
+links:l_gripper_palm_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_palm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/gripper_palm.stl" ;
+    soma:hasMassValue 5.8007e-01 .
+
+links:l_gripper_r_finger_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_r_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger.stl" ;
+    soma:hasMassValue 1.7389e-01 .
+
+links:l_gripper_r_finger_tip_link a urdf:Link ;
+    urdf:hasURDFName "l_gripper_r_finger_tip_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger_tip.stl" ;
+    soma:hasMassValue 4.419e-02 .
+
+links:l_gripper_tool_frame a urdf:Link ;
+    urdf:hasURDFName "l_gripper_tool_frame" .
+
+links:l_shoulder_lift_link a urdf:Link ;
+    urdf:hasURDFName "l_shoulder_lift_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/shoulder_lift.stl" ;
+    soma:hasMassValue 2.74988e+00 .
+
+links:l_shoulder_pan_link a urdf:Link ;
+    urdf:hasURDFName "l_shoulder_pan_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/shoulder_pan.stl" ;
+    soma:hasMassValue 2.579932e+01 .
+
+links:l_torso_lift_side_plate_link a urdf:Link ;
+    urdf:hasURDFName "l_torso_lift_side_plate_link" ;
+    soma:hasMassValue 1e-01 .
+
+links:l_upper_arm_link a urdf:Link ;
+    urdf:hasURDFName "l_upper_arm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/upper_arm.stl" ;
+    soma:hasMassValue 6.01769e+00 .
+
+links:l_upper_arm_roll_link a urdf:Link ;
+    urdf:hasURDFName "l_upper_arm_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/upper_arm_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:l_wrist_flex_link a urdf:Link ;
+    urdf:hasURDFName "l_wrist_flex_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/wrist_flex.stl" ;
+    soma:hasMassValue 6.1402e-01 .
+
+links:l_wrist_roll_link a urdf:Link ;
+    urdf:hasURDFName "l_wrist_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/wrist_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:laser_tilt_link a urdf:Link ;
+    urdf:hasURDFName "laser_tilt_link" ;
+    soma:hasMassValue 1e-03 .
+
+links:laser_tilt_mount_link a urdf:Link ;
+    urdf:hasURDFName "laser_tilt_mount_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_L.stl" ;
+    soma:hasMassValue 5.91e-01 .
+
+links:narrow_stereo_l_stereo_camera_frame a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_l_stereo_camera_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:narrow_stereo_l_stereo_camera_optical_frame a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_l_stereo_camera_optical_frame" .
+
+links:narrow_stereo_link a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_link" ;
+    soma:hasMassValue 1e-01 .
+
+links:narrow_stereo_optical_frame a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_optical_frame" .
+
+links:narrow_stereo_r_stereo_camera_frame a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_r_stereo_camera_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:narrow_stereo_r_stereo_camera_optical_frame a urdf:Link ;
+    urdf:hasURDFName "narrow_stereo_r_stereo_camera_optical_frame" .
+
+links:projector_wg6802418_child_frame a urdf:Link ;
+    urdf:hasURDFName "projector_wg6802418_child_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:projector_wg6802418_frame a urdf:Link ;
+    urdf:hasURDFName "projector_wg6802418_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:r_elbow_flex_link a urdf:Link ;
+    urdf:hasURDFName "r_elbow_flex_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/elbow_flex.stl" ;
+    soma:hasMassValue 1.90327e+00 .
+
+links:r_forearm_cam_frame a urdf:Link ;
+    urdf:hasURDFName "r_forearm_cam_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:r_forearm_cam_optical_frame a urdf:Link ;
+    urdf:hasURDFName "r_forearm_cam_optical_frame" .
+
+links:r_forearm_link a urdf:Link ;
+    urdf:hasURDFName "r_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/forearm.stl" ;
+    soma:hasMassValue 2.57968e+00 .
+
+links:r_forearm_roll_link a urdf:Link ;
+    urdf:hasURDFName "r_forearm_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/forearm_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:r_gripper_l_finger_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_l_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger.stl" ;
+    soma:hasMassValue 1.7126e-01 .
+
+links:r_gripper_l_finger_tip_frame a urdf:Link ;
+    urdf:hasURDFName "r_gripper_l_finger_tip_frame" .
+
+links:r_gripper_l_finger_tip_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_l_finger_tip_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger_tip.stl" ;
+    soma:hasMassValue 4.419e-02 .
+
+links:r_gripper_led_frame a urdf:Link ;
+    urdf:hasURDFName "r_gripper_led_frame" .
+
+links:r_gripper_motor_accelerometer_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_motor_accelerometer_link" ;
+    soma:hasCollisionShape soma:BoxShape ;
+    soma:hasDepth "0.001"^^xsd:float ;
+    soma:hasLength "0.001"^^xsd:float ;
+    soma:hasMassValue 1e-03 ;
+    soma:hasWidth "0.001"^^xsd:float .
+
+links:r_gripper_motor_screw_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_motor_screw_link" ;
+    soma:hasMassValue 1e-02 .
+
+links:r_gripper_motor_slider_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_motor_slider_link" ;
+    soma:hasMassValue 1e-02 .
+
+links:r_gripper_palm_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_palm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/gripper_palm.stl" ;
+    soma:hasMassValue 5.8007e-01 .
+
+links:r_gripper_r_finger_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_r_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger.stl" ;
+    soma:hasMassValue 1.7389e-01 .
+
+links:r_gripper_r_finger_tip_link a urdf:Link ;
+    urdf:hasURDFName "r_gripper_r_finger_tip_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/gripper_v0/l_finger_tip.stl" ;
+    soma:hasMassValue 4.419e-02 .
+
+links:r_gripper_tool_frame a urdf:Link ;
+    urdf:hasURDFName "r_gripper_tool_frame" .
+
+links:r_shoulder_lift_link a urdf:Link ;
+    urdf:hasURDFName "r_shoulder_lift_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/shoulder_lift.stl" ;
+    soma:hasMassValue 2.74988e+00 .
+
+links:r_shoulder_pan_link a urdf:Link ;
+    urdf:hasURDFName "r_shoulder_pan_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/shoulder_pan.stl" ;
+    soma:hasMassValue 2.579932e+01 .
+
+links:r_torso_lift_side_plate_link a urdf:Link ;
+    urdf:hasURDFName "r_torso_lift_side_plate_link" ;
+    soma:hasMassValue 1e-01 .
+
+links:r_upper_arm_link a urdf:Link ;
+    urdf:hasURDFName "r_upper_arm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/upper_arm_v0/upper_arm.stl" ;
+    soma:hasMassValue 6.01769e+00 .
+
+links:r_upper_arm_roll_link a urdf:Link ;
+    urdf:hasURDFName "r_upper_arm_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/shoulder_v0/upper_arm_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:r_wrist_flex_link a urdf:Link ;
+    urdf:hasURDFName "r_wrist_flex_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/wrist_flex.stl" ;
+    soma:hasMassValue 6.1402e-01 .
+
+links:r_wrist_roll_link a urdf:Link ;
+    urdf:hasURDFName "r_wrist_roll_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/forearm_v0/wrist_roll_L.stl" ;
+    soma:hasMassValue 1e-01 .
+
+links:sensor_mount_link a urdf:Link ;
+    urdf:hasURDFName "sensor_mount_link" ;
+    soma:hasMassValue 5e-02 .
+
+links:torso_lift_link a urdf:Link ;
+    urdf:hasURDFName "torso_lift_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://pr2_description/meshes/torso_v0/torso_lift_L.stl" ;
+    soma:hasMassValue 3.624805e+01 .
+
+links:torso_lift_motor_screw_link a urdf:Link ;
+    urdf:hasURDFName "torso_lift_motor_screw_link" ;
+    soma:hasMassValue 1e+00 .
+
+links:wide_stereo_l_stereo_camera_frame a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_l_stereo_camera_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:wide_stereo_l_stereo_camera_optical_frame a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_l_stereo_camera_optical_frame" .
+
+links:wide_stereo_link a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_link" ;
+    soma:hasMassValue 1e-01 .
+
+links:wide_stereo_optical_frame a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_optical_frame" .
+
+links:wide_stereo_r_stereo_camera_frame a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_r_stereo_camera_frame" ;
+    soma:hasMassValue 1e-02 .
+
+links:wide_stereo_r_stereo_camera_optical_frame a urdf:Link ;
+    urdf:hasURDFName "wide_stereo_r_stereo_camera_optical_frame" .
+
+<http://example.org/pr2/sensors/base_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/base_laser> a <http://example.org/pr2/sensors/ray>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    knowrob:hasSensorRange "0.08",
+        "10.0" .
+
+<http://example.org/pr2/sensors/head_mount_ir_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "0.994837673637"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/head_mount_prosilica_link_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.12050137978"^^xsd:float ;
+    sensorProperty:hasImageHeight 240 ;
+    sensorProperty:hasImageWidth 320 .
+
+<http://example.org/pr2/sensors/head_mount_prosilica_link_sim_pcd_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.12050137978"^^xsd:float ;
+    sensorProperty:hasImageHeight 240 ;
+    sensorProperty:hasImageWidth 320 .
+
+<http://example.org/pr2/sensors/head_mount_rgb_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "0.994837673637"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/high_def_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "0.785398163397"^^xsd:float ;
+    sensorProperty:hasImageHeight 2050 ;
+    sensorProperty:hasImageWidth 2448 .
+
+<http://example.org/pr2/sensors/l_forearm_cam_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.57079632679"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/l_gripper_l_finger_tip_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/l_gripper_r_finger_tip_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/laser_tilt> a <http://example.org/pr2/sensors/ray>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    knowrob:hasSensorRange "0.08",
+        "10.0" .
+
+<http://example.org/pr2/sensors/narrow_stereo_l_stereo_camera_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "0.785398163397"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/narrow_stereo_r_stereo_camera_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "0.785398163397"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/r_forearm_cam_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.57079632679"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/r_gripper_l_finger_tip_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/r_gripper_r_finger_tip_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/torso_lift_contact_sensor> a <http://example.org/pr2/sensors/contact>,
+        knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/pr2/sensors/wide_stereo_l_stereo_camera_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.57079632679"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/pr2/sensors/wide_stereo_r_stereo_camera_sensor> a <http://example.org/pr2/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.57079632679"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+urdf:Robot rdfs:subClassOf sosa:Platform .
+
+knowrob:SensorDevice owl:sameAs sosa:Sensor .
+

@@ -1,0 +1,557 @@
+@prefix joints: <http://example.org/locobot/joints/> .
+@prefix knowrob: <http://knowrob.org/kb/knowrob.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix self: <http://example.org/locobot/> .
+@prefix sensorProperty: <http://example.org/locobot/sensorProperties/> .
+@prefix soma: <http://www.ease-crc.org/ont/SOMA.owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix urdf: <http://knowrob.org/kb/urdf.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/locobot> a urdf:Robot,
+        sosa:Platform ;
+    urdf:hasJoint joints:ar_tag,
+        joints:arm_base_link_joint,
+        joints:base_joint,
+        joints:battery,
+        joints:camera,
+        joints:camera_tower,
+        joints:caster_back_joint,
+        joints:caster_front_joint,
+        joints:cliff_sensor_front_joint,
+        joints:cliff_sensor_left_joint,
+        joints:cliff_sensor_right_joint,
+        joints:ee_arm,
+        joints:ee_bar,
+        joints:ee_gripper,
+        joints:elbow,
+        joints:forearm_roll,
+        joints:gripper,
+        joints:gripper_bar,
+        joints:gyro_joint,
+        joints:left_finger,
+        joints:lidar,
+        joints:lidar_tower,
+        joints:pan,
+        joints:plate,
+        joints:right_finger,
+        joints:shoulder,
+        joints:tilt,
+        joints:waist,
+        joints:wheel_left_joint,
+        joints:wheel_right_joint,
+        joints:wrist_angle,
+        joints:wrist_rotate ;
+    urdf:hasLink <http://example.org/locobot/links/locobot/ar_tag_link>,
+        <http://example.org/locobot/links/locobot/arm_base_link>,
+        <http://example.org/locobot/links/locobot/base_footprint>,
+        <http://example.org/locobot/links/locobot/base_link>,
+        <http://example.org/locobot/links/locobot/battery_link>,
+        <http://example.org/locobot/links/locobot/camera_link>,
+        <http://example.org/locobot/links/locobot/camera_tower_link>,
+        <http://example.org/locobot/links/locobot/caster_back_link>,
+        <http://example.org/locobot/links/locobot/caster_front_link>,
+        <http://example.org/locobot/links/locobot/cliff_sensor_front_link>,
+        <http://example.org/locobot/links/locobot/cliff_sensor_left_link>,
+        <http://example.org/locobot/links/locobot/cliff_sensor_right_link>,
+        <http://example.org/locobot/links/locobot/ee_arm_link>,
+        <http://example.org/locobot/links/locobot/ee_gripper_link>,
+        <http://example.org/locobot/links/locobot/fingers_link>,
+        <http://example.org/locobot/links/locobot/gripper_bar_link>,
+        <http://example.org/locobot/links/locobot/gripper_link>,
+        <http://example.org/locobot/links/locobot/gripper_prop_link>,
+        <http://example.org/locobot/links/locobot/gyro_link>,
+        <http://example.org/locobot/links/locobot/laser_frame_link>,
+        <http://example.org/locobot/links/locobot/left_finger_link>,
+        <http://example.org/locobot/links/locobot/lidar_tower_link>,
+        <http://example.org/locobot/links/locobot/lower_forearm_link>,
+        <http://example.org/locobot/links/locobot/pan_link>,
+        <http://example.org/locobot/links/locobot/plate_link>,
+        <http://example.org/locobot/links/locobot/right_finger_link>,
+        <http://example.org/locobot/links/locobot/shoulder_link>,
+        <http://example.org/locobot/links/locobot/tilt_link>,
+        <http://example.org/locobot/links/locobot/upper_arm_link>,
+        <http://example.org/locobot/links/locobot/upper_forearm_link>,
+        <http://example.org/locobot/links/locobot/wheel_left_link>,
+        <http://example.org/locobot/links/locobot/wheel_right_link>,
+        <http://example.org/locobot/links/locobot/wrist_link> ;
+    urdf:hasURDFName "locobot" ;
+    sosa:hosts <http://example.org/locobot/actuators/elbow_motor>,
+        <http://example.org/locobot/actuators/forearm_roll_motor>,
+        <http://example.org/locobot/actuators/gripper_motor>,
+        <http://example.org/locobot/actuators/left_finger_motor>,
+        <http://example.org/locobot/actuators/pan_motor>,
+        <http://example.org/locobot/actuators/right_finger_motor>,
+        <http://example.org/locobot/actuators/shoulder_motor>,
+        <http://example.org/locobot/actuators/tilt_motor>,
+        <http://example.org/locobot/actuators/waist_motor>,
+        <http://example.org/locobot/actuators/wheel_left_joint_motor>,
+        <http://example.org/locobot/actuators/wheel_right_joint_motor>,
+        <http://example.org/locobot/actuators/wrist_angle_motor>,
+        <http://example.org/locobot/actuators/wrist_rotate_motor>,
+        <http://example.org/locobot/sensors/intel_d435_color>,
+        <http://example.org/locobot/sensors/intel_d435_depth>,
+        <http://example.org/locobot/sensors/intel_d435_ired1>,
+        <http://example.org/locobot/sensors/intel_d435_ired2> .
+
+self:cameraSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:contactSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:depthSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:imuSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:raySensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/locobot/actuators/elbow_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/forearm_roll_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/gripper_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/left_finger_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/pan_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/right_finger_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/shoulder_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/tilt_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/waist_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/wheel_left_joint_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/wheel_right_joint_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/wrist_angle_motor> a sosa:Actuator .
+
+<http://example.org/locobot/actuators/wrist_rotate_motor> a sosa:Actuator .
+
+joints:ar_tag a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/ar_tag_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/ee_arm_link> ;
+    urdf:hasURDFName "ar_tag" .
+
+joints:arm_base_link_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/arm_base_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/plate_link> ;
+    urdf:hasURDFName "arm_base_link_joint" .
+
+joints:base_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_footprint> ;
+    urdf:hasURDFName "base_joint" .
+
+joints:battery a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/battery_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/plate_link> ;
+    urdf:hasURDFName "battery" .
+
+joints:camera a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/camera_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/tilt_link> ;
+    urdf:hasURDFName "camera" .
+
+joints:camera_tower a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/camera_tower_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "camera_tower" .
+
+joints:caster_back_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/caster_back_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "caster_back_joint" .
+
+joints:caster_front_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/caster_front_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "caster_front_joint" .
+
+joints:cliff_sensor_front_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/cliff_sensor_front_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "cliff_sensor_front_joint" .
+
+joints:cliff_sensor_left_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/cliff_sensor_left_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "cliff_sensor_left_joint" .
+
+joints:cliff_sensor_right_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/cliff_sensor_right_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "cliff_sensor_right_joint" .
+
+joints:ee_arm a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/ee_arm_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/gripper_link> ;
+    urdf:hasURDFName "ee_arm" .
+
+joints:ee_bar a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/fingers_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/gripper_bar_link> ;
+    urdf:hasURDFName "ee_bar" .
+
+joints:ee_gripper a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/ee_gripper_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/fingers_link> ;
+    urdf:hasURDFName "ee_gripper" .
+
+joints:elbow a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/upper_forearm_link> ;
+    urdf:hasLowerLimit "-2.1467549799530254"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/upper_arm_link> ;
+    urdf:hasURDFName "elbow" ;
+    urdf:hasUpperLimit "1.6057029118347832"^^xsd:float .
+
+joints:forearm_roll a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/lower_forearm_link> ;
+    urdf:hasLowerLimit "-3.141582653589793"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/upper_forearm_link> ;
+    urdf:hasURDFName "forearm_roll" ;
+    urdf:hasUpperLimit "3.141582653589793"^^xsd:float .
+
+joints:gripper a urdf:ContinuousJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/gripper_prop_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/ee_arm_link> ;
+    urdf:hasURDFName "gripper" .
+
+joints:gripper_bar a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/gripper_bar_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/ee_arm_link> ;
+    urdf:hasURDFName "gripper_bar" .
+
+joints:gyro_joint a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/gyro_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "gyro_joint" .
+
+joints:left_finger a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/left_finger_link> ;
+    urdf:hasLowerLimit "0.015"^^xsd:float ;
+    urdf:hasMaxJointVelocity "1.0"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/fingers_link> ;
+    urdf:hasURDFName "left_finger" ;
+    urdf:hasUpperLimit "0.037"^^xsd:float .
+
+joints:lidar a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/laser_frame_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/lidar_tower_link> ;
+    urdf:hasURDFName "lidar" .
+
+joints:lidar_tower a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/lidar_tower_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/camera_tower_link> ;
+    urdf:hasURDFName "lidar_tower" .
+
+joints:pan a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/pan_link> ;
+    urdf:hasLowerLimit "-1.5707963267948966"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/camera_tower_link> ;
+    urdf:hasURDFName "pan" ;
+    urdf:hasUpperLimit "1.5707963267948966"^^xsd:float .
+
+joints:plate a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/plate_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "plate" .
+
+joints:right_finger a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/right_finger_link> ;
+    urdf:hasLowerLimit "-0.037"^^xsd:float ;
+    urdf:hasMaxJointVelocity "1.0"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/fingers_link> ;
+    urdf:hasURDFName "right_finger" ;
+    urdf:hasUpperLimit "-0.015"^^xsd:float .
+
+joints:shoulder a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/upper_arm_link> ;
+    urdf:hasLowerLimit "-1.8849555921538759"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/shoulder_link> ;
+    urdf:hasURDFName "shoulder" ;
+    urdf:hasUpperLimit "1.9896753472735358"^^xsd:float .
+
+joints:tilt a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/tilt_link> ;
+    urdf:hasLowerLimit "-1.5707963267948966"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/pan_link> ;
+    urdf:hasURDFName "tilt" ;
+    urdf:hasUpperLimit "1.3089969389957472"^^xsd:float .
+
+joints:waist a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/shoulder_link> ;
+    urdf:hasLowerLimit "-3.141582653589793"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/arm_base_link> ;
+    urdf:hasURDFName "waist" ;
+    urdf:hasUpperLimit "3.141582653589793"^^xsd:float .
+
+joints:wheel_left_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/wheel_left_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "wheel_left_joint" .
+
+joints:wheel_right_joint a urdf:ContinuousJoint ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/wheel_right_link> ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/base_link> ;
+    urdf:hasURDFName "wheel_right_joint" .
+
+joints:wrist_angle a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/wrist_link> ;
+    urdf:hasLowerLimit "-1.7453292519943295"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/lower_forearm_link> ;
+    urdf:hasURDFName "wrist_angle" ;
+    urdf:hasUpperLimit "2.1467549799530254"^^xsd:float .
+
+joints:wrist_rotate a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink <http://example.org/locobot/locobot/gripper_link> ;
+    urdf:hasLowerLimit "-3.141582653589793"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/locobot/locobot/wrist_link> ;
+    urdf:hasURDFName "wrist_rotate" ;
+    urdf:hasUpperLimit "3.141582653589793"^^xsd:float .
+
+<http://example.org/locobot/links/locobot/ar_tag_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ar_tag_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_11_ar_tag.stl" ;
+    soma:hasMassValue 1.6507e-02 .
+
+<http://example.org/locobot/links/locobot/arm_base_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/arm_base_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_1_base.stl" ;
+    soma:hasMassValue 3.79673e-01 .
+
+<http://example.org/locobot/links/locobot/base_footprint> a urdf:Link ;
+    urdf:hasURDFName "locobot/base_footprint" .
+
+<http://example.org/locobot/links/locobot/base_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/base_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 1.0938e-01 ;
+    soma:hasMassValue 2.4e+00 ;
+    soma:hasRadius 1.78e-01 .
+
+<http://example.org/locobot/links/locobot/battery_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/battery_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_battery.stl" ;
+    soma:hasMassValue 1.194e+00 .
+
+<http://example.org/locobot/links/locobot/camera_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/camera_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_camera.stl" ;
+    soma:hasMassValue 7.2e-02 .
+
+<http://example.org/locobot/links/locobot/camera_tower_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/camera_tower_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_camera_tower_large_simple.stl" ;
+    soma:hasMassValue 2.366224e+00 .
+
+<http://example.org/locobot/links/locobot/caster_back_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/caster_back_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 1.76e-02 ;
+    soma:hasMassValue 1e-02 ;
+    soma:hasRadius 1.7e-02 .
+
+<http://example.org/locobot/links/locobot/caster_front_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/caster_front_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 1.76e-02 ;
+    soma:hasMassValue 1e-02 ;
+    soma:hasRadius 1.7e-02 .
+
+<http://example.org/locobot/links/locobot/cliff_sensor_front_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/cliff_sensor_front_link" ;
+    soma:hasMassValue 1e-04 .
+
+<http://example.org/locobot/links/locobot/cliff_sensor_left_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/cliff_sensor_left_link" ;
+    soma:hasMassValue 1e-04 .
+
+<http://example.org/locobot/links/locobot/cliff_sensor_right_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/cliff_sensor_right_link" ;
+    soma:hasMassValue 1e-04 .
+
+<http://example.org/locobot/links/locobot/ee_arm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ee_arm_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/locobot/links/locobot/ee_gripper_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ee_gripper_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/locobot/links/locobot/fingers_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/fingers_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/locobot/links/locobot/gripper_bar_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_bar_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_9_gripper_bar.stl" ;
+    soma:hasMassValue 3.4199e-02 .
+
+<http://example.org/locobot/links/locobot/gripper_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_7_gripper.stl" ;
+    soma:hasMassValue 7.2885e-02 .
+
+<http://example.org/locobot/links/locobot/gripper_prop_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_prop_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_8_gripper_prop.stl" ;
+    soma:hasMassValue 4.34e-03 .
+
+<http://example.org/locobot/links/locobot/gyro_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gyro_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/locobot/links/locobot/laser_frame_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/laser_frame_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 4.08e-02 ;
+    soma:hasMassValue 1.96e-01 ;
+    soma:hasRadius 3.785e-02 .
+
+<http://example.org/locobot/links/locobot/left_finger_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/left_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_10_gripper_finger.stl" ;
+    soma:hasMassValue 1.6246e-02 .
+
+<http://example.org/locobot/links/locobot/lidar_tower_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/lidar_tower_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_lidar_tower_simple.stl" ;
+    soma:hasMassValue 1.55485e-01 .
+
+<http://example.org/locobot/links/locobot/lower_forearm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/lower_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_5_lower_forearm.stl" ;
+    soma:hasMassValue 2.20991e-01 .
+
+<http://example.org/locobot/links/locobot/pan_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/pan_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_pan.stl" ;
+    soma:hasMassValue 9.8997e-02 .
+
+<http://example.org/locobot/links/locobot/plate_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/plate_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_base_plate.stl" ;
+    soma:hasMassValue 5.71995e-01 .
+
+<http://example.org/locobot/links/locobot/right_finger_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/right_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_10_gripper_finger.stl" ;
+    soma:hasMassValue 1.6246e-02 .
+
+<http://example.org/locobot/links/locobot/shoulder_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/shoulder_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_2_shoulder.stl" ;
+    soma:hasMassValue 4.80879e-01 .
+
+<http://example.org/locobot/links/locobot/tilt_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/tilt_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/locobot_meshes/locobot_tilt.stl" ;
+    soma:hasMassValue 1.9845e-02 .
+
+<http://example.org/locobot/links/locobot/upper_arm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/upper_arm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_3_upper_arm.stl" ;
+    soma:hasMassValue 4.30811e-01 .
+
+<http://example.org/locobot/links/locobot/upper_forearm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/upper_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_4_upper_forearm.stl" ;
+    soma:hasMassValue 2.34589e-01 .
+
+<http://example.org/locobot/links/locobot/wheel_left_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/wheel_left_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 2.06e-02 ;
+    soma:hasMassValue 1e-02 ;
+    soma:hasRadius 3.52e-02 .
+
+<http://example.org/locobot/links/locobot/wheel_right_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/wheel_right_link" ;
+    soma:hasCollisionShape soma:CylinderShape ;
+    soma:hasLength 2.06e-02 ;
+    soma:hasMassValue 1e-02 ;
+    soma:hasRadius 3.5e-02 .
+
+<http://example.org/locobot/links/locobot/wrist_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/wrist_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "package://interbotix_xslocobot_descriptions/meshes/mobile_wx250s_meshes/mobile_wx250s_6_wrist.stl" ;
+    soma:hasMassValue 8.4957e-02 .
+
+<http://example.org/locobot/sensors/intel_d435_color> a <http://example.org/locobot/sensors/camera>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.211259"^^xsd:float ;
+    sensorProperty:hasImageHeight 480 ;
+    sensorProperty:hasImageWidth 640 .
+
+<http://example.org/locobot/sensors/intel_d435_depth> a <http://example.org/locobot/sensors/depth>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.487021"^^xsd:float ;
+    sensorProperty:hasImageHeight 720 ;
+    sensorProperty:hasImageWidth 1280 .
+
+<http://example.org/locobot/sensors/intel_d435_ired1> a <http://example.org/locobot/sensors/camera>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.487021"^^xsd:float ;
+    sensorProperty:hasImageHeight 720 ;
+    sensorProperty:hasImageWidth 1280 .
+
+<http://example.org/locobot/sensors/intel_d435_ired2> a <http://example.org/locobot/sensors/camera>,
+        knowrob:SensorDevice,
+        sosa:Sensor ;
+    sensorProperty:hasFieldOfView "1.487021"^^xsd:float ;
+    sensorProperty:hasImageHeight 720 ;
+    sensorProperty:hasImageWidth 1280 .
+
+urdf:Robot rdfs:subClassOf sosa:Platform .
+
+knowrob:SensorDevice owl:sameAs sosa:Sensor .
+

@@ -1,0 +1,280 @@
+@prefix knowrob: <http://knowrob.org/kb/knowrob.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix self: <http://example.org/mobile_wx250s/> .
+@prefix soma: <http://www.ease-crc.org/ont/SOMA.owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix urdf: <http://knowrob.org/kb/urdf.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/mobile_wx250s> a urdf:Robot,
+        sosa:Platform ;
+    urdf:hasJoint <http://example.org/mobile_wx250s/joints/ar_tag>,
+        <http://example.org/mobile_wx250s/joints/arm_base_link_joint>,
+        <http://example.org/mobile_wx250s/joints/ee_arm>,
+        <http://example.org/mobile_wx250s/joints/ee_bar>,
+        <http://example.org/mobile_wx250s/joints/ee_gripper>,
+        <http://example.org/mobile_wx250s/joints/elbow>,
+        <http://example.org/mobile_wx250s/joints/forearm_roll>,
+        <http://example.org/mobile_wx250s/joints/gripper>,
+        <http://example.org/mobile_wx250s/joints/gripper_bar>,
+        <http://example.org/mobile_wx250s/joints/left_finger>,
+        <http://example.org/mobile_wx250s/joints/right_finger>,
+        <http://example.org/mobile_wx250s/joints/shoulder>,
+        <http://example.org/mobile_wx250s/joints/waist>,
+        <http://example.org/mobile_wx250s/joints/wrist_angle>,
+        <http://example.org/mobile_wx250s/joints/wrist_rotate> ;
+    urdf:hasLink <http://example.org/mobile_wx250s/links/locobot/ar_tag_link>,
+        <http://example.org/mobile_wx250s/links/locobot/arm_base_link>,
+        <http://example.org/mobile_wx250s/links/locobot/ee_arm_link>,
+        <http://example.org/mobile_wx250s/links/locobot/ee_gripper_link>,
+        <http://example.org/mobile_wx250s/links/locobot/fingers_link>,
+        <http://example.org/mobile_wx250s/links/locobot/gripper_bar_link>,
+        <http://example.org/mobile_wx250s/links/locobot/gripper_link>,
+        <http://example.org/mobile_wx250s/links/locobot/gripper_prop_link>,
+        <http://example.org/mobile_wx250s/links/locobot/left_finger_link>,
+        <http://example.org/mobile_wx250s/links/locobot/lower_forearm_link>,
+        <http://example.org/mobile_wx250s/links/locobot/right_finger_link>,
+        <http://example.org/mobile_wx250s/links/locobot/shoulder_link>,
+        <http://example.org/mobile_wx250s/links/locobot/upper_arm_link>,
+        <http://example.org/mobile_wx250s/links/locobot/upper_forearm_link>,
+        <http://example.org/mobile_wx250s/links/locobot/wrist_link> ;
+    urdf:hasURDFName "mobile_wx250s" ;
+    sosa:hosts <http://example.org/mobile_wx250s/actuators/elbow_motor>,
+        <http://example.org/mobile_wx250s/actuators/forearm_roll_motor>,
+        <http://example.org/mobile_wx250s/actuators/gripper_motor>,
+        <http://example.org/mobile_wx250s/actuators/left_finger_motor>,
+        <http://example.org/mobile_wx250s/actuators/right_finger_motor>,
+        <http://example.org/mobile_wx250s/actuators/shoulder_motor>,
+        <http://example.org/mobile_wx250s/actuators/waist_motor>,
+        <http://example.org/mobile_wx250s/actuators/wrist_angle_motor>,
+        <http://example.org/mobile_wx250s/actuators/wrist_rotate_motor> .
+
+self:cameraSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:contactSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:depthSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:imuSensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+self:raySensor a knowrob:SensorDevice,
+        sosa:Sensor .
+
+<http://example.org/mobile_wx250s/actuators/elbow_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/forearm_roll_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/gripper_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/left_finger_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/right_finger_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/shoulder_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/waist_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/wrist_angle_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/actuators/wrist_rotate_motor> a sosa:Actuator .
+
+<http://example.org/mobile_wx250s/joints/ar_tag> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/ar_tag_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/ee_arm_link> ;
+    urdf:hasURDFName "ar_tag" .
+
+<http://example.org/mobile_wx250s/joints/arm_base_link_joint> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/arm_base_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/plate_link> ;
+    urdf:hasURDFName "arm_base_link_joint" .
+
+<http://example.org/mobile_wx250s/joints/ee_arm> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/ee_arm_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/gripper_link> ;
+    urdf:hasURDFName "ee_arm" .
+
+<http://example.org/mobile_wx250s/joints/ee_bar> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/fingers_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/gripper_bar_link> ;
+    urdf:hasURDFName "ee_bar" .
+
+<http://example.org/mobile_wx250s/joints/ee_gripper> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/ee_gripper_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/fingers_link> ;
+    urdf:hasURDFName "ee_gripper" .
+
+<http://example.org/mobile_wx250s/joints/elbow> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/upper_forearm_link> ;
+    urdf:hasLowerLimit "-2.1467549799530254"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/upper_arm_link> ;
+    urdf:hasURDFName "elbow" ;
+    urdf:hasUpperLimit "1.6057029118347832"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/forearm_roll> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/lower_forearm_link> ;
+    urdf:hasLowerLimit "-0.9"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/upper_forearm_link> ;
+    urdf:hasURDFName "forearm_roll" ;
+    urdf:hasUpperLimit "0.9"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/gripper> a urdf:ContinuousJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/gripper_prop_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/ee_arm_link> ;
+    urdf:hasURDFName "gripper" .
+
+<http://example.org/mobile_wx250s/joints/gripper_bar> a urdf:FixedJoint ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/gripper_bar_link> ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/ee_arm_link> ;
+    urdf:hasURDFName "gripper_bar" .
+
+<http://example.org/mobile_wx250s/joints/left_finger> a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/left_finger_link> ;
+    urdf:hasLowerLimit "0.015"^^xsd:float ;
+    urdf:hasMaxJointVelocity "1.0"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/fingers_link> ;
+    urdf:hasURDFName "left_finger" ;
+    urdf:hasUpperLimit "0.037"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/right_finger> a urdf:PrismaticJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/right_finger_link> ;
+    urdf:hasLowerLimit "-0.037"^^xsd:float ;
+    urdf:hasMaxJointVelocity "1.0"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/fingers_link> ;
+    urdf:hasURDFName "right_finger" ;
+    urdf:hasUpperLimit "-0.015"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/shoulder> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/upper_arm_link> ;
+    urdf:hasLowerLimit "-1.8849555921538759"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/shoulder_link> ;
+    urdf:hasURDFName "shoulder" ;
+    urdf:hasUpperLimit "1.9896753472735358"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/waist> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 0 1" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/shoulder_link> ;
+    urdf:hasLowerLimit "-0.9"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/arm_base_link> ;
+    urdf:hasURDFName "waist" ;
+    urdf:hasUpperLimit "0.9"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/wrist_angle> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "0 1 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/wrist_link> ;
+    urdf:hasLowerLimit "-1.7453292519943295"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/lower_forearm_link> ;
+    urdf:hasURDFName "wrist_angle" ;
+    urdf:hasUpperLimit "2.1467549799530254"^^xsd:float .
+
+<http://example.org/mobile_wx250s/joints/wrist_rotate> a urdf:RevoluteJoint ;
+    urdf:hasAxisVector "1 0 0" ;
+    urdf:hasChildLink <http://example.org/mobile_wx250s/locobot/gripper_link> ;
+    urdf:hasLowerLimit "-0.9"^^xsd:float ;
+    urdf:hasMaxJointVelocity "3.141592653589793"^^xsd:float ;
+    urdf:hasParentLink <http://example.org/mobile_wx250s/locobot/wrist_link> ;
+    urdf:hasURDFName "wrist_rotate" ;
+    urdf:hasUpperLimit "0.9"^^xsd:float .
+
+<http://example.org/mobile_wx250s/links/locobot/ar_tag_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ar_tag_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_11_ar_tag.stl" ;
+    soma:hasMassValue 1.6507e-02 .
+
+<http://example.org/mobile_wx250s/links/locobot/arm_base_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/arm_base_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_1_base.stl" ;
+    soma:hasMassValue 3.79673e-01 .
+
+<http://example.org/mobile_wx250s/links/locobot/ee_arm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ee_arm_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/mobile_wx250s/links/locobot/ee_gripper_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/ee_gripper_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/mobile_wx250s/links/locobot/fingers_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/fingers_link" ;
+    soma:hasMassValue 1e-03 .
+
+<http://example.org/mobile_wx250s/links/locobot/gripper_bar_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_bar_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_9_gripper_bar.stl" ;
+    soma:hasMassValue 3.4199e-02 .
+
+<http://example.org/mobile_wx250s/links/locobot/gripper_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_7_gripper.stl" ;
+    soma:hasMassValue 7.2885e-02 .
+
+<http://example.org/mobile_wx250s/links/locobot/gripper_prop_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/gripper_prop_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_8_gripper_prop.stl" ;
+    soma:hasMassValue 4.34e-03 .
+
+<http://example.org/mobile_wx250s/links/locobot/left_finger_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/left_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_10_gripper_finger.stl" ;
+    soma:hasMassValue 1.6246e-02 .
+
+<http://example.org/mobile_wx250s/links/locobot/lower_forearm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/lower_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_5_lower_forearm.stl" ;
+    soma:hasMassValue 2.20991e-01 .
+
+<http://example.org/mobile_wx250s/links/locobot/right_finger_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/right_finger_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_10_gripper_finger.stl" ;
+    soma:hasMassValue 1.6246e-02 .
+
+<http://example.org/mobile_wx250s/links/locobot/shoulder_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/shoulder_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_2_shoulder.stl" ;
+    soma:hasMassValue 4.80879e-01 .
+
+<http://example.org/mobile_wx250s/links/locobot/upper_arm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/upper_arm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_3_upper_arm.stl" ;
+    soma:hasMassValue 4.30811e-01 .
+
+<http://example.org/mobile_wx250s/links/locobot/upper_forearm_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/upper_forearm_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_4_upper_forearm.stl" ;
+    soma:hasMassValue 2.34589e-01 .
+
+<http://example.org/mobile_wx250s/links/locobot/wrist_link> a urdf:Link ;
+    urdf:hasURDFName "locobot/wrist_link" ;
+    soma:hasCollisionShape soma:MeshShape ;
+    soma:hasFilePath "/home/user/Documents/mobile_wx250s_meshes/mobile_wx250s_6_wrist.stl" ;
+    soma:hasMassValue 8.4957e-02 .
+
+urdf:Robot rdfs:subClassOf sosa:Platform .
+
+knowrob:SensorDevice owl:sameAs sosa:Sensor .
+
