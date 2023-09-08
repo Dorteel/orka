@@ -58,6 +58,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#algorithmCharacteristicProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#algorithmCharacteristicProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>has algorithm characteristics property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#canDetect -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#canDetect">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#detectableBy"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#capableOfObservationOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#capableOfObservationOf">
@@ -85,14 +103,6 @@
     <!-- http://www.semanticweb.org/dorte/perception-ontology#detectableBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#detectableBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/perception-ontology#detectedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#detectedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
     </owl:ObjectProperty>
     
@@ -130,6 +140,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasAlgorithmOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasAlgorithmOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#algorithmCharacteristicProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasAlgorithmProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasAlgorithmProperty"/>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/perception-ontology#hasBoundingBox -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasBoundingBox">
@@ -141,6 +165,14 @@
     <!-- http://www.semanticweb.org/dorte/perception-ontology#hasCertainty -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasCertainty">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#hasDetectionThreshold -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#hasDetectionThreshold">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty"/>
     </owl:ObjectProperty>
     
@@ -254,7 +286,8 @@
     <!-- http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/perception-ontology#objectDetectionProperty">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#algorithmCharacteristicProperty"/>
+        <rdfs:label>has object detection property</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -449,6 +482,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#Camera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#LightwaveSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#CertaintyUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/perception-ontology#CertaintyUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#UnitOFMeasure"/>
     </owl:Class>
     
 
@@ -1555,8 +1596,13 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#LocoBotYoloV4">
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#YOLO"/>
+        <canDetect rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#orange"/>
+        <capableOfObservationOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#orange"/>
+        <capableOfObservationOf rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#orangeLocation"/>
+        <hasDetectionThreshold rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#YoloV4DetectionThreshold"/>
         <hasInput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#image"/>
         <hasOutput rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#boundingbox"/>
+        <hasOutputUnitOfMeasure rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#pixel"/>
     </owl:NamedIndividual>
     
 
@@ -1564,6 +1610,16 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     <!-- http://www.semanticweb.org/dorte/perception-ontology#RGB -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#RGB"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#YoloV4DetectionThreshold -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#YoloV4DetectionThreshold">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Measurement"/>
+        <hasUnitofMeasure rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#percentage"/>
+        <hasNumericalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</hasNumericalValue>
+    </owl:NamedIndividual>
     
 
 
@@ -1621,6 +1677,29 @@ It can be measured horizontally, vertically, or diagonally.</rdfs:isDefinedBy>
     <!-- http://www.semanticweb.org/dorte/perception-ontology#millimeter -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#millimeter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#orange -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#orange">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#Identity"/>
+        <detectableBy rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#LocoBotYoloV4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#orangeLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#orangeLocation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/perception-ontology#percentage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/perception-ontology#percentage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/perception-ontology#CertaintyUnit"/>
+    </owl:NamedIndividual>
     
 
 
