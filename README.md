@@ -1,4 +1,4 @@
-# Robotic Perception Ontology (RPO)
+# Ontology for Robotic Knowledge Acquisition (ORKA)
 
 This is a first attempt to create a Unified Robot Perception Ontology. The current version of the ontology is mainly concerned with four distinct classes:
 
