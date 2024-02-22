@@ -11,7 +11,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:perception-ontology="http://www.semanticweb.org/dorte/perception-ontology#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/dorte/orka-core"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dorte/orka-core">
+        <rdfs:comment>The Ontology of Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
+    </owl:Ontology>
     
 
 
@@ -43,68 +46,19 @@
     
 
 
-    <!-- http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#hasValue -->
-
-    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#hasValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#ofCharacteristic -->
-
-    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#ofCharacteristic">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#ofEntity -->
-
-    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#ofEntity">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#usesStandard -->
-
-    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#usesStandard">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Measurement_Standard"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement -->
-
-    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/dorte/orka-core#hasInput -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasInput">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Procedure"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasMeasurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Measurement"/>
     </owl:ObjectProperty>
     
 
@@ -114,29 +68,13 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasOutput">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Procedure"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/dorte/orka-core#hasPrecision -->
+    <!-- http://www.semanticweb.org/dorte/orka-core#hostedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasPrecision">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#real"/>
-            </owl:Restriction>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/orka-core#hosted_by -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hosted_by">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hostedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#hosts"/>
     </owl:ObjectProperty>
@@ -153,23 +91,78 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-core#ofCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofCharacteristic">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#ofEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofEntity">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-core#providesMeasurement -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#providesMeasurement">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Sensor"/>
-        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.w3.org/ns/sosa/usedProcedure -->
+    <!-- http://www.semanticweb.org/dorte/orka-core#usedProcedure -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#usedProcedure">
         <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Procedure"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#usesStandard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#usesStandard">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Measurement_Standard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#hasCertainty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasCertainty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#hasPrecision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasPrecision">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasValue"/>
     
 
 
@@ -181,12 +174,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement -->
-
-    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Measurement"/>
     
 
 
@@ -202,9 +189,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-core#Identifying_Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Identifying_Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Measured_Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Measured_Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Observation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-core#Measurement_Standard -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Measurement_Standard"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Observation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Observation"/>
     
 
 
@@ -222,20 +239,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-core#Sample -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Sample">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Measurement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-core#Sensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Sensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/Observation -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
 
