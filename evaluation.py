@@ -1,7 +1,7 @@
 import rdflib
 
 # Path to your ontology file
-ontology_path = 'owl/orka-core.owl'
+ontology_path = 'orka/owl/orka-full.rdf'
 
 # Create a Graph
 g = rdflib.Graph()
@@ -10,8 +10,8 @@ g = rdflib.Graph()
 g.parse(ontology_path, format=rdflib.util.guess_format(ontology_path))
 
 # Print out all triples in the ontology
-for subj, pred, obj in g:
-    print(f"Subject: {subj}\tPredicate: {pred}\tObject: {obj}")
+# for subj, pred, obj in g:
+#     print(f"Subject: {subj}\tPredicate: {pred}\tObject: {obj}")
 
 # Example: Querying the ontology using SPARQL
 query = """
@@ -21,10 +21,6 @@ WHERE {
 }
 LIMIT 10
 """
-
-# Execute the SPARQL query
-for row in g.query(query):
-    print(f"Row: {row}")
 
 # List all namespaces with their prefixes
 print("Existing namespaces and prefixes:")

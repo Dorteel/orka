@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dorte/orka-core#"
+     xml:base="http://www.semanticweb.org/dorte/orka-core"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rpo="http://www.semanticweb.org/dorte/perception-ontology/"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:perception-ontology="http://www.semanticweb.org/dorte/perception-ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dorte/orka-aur">
+        <rdfs:comment>The Ontology of Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Procedure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasMeasurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Procedure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hostedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hostedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#hosts"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hosts">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Robot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#ofCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#ofCharacteristic">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#ofEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#ofEntity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#providesMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#providesMeasurement">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#usedProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#usedProcedure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Procedure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#usesStandard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#usesStandard">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Measurement_Standard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasCertainty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasCertainty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasPrecision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasPrecision">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-aur#hasValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Characteristic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Identifying_Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Identifying_Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Measured_Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Measured_Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Measurement_Standard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Measurement_Standard"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Observation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Observation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Procedure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Procedure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Robot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Sample -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Sample">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-aur#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-aur#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-aur#Entity"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

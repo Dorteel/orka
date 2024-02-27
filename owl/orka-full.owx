@@ -1,0 +1,1367 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/dorte/orka-full"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/dorte/orka-full">
+    <Prefix name="" IRI="http://www.semanticweb.org/dorte/orka-full/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="orka-core" IRI="http://www.semanticweb.org/dorte/orka-core#"/>
+    <Import>http://www.semanticweb.org/dorte/orka-core</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>This ontology contains the full version of the Ontology for Robotic Knowledge Acquisition (ORKA)</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Accelerometer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airplane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apple"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Backpack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Banana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Baseball_bat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Baseball_glove"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bench"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bicycle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bird"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Boat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Book"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bottle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bowl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Broccoli"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bumper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Button"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Car"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carrot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cell_phone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Compass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompelxStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContactSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Couch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CurrentSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeepLearningModel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Depth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepthCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dining_table"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DistanceSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dog"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Donut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Elephant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Encoder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FeatureDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fire_hydrant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frisbee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GazeDetector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeometricCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Giraffe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gyroscope"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hair_drier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Handbag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hot_dog"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanPoseEstimationAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumiditySensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IRProximitySensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageSegmentationAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InertialSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformationStorageSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InfraredCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntelRealSenseDepthCameraD435"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Keyboard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Knife"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laptop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LaserScanner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Length"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightWaveSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalisationProcedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microphone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microwave"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonochromeCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Motorcycle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservableCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrientationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oven"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parking_meter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pizza"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PositionSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Potted_plant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PressureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RGBCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RPLiDARA2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RadiationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Refrigerator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Remote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SIFT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scissors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sheep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SizeCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Skateboard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Skis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Slam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Snowboard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sonar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoundwaveSrnsor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spoon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sports_ball"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StereoCamera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stop_sign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Suitcase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SurfaceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Surfboard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Teddy_bear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tennis_racket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tiltsensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Toaster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Toilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Toothbrush"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Traffic_light"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Train"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Truck"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Type"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Umbrella"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Width"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wine_glass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YOLO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YoloV5Nano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zebra"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canDetect"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDetectionThreshold"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEnergyEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFLOPsat640"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInputSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasParams"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpeedCPUb1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpeedV100b1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpeedV100b32"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasmAPval50-95"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#airplane_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lb01_bumper_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lb01_cliff_sensor_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lb01_gyroscope01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lb01_intel_d435rgbd_camera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lb01_yoloV5_object_detector"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#locobot_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#locobot_02"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="orka-core:KnowledgeRepository"/>
+        <Class IRI="#InformationStorageSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="orka-core:Robot"/>
+        <Class abbreviatedIRI="orka-core:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+        <Class abbreviatedIRI="orka-core:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Accelerometer"/>
+        <Class IRI="#InertialSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airplane"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Apple"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Backpack"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Banana"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Baseball_bat"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Baseball_glove"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bear"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bed"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bench"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bicycle"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bird"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boat"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Book"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bottle"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bowl"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Broccoli"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bumper"/>
+        <Class IRI="#ContactSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bus"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Button"/>
+        <Class IRI="#ContactSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cake"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#LightWaveSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Car"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carrot"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cat"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cell_phone"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chair"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clock"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="#VisualCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Compass"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompelxStructure"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+        <Class abbreviatedIRI="orka-core:Procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContactSensor"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Couch"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cow"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cup"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CurrentSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataSet"/>
+        <Class IRI="#InformationStorageSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeepLearningModel"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Depth"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepthCamera"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dining_table"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DistanceSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dog"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Donut"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Elephant"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Encoder"/>
+        <Class IRI="#CurrentSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Encoder"/>
+        <Class IRI="#PositionSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalSensor"/>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FeatureDescriptor"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fire_hydrant"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fork"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frisbee"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPS"/>
+        <Class IRI="#PositionSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GazeDetector"/>
+        <Class IRI="#HumanPoseEstimationAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeometricCharacteristic"/>
+        <Class IRI="#VisualCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Giraffe"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gyroscope"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hair_drier"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Handbag"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Height"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Horse"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hot_dog"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanPoseEstimationAlgorithm"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumiditySensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IRProximitySensor"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageSegmentationAlgorithm"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InertialSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InfraredCamera"/>
+        <Class IRI="#RadiationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntelRealSenseDepthCameraD435"/>
+        <Class IRI="#DepthCamera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalSensor"/>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Keyboard"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kite"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Knife"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LaserScanner"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Length"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightWaveSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalisationProcedure"/>
+        <Class abbreviatedIRI="orka-core:Procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MSCOCODataSetObject"/>
+        <Class abbreviatedIRI="orka-core:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Microphone"/>
+        <Class IRI="#SoundwaveSrnsor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Microwave"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonochromeCamera"/>
+        <Class IRI="#Camera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Motorcycle"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mouse"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObservableCharacteristic"/>
+        <Class abbreviatedIRI="orka-core:Characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orange"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrientationSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oven"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parking_meter"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pattern"/>
+        <Class IRI="#VisualCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pizza"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositionSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Potted_plant"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PressureSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RGBCamera"/>
+        <Class IRI="#Camera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RPLiDARA2"/>
+        <Class IRI="#LaserScanner"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RadiationSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Refrigerator"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Remote"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SIFT"/>
+        <Class IRI="#FeatureDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sandwich"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scissors"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shape"/>
+        <Class IRI="#GeometricCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sheep"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleStructure"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sink"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SizeCharacteristic"/>
+        <Class IRI="#GeometricCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skateboard"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skis"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Slam"/>
+        <Class IRI="#LocalisationProcedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snowboard"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sonar"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoundwaveSrnsor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spoon"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sports_ball"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StereoCamera"/>
+        <Class IRI="#DistanceSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stop_sign"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Structure"/>
+        <Class IRI="#GeometricCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Suitcase"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SurfaceArea"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Surfboard"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TV"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Teddy_bear"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#ExternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#InternalSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tennis_racket"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tie"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tiltsensor"/>
+        <Class IRI="#OrientationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Toaster"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Toilet"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Toothbrush"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Traffic_light"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Train"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Truck"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Type"/>
+        <Class IRI="#ObservableCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Umbrella"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vase"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualCharacteristic"/>
+        <Class IRI="#ObservableCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volume"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Width"/>
+        <Class IRI="#SizeCharacteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wine_glass"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YOLO"/>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YoloV5Nano"/>
+        <Class IRI="#YOLO"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YoloV5Nano"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canDetect"/>
+            <Class IRI="#Airplane"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zebra"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Airplane"/>
+        <NamedIndividual IRI="#airplane_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+        <NamedIndividual IRI="#lb01_bumper_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+        <NamedIndividual IRI="#lb01_cliff_sensor_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+        <NamedIndividual IRI="#lb01_gyroscope01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Sensor"/>
+        <NamedIndividual IRI="#lb01_intel_d435rgbd_camera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#YoloV5Nano"/>
+        <NamedIndividual IRI="#lb01_yoloV5_object_detector"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Robot"/>
+        <NamedIndividual IRI="#locobot_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="orka-core:Robot"/>
+        <NamedIndividual IRI="#locobot_02"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="orka-core:implementedOn"/>
+        <NamedIndividual IRI="#lb01_yoloV5_object_detector"/>
+        <NamedIndividual IRI="#locobot_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="orka-core:hosts"/>
+        <NamedIndividual IRI="#locobot_01"/>
+        <NamedIndividual IRI="#lb01_bumper_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="orka-core:hosts"/>
+        <NamedIndividual IRI="#locobot_01"/>
+        <NamedIndividual IRI="#lb01_cliff_sensor_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="orka-core:hosts"/>
+        <NamedIndividual IRI="#locobot_01"/>
+        <NamedIndividual IRI="#lb01_gyroscope01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="orka-core:hosts"/>
+        <NamedIndividual IRI="#locobot_01"/>
+        <NamedIndividual IRI="#lb01_intel_d435rgbd_camera"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="orka-core:hasName"/>
+        <NamedIndividual IRI="#locobot_01"/>
+        <Literal>Locreate</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="orka-core:hasName"/>
+        <NamedIndividual IRI="#locobot_02"/>
+        <Literal>Lokobuki</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#canDetect"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canDetect"/>
+        <Class IRI="#YoloV5Nano"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canDetect"/>
+        <Class IRI="#MSCOCODataSetObject"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDetectionThreshold"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEnergyEfficiency"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFLOPsat640"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInputSize"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasParams"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSpeedCPUb1"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSpeedV100b1"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSpeedV100b32"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasVersion"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasmAPval50-95"/>
+        <DataProperty IRI="#hasObjectDetectionModelCharacteristic"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInputSize"/>
+        <Class IRI="#ComputerVisionAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasParams"/>
+        <Class IRI="#DeepLearningModel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpeedCPUb1"/>
+        <Class IRI="#DeepLearningModel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpeedV100b1"/>
+        <Class IRI="#DeepLearningModel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpeedV100b32"/>
+        <Class IRI="#DeepLearningModel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasmAPval50-95"/>
+        <Class IRI="#ObjectDetectionAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasInputSize"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasParams"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpeedCPUb1"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpeedV100b1"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpeedV100b32"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasmAPval50-95"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFLOPsat640</IRI>
+        <Literal>Floating Point Operations per Second at a model input size of 640 pixels, measured in billions. This metric estimates the computational complexity of a single forward pass through the model. Higher FLOPs indicate a more computationally intensive model, which can impact inference speed and power consumption.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFLOPsat640</IRI>
+        <Literal>has Floating Point Operations per Second</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInputSize</IRI>
+        <Literal>Refers to the size of the image (in pixels) that is used as an input</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasInputSize</IRI>
+        <Literal>has input size</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParams</IRI>
+        <Literal>Indicates the number of trainable parameters in the model, measured in millions. This metric gives an idea of the model&apos;s complexity and size. Generally, more parameters can increase the model&apos;s potential to learn complex patterns but also its computational cost and risk of overfitting.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasParams</IRI>
+        <Literal>number of parameters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpeedCPUb1</IRI>
+        <Literal>The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpeedV100b1</IRI>
+        <Literal>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpeedV100b32</IRI>
+        <Literal>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasmAPval50-95</IRI>
+        <Literal>This is a metric that evaluates the accuracy of an object detector algorithm. The value defines the mean Average Percision for detections that have an overlap with the ground truth value (Intersection over Union) of 50% to 95% with 5% increments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasmAPval50-95</IRI>
+        <Literal>has mean Average Precision (mAP) (50-95)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#locobot_01</IRI>
+        <Literal>Locreate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#locobot_02</IRI>
+        <Literal>Lokobuki</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
