@@ -1120,6 +1120,13 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#YoloV5Nano"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canDetect"/>
+            <Class IRI="#MSCOCODataSetObject"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Zebra"/>
         <Class IRI="#MSCOCODataSetObject"/>
     </SubClassOf>
