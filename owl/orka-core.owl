@@ -49,14 +49,6 @@
     <!-- http://www.semanticweb.org/dorte/orka-core#describedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#describedBy">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-core#Entity"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#KnowledgeRepository"/>
     </owl:ObjectProperty>
     
