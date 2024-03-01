@@ -105,7 +105,6 @@
     <!-- http://www.semanticweb.org/dorte/orka-core#ofCharacteristic -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofCharacteristic">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#Measurement"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
     </owl:ObjectProperty>
     
@@ -114,7 +113,6 @@
     <!-- http://www.semanticweb.org/dorte/orka-core#ofEntity -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofEntity">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Observation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
     </owl:ObjectProperty>
     
