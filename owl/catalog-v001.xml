@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-aur/" uri="depracated/orka-aur-aligned.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-backup/" uri="depracated/orka-full-backup.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-characteristic" uri="depracated/rpo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-characteristics/" uri="depracated/orka-characteristic.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-core" uri="orka-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="orka-full.owx"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="orka-full.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-full/" uri="depracated/orka-full.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/orka-oboe/" uri="depracated/orka-oboe.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/dorte/perception-ontology/" uri="depracated/rpo-testcase.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="http://www.semanticweb.org/kai/orka/2024/1/untitled-ontology-28" uri="depracated/orka-dul.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/orka-aur.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/orka-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1709218935265" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/rpo.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-aur/" uri="depracated/orka-aur-aligned.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-backup/" uri="depracated/orka-full-backup.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-characteristic" uri="depracated/rpo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-characteristics/" uri="depracated/orka-characteristic.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-core" uri="orka-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="orka-full.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="orka-full.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-full/" uri="depracated/orka-full.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/orka-oboe/" uri="depracated/orka-oboe.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/dorte/perception-ontology/" uri="depracated/rpo-testcase.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="http://www.semanticweb.org/kai/orka/2024/1/untitled-ontology-28" uri="depracated/orka-dul.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/orka-aur.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/orka-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709282336339" name="shadowed:http://www.semanticweb.org/dorte/orka-core" uri="depracated/rpo.rdf"/>
     </group>
 </catalog>
