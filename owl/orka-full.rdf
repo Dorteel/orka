@@ -219,6 +219,47 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedCPUb1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedCPUb1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedV100b1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedV100b1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedV100b32 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedV100b32">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionThreshold -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionThreshold">
@@ -238,7 +279,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#hasFLOPsat640 -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasFLOPsat640">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:comment>Floating Point Operations per Second at a model input size of 640 pixels, measured in billions. This metric estimates the computational complexity of a single forward pass through the model. Higher FLOPs indicate a more computationally intensive model, which can impact inference speed and power consumption.</rdfs:comment>
         <rdfs:label>has Floating Point Operations per Second</rdfs:label>
     </owl:DatatypeProperty>
@@ -257,7 +298,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#hasInputSize -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasInputSize">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#ComputerVisionAlgorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment>Refers to the size of the image (in pixels) that is used as an input</rdfs:comment>
@@ -310,7 +351,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#hasParams -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasParams">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
         <rdfs:comment>Indicates the number of trainable parameters in the model, measured in millions. This metric gives an idea of the model&apos;s complexity and size. Generally, more parameters can increase the model&apos;s potential to learn complex patterns but also its computational cost and risk of overfitting.</rdfs:comment>
@@ -327,39 +368,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/dorte/orka-full#hasSpeedCPUb1 -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasSpeedCPUb1">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/orka-full#hasSpeedV100b1 -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasSpeedV100b1">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/orka-full#hasSpeedV100b32 -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasSpeedV100b32">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#DeepLearningModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/dorte/orka-full#hasVersion -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasVersion">
@@ -371,7 +379,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#hasmAPval50-95 -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasmAPval50-95">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasObjectDetectionModelCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-full#ObjectDetectionAlgorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>This is a metric that evaluates the accuracy of an object detector algorithm. The value defines the mean Average Percision for detections that have an overlap with the ground truth value (Intersection over Union) of 50% to 95% with 5% increments.</rdfs:comment>
@@ -1917,6 +1925,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#YOLOv5n">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#YoloV5"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasDetectionSpeedCPUb1"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasInputSize"/>
