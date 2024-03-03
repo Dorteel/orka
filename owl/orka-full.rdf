@@ -825,7 +825,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#EnvironmentCharacteristic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#EnvironmentCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ObservableCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
     </owl:Class>
     
 
@@ -1146,6 +1146,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#MeasurementStandard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard"/>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#Microphone -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Microphone">
@@ -1197,7 +1203,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#ObjectCharacteristic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ObjectCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ObservableCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
     </owl:Class>
     
 
@@ -1215,14 +1221,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ObjectsFromMSCOCODataSet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#Type"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/orka-full#ObservableCharacteristic -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ObservableCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
     </owl:Class>
     
 
@@ -2015,7 +2013,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/orka-full#mes_bumper_left">
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/orka-full#Measurement"/>
         <orka-core:ofCharacteristic rdf:resource="http://www.semanticweb.org/dorte/orka-full#char_ent_bumper_01"/>
-        <orka-core:ofEntity rdf:resource="http://www.semanticweb.org/dorte/orka-full#ent_bumper_01"/>
     </owl:NamedIndividual>
     
 
@@ -2024,6 +2021,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dorte/orka-full#obs_bumper_left">
         <rdf:type rdf:resource="http://www.semanticweb.org/dorte/orka-core#Observation"/>
+        <orka-core:ofEntity rdf:resource="http://www.semanticweb.org/dorte/orka-full#ent_bumper_01"/>
         <hasMeasurement rdf:resource="http://www.semanticweb.org/dorte/orka-full#mes_bumper_left"/>
         <producedBy rdf:resource="http://www.semanticweb.org/dorte/orka-full#lb01_bumper_left"/>
     </owl:NamedIndividual>
@@ -2171,16 +2169,16 @@
     <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#y">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#sl">
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#sloc">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#sloc">
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#slocvalue">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment>If the sensor is a ContactSensor and produces an Observation with a Measurement ofCharacteristic &quot;characteristic&quot;, then &quot;characteristic&quot; must be of class Location. It should also be inferred, that since the range is 0, the value of the Location should be equated with the sensor&apos;s Location.</rdfs:comment>
-        <rdfs:label>Contact Sensors Measure Location</rdfs:label>
+        <rdfs:label>Distance Sensors Measure Location</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
@@ -2188,7 +2186,78 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#ContactSensor"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#DistanceSensor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#produced"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#s"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#o"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasMeasurement"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#o"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-core#ofCharacteristic"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#m"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#c"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#Location"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If the sensor is a ContactSensor and produces an Observation with a Measurement ofCharacteristic &quot;characteristic&quot;, then &quot;characteristic&quot; must be of class Location. It should also be inferred, that since the range is 0, the value of the Location should be equated with the sensor&apos;s Location.</rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#DistanceSensor"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#s"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2673,7 +2742,7 @@
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment>If the sensor is a ContactSensor and produces an Observation with a Measurement ofCharacteristic &quot;characteristic&quot;, then &quot;characteristic&quot; must be of class Location. It should also be inferred, that since the range is 0, the value of the Location should be equated with the sensor&apos;s Location.</rdfs:comment>
-        <rdfs:label>S1</rdfs:label>
+        <rdfs:label>Contact Sensors Measure Location</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
@@ -2693,7 +2762,7 @@
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasLocation"/>
                                 <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#s"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sl"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sloc"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2703,8 +2772,8 @@
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasLocationValue"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sl"/>
-                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sloc"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sloc"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#slocvalue"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest>
@@ -2784,7 +2853,7 @@
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasLocationValue"/>
                                 <swrl:argument1 rdf:resource="http://www.semanticweb.org/dorte/orka-full#c"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#sloc"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dorte/orka-full#slocvalue"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
