@@ -149,9 +149,7 @@
 
     <!-- http://www.semanticweb.org/dorte/orka-core#hasPrecision -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasPrecision">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasPrecision"/>
     
 
 
