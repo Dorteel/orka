@@ -434,6 +434,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#hasDBpediaURI -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDBpediaURI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasExternalDescription"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#hasDetectionRange -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-full#hasDetectionRange">
@@ -881,7 +889,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#Boolean -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Boolean">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#NonStandardUnit"/>
     </owl:Class>
     
 
@@ -1461,10 +1469,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#Kelvin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Kelvin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ThermodynamicUnit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#Keyboard -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Keyboard">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ObjectsFromMSCOCODataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#Kilogram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Kilogram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#WeightUnit"/>
     </owl:Class>
     
 
@@ -1509,6 +1533,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasMeasurementStandard"/>
+                <owl:hasValue>millimeter</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/dorte/orka-full#hasMinRange"/>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</owl:hasValue>
             </owl:Restriction>
@@ -1537,6 +1567,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Length">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#SizeCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#LightIntensityUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#LightIntensityUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
     </owl:Class>
     
 
@@ -1593,9 +1631,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/dorte/orka-full#MeasurementStandard -->
+    <!-- http://www.semanticweb.org/dorte/orka-full#MeasurementUnit -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard">
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit">
         <rdfs:comment>Contains the standard measurements of the International System of Quantities (SI) as well as some additional measurement types, such as pixel values, and boolean measurement representing on/off measures</rdfs:comment>
     </owl:Class>
     
@@ -1620,7 +1658,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#Millimeter -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Millimeter">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#SpatialUnit"/>
     </owl:Class>
     
 
@@ -1660,7 +1698,15 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#Nominal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Nominal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#NonStandardUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#NonStandardUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#NonStandardUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
     </owl:Class>
     
 
@@ -1769,7 +1815,7 @@
     <!-- http://www.semanticweb.org/dorte/orka-full#PixelInsentity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#PixelInsentity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementStandard"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#LightIntensityUnit"/>
     </owl:Class>
     
 
@@ -1910,6 +1956,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#Second -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Second">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#TimeUnit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#Shape -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Shape">
@@ -2002,6 +2056,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#SpatialCharacteristic">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ObjectCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#SpatialUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#SpatialUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
     </owl:Class>
     
 
@@ -2128,6 +2190,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#ThermodynamicUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ThermodynamicUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#Tie -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Tie">
@@ -2140,6 +2210,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Tiltsensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#OrientationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#TimeUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#TimeUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
     </owl:Class>
     
 
@@ -2228,6 +2306,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Weight">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MaterialCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#WeightUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#WeightUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit"/>
     </owl:Class>
     
 
