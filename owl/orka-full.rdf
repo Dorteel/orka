@@ -998,6 +998,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dorte/orka-full#Celsius -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Celsius">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ThermodynamicUnit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dorte/orka-full#Chair -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#Chair">
@@ -1730,7 +1738,9 @@
 
     <!-- http://www.semanticweb.org/dorte/orka-full#ObjectsFromMSCOCODataSet -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ObjectsFromMSCOCODataSet"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-full#ObjectsFromMSCOCODataSet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dorte/orka-full#ClassType"/>
+    </owl:Class>
     
 
 
