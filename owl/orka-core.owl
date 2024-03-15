@@ -10,6 +10,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:orka-core="http://www.semanticweb.org/dorte/orka-core#"
      xmlns:perception-ontology="http://www.semanticweb.org/dorte/perception-ontology#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/dorte/orka-core">
         <rdfs:comment>The Ontology of Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</rdfs:comment>
@@ -112,9 +113,7 @@
 
     <!-- http://www.semanticweb.org/dorte/orka-core#ofEntity -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofEntity">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#ofEntity"/>
     
 
 
@@ -141,7 +140,6 @@
     <!-- http://www.semanticweb.org/dorte/orka-core#hasName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dorte/orka-core#hasName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dorte/orka-core#Entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:DatatypeProperty>
     
@@ -173,12 +171,6 @@
     <!-- http://www.semanticweb.org/dorte/orka-core#Characteristic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Characteristic"/>
-    
-
-
-    <!-- http://www.semanticweb.org/dorte/orka-core#Entity -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dorte/orka-core#Entity"/>
     
 
 
