@@ -1,9 +1,226 @@
-# Ontology for Robotic Knowledge Acquisition (ORKA)
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This is a first attempt to create a Unified Robot Perception Ontology. The current version of the ontology is mainly concerned with four distinct classes:
 
-- Sensors and sensor attributes: Sensors are the main devices through which robots can attain knowledge about the environment. This section of of the ontology details what sensory devices can be deployed on robotic agents, as well as the attributes these devices possess.
-- Measurement units and dimensions: The outputs of the sensors correspond to some form of measurements, which are given meaning to once a unit of measurement is coupled to the readings. These classes attempt to classify and organize these readings.
-- Object attributes: The measurements of the sensors often correspond to different attributes of the objects contained within the environment. Within the ontology these attributes are organised and linked to the sensors and measurement dimensions and units.
-- Algorithms and algorithm attributes: As some of the object attributes are not readily attainable by the sensors and the measurements they provide, different algorithms can be deployed to estimate these attributes.
-dsad
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Dorteel/orka">
+    <img src="images/logo.png" alt="Logo" width="150" height="150">
+  </a>
+
+  <h3 align="center">ORKA: Ontology for Robotic Knowledge Acquisition</h3>
+
+  <p align="center">
+    <br />
+    <a href="https://github.com/Dorteel/orka/blob/main/README.md"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Dorteel/orka/blob/main/README.md">View Demo</a>
+    ·
+    <a href="https://github.com/Dorteel/orka/blob/main/README.md/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Dorteel/orka/blob/main/README.md/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+
+ORKA, the Ontology for Robotic Knowledge Acquisition, models the perception pipeline of robotic agents by encapsulating the sensory, algorithmic, and measurement aspects of the perception process. This innovative approach not only bridges the agents' sensing capabilities with the characteristics of the environment, enhancing the grounding process but also links to external databases as additional knowledge sources. Developed following the Ontology101 methodology, ORKA addresses the critical need for a unified representation of the robotic perception domain, marking a significant leap forward in the field of robotic knowledge acquisition.
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Dorteel/orka/blob/main/owl/orka-full.rdf)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+
+* Ontology101 Methodology
+* Semantic Web Rule Language (SWRL) for reasoning
+* SPARQL for querying
+* Protegé for ontology editing and management
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To explore ORKA or integrate it into your project, follow these steps:
+
+### Prerequisites
+Basic understanding of ontologies and semantic web technologies.
+Access to ontology management tools such as Protegé.
+
+### Installation
+
+To run the evaluation yourself, you need > Python 3.10. You can install the required libraries by running.
+
+  ```sh
+  pip install -r requirements.txt
+  ```
+
+Download the latest version of ORKA from our repository.
+Open the ontology file using Protegé or your preferred ontology management tool.
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+ORKA has been evaluated through competency questions and comparison with related ontologies, highlighting its unique contribution to the domain of robotic knowledge acquisition. With 209 classes, 41 object properties, and 39 data properties, ORKA is populated with instances from two distinct robotic use-cases.
+
+_For examples, please refer to the [Evaluation](https://github.com/Dorteel/orka/blob/main/eval.ipynb)_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Extend ORKA with time representation and multi-sensory integration.
+- [ ] Develop alignment modules for integration with other robotic and knowledge systems.
+- [ ] Pilot ORKA in real-world robotic applications to validate and refine its capabilities.
+
+See the [open issues](https://github.com/Dorteel/orka/blob/main/README.md/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Mark Adamik - m.adamik@vu.nl
+
+Project Link: https://github.com/Dorteel/orka/
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [ReadMe Template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/Dorteel/orka/blob/main/README.md/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/Dorteel/orka/blob/main/README.md/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/Dorteel/orka/blob/main/README.md/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/Dorteel/orka/blob/main/README.md/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/Dorteel/orka/blob/main/README.md/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/orka-core-white.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[JQuery-url]: https://jquery.com 

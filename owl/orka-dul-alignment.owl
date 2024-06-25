@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kai/orka/2024/2/untitled-ontology-41#"
+     xml:base="http://www.semanticweb.org/kai/orka/2024/2/untitled-ontology-41"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:orka-core="http://www.semanticweb.org/dorte/orka-core#"
+     xmlns:orka-full="http://www.semanticweb.org/dorte/orka-full#"
+     xmlns:dul-orka-alignment="http://www.semanticweb.org/kai/orka/dul-orka-alignment#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kai/orka/dul-orka-alignment">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/dorte/orka-full"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Characteristic -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-core#Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Observation -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-core#Observation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-core#Procedure -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-core#Procedure">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#Context -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#Context">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#InformationStorageSystem -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#InformationStorageSystem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#Measurement -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#MeasurementUnit -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#MeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#PhysicalEntity -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#PhysicalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#eval_MarksFace -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#eval_MarksFace">
+        <orka-full:hasCharacteristic rdf:resource="http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksFace"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/dorte/orka-full#eval_MarksOrange -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dorte/orka-full#eval_MarksOrange">
+        <orka-full:hasCharacteristic rdf:resource="http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksOrange_02"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksFace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksFace">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/orka-full#HumanFace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksOrange_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kai/orka/dul-orka-alignment#eval_char_MarksOrange_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dorte/orka-full#Orange"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
