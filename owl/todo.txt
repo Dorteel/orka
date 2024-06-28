@@ -1,0 +1,10 @@
+Add Measurements:
+- If we know the sensor that provided the measurement, add the corresponding measurement standard (RPLidar - millimeter)
+- Given the Sensors that provide the measurement, add the corresponding ObservedProperty
+- In case the sensor has multiple possible observed properties, add them using the algorithms (Procedures) that specify the property.
+ 
+Add Sensors and Robots
+- Given a sheet that has the sensors and the robots, ORKA should be able to automatically associate entities. 
+
+The system creates instances.
+- Compare what the reasoners infer using SSN and what they can infer using ORKA
