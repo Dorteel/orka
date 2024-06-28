@@ -1,0 +1,902 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
+     xml:base="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8">
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/systems/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Accelerometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Accelerometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Age -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Age">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Angle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Angle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Brightness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Brightness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Color -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Color">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComplexStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComplexStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SimpleStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CreationDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CreationDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DeepLearningModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DeepLearningModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Density -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Density">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Depth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Depth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DestructionDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DestructionDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Encoder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExpirationDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExpirationDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#FeatureDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#FeatureDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Flexibility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Flexibility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GazeDetector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GazeDetector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumanPoseEstimationAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Height -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Height">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumanPoseEstimationAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumanPoseEstimationAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Humidity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Humidity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ImageSegmentationAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ImageSegmentationAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InfraredCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InfraredCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IntelRealSenseDepthCameraD435 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IntelRealSenseDepthCameraD435">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Length -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Length">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LocalisationProcedure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LocalisationProcedure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialName">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Microphone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Microphone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MonochromeCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MonochromeCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectDetectionAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectDetectionAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pattern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pitch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pitch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RPLiDARA2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RPLiDARA2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Roll -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Roll">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SIFT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SIFT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#FeatureDescriptor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Shape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Shape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SimpleStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SimpleStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Slam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Slam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LocalisationProcedure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Volume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Volume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Weight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Weight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Width -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Width">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#YOLO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#YOLO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectDetectionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Yaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Yaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#YoloV5Nano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#YoloV5Nano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#YOLO"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Procedure -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Age"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CreationDate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DestructionDate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExpirationDate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Brightness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Humidity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Temperature"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Color"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GeometricProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pattern"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LocalisationProcedure"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DeepLearningModel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#FeatureDescriptor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumanPoseEstimationAlgorithm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ImageSegmentationAlgorithm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ObjectDetectionAlgorithm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Density"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Flexibility"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialName"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Weight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Depth"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Height"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Length"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Volume"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Width"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ActuatableProperty"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/Condition"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/OperatingProperty"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/OperatingRange"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalProperty"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalRange"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SpatialProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#VisualCharactersitic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Pitch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Roll"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Yaw"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Shape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structure"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
