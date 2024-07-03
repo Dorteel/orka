@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
      xml:base="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -14,9 +15,9 @@
     <owl:Ontology rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8">
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/systems/"/>
-        <terms:description>The Ontology of Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</terms:description>
+        <terms:description>The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</terms:description>
         <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
-        <terms:title>Ontology of Robotic Knowledge Acqusition</terms:title>
+        <terms:title>Ontology for Robotic Knowledge Acqusition</terms:title>
     </owl:Ontology>
     
 
@@ -190,6 +191,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+        <rdfs:label>Distance Sensor</rdfs:label>
+        <skos:definition>A sensor designed to measure the distance between two points (usually itself and an other object), typically using ultrasonic, infrared, or laser technology.</skos:definition>
     </owl:Class>
     
 
@@ -231,6 +234,10 @@
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+        <rdfs:comment>The division between external and internal sensors stems from the aspects of the environment they measure.</rdfs:comment>
+        <rdfs:label>External Sensor</rdfs:label>
+        <skos:definition>Sensor devices that measure the aspects of the environment other than the platform or system that the sensor is hosted by.</skos:definition>
+        <skos:example>Examples of external sensors include cameras that measure the light reflected from the environment, and LiDARs that measure distances to the closest objects that reflect the light rays.</skos:example>
     </owl:Class>
     
 

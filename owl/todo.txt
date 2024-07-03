@@ -8,3 +8,7 @@ Add Sensors and Robots
 
 The system creates instances.
 - Compare what the reasoners infer using SSN and what they can infer using ORKA
+
+
+Related Work:
+- IoT Lite attempts to tie together sensors with attributes using QUDT-QuantityKind vocabulary, but QUDT does not provide a taxonomy necessary for our use-cases. As an example, it defines Width, Length, and Distance, but it does not group them as corresponding to the same category of quantities
