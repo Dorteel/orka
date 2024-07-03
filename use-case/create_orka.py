@@ -1,0 +1,70 @@
+# VisualCharactersitic
+# 	Color
+# 	GeometricCharacteristic
+# 		Shape
+# 		SizeCharacteristic
+# 			Depth
+# 			Height
+# 			Length
+# 			SurfaceArea
+# 			Volume
+# 			Width
+# 		Structure
+# 			ComplexStructure
+# 			SimpleStructure
+# 	Pattern
+
+
+# Sensors
+    # ExternalSensor
+    #     DistanceSensor
+    #         ContactSensor
+    #             Bumper
+    #             Button
+    #         DepthCamera
+    #             IntelRealSenseDepthCameraD435
+    #         IRProximitySensor
+    #         LaserScanner
+    #             RPLiDARA2
+    #         Sonar
+    #         StereoCamera
+    #     HumiditySensor
+    #     LightWaveSensor
+    #         Camera
+    #             MonochromeCamera
+    #             RGBCamera
+    #     PressureSensor
+    #     RadiationSensor
+    #         InfraredCamera
+    #     SoundwaveSrnsor
+    #         Microphone
+    #     TemperatureSensor
+    # InternalSensor
+    #     CurrentSensor
+    #         Encoder
+    #     InertialSensor
+    #         Accelerometer
+    #     OrientationSensor
+    #         Compass
+    #         Gyroscope
+    #         Tiltsensor
+    #     PositionSensor
+    #         Encoder
+    #         GPS
+    #     TemperatureSensor
+
+# Procedures
+# Procedure
+# 	ComputerVisionAlgorithm
+# 		DeepLearningModel
+# 		FeatureDescriptor
+# 			SIFT
+# 		HumanPoseEstimationAlgorithm
+# 			GazeDetector
+# 		ImageSegmentationAlgorithm
+# 		ObjectDetectionAlgorithm
+# 			YOLO
+# 				YoloV5Nano
+# 	LocalisationProcedure
+# 		Slam
+
