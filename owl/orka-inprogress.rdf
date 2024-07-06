@@ -25,6 +25,34 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#observesOther -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#observesOther">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#observesSelf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#observesSelf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#observesSelf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -36,7 +64,25 @@
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Accelerometer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Accelerometer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Active_Optical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Active_Optical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Active_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Active_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that requires an external power source to operate and emits its own signal which interacts with the environment and measures the return signal.</rdfs:comment>
+        <rdfs:label xml:lang="en">Active Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -65,19 +111,21 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Brush_Encoder -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Brush_Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Button">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Bumper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor"/>
+        <rdfs:comment xml:lang="en">A type of touch sensor that detects physical collisions or impacts, typically used in robotic applications to detect obstacles. Examples include bump sensors on robotic vacuum cleaners and collision detection bumpers on automated guided vehicles.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bumper</rdfs:label>
     </owl:Class>
     
 
@@ -85,7 +133,25 @@
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Capacitive_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Capacitive_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Capacity_Encoder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Capacity_Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
     </owl:Class>
     
 
@@ -101,7 +167,9 @@
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Heading_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that detects the Earth&apos;s magnetic field to determine the direction relative to the North. Examples are magnetic compasses used in handheld navigation devices and smartphones.</rdfs:comment>
+        <rdfs:label xml:lang="en">Compass</rdfs:label>
     </owl:Class>
     
 
@@ -123,10 +191,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Contact_Array -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Contact_Array">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor composed of multiple contact points arranged in an array to detect touch or pressure across a surface. Examples include touch-sensitive surfaces in robotics and multitouch screens.</rdfs:comment>
+        <rdfs:label>Contact Array</rdfs:label>
     </owl:Class>
     
 
@@ -135,14 +206,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CreationDate">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemporalProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
     </owl:Class>
     
 
@@ -171,14 +234,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DestructionDate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DestructionDate">
@@ -187,22 +242,19 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Doppler_Radar -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
-        <rdfs:label>Distance Sensor</rdfs:label>
-        <skos:definition>A sensor designed to measure the distance between two points (usually itself and an other object), typically using ultrasonic, infrared, or laser technology.</skos:definition>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Doppler_Radar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor"/>
+        <rdfs:label>Doppler Radar</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Encoder -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Doppler_Sound -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Encoder">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Doppler_Sound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor"/>
     </owl:Class>
     
 
@@ -229,15 +281,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor">
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
-        <rdfs:comment>The division between external and internal sensors stems from the aspects of the environment they measure.</rdfs:comment>
-        <rdfs:label>External Sensor</rdfs:label>
-        <skos:definition>Sensor devices that measure the aspects of the environment other than the platform or system that the sensor is hosted by.</skos:definition>
-        <skos:example>Examples of external sensors include cameras that measure the light reflected from the environment, and LiDARs that measure distances to the closest objects that reflect the light rays.</skos:example>
+        <rdfs:comment xml:lang="en">A sensor that provides information about the external environment surrounding the device.</rdfs:comment>
+        <rdfs:label xml:lang="en">Exteroception Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -258,10 +307,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Force_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Force_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that measures the amount of force applied to an object. Examples include load cells used in weighing scales and force-sensitive resistors used in haptic devices.</rdfs:comment>
+        <rdfs:label xml:lang="en">Force Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#GPS">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor"/>
     </owl:Class>
     
 
@@ -285,7 +345,23 @@
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Heading_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Heading_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Heading_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A sensor used to determine the orientation or direction of an object. Examples are gyroscopes and magnetic compasses used in navigation systems.</rdfs:comment>
+        <rdfs:label xml:lang="en">Heading Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -314,18 +390,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
@@ -338,42 +406,34 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Inclinometer -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Inclinometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Heading_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InfraredCamera -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Inductive_Encoder -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InfraredCamera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Inductive_Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IntelRealSenseDepthCameraD435 -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Laser_Range -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IntelRealSenseDepthCameraD435">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Laser_Range">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Laser_Ranging -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Laser_Ranging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
     </owl:Class>
     
 
@@ -382,14 +442,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Length">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
     </owl:Class>
     
 
@@ -411,6 +463,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Magnetic_Encoder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Magnetic_Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Magnetic_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Magnetic_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialName -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MaterialName">
@@ -427,19 +495,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Microphone -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Microphone">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MonochromeCamera -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#MonochromeCamera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proprioception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
@@ -460,6 +520,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Optical_Barrier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Optical_Barrier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that detects the interruption of a light beam to determine the presence or absence of an object. Examples include photoelectric sensors used in security systems and safety light curtains in industrial automation.</rdfs:comment>
+        <rdfs:label>Optical Barrier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Optical_Encoder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Optical_Encoder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Orientation">
@@ -468,10 +546,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Passive_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Passive_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that does not require an external power source and relies on detecting energy emitted or reflected by objects.</rdfs:comment>
+        <rdfs:label xml:lang="en">Passive Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -492,42 +572,96 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Potentiometer -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Potentiometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proprioception_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RGBCamera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Camera"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proprioception_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RPLiDARA2 -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proximity_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RPLiDARA2">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proximity_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
+        <rdfs:label xml:lang="en">Proximity Sensor</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RF_Beacon -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RF_Beacon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Radar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Radar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Radio_Frequency_Identification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Radio_Frequency_Identification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Reflective_Beacon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Reflective_Beacon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Resistive_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Resistive_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resistive Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Resolver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Resolver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
     </owl:Class>
     
 
@@ -583,15 +717,15 @@
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sound -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
     </owl:Class>
     
 
@@ -604,10 +738,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Speed_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
@@ -620,10 +754,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structures_Light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Structures_Light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ranging_Sensor"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Switch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Switch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor"/>
+        <rdfs:comment xml:lang="en">Similar to Bumpers, a switch is a simple sensor that detects the opening or closing of an electrical circuit. Examples include mechanical switches used in keyboards and limit switches used in industrial machinery.</rdfs:comment>
+        <rdfs:label xml:lang="en">Switch</rdfs:label>
     </owl:Class>
     
 
@@ -633,15 +786,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Temperature">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#EnvironmentProperty"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ThermalProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ExternalSensor"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InternalSensor"/>
     </owl:Class>
     
 
@@ -662,10 +806,46 @@
     
 
 
-    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor -->
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Torque_Sensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Torque_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Motor_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Proprioception_Sensor"/>
+        <rdfs:comment>A sensor that measures the rotational force (torque) applied to an object. Examples include torque transducers used in motor control systems and torque sensors used in robotics to monitor joint movements.</rdfs:comment>
+        <rdfs:label xml:lang="en">Torque Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Touch_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A sensor that detects and measures physical contact or touch. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics.</rdfs:comment>
+        <rdfs:label xml:lang="en">Touch Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ultrasound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ultrasound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Identification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ultrasound_Beacon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Ultrasound_Beacon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Position_Sensor"/>
     </owl:Class>
     
 
@@ -742,6 +922,48 @@
     
 
 
+    <!-- http://www.w3.org/ns/ssn/systems/Condition -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/Condition"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/OperatingProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/OperatingProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/OperatingRange -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/OperatingRange"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/SurvivalProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/SurvivalRange -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalRange"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/SystemCapability -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/SystemProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -778,38 +1000,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Compass"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Gyroscope"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Tiltsensor"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ComputerVisionAlgorithm"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LocalisationProcedure"/>
             <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#ContactSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DepthCamera"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#IRProximitySensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LaserScanner"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Sonar"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#StereoCamera"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#CurrentSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#InertialSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#OrientationSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PositionSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -840,18 +1033,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SurfaceArea"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Volume"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#Width"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#DistanceSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#HumiditySensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#LightWaveSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#PressureSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#RadiationSensor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#SoundwaveSrnsor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#TemperatureSensor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -908,5 +1089,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
