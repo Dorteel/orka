@@ -21,6 +21,7 @@
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/systems/"/>
         <terms:description>The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</terms:description>
         <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
         <terms:title>Ontology for Robotic Knowledge Acqusition</terms:title>
@@ -55,10 +56,26 @@
     
 
 
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity -->
+
+    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/orka#observedIn"/>
+    </rdf:Description>
+    
+
+
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol -->
 
     <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </rdf:Description>
     
 
@@ -81,6 +98,46 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/orka#observedIn"/>
+            <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+            <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Links entities to the characteristics possessed by the entity</rdfs:comment>
+        <rdfs:label>has characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#inferrableProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#inferrableProperty">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+        <rdfs:comment>A property between a Characteristic and a Sensor, which is not the directly observed characteristic of the device.</rdfs:comment>
+        <rdfs:label>inferrable property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#observedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+        <rdfs:comment>Relates an entity to an observation</rdfs:comment>
+        <rdfs:label>observed in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#observesOther -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observesOther">
@@ -95,6 +152,28 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observesSelf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/def/orka#hasMeasurementRange -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasMeasurementRange">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The measurement range of the sensor device</rdfs:comment>
+        <rdfs:label>has measurement range</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -133,6 +212,14 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
@@ -152,6 +239,14 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/Procedure -->
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
@@ -160,10 +255,17 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Result">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/Sensor -->
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
-        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
@@ -681,7 +783,13 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Motor_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Proprioception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ProprioceptorSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -748,6 +856,23 @@
     
 
 
+    <!-- https://w3id.org/def/orka#PhysicalEntity -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#PhysicalEntity">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Entities that have some form of physical existence. Used to denote entities that possess some characteristics that everyday objects possess (e.g. weight, color, size, etc.).
+Despite the name, these entities can be virtual.</rdfs:comment>
+        <rdfs:label>Physical Entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#Pitch -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Pitch">
@@ -760,6 +885,12 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Position_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -772,10 +903,33 @@
     
 
 
-    <!-- https://w3id.org/def/orka#Proprioception_Sensor -->
+    <!-- https://w3id.org/def/orka#ProprioceptorSensor -->
 
-    <owl:Class rdf:about="https://w3id.org/def/orka#Proprioception_Sensor">
+    <owl:Class rdf:about="https://w3id.org/def/orka#ProprioceptorSensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://w3id.org/def/orka#Robot"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                                        <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A class of sensors that measure the internal state of the robot, or parts of the robot</rdfs:comment>
+        <rdfs:label>Proprioceptor Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -837,6 +991,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Resistive_Sensor">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
         <rdfs:label xml:lang="en">Resistive Sensor</rdfs:label>
@@ -848,6 +1003,40 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Resolver">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Motor_Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Robot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/def/orka#Robot"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://w3id.org/def/orka#ProprioceptorSensor"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+                                                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Robot"/>
+                                            </owl:Restriction>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
     </owl:Class>
     
 
@@ -1020,7 +1209,14 @@
                 <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A sensor that detects and measures physical contact or touch. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasMeasurementRange"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A sensor that detects and measures physical contact or touch.
+When these sensors activate, the activation implies the location of an entity at the range of the sensor. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics.</rdfs:comment>
         <rdfs:label xml:lang="en">Touch Sensor</rdfs:label>
     </owl:Class>
     
@@ -1109,15 +1305,25 @@
     
 
 
+    <!-- https://w3id.org/def/orka#test_entity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_entity"/>
+    
+
+
     <!-- https://w3id.org/def/orka#test_feature_of_interest -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_feature_of_interest"/>
     
 
 
-    <!-- https://w3id.org/def/orka#test_measure -->
+    <!-- https://w3id.org/def/orka#test_measurement -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_measure"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_measurement">
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+        <sosa:hasFeatureOfInterest rdf:resource="https://w3id.org/def/orka#test_feature_of_interest"/>
+        <sosa:observedProperty rdf:resource="https://w3id.org/def/orka#test_observable_property"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1130,9 +1336,18 @@
     <!-- https://w3id.org/def/orka#test_observation -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_observation">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <sosa:hasFeatureOfInterest rdf:resource="https://w3id.org/def/orka#test_feature_of_interest"/>
-        <sosa:observedProperty rdf:resource="https://w3id.org/def/orka#test_observable_property"/>
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+        <oboe-core:hasMeasurement rdf:resource="https://w3id.org/def/orka#test_measurement"/>
+        <oboe-core:ofEntity rdf:resource="https://w3id.org/def/orka#test_entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#test_robot -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_robot">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#test_sensor"/>
     </owl:NamedIndividual>
     
 
@@ -1140,8 +1355,8 @@
     <!-- https://w3id.org/def/orka#test_sensor -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_sensor">
-        <rdf:type rdf:resource="https://w3id.org/def/orka#Force_Sensor"/>
-        <sosa:madeObservation rdf:resource="https://w3id.org/def/orka#test_observation"/>
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Torque_Sensor"/>
+        <sosa:madeObservation rdf:resource="https://w3id.org/def/orka#test_measurement"/>
         <sosa:observes rdf:resource="https://w3id.org/def/orka#test_observable_property"/>
     </owl:NamedIndividual>
     
@@ -1158,33 +1373,10 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ActuatableProperty"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/Condition"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/OperatingProperty"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/OperatingRange"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalProperty"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalRange"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#EnvironmentProperty"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/def/orka#Age"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#CreationDate"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#DestructionDate"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#ExpirationDate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Brightness"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Humidity"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Temperature"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
