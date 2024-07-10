@@ -20,7 +20,6 @@
     <owl:Ontology rdf:about="https://w3id.org/def/orka">
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
-        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/oboe"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
         <terms:description>The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</terms:description>
         <terms:license>https://creativecommons.org/publicdomain/zero/1.0/</terms:license>
@@ -171,6 +170,14 @@
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/System -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ssn/System">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
     </rdf:Description>
     
 
