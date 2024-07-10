@@ -33,11 +33,6 @@
         <vann:preferredNamespaceUri>http://www.w3.org/ns/ssn/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">Please report any errors to the W3C Spatial Data on the Web Working Group via the SDW WG Public List public-sdw-wg@w3.org</rdfs:comment>
         <rdfs:seeAlso rdf:resource="https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology"/>
-        <owl:versionInfo xml:lang="en">New modular version of the SSN ontology. 
-
-This ontology was originally developed in 2009-2011 by the W3C Semantic Sensor Networks Incubator Group (SSN-XG). For more information on the group&apos;s activities see: http://www.w3.org/2005/Incubator/ssn/. The ontology was revised and modularized in 2015-2017 by the W3C/OGC Spatial Data on the Web Working Group, see: https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology. 
-
-In particular, (a) the scope is extended to include actuation and sampling; (b) the core concepts and properties are factored out into the SOSA ontology. The SSN ontology imports SOSA and adds formal axiomatization consistent with the text definitions in SOSA, and adds classes and properties to accommodate the scope of the original SSN ontology. </owl:versionInfo>
     </owl:Ontology>
     
 
@@ -101,18 +96,6 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#cardinality -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#cardinality"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#minCardinality -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minCardinality"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
@@ -134,28 +117,35 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/actsOnProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/actsOnProperty">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasResult -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasResult">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
@@ -170,82 +160,135 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
 
     <!-- http://www.w3.org/ns/sosa/hosts -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hosts">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hosts">
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.w3.org/ns/ssn/inDeployment"/>
             <rdf:Description rdf:about="http://www.w3.org/ns/ssn/deployedSystem"/>
         </owl:propertyChainAxiom>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isActedOnBy -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isActedOnBy">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/isHostedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isHostedBy">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isHostedBy">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/isObservedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isObservedBy">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isObservedBy">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isResultOf -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isSampleOf -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isSampleOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeActuation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeActuation">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/madeByActuator -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeByActuator">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeByActuator">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/madeBySampler -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySampler">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySampler">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/madeBySensor -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeSampling -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeSampling">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observedProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observedProperty">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/observes -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observes">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observes">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/phenomenonTime -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/phenomenonTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/usedProcedure -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeByActuator"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implements"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySampler"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implements"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySensor"/>
-            <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implements"/>
-        </owl:propertyChainAxiom>
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/usedProcedure">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:ObjectProperty>
+    </rdf:Description>
     
 
 
@@ -427,6 +470,25 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/resultTime">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -443,8 +505,82 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
 
     <!-- http://www.w3.org/ns/sosa/ActuatableProperty -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ActuatableProperty">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ActuatableProperty">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isActedOnBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Actuation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Actuation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/actsOnProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ActuatableProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeByActuator"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/actsOnProperty"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeByActuator"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
     </owl:Class>
     
@@ -452,8 +588,14 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
 
     <!-- http://www.w3.org/ns/sosa/Actuator -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Actuator">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuator">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeActuation"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
@@ -467,13 +609,19 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSample"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
@@ -487,18 +635,28 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isObservedBy"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -512,13 +670,99 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
     </owl:Class>
     
 
 
     <!-- http://www.w3.org/ns/sosa/Platform -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
@@ -532,13 +776,13 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/Procedure -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Procedure">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
@@ -558,18 +802,128 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:Class>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Result">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sample -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sample">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
     
 
 
     <!-- http://www.w3.org/ns/sosa/Sampler -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sampler">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampler">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeSampling"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampling -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sampling">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampler"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
@@ -579,8 +933,14 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
 
     <!-- http://www.w3.org/ns/sosa/Sensor -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeObservation"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
@@ -600,7 +960,7 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </owl:Class>
+    </rdf:Description>
     
 
 
@@ -732,6 +1092,16 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An event in the real world that &apos;triggers&apos; the Sensor. The properties associated to the Stimulus may be different to the eventual observed ObservableProperty. It is the event, not the object, that triggers the Sensor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
         <rdfs:label xml:lang="en">Stimulus</rdfs:label>
@@ -804,7 +1174,9 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
 
     <!-- http://www.w3.org/ns/ssn/ -->
 
-    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/ssn/"/>
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/ssn/">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    </owl:NamedIndividual>
     <rdf:Description>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <foaf:name xml:lang="en">W3C/OGC Spatial Data on the Web Working Group</foaf:name>
@@ -812,57 +1184,6 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
     <rdf:Description>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <foaf:name xml:lang="en">W3C/OGC Spatial Data on the Web Working Group</foaf:name>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
     </rdf:Description>
     
 
@@ -875,46 +1196,10 @@ In particular, (a) the scope is extended to include actuation and sampling; (b) 
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/actsOnProperty">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasResult">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isActedOnBy">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isResultOf">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isSampleOf">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeActuation">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeSampling">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observedProperty">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/phenomenonTime">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/resultTime">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
     </rdf:Description>
 </rdf:RDF>

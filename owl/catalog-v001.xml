@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl" uri="file:/home/user/repos/knowledgegraphs/oboe/oboe-standards.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl" uri="file:/home/user/repos/knowledgegraphs/oboe/oboe-characteristics.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/ssn/" uri="http://www.w3.org/ns/ssn/"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/sosa/" uri="http://www.w3.org/ns/sosa/"/>
     <uri id="User Entered Import Resolution" name="http://www.w3.org/ns/ssn/systems/" uri="file:/C:/Users/dorte/Documents/Repositories/ontologies/sdw/ssn/integrated/ssn-system.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.w3.org/ns/sosa/" uri="file:/C:/Users/dorte/Documents/Repositories/ontologies/sdw/ssn/rdf/sosa.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.w3.org/ns/ssn/" uri="file:/C:/Users/dorte/Documents/Repositories/ontologies/sdw/ssn/ssn_separated/ssn.ttl"/>
