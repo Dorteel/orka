@@ -357,7 +357,7 @@
     <!-- https://w3id.org/def/orka#Accelerometer -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Accelerometer">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
         <rdfs:subClassOf>
@@ -376,7 +376,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Active_Optical">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:comment>A sensor that uses light to actively measure position or distance.</rdfs:comment>
         <rdfs:label>Active Optical</rdfs:label>
@@ -455,7 +455,7 @@
     <!-- https://w3id.org/def/orka#Bumper -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Bumper">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A type of touch sensor that detects physical collisions or impacts, typically used in robotic applications to detect obstacles. Examples include bump sensors on robotic vacuum cleaners and collision detection bumpers on automated guided vehicles.</rdfs:comment>
@@ -467,7 +467,7 @@
     <!-- https://w3id.org/def/orka#Camera -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Camera">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
@@ -481,7 +481,7 @@
     <!-- https://w3id.org/def/orka#Capacitive_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Capacitive_Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that detects changes in capacitance to measure distance or presence.</rdfs:comment>
@@ -540,7 +540,7 @@
     <!-- https://w3id.org/def/orka#Contact_Array -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Contact_Array">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor composed of multiple contact points arranged in an array to detect touch or pressure across a surface. Examples include touch-sensitive surfaces in robotics and multitouch screens.</rdfs:comment>
@@ -593,7 +593,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Doppler_Radar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -611,7 +611,7 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Doppler_Sound">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -641,12 +641,12 @@
     
 
 
-    <!-- https://w3id.org/def/orka#Exteroception_Sensor -->
+    <!-- https://w3id.org/def/orka#Exteroceptor_Sensor -->
 
-    <owl:Class rdf:about="https://w3id.org/def/orka#Exteroception_Sensor">
+    <owl:Class rdf:about="https://w3id.org/def/orka#Exteroceptor_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that provides information about the external environment surrounding the device.</rdfs:comment>
-        <rdfs:label xml:lang="en">Exteroception Sensor</rdfs:label>
+        <rdfs:label xml:lang="en">Exteroceptor Sensor</rdfs:label>
     </owl:Class>
     
 
@@ -670,7 +670,7 @@
     <!-- https://w3id.org/def/orka#Force_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Force_Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that measures the amount of force applied to an object. Examples include load cells used in weighing scales and force-sensitive resistors used in haptic devices.</rdfs:comment>
@@ -822,7 +822,7 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Laser_Ranging">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -883,7 +883,7 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     <!-- https://w3id.org/def/orka#Magnetic_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Magnetic_Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that detects magnetic fields to measure position or movement. Examples are Hall effect sensors used in motor control and proximity sensing.</rdfs:comment>
         <rdfs:label>Magnetic Sensor</rdfs:label>
@@ -954,7 +954,7 @@ TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Optical_Barrier">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that detects the interruption of a light beam to determine the presence or absence of an object. Examples include photoelectric sensors used in security systems and safety light curtains in industrial automation.</rdfs:comment>
         <rdfs:label>Optical Barrier</rdfs:label>
@@ -1106,7 +1106,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
     <!-- https://w3id.org/def/orka#Proximity_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Proximity_Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
@@ -1119,7 +1119,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#RF_Beacon">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:comment>A device that emits radio frequency signals used for positioning or navigation. Used in indoor positioning systems.</rdfs:comment>
         <rdfs:label>Radio Frequency Beacon</rdfs:label>
@@ -1131,7 +1131,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Radar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses radio waves to detect objects and measure their distance and speed. Examples of radar systems are used in aviation.</rdfs:comment>
@@ -1144,7 +1144,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Radio_Frequency_Identification">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:comment>A technology that uses electromagnetic fields to automatically identify and track tags attached to objects. RFID tags are used in inventory tracking and access control systems.</rdfs:comment>
         <rdfs:label>RFID</rdfs:label>
@@ -1156,7 +1156,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Ranging_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
@@ -1174,7 +1174,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Reflective_Beacon">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:comment>A sensor that uses reflected signals to determine position or distance. Reflective beacons used in robotic navigation and tracking systems.</rdfs:comment>
         <rdfs:label>Reflective Beacon</rdfs:label>
@@ -1185,7 +1185,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
     <!-- https://w3id.org/def/orka#Resistive_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Resistive_Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
@@ -1272,7 +1272,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Sonar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses sound waves to detect objects and measure distances (mostly underwater).</rdfs:comment>
         <rdfs:label>Sonar</rdfs:label>
@@ -1283,7 +1283,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
     <!-- https://w3id.org/def/orka#Sound -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Sound">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:comment>A sensor that detects and measures sound waves. Examplse are microphones that are used in audio recording and voice recognition systems.</rdfs:comment>
@@ -1358,7 +1358,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
     <!-- https://w3id.org/def/orka#Switch -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Switch">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
         <rdfs:comment xml:lang="en">Similar to Bumpers, a switch is a simple sensor that detects the opening or closing of an electrical circuit. Examples include mechanical switches used in keyboards and limit switches used in industrial machinery.</rdfs:comment>
@@ -1413,7 +1413,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Touch_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
@@ -1437,7 +1437,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Ultrasound">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses high-frequency sound waves to detect objects and measure distances. Examples of ultrasonic sensors are used in medical imaging and parking assistance systems.</rdfs:comment>
@@ -1450,7 +1450,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Ultrasound_Beacon">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroception_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:comment>A sensor that uses ultrasonic waves to determine distance or position. Ultrasonic beacons used in indoor navigation and positioning systems.</rdfs:comment>
         <rdfs:label>Ultrasound Beacon</rdfs:label>
