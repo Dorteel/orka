@@ -89,3 +89,8 @@ def find_key_by_value(dictionary, target_value):
 for color in colours:
   closest_color = closest(list(color_dict.values()), color)
   print(color, closest_color[0], find_key_by_value(color_dict, closest_color[0]))
+
+
+# [201, 127, 34] [204 119  34] ochre
+# [179, 96, 53] [184 115  51] copper
+# [190, 186, 76] [188 147  55] honey
