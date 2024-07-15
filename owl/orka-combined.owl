@@ -1566,6 +1566,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#robot_lokobuki">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#test_sensor"/>
     </owl:NamedIndividual>
     
 
