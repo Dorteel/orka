@@ -16,10 +16,11 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/"
      xmlns:oboe-core="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#"
+     xmlns:oboe-core1="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#"
      xmlns:untitled-ontology-8="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#">
     <owl:Ontology rdf:about="https://w3id.org/def/orka">
-        <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
-        <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
+        <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/ssn/systems/"/>
         <terms:description>The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</terms:description>
@@ -40,35 +41,47 @@
     
 
 
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor -->
+
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+    
+
+
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasValue -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasValue">
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasValue">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic">
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity">
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity">
         <owl:inverseOf rdf:resource="https://w3id.org/def/orka#observedIn"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol">
+    <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -216,27 +229,51 @@
     
 
 
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed"/>
+    
+
+
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
-    </rdf:Description>
+    </owl:Class>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
     
 
 
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-    </rdf:Description>
+    </owl:Class>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
     
 
 
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol -->
 
-    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -1522,6 +1559,14 @@ When these sensors activate, the activation implies the location of an entity at
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://w3id.org/def/orka#robot_lokobuki -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#robot_lokobuki">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
+    </owl:NamedIndividual>
     
 
 

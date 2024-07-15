@@ -144,7 +144,14 @@ See the [open issues](https://github.com/Dorteel/orka/blob/main/README.md/issues
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+## Troubleshooting
+Error message:
+An error occurred during reasoning: Unsupported axiom: Ignoring transitivity and/or complex subproperty axioms for usesProtocol
+Solution
+This error occurs because of the property chains SSN uses. Removing the property chains solves the issue:
+* 'made by actuator' o implements SubPropertyOf: 'used procedure'
+* 'made by sensors' o implements SubPropertyOf: 'used procedure'
+* 'made by sampler' o implements SubPropertyOf: 'used procedure'
 
 <!-- CONTRIBUTING -->
 ## Contributing

@@ -78,6 +78,14 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Entity"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/Procedure -->
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
@@ -770,6 +778,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#Roll -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Roll">
@@ -1035,6 +1051,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#lokobuki -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lokobuki">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/def/orka#test_feature_of_interest -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#test_feature_of_interest"/>
@@ -1095,14 +1119,6 @@
             <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
             <rdf:Description rdf:about="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#EnvironmentProperty"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#ComputerVisionAlgorithm"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#LocalisationProcedure"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
