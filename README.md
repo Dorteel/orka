@@ -129,6 +129,15 @@ ORKA has been evaluated through competency questions and comparison with related
 
 _For examples, please refer to the [Evaluation](https://github.com/Dorteel/orka/blob/main/eval.ipynb)_
 
+## SWRL Rules
+
+SWRL rules are utilised in the ontology to infer new knowledge.
+Here is an example of such rules:
+
+orka:ProprioceptorSensor(?s) ^ oboe-core:Measurement(?m) ^ oboe-core:Observation(?o) ^ sosa:hosts(?r,?s) ^ sosa:madeBySensor(?m,?s) ^ oboe-core:hasMeasurement(?o,?m) -> oboe-core:ofEntity(?o, ?r)
+
+This rule means that if the sensor is a proprioceptor sensor, then every observation made by the sensor is of the robot itself.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

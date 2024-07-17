@@ -70,7 +70,7 @@ list_of_colors = [[255,0,0],[150,33,77],[75,99,23],[45,88,250],[250,0,255]]
 color = [155,155,155]
 
 # Example colours from the use-case
-colours = [[201, 127, 34], [179, 96, 53], [190, 186, 76]]
+colours = [[202, 128, 35], [179, 95, 53], [190, 186, 76]]
 
 def closest(colors,color):
     colors = np.array(colors)

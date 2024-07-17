@@ -157,7 +157,7 @@ def instance_segmentation_api(img_path, threshold=0.5, rect_th=2, text_size=1, t
             text_org = (int(boxes[i][0][0]), int(boxes[i][0][1]))
             cv2.putText(img,pred_cls[i], text_org, cv2.FONT_HERSHEY_SIMPLEX, text_size, (0,255,0),thickness=text_th)
         result = np.full((rgb_masks[0].shape), (0,0,0), dtype=np.uint8)
-        for mask in rgb_masks[2:3]:
+        for mask in rgb_masks[:1]:
             result = cv2.add(result, mask)
         plt.imshow(result)
         plt.show()

@@ -6,7 +6,6 @@ import numpy as np
 import pathlib
 import torchvision
 import torchvision.transforms as T
-from torchvision.models.detection import MaskRCNN_ResNet50_FPN_Weights, maskrcnn_resnet50_fpn
 import matplotlib.pyplot as plt
 import random
 import time
@@ -76,8 +75,7 @@ def image_yolo(img_path):
 # MASKCNN
 
 #model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained_backbone=True)
-model = maskrcnn_resnet50_fpn(weights=MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
-
+model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
 model.eval()
 
 def random_colour_masks(mask, img):
@@ -98,8 +96,9 @@ def random_colour_masks(mask, img):
     g = np.zeros_like(mask).astype(np.uint8)
     b = np.zeros_like(mask).astype(np.uint8)
     r[mask == 1], g[mask == 1], b[mask == 1] = np.mean(non_zero_pixels,  axis=tuple(range(non_zero_pixels.ndim-1)))
+    color = [np.max(r), np.max(g), np.max(b)]
     coloured_mask = np.stack([r, g, b], axis=2)
-    return coloured_mask
+    return coloured_mask, color
 
 def get_prediction(img_path, threshold):
     """
@@ -141,14 +140,17 @@ def instance_segmentation_api(img_path, threshold=0.5, rect_th=2, text_size=1, t
       - final output is displayed
     """
     masks, boxes, pred_cls = get_prediction(img_path, threshold)
+    colours = [pred_cls, []]
     if show_img:
         img = cv2.imread(img_path)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         rgb_masks = []
+        normal_masks = []
         for i in range(len(masks)):
-            rgb_mask = random_colour_masks(masks[i], img)
+            rgb_mask, color = random_colour_masks(masks[i], img)
+            colours[1].append(color)
             rgb_masks.append(rgb_mask)
-
+            normal_masks.append(masks[i])
             img = cv2.addWeighted(img, 1, rgb_mask, 0.5, 0)
             pt1 = (int(boxes[i][0][0]), int(boxes[i][0][1]))
             pt2 = (int(boxes[i][1][0]), int(boxes[i][1][1]))
@@ -156,7 +158,7 @@ def instance_segmentation_api(img_path, threshold=0.5, rect_th=2, text_size=1, t
             text_org = (int(boxes[i][0][0]), int(boxes[i][0][1]))
             cv2.putText(img,pred_cls[i], text_org, cv2.FONT_HERSHEY_SIMPLEX, text_size, (0,255,0),thickness=text_th)
         result = np.full((rgb_masks[0].shape), (0,0,0), dtype=np.uint8)
-        for mask in rgb_masks:
+        for mask in masks:
             result = cv2.add(result, mask)
         plt.imshow(result)
         plt.show()
@@ -165,7 +167,7 @@ def instance_segmentation_api(img_path, threshold=0.5, rect_th=2, text_size=1, t
         plt.xticks([])
         plt.yticks([])
         plt.show()
-    return dict(zip(pred_cls, masks))
+    return dict(zip(pred_cls, masks)), colours
 
 
 ###########################################################
@@ -232,7 +234,9 @@ def get_color(img_path, results, method='average'):
 # plt.imshow(blend_img)
 # plt.show()
 img_path = 'citrus.jpg'
-results = instance_segmentation_api(img_path, 0.75, show_img=True)
+results, colours = instance_segmentation_api(img_path, 0.75, show_img=True)
+# [[201, 127, 34], [179, 96, 53], [190, 186, 76]]
+print(colours)
 colors = get_color(img_path, results)
 print(colors)
 # for k, v in colors:
