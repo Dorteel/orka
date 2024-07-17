@@ -125,6 +125,17 @@
     
 
 
+    <!-- https://w3id.org/def/orka#calculatesCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#calculatesCharacteristic">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+        <rdfs:comment>a relationship between a procedure/protocol and a characteristic</rdfs:comment>
+        <rdfs:label>calculates characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#describedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#describedBy">
@@ -250,11 +261,34 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasAlgorithmCharacteristic -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasAlgorithmCharacteristic"/>
+    
+
+
     <!-- https://w3id.org/def/orka#hasDBpediaURI -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasDBpediaURI">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasExternalDescription"/>
         <rdfs:label>has DBpedia URI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasDeepLearningModelCharacteristic -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasAlgorithmCharacteristic"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/orka#DeepLearningModel"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasDetectionThreshold -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasDetectionThreshold">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
     </owl:DatatypeProperty>
     
 
@@ -267,6 +301,61 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasFLOPsat640 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasFLOPsat640">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+        <rdfs:comment>Floating Point Operations per Second at a model input size of 640 pixels, measured in billions. This metric estimates the computational complexity of a single forward pass through the model. Higher FLOPs indicate a more computationally intensive model, which can impact inference speed and power consumption.</rdfs:comment>
+        <rdfs:label>Floating Point Operations per Second at a model input size of 640 pixels</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasInferenceSpeed -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasInferenceSpeed">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasInferenceSpeedCPUb1 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasInferenceSpeedCPUb1">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasInferenceSpeed"/>
+        <rdfs:comment>The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasInferenceSpeedV100b1 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasInferenceSpeedV100b1">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasInferenceSpeed"/>
+        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasInferenceSpeedV100b32 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasInferenceSpeedV100b32">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasInferenceSpeed"/>
+        <rdfs:comment>The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model&apos;s performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasInputSize -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasInputSize">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+        <rdfs:comment>Refers to the size of the image (in pixels) that is used as an input</rdfs:comment>
+        <rdfs:label>has input size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasMeasurementRange -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasMeasurementRange">
@@ -274,6 +363,16 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The measurement range of the sensor device</rdfs:comment>
         <rdfs:label>has measurement range</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasNumberOfParameters -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasNumberOfParameters">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+        <rdfs:comment>Indicates the number of trainable parameters of the mode, measured in millions. Gives an idea of the model&apos;s complexity and size.</rdfs:comment>
+        <rdfs:label>number of parameters</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -306,11 +405,28 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasWikiDataURI -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasWikiDataURI">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasExternalDescription"/>
         <rdfs:label>has WikiData URI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasmAPval50-95 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasmAPval50-95">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+        <rdfs:comment>This is a metric that evaluates the accuracy of an object detector algorithm. The value defines the mean Average Percision for detections that have an overlap with the ground truth value (Intersection over Union) of 50% to 95% with 5% increments.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1037,6 +1153,12 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#ComputerVisionAlgorithm">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#calculatesCharacteristic"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#ObjectType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1144,6 +1266,18 @@
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Depth">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#DepthCamera -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#DepthCamera">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
+        <rdfs:label>Depth Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1662,6 +1796,12 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
 
     <owl:Class rdf:about="https://w3id.org/def/orka#LocalisationProcedure">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#calculatesCharacteristic"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1671,6 +1811,14 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     <owl:Class rdf:about="https://w3id.org/def/orka#Location">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#SpatialProperty"/>
         <owl:disjointWith rdf:resource="https://w3id.org/def/orka#Orientation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#LocobotWX250s -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#LocobotWX250s">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Robot"/>
     </owl:Class>
     
 
@@ -1794,6 +1942,14 @@ TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#ObjectProperty">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#ObjectType -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#ObjectType">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
     </owl:Class>
     
 
@@ -2763,6 +2919,40 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
+    <!-- https://w3id.org/def/orka#TurtleBot3Burger -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#TurtleBot3Burger">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Robot"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Accelerometer"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Gyroscope"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Laser_Ranging"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Brush_Encoder"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#Ultrasound -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Ultrasound">
@@ -2865,7 +3055,142 @@ When these sensors activate, the activation implies the location of an entity at
     <!-- https://w3id.org/def/orka#YOLO -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#YOLO">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#DeepLearningModel"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ObjectDetectionAlgorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5l -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5l">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInferenceSpeedCPUb1"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">430</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5l6 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5l6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInferenceSpeedCPUb1"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1784</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInputSize"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5m -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5m">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5m6 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5m6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInputSize"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5n -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5n">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5n6 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5n6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInputSize"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5s -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5s">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5s6 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5s6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInferenceSpeedCPUb1"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInputSize"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasmAPval50-95"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.8</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5x -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5x">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#YOLOv5x6 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#YOLOv5x6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasInputSize"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -2874,14 +3199,6 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Yaw">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Angle"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/orka#YoloV5Nano -->
-
-    <owl:Class rdf:about="https://w3id.org/def/orka#YoloV5Nano">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#YOLO"/>
     </owl:Class>
     
 
@@ -2917,6 +3234,12 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
+    <!-- https://w3id.org/def/orka#ent_yolo_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#ent_yolo_01"/>
+    
+
+
     <!-- https://w3id.org/def/orka#fetch_object -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#fetch_object">
@@ -2933,10 +3256,34 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
+    <!-- https://w3id.org/def/orka#lb_01_rgbd_cam -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_01_rgbd_cam">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#DepthCamera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_yolo -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_yolo">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#YOLOv5s6"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/def/orka#loc_tb_01_gyro -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#loc_tb_01_gyro">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#locobot_01_lokobuki -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#locobot_01_lokobuki">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#LocobotWX250s"/>
     </owl:NamedIndividual>
     
 
@@ -2948,6 +3295,21 @@ When these sensors activate, the activation implies the location of an entity at
         <oboe-core:ofCharacteristic rdf:resource="https://w3id.org/def/orka#yaw_tb_01"/>
         <oboe-core:usesStandard rdf:resource="https://w3id.org/def/orka#standard_mes_tb_gyro_01"/>
         <sosa:madeBySensor rdf:resource="https://w3id.org/def/orka#tb_01_gyro"/>
+        <orka:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</orka:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#mes_yolo_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#mes_yolo_01"/>
+    
+
+
+    <!-- https://w3id.org/def/orka#obs_cam_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#obs_cam_01">
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
     </owl:NamedIndividual>
     
 
@@ -2958,6 +3320,14 @@ When these sensors activate, the activation implies the location of an entity at
         <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
         <oboe-core:hasMeasurement rdf:resource="https://w3id.org/def/orka#mes_tb_gyro_01"/>
         <oboe-core:ofEntity rdf:resource="https://w3id.org/def/orka#ent_tb_01_gyro_01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#obs_yolo_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#obs_yolo_01">
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
     </owl:NamedIndividual>
     
 
@@ -3096,7 +3466,7 @@ When these sensors activate, the activation implies the location of an entity at
     <!-- https://w3id.org/def/orka#turtlebot_01 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#turtlebot_01">
-        <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
+        <rdf:type rdf:resource="https://w3id.org/def/orka#TurtleBot3Burger"/>
         <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_accelerometer"/>
         <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_lw"/>
         <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_rw"/>
@@ -3284,6 +3654,21 @@ When these sensors activate, the activation implies the location of an entity at
             <rdf:Description rdf:about="https://w3id.org/def/orka#Shape"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#SizeProperty"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#Structure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5l"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5l6"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5m"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5m6"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5n"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5n6"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5s"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5s6"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5x"/>
+            <rdf:Description rdf:about="https://w3id.org/def/orka#YOLOv5x6"/>
         </owl:members>
     </rdf:Description>
     
