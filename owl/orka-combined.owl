@@ -5,6 +5,7 @@
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -117,10 +118,19 @@
     <!-- http://www.w3.org/ns/sosa/observes -->
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observes">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#observesCharacteristic"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation"/>
             <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
         </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/implementedBy -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implementedBy">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#implementedOn"/>
     </rdf:Description>
     
 
@@ -132,6 +142,17 @@
         <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
         <rdfs:comment>a relationship between a procedure/protocol and a characteristic</rdfs:comment>
         <rdfs:label>calculates characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#canDetect -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#canDetect">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+        <rdfs:comment>Defines the relationship between an obejct detection algorithm and entities</rdfs:comment>
+        <rdfs:label>can detect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -164,12 +185,44 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasColor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasColor">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasDensity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasDensity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasLocation -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasLocation">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
         <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
         <rdfs:range rdf:resource="https://w3id.org/def/orka#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasObservableCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasObservableCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasOrientation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasOrientation">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
     </owl:ObjectProperty>
     
 
@@ -185,11 +238,26 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasSize -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasSize">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasWeight -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasWeight">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasObservableCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#implementedOn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#implementedOn">
-        <rdfs:comment>Connects the robot to the procedures implemented on the given instance of the robot.</rdfs:comment>
-        <rdfs:label>implemented on</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -233,6 +301,12 @@
     
 
 
+    <!-- https://w3id.org/def/orka#observesCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observesCharacteristic"/>
+    
+
+
     <!-- https://w3id.org/def/orka#observesOther -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observesOther">
@@ -261,9 +335,33 @@
     
 
 
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasPrecision -->
+
+    <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasPrecision">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasAccuracy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasAlgorithmCharacteristic -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasAlgorithmCharacteristic"/>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasAngularResolution -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasAngularResolution">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -285,10 +383,26 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasDetectionRange -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasDetectionRange">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasDetectionThreshold -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasDetectionThreshold">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasDeepLearningModelCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasEnergyConsumption -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasEnergyConsumption">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
     </owl:DatatypeProperty>
     
 
@@ -356,6 +470,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasMaxRange -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasMaxRange">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasMeasurementRange -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasMeasurementRange">
@@ -363,6 +485,14 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>The measurement range of the sensor device</rdfs:comment>
         <rdfs:label>has measurement range</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasMinRange -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasMinRange">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
     </owl:DatatypeProperty>
     
 
@@ -405,6 +535,20 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasScanningFrequency -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasScanningFrequency">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#hasSensorCharacteristic -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasSensorCharacteristic"/>
+    
+
+
     <!-- https://w3id.org/def/orka#hasValue -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasValue">
@@ -433,10 +577,7 @@
 
     <!-- https://w3id.org/def/orka#inDataSet -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#inDataSet">
-        <rdfs:comment>Representing the relationship between datasets and classes that are in the dataset.</rdfs:comment>
-        <rdfs:label>in dataset</rdfs:label>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#inDataSet"/>
     
 
 
@@ -449,6 +590,12 @@
         <rdfs:comment>The SPARQL endpoint of a Semantic Web Knowledge Repository</rdfs:comment>
         <rdfs:label>has sparql endpoint</rdfs:label>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#trainedOnDataSet -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#trainedOnDataSet"/>
     
 
 
@@ -557,12 +704,6 @@
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/def/orka#implementedOn"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/def/orka#Robot"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </rdf:Description>
     
 
@@ -1496,6 +1637,12 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
 
     <owl:Class rdf:about="https://w3id.org/def/orka#GazeDetector">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#HumanPoseEstimationAlgorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#trainedOnDataSet"/>
+                <owl:hasValue>L2CSNET</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1621,6 +1768,21 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     
 
 
+    <!-- https://w3id.org/def/orka#HumanFace -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#HumanFace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#PhysicalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#inDataSet"/>
+                <owl:hasValue>L2CSNET</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Human Face</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#HumanPoseEstimationAlgorithm -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#HumanPoseEstimationAlgorithm">
@@ -1644,7 +1806,7 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
-                <owl:allValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Sensors used to identify objects or individuals based on specific characteristics or signals. Examples are biometric scanners and RFID readers used in security and inventory management.</rdfs:comment>
@@ -1740,6 +1902,14 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     <owl:Class rdf:about="https://w3id.org/def/orka#Knowledge_Repository">
         <rdfs:comment>This class represents the external sources of knowledge ORKA can utilise such as WikiData and DBpedia.</rdfs:comment>
         <rdfs:label>Knowledge Repository</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#L2CSNET_GazeDetector -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#L2CSNET_GazeDetector">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#GazeDetector"/>
     </owl:Class>
     
 
@@ -2071,6 +2241,12 @@ TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/def/orka#inDataSet"/>
+                <owl:hasValue>L2CSNET</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#inDataSet"/>
                 <owl:hasValue>MSCOCO</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2223,6 +2399,39 @@ Despite the name, these entities can be virtual.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:comment>A device that emits radio frequency signals used for positioning or navigation. Used in indoor positioning systems.</rdfs:comment>
         <rdfs:label>Radio Frequency Beacon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#RPLIDAR_A2 -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#RPLIDAR_A2">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Laser_Ranging"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasAngularResolution"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.225</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasMaxRange"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12000</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasMinRange"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasScanningFrequency"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>RPLiDAR A2</rdfs:label>
     </owl:Class>
     
 
@@ -3030,6 +3239,15 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
+    <!-- https://w3id.org/def/orka#WheelDropSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#WheelDropSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
+        <rdfs:label>Wheel Drop Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#Width -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Width">
@@ -3057,6 +3275,12 @@ When these sensors activate, the activation implies the location of an entity at
     <owl:Class rdf:about="https://w3id.org/def/orka#YOLO">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#DeepLearningModel"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ObjectDetectionAlgorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/def/orka#trainedOnDataSet"/>
+                <owl:hasValue>MSCOCO</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -3228,6 +3452,35 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
+    <!-- https://w3id.org/def/orka#char_bumper_event -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#char_bumper_event"/>
+    
+
+
+    <!-- https://w3id.org/def/orka#char_orange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#char_orange">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Color"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#dbpedia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#dbpedia">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Knowledge_Repository"/>
+        <orka:sparqlEndpoint>https://dbpedia.org/sparql</orka:sparqlEndpoint>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#ent_bumper_event -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#ent_bumper_event"/>
+    
+
+
     <!-- https://w3id.org/def/orka#ent_tb_01_gyro_01 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#ent_tb_01_gyro_01"/>
@@ -3240,18 +3493,39 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
-    <!-- https://w3id.org/def/orka#fetch_object -->
+    <!-- https://w3id.org/def/orka#eval_context_fetch_orange -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#fetch_object">
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_context_fetch_orange">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Context"/>
+        <orka:hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_fetch_orange"/>
+        <rdfs:comment>Consider a command from a human: &quot;Get me an orange&quot;</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/def/orka#hri_dialogue -->
+    <!-- https://w3id.org/def/orka#eval_context_hri_dialogue -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#hri_dialogue">
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_context_hri_dialogue">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Context"/>
+        <orka:hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_human"/>
+        <rdfs:comment>Consider a command from a human: &quot;Tell mom I&apos;ll be late&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#eval_req_ent_fetch_orange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_req_ent_fetch_orange">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Orange"/>
+        <orka:hasCharacteristic rdf:resource="https://w3id.org/def/orka#char_orange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#eval_req_ent_human -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_req_ent_human">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#HumanFace"/>
     </owl:NamedIndividual>
     
 
@@ -3264,10 +3538,182 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
-    <!-- https://w3id.org/def/orka#lb_yolo -->
+    <!-- https://w3id.org/def/orka#lb_procedure_l2csnet_gaze_detector -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_yolo">
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_procedure_l2csnet_gaze_detector">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#L2CSNET_GazeDetector"/>
+        <ssn:implementedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_procedure_slam_localisation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_procedure_slam_localisation">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#LocalisationProcedure"/>
+        <ssn:implementedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_procedure_yolov5_object_detector -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_procedure_yolov5_object_detector">
         <rdf:type rdf:resource="https://w3id.org/def/orka#YOLOv5s6"/>
+        <ssn:implementedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_bumper_center -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_bumper_center">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Bumper"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_bumper_left -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_bumper_left">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Bumper"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+        <orka:hasLocation rdf:resource="https://w3id.org/def/orka#loc_bumper_left"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_bumper_right -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_bumper_right">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Bumper"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_button1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_button1">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Switch"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_button2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_button2">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Switch"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_button3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_button3">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Switch"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_cliff_sensor_center -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_cliff_sensor_center">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Proximity_Sensor"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_cliff_sensor_left -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_cliff_sensor_left">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Proximity_Sensor"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_cliff_sensor_right -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_cliff_sensor_right">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Proximity_Sensor"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_encoder_cam_pitch -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_encoder_cam_pitch">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Brush_Encoder"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_encoder_cam_yaw -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_encoder_cam_yaw">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Brush_Encoder"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_gyroscope -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_gyroscope">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Gyroscope"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_intel_d435rgbd_camera -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_intel_d435rgbd_camera">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#DepthCamera"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_lidar -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_lidar">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#RPLIDAR_A2"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_wheeldrop_lw -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_wheeldrop_lw">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#WheelDropSensor"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#lb_sensor_wheeldrop_rw -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_wheeldrop_rw">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#WheelDropSensor"/>
+        <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#loc_bumper_left -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#loc_bumper_left">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#Location"/>
     </owl:NamedIndividual>
     
 
@@ -3280,10 +3726,12 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
-    <!-- https://w3id.org/def/orka#locobot_01_lokobuki -->
+    <!-- https://w3id.org/def/orka#mes_bumper_left -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#locobot_01_lokobuki">
-        <rdf:type rdf:resource="https://w3id.org/def/orka#LocobotWX250s"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#mes_bumper_left">
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+        <oboe-core:ofCharacteristic rdf:resource="https://w3id.org/def/orka#char_bumper_event"/>
+        <sosa:madeBySensor rdf:resource="https://w3id.org/def/orka#lb_sensor_bumper_left"/>
     </owl:NamedIndividual>
     
 
@@ -3303,6 +3751,16 @@ When these sensors activate, the activation implies the location of an entity at
     <!-- https://w3id.org/def/orka#mes_yolo_01 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#mes_yolo_01"/>
+    
+
+
+    <!-- https://w3id.org/def/orka#obs_bumber_left -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#obs_bumber_left">
+        <rdf:type rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+        <oboe-core:hasMeasurement rdf:resource="https://w3id.org/def/orka#mes_bumper_left"/>
+        <oboe-core:ofEntity rdf:resource="https://w3id.org/def/orka#ent_bumper_event"/>
+    </owl:NamedIndividual>
     
 
 
@@ -3332,10 +3790,12 @@ When these sensors activate, the activation implies the location of an entity at
     
 
 
-    <!-- https://w3id.org/def/orka#orange_fetching -->
+    <!-- https://w3id.org/def/orka#robot_locobot_01_lokobuki -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#orange_fetching">
-        <rdf:type rdf:resource="https://w3id.org/def/orka#Context"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#robot_locobot_01_lokobuki">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#LocobotWX250s"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#lb_sensor_wheeldrop_lw"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#lb_sensor_wheeldrop_rw"/>
     </owl:NamedIndividual>
     
 
@@ -3345,6 +3805,19 @@ When these sensors activate, the activation implies the location of an entity at
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#robot_lokobuki">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Robot"/>
         <sosa:hosts rdf:resource="https://w3id.org/def/orka#test_sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/orka#robot_turtlebot_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#robot_turtlebot_01">
+        <rdf:type rdf:resource="https://w3id.org/def/orka#TurtleBot3Burger"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_accelerometer"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_lw"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_rw"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_gyro"/>
+        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_lidar"/>
     </owl:NamedIndividual>
     
 
@@ -3400,7 +3873,6 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#tb_01_slam">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Slam"/>
-        <orka:implementedOn rdf:resource="https://w3id.org/def/orka#turtlebot_01"/>
     </owl:NamedIndividual>
     
 
@@ -3459,19 +3931,6 @@ When these sensors activate, the activation implies the location of an entity at
         <rdf:type rdf:resource="https://w3id.org/def/orka#Radar"/>
         <sosa:madeObservation rdf:resource="https://w3id.org/def/orka#test_measurement"/>
         <sosa:observes rdf:resource="https://w3id.org/def/orka#test_observable_property"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/def/orka#turtlebot_01 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#turtlebot_01">
-        <rdf:type rdf:resource="https://w3id.org/def/orka#TurtleBot3Burger"/>
-        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_accelerometer"/>
-        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_lw"/>
-        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_encoder_rw"/>
-        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_gyro"/>
-        <sosa:hosts rdf:resource="https://w3id.org/def/orka#tb_01_lidar"/>
     </owl:NamedIndividual>
     
 
@@ -3694,6 +4153,30 @@ When these sensors activate, the activation implies the location of an entity at
     <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/thing">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/uri">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment></rdfs:comment>
@@ -3784,6 +4267,209 @@ When these sensors activate, the activation implies the location of an entity at
                         <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CanDetect</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#inDataSet"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#trainedOnDataSet"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#canDetect"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a touch sensor is activated, it means there is an entity with characteristic Location same as the location of the sensor itself</rdfs:comment>
+        <rdfs:label>Touch Sensor Detection</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://w3id.org/def/orka#Touch_Sensor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#hasLocation"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://w3id.org/def/orka#Location"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#hasLocation"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>WikiData</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#hasWikiDataURI"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/thing"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/uri"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/orka#describedBy"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/thing"/>
+                        <swrl:argument2 rdf:resource="https://w3id.org/def/orka#wikidata"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
