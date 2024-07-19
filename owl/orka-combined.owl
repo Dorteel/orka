@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
-     xml:base="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/"
+<rdf:RDF xmlns="https://w3id.org/def/orka#"
+     xml:base="https://w3id.org/def/orka"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -19,8 +19,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/"
-     xmlns:oboe-core="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#"
-     xmlns:untitled-ontology-8="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8#">
+     xmlns:oboe-core="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#">
     <owl:Ontology rdf:about="https://w3id.org/def/orka">
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
         <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
@@ -696,14 +695,6 @@
 
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
         <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/Procedure -->
-
-    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
     </rdf:Description>
     
 
@@ -3470,7 +3461,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#dbpedia">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Knowledge_Repository"/>
-        <orka:sparqlEndpoint>https://dbpedia.org/sparql</orka:sparqlEndpoint>
+        <sparqlEndpoint>https://dbpedia.org/sparql</sparqlEndpoint>
     </owl:NamedIndividual>
     
 
@@ -3497,7 +3488,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_context_fetch_orange">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Context"/>
-        <orka:hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_fetch_orange"/>
+        <hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_fetch_orange"/>
         <rdfs:comment>Consider a command from a human: &quot;Get me an orange&quot;</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -3507,7 +3498,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_context_hri_dialogue">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Context"/>
-        <orka:hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_human"/>
+        <hasRequiredEntity rdf:resource="https://w3id.org/def/orka#eval_req_ent_human"/>
         <rdfs:comment>Consider a command from a human: &quot;Tell mom I&apos;ll be late&quot;</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -3517,7 +3508,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#eval_req_ent_fetch_orange">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Orange"/>
-        <orka:hasCharacteristic rdf:resource="https://w3id.org/def/orka#char_orange"/>
+        <hasCharacteristic rdf:resource="https://w3id.org/def/orka#char_orange"/>
     </owl:NamedIndividual>
     
 
@@ -3579,7 +3570,7 @@ When these sensors activate, the activation implies the location of an entity at
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#lb_sensor_bumper_left">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Bumper"/>
         <sosa:isHostedBy rdf:resource="https://w3id.org/def/orka#robot_locobot_01_lokobuki"/>
-        <orka:hasLocation rdf:resource="https://w3id.org/def/orka#loc_bumper_left"/>
+        <hasLocation rdf:resource="https://w3id.org/def/orka#loc_bumper_left"/>
     </owl:NamedIndividual>
     
 
@@ -3743,7 +3734,7 @@ When these sensors activate, the activation implies the location of an entity at
         <oboe-core:ofCharacteristic rdf:resource="https://w3id.org/def/orka#yaw_tb_01"/>
         <oboe-core:usesStandard rdf:resource="https://w3id.org/def/orka#standard_mes_tb_gyro_01"/>
         <sosa:madeBySensor rdf:resource="https://w3id.org/def/orka#tb_01_gyro"/>
-        <orka:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</orka:hasValue>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</hasValue>
     </owl:NamedIndividual>
     
 
@@ -3856,7 +3847,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#tb_01_gyro">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Gyroscope"/>
-        <orka:hasLocation rdf:resource="https://w3id.org/def/orka#loc_tb_01_gyro"/>
+        <hasLocation rdf:resource="https://w3id.org/def/orka#loc_tb_01_gyro"/>
     </owl:NamedIndividual>
     
 
@@ -3939,7 +3930,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/orka#wikidata">
         <rdf:type rdf:resource="https://w3id.org/def/orka#Knowledge_Repository"/>
-        <orka:sparqlEndpoint>https://query.wikidata.org/</orka:sparqlEndpoint>
+        <sparqlEndpoint>https://query.wikidata.org/</sparqlEndpoint>
     </owl:NamedIndividual>
     
 
