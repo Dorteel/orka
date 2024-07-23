@@ -68,3 +68,56 @@
 # 	LocalisationProcedure
 # 		Slam
 
+
+Sensors
+    Exteroception Sensor
+    Proprioception Sensor
+    Active Sensor
+    Passive Sensor
+    Tactile Sensor
+        Switch
+        Bumper
+        Optical Barrier
+        Proximity Sensor
+    Haptic Sensor
+        Contact Array
+        Force Sensor
+        Torque Sensor
+        Resistive Sensor
+    Motor Sensor
+        Brush Encoder
+        Potentiometer
+        Resolver
+        Optical Encoder
+        Magnetic Encoder
+        Inductive Encoder
+        Capacity Encoder
+    Heading Sensor
+        Compass
+        Gyroscope
+        Inclinometer
+    Position Sensor
+        GPS
+        Active Optical
+        RF Beacon
+        Ultrasound Beacon
+        Reflective Beacon
+    Ranging Sensor
+        Capacitive Sensor
+        Magnetic Sensor
+        Camera
+        Sonar
+        Laser Range
+        Structures Light
+    Speed Sensor
+        Doppler Radar
+        Doppler Sound
+        Camera
+        Accelerometer
+    Identification
+        Camera
+        Radio Frequency Identification
+        Laser Ranging
+        Radar
+        Ultrasound
+        Sound

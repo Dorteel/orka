@@ -1,7 +1,7 @@
 import owlready2
 
 # Define the path to the OWL file
-owl_file_path = r"c:\Users\dorte\Documents\Repositories\ontologies\orka\owl\orka.owl"  # Replace with the actual path to your file
+owl_file_path = r"owl/orka.owl"  # Replace with the actual path to your file
 
 # Load the ontology
 onto = owlready2.get_ontology(owl_file_path).load()
@@ -27,6 +27,6 @@ print(f"Number of individuals in the ontology: {len(list(onto.individuals()))}")
 
 with onto:
     # owlready2.sync_reasoner(infer_property_values = True, debug = 2)
-    owlready2.sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True, debug = 1)   
+    owlready2.sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True, debug = 0)   
     # print(onto.get_parents_of(onto.yaw_tb_01))
     onto.save(file="orka-inferred.owl", format="rdfxml")

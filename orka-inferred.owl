@@ -2239,7 +2239,7 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
   <hasCharacteristic rdf:resource="#yaw_tb_01"/>
   <sosa:hosts rdf:resource="#tb_01_lidar"/>
   <sosa:hosts rdf:resource="#tb_01_gyro"/>
-  <sosa:hosts rdf:resource="#tb_01_encoder_rw"/>
+  <sosa:hosts rdf:resource="#tb_01_encoder_lw"/>
   <sosa:hosts rdf:resource="#tb_01_accelerometer"/>
 </owl:NamedIndividual>
 
@@ -2547,12 +2547,12 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
 
 <owl:NamedIndividual rdf:about="#tb_01_encoder_lw">
   <rdf:type rdf:resource="#Brush_Encoder"/>
+  <sosa:isHostedBy rdf:resource="#ent_tb_01_gyro_01"/>
   <hasPowerRequirement rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">low</hasPowerRequirement>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#tb_01_encoder_rw">
   <rdf:type rdf:resource="#Brush_Encoder"/>
-  <sosa:isHostedBy rdf:resource="#ent_tb_01_gyro_01"/>
   <hasPowerRequirement rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">low</hasPowerRequirement>
 </owl:NamedIndividual>
 
