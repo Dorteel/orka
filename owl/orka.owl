@@ -78,7 +78,9 @@
 
     <!-- https://w3id.org/def/orka#hasWeBotsName -->
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/def/orka#hasWeBotsName"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/def/orka#hasWeBotsName">
+        <rdfs:comment>Representing the sensors available in the WeBots simulation environment, in a non-case-sensitve manner.</rdfs:comment>
+    </owl:AnnotationProperty>
     
 
 
@@ -870,7 +872,7 @@
         </rdfs:subClassOf>
         <rdfs:comment>A sensor that measures acceleration forces. Accelerometers used in smartphones and fitness trackers to detect movement and orientation.</rdfs:comment>
         <rdfs:label>Accelerometer</rdfs:label>
-        <hasWeBotsName>ACCELEROMETER</hasWeBotsName>
+        <hasWeBotsName>accelerometer</hasWeBotsName>
     </owl:Class>
     
 
@@ -922,6 +924,34 @@
                 <owl:hasValue>MSCOCO</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Altitude -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Altitude">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Altitude_Sensor -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Altitude_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ProprioceptorSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/def/orka#Altitude"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A sensory device that returns a measurement corresponding to the altitude the sensor is located at.
+
+TODO: need to add sensors that can measure altitude based on the orientation of the sensor (e.g. distance sensor)</rdfs:comment>
+        <rdfs:label>Altitude Sensor</rdfs:label>
+        <hasWeBotsName>altimeter</hasWeBotsName>
     </owl:Class>
     
 
@@ -988,6 +1018,14 @@
                 <owl:hasValue>MSCOCO</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Barometric_Altimeter -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Barometric_Altimeter">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Altitude_Sensor"/>
     </owl:Class>
     
 
@@ -1222,13 +1260,14 @@
     <!-- https://w3id.org/def/orka#Camera -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Camera">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
         <rdfs:comment>An optical sensor that captures visual information in the form of images or video. Examples are digital cameras in smartphones and surveillance systems.</rdfs:comment>
         <rdfs:label>Camera</rdfs:label>
+        <hasWeBotsName>camera</hasWeBotsName>
     </owl:Class>
     
 
@@ -1236,9 +1275,9 @@
     <!-- https://w3id.org/def/orka#Capacitive_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Capacitive_Sensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that detects changes in capacitance to measure distance or presence.</rdfs:comment>
         <rdfs:label>Capacitive Sensor</rdfs:label>
     </owl:Class>
@@ -1355,6 +1394,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Passive_Sensor"/>
         <rdfs:comment xml:lang="en">A sensor that detects the Earth&apos;s magnetic field to determine the direction relative to the North. Examples are magnetic compasses used in handheld navigation devices and smartphones.</rdfs:comment>
         <rdfs:label xml:lang="en">Compass</rdfs:label>
+        <hasWeBotsName>compass</hasWeBotsName>
     </owl:Class>
     
 
@@ -1497,6 +1537,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position_Sensor"/>
         <rdfs:label>Depth Camera</rdfs:label>
+        <hasWeBotsName>range_finder</hasWeBotsName>
     </owl:Class>
     
 
@@ -1519,6 +1560,26 @@
                 <owl:hasValue>MSCOCO</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Distance_Sensor -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Distance_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A sensor that measures the distance to an object.
+For example, laser rangefinders and ultrasonic distance sensors used in robotics and surveying.</rdfs:comment>
+        <rdfs:label>Ranging Sensor</rdfs:label>
+        <skos:altLabel>Distance Sensor</skos:altLabel>
+        <hasWeBotsName>distance_sensor</hasWeBotsName>
     </owl:Class>
     
 
@@ -1707,6 +1768,15 @@
 
 TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment>
         <rdfs:label>GPS</rdfs:label>
+        <hasWeBotsName>gps</hasWeBotsName>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#GPS_Altimeter -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#GPS_Altimeter">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Altitude_Sensor"/>
     </owl:Class>
     
 
@@ -1760,6 +1830,7 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
         </rdfs:subClassOf>
         <rdfs:comment>A sensor that measures the rate of rotation around a particular axis. Gyroscopes used in drones and smartphones to maintain orientation and stability.</rdfs:comment>
         <rdfs:label>Gyroscope</rdfs:label>
+        <hasWeBotsName>gyro</hasWeBotsName>
     </owl:Class>
     
 
@@ -1877,20 +1948,6 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     
 
 
-    <!-- https://w3id.org/def/orka#IMU -->
-
-    <owl:Class rdf:about="https://w3id.org/def/orka#IMU">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Heading_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
-        <rdfs:comment>Inertial Measurement Unit consists of an accelerometer and a gyroscope and optionally a magnetometer.</rdfs:comment>
-        <rdfs:label>Inertial Measurement Unit</rdfs:label>
-        <skos:altLabel>IMU</skos:altLabel>
-        <skos:altLabel>Inertial Unit</skos:altLabel>
-        <hasWeBotsName>INERTIAL_UNIT</hasWeBotsName>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/def/orka#IdentificationSensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#IdentificationSensor">
@@ -1943,6 +2000,20 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Motor_Sensor"/>
         <rdfs:comment>A sensor that measures position by detecting changes in inductance. Used in harsh environments for industrial applications.</rdfs:comment>
         <rdfs:label>Inductive Encoder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Inertial_Unit -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Inertial_Unit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Heading_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Speed_Sensor"/>
+        <rdfs:comment>Inertial Measurement Unit consists of an accelerometer and a gyroscope and optionally a magnetometer.</rdfs:comment>
+        <rdfs:label>Inertial Measurement Unit</rdfs:label>
+        <skos:altLabel>IMU</skos:altLabel>
+        <skos:altLabel>Inertial Unit</skos:altLabel>
+        <hasWeBotsName>inertial_unit</hasWeBotsName>
     </owl:Class>
     
 
@@ -2020,9 +2091,25 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     
 
 
-    <!-- https://w3id.org/def/orka#Laser_Ranging -->
+    <!-- https://w3id.org/def/orka#Latitude -->
 
-    <owl:Class rdf:about="https://w3id.org/def/orka#Laser_Ranging">
+    <owl:Class rdf:about="https://w3id.org/def/orka#Latitude">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Position"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Length -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Length">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#SizeProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Lidar -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Lidar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
@@ -2034,14 +2121,25 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
         </rdfs:subClassOf>
         <rdfs:comment>A sensor that measures distance by emitting a laser beam and calculating the time it takes for the beam to reflect back. Lidar sensors used in autonomous vehicles and mapping.</rdfs:comment>
         <rdfs:label>LiDAR</rdfs:label>
+        <hasWeBotsName>lidar</hasWeBotsName>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/def/orka#Length -->
+    <!-- https://w3id.org/def/orka#Light_Sensor -->
 
-    <owl:Class rdf:about="https://w3id.org/def/orka#Length">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#SizeProperty"/>
+    <owl:Class rdf:about="https://w3id.org/def/orka#Light_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Brightness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Sensors that observe the presence of light above a certain threshold.</rdfs:comment>
+        <rdfs:label>Light Sensor</rdfs:label>
+        <hasWeBotsName>light_sensor</hasWeBotsName>
     </owl:Class>
     
 
@@ -2099,8 +2197,8 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
     <!-- https://w3id.org/def/orka#Magnetic_Sensor -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Magnetic_Sensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that detects magnetic fields to measure position or movement. Examples are Hall effect sensors used in motor control and proximity sensing.</rdfs:comment>
         <rdfs:label>Magnetic Sensor</rdfs:label>
     </owl:Class>
@@ -2192,9 +2290,9 @@ TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
     
 
 
-    <!-- https://w3id.org/def/orka#ObjectDetectionAlgorithm -->
+    <!-- https://w3id.org/def/orka#ObjectDetector -->
 
-    <owl:Class rdf:about="https://w3id.org/def/orka#ObjectDetectionAlgorithm">
+    <owl:Class rdf:about="https://w3id.org/def/orka#ObjectDetector">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ComputerVisionAlgorithm"/>
     </owl:Class>
     
@@ -2346,6 +2444,23 @@ TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/def/orka#Photodiode -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Photodiode">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Light_Sensor"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/def/orka#Phototransistor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Phototransistor -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Phototransistor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Light_Sensor"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#PhysicalEntity -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#PhysicalEntity">
@@ -2405,6 +2520,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:comment>A sensor that detects the position of an object.</rdfs:comment>
         <rdfs:label>Position Sensor</rdfs:label>
+        <hasWeBotsName>position_sensor</hasWeBotsName>
     </owl:Class>
     
 
@@ -2498,7 +2614,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
     <!-- https://w3id.org/def/orka#RPLIDAR_A2 -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#RPLIDAR_A2">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Laser_Ranging"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Lidar"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/def/orka#hasAngularResolution"/>
@@ -2532,11 +2648,20 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Radar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses radio waves to detect objects and measure their distance and speed. Examples of radar systems are used in aviation.</rdfs:comment>
         <rdfs:label>Radar</rdfs:label>
+        <hasWeBotsName>radar</hasWeBotsName>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Radar_Altimeter -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Radar_Altimeter">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Altitude_Sensor"/>
     </owl:Class>
     
 
@@ -2599,25 +2724,6 @@ Despite the name, these entities can be virtual.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
         <rdfs:comment>A technology that uses electromagnetic fields to automatically identify and track tags attached to objects. RFID tags are used in inventory tracking and access control systems.</rdfs:comment>
         <rdfs:label>RFID</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/def/orka#Ranging_Sensor -->
-
-    <owl:Class rdf:about="https://w3id.org/def/orka#Ranging_Sensor">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A sensor that measures the distance to an object.
-For example, laser rangefinders and ultrasonic distance sensors used in robotics and surveying.</rdfs:comment>
-        <rdfs:label>Ranging Sensor</rdfs:label>
-        <skos:altLabel>Distance Sensor</skos:altLabel>
     </owl:Class>
     
 
@@ -2850,8 +2956,8 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Sonar">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses sound waves to detect objects and measure distances (mostly underwater).</rdfs:comment>
         <rdfs:label>Sonar</rdfs:label>
     </owl:Class>
@@ -2947,7 +3053,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
     <!-- https://w3id.org/def/orka#Structures_Light -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Structures_Light">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
@@ -3175,6 +3281,7 @@ For example, laser rangefinders and ultrasonic distance sensors used in robotics
         <rdfs:comment xml:lang="en">A sensor that detects and measures physical contact or touch.
 When these sensors activate, the activation implies the location of an entity at the range of the sensor. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics.</rdfs:comment>
         <rdfs:label xml:lang="en">Touch Sensor</rdfs:label>
+        <hasWeBotsName>touch_sensor</hasWeBotsName>
     </owl:Class>
     
 
@@ -3241,7 +3348,7 @@ When these sensors activate, the activation implies the location of an entity at
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Laser_Ranging"/>
+                        <owl:onClass rdf:resource="https://w3id.org/def/orka#Lidar"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
@@ -3259,9 +3366,9 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Ultrasound">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Active_Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Distance_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#IdentificationSensor"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Ranging_Sensor"/>
         <rdfs:comment>A sensor that uses high-frequency sound waves to detect objects and measure distances. Examples of ultrasonic sensors are used in medical imaging and parking assistance systems.</rdfs:comment>
         <rdfs:label>Ultrasound Sensor</rdfs:label>
     </owl:Class>
@@ -3367,7 +3474,7 @@ When these sensors activate, the activation implies the location of an entity at
 
     <owl:Class rdf:about="https://w3id.org/def/orka#YOLO">
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#DeepLearningModel"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ObjectDetectionAlgorithm"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#ObjectDetector"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/def/orka#trainedOnDataSet"/>
