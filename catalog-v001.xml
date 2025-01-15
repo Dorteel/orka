@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="file://owl/ssn-systems-fixed.owl/" uri="owl/ssn-systems-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file://owl/ssn-fixed.owl/" uri="owl/ssn-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file://owl/sosa-fixed.owl/" uri="owl/sosa-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://c:/Users/dorte/Documents/Repositories/ontologies/orka/owl/ssn-systems-fixed.owl" uri="owl/ssn-systems-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://c:/Users/dorte/Documents/Repositories/ontologies/orka/owl/ssn-fixed.owl" uri="owl/ssn-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://c:/Users/dorte/Documents/Repositories/ontologies/orka/owl/sosa-fixed.owl" uri="owl/sosa-fixed.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl" uri="owl/oboe-characteristics.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl" uri="owl/oboe-standards.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl" uri="owl/oboe.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://example.org/converted_ontology.owl" uri="orka.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-aur/" uri="owl/depracated/orka-aur-aligned.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-backup/" uri="owl/depracated/orka-full-backup.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-characteristic" uri="owl/depracated/rpo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-characteristics/" uri="owl/depracated/orka-characteristic.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/rpo.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/orka-aur.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/orka-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-dul/" uri="owl/depracated/orka-dul.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="owl/depracated/orka-full.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="owl/depracated/orka-full.owx"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-full-inferred" uri="owl/depracated/orka-full-inferred.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/orka-oboe/" uri="owl/depracated/orka-oboe.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/dorte/perception-ontology/" uri="owl/depracated/rpo-testcase.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/kai/orka/2024/1/untitled-ontology-28" uri="owl/depracated/orka-dul.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.semanticweb.org/kai/orka/2024/2/untitled-ontology-41" uri="owl/depracated/orka-dul-alignment.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/" uri="owl/depracated/orka-inprogress.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="duplicate:http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/" uri="owl/depracated/orka-ssn.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.w3.org/ns/sosa/" uri="owl/sosa-fixed.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.w3.org/ns/ssn/" uri="owl/ssn-fixed.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="http://www.w3.org/ns/ssn/systems/" uri="owl/ssn-systems-fixed.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="https://w3id.org/def/orka" uri="orka-inferred.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="https://w3id.org/def/orka/" uri="owl/orka-inferred.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-ekaw.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-backup.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-combined.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1734014305262" name="shadowed:https://w3id.org/def/orka" uri="owl/orka.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl" uri="owl/oboe-characteristics.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl" uri="owl/oboe-standards.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl" uri="owl/oboe.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-aur/" uri="owl/depracated/orka-aur-aligned.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-backup/" uri="owl/depracated/orka-full-backup.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-characteristic" uri="owl/depracated/rpo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-characteristics/" uri="owl/depracated/orka-characteristic.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/rpo.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/orka-aur.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/dorte/orka-core" uri="owl/depracated/orka-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-dul/" uri="owl/depracated/orka-dul.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="owl/depracated/orka-full.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/dorte/orka-full" uri="owl/depracated/orka-full.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-full-inferred" uri="owl/depracated/orka-full-inferred.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/orka-oboe/" uri="owl/depracated/orka-oboe.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/dorte/perception-ontology/" uri="owl/depracated/rpo-testcase.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/kai/orka/2024/1/untitled-ontology-28" uri="owl/depracated/orka-dul.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/kai/orka/2024/2/untitled-ontology-41" uri="owl/depracated/orka-dul-alignment.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.semanticweb.org/kai/orka/2025/0/untitled-ontology-91" uri="orvis_testing_inferred.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/" uri="owl/depracated/orka-inprogress.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/" uri="owl/depracated/orka-ssn.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.w3.org/ns/sosa/" uri="owl/sosa-fixed.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.w3.org/ns/ssn/" uri="owl/ssn-fixed.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="http://www.w3.org/ns/ssn/systems/" uri="owl/ssn-systems-fixed.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:https://w3id.org/def/orka" uri="orka_testing.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:https://w3id.org/def/orka" uri="orvis_testing.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:https://w3id.org/def/orka" uri="orvis_testing_owlready_inferred.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:https://w3id.org/def/orka" uri="fixed_orka.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="duplicate:https://w3id.org/def/orka" uri="orka.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="https://w3id.org/def/orka/" uri="owl/orka-inferred.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka_orvis.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/updated_orka.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka_testing.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-ekaw.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/updated_orka_test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-backup.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/fixed_orka.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka_orvis_test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka-combined.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1736938808749" name="shadowed:https://w3id.org/def/orka" uri="owl/orka.owl"/>
     </group>
 </catalog>

@@ -1,0 +1,2835 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka"
+         xmlns="https://w3id.org/def/orka#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+         xmlns:term="http://purl.org/dc/terms/"
+         xmlns:core="http://www.w3.org/2004/02/skos/core#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka">
+  <owl:imports rdf:resource="file:///home/user/pel_ws/src/orvis/orka/owl/owl/sosa-fixed.owl"/>
+  <owl:imports rdf:resource="file:///home/user/pel_ws/src/orvis/orka/owl/owl/ssn-fixed.owl"/>
+  <owl:imports rdf:resource="file:///home/user/pel_ws/src/orvis/orka/owl/owl/ssn-systems-fixed.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl"/>
+  <term:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web.</term:description>
+  <term:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://creativecommons.org/publicdomain/zero/1.0/</term:license>
+  <term:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology for Robotic Knowledge Acqusition</term:title>
+  <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasValue">
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult"/>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic">
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observedProperty"/>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity">
+  <owl:inverseOf rdf:resource="#observedIn"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observedIn">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates an entity to an observation</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observed in</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesProtocol">
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure"/>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hosts"/>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor"/>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeObservation"/>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observes">
+  <owl:equivalentProperty rdf:resource="#observesCharacteristic"/>
+  <owl:propertyChainAxiom>
+    <rdf:Description>
+      <rdf:first rdf:resource="http://www.w3.org/ns/sosa/madeObservation"/>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </owl:propertyChainAxiom>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesCharacteristic"/>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/implementedBy">
+  <owl:equivalentProperty rdf:resource="#implementedOn"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedOn">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#calculatesCharacteristic">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a relationship between a procedure/protocol and a characteristic</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calculates characteristic</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canDetect">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines the relationship between an obejct detection algorithm and entities</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">can detect</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describedBy">
+  <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:range rdf:resource="#Knowledge_Repository"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Connects the entities to some external Knowledge Repository that describes the given entity.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">described by</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacteristic">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+  <owl:propertyChainAxiom>
+    <rdf:Description>
+      <rdf:first rdf:resource="#observedIn"/>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </owl:propertyChainAxiom>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links entities to the characteristics possessed by the entity</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has characteristic</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasColor">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasObservableCharacteristic">
+  <rdfs:subPropertyOf rdf:resource="#hasCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDensity">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocation">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+  <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasOrientation">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRequiredEntity">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property connects the context to the entities required by the context</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has required entity</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSize">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasWeight">
+  <rdfs:subPropertyOf rdf:resource="#hasObservableCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#inferrableProperty">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A property between a Characteristic and a Sensor, which is not the directly observed characteristic of the device.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inferrable property</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measuresUsingStandard">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard"/>
+  <owl:propertyChainAxiom>
+    <rdf:Description>
+      <rdf:first rdf:resource="http://www.w3.org/ns/sosa/madeObservation"/>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesStandard"/>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </owl:propertyChainAxiom>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relationship between a sensor and a measurement standard</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measures using standard</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesOther">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+  <owl:propertyDisjointWith rdf:resource="#observesSelf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesSelf">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSensorCharacteristic"/>
+
+<owl:DatatypeProperty rdf:about="#hasAccuracy">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasAlgorithmCharacteristic"/>
+
+<owl:DatatypeProperty rdf:about="#hasAngularResolution">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDBpediaURI">
+  <rdfs:subPropertyOf rdf:resource="#hasExternalDescription"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has DBpedia URI</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasExternalDescription">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has external description</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDeepLearningModelCharacteristic">
+  <rdfs:subPropertyOf rdf:resource="#hasAlgorithmCharacteristic"/>
+  <rdfs:domain rdf:resource="#DeepLearningModel"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDetectionRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDetectionThreshold">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEnergyConsumption">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFLOPsat640">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Floating Point Operations per Second at a model input size of 640 pixels, measured in billions. This metric estimates the computational complexity of a single forward pass through the model. Higher FLOPs indicate a more computationally intensive model, which can impact inference speed and power consumption.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Floating Point Operations per Second at a model input size of 640 pixels</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeed">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedCPUb1">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedV100b1">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model's performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedV100b32">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model's performance on high-end GPU hardware, relevant for environments where fast processing times are critical.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInputSize">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Refers to the size of the image (in pixels) that is used as an input</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has input size</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMaxRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeasurementRange">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The measurement range of the sensor device</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has measurement range</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMinRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasNumberOfParameters">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the number of trainable parameters of the mode, measured in millions. Gives an idea of the model's complexity and size.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number of parameters</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPowerRequirement">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:range>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </rdfs:range>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Used to indicate the power requirement of the sensor devices</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has power requirement</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasScanningFrequency">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasValue">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasWikiDataURI">
+  <rdfs:subPropertyOf rdf:resource="#hasExternalDescription"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has WikiData URI</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasmAPval50-95">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a metric that evaluates the accuracy of an object detector algorithm. The value defines the mean Average Percision for detections that have an overlap with the ground truth value (Intersection over Union) of 50% to 95% with 5% increments.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#inDataSet"/>
+
+<owl:DatatypeProperty rdf:about="#sparqlEndpoint">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Knowledge_Repository"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The SPARQL endpoint of a Semantic Web Knowledge Repository</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has sparql endpoint</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trainedOnDataSet"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+
+<owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+
+<owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+
+<owl:AnnotationProperty rdf:about="#hasWeBotsName">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representing the sensors available in the WeBots simulation environment, in a non-case-sensitve manner.</rdfs:comment>
+</owl:AnnotationProperty>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Procedure"/>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#describedBy"/>
+      <owl:someValuesFrom rdf:resource="#Knowledge_Repository"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCharacteristic"/>
+      <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Knowledge_Repository">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class represents the external sources of knowledge ORKA can utilise such as WikiData and DBpedia.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knowledge Repository</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="#SpatialProperty"/>
+  <owl:disjointWith rdf:resource="#Orientation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasRequiredEntity"/>
+      <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A placeholder representation for the context the robot is deployed in. It involves the required entity (as a representation of the task).</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Context</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+
+<owl:Class rdf:about="#DeepLearningModel">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Result">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/System">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/Condition"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/OperatingProperty"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/OperatingRange"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalProperty"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SurvivalRange"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
+
+<owl:Class rdf:about="#Accelerometer">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:someValuesFrom rdf:resource="#Orientation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures acceleration forces. Accelerometers used in smartphones and fitness trackers to detect movement and orientation.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accelerometer</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accelerometer</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Exteroceptor_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that provides information about the external environment surrounding the device.</rdfs:comment>
+  <rdfs:label xml:lang="en">Exteroceptor Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Passive_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPowerRequirement"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">A sensor that does not require an external power source and relies on detecting energy emitted or reflected by objects.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: Power requirement needs to be further defined</rdfs:comment>
+  <rdfs:label xml:lang="en">Passive Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Speed_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sensors that measures the speed of an object, such as speedometers and tachometers used in vehicles and machinery.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Orientation">
+  <rdfs:subClassOf rdf:resource="#SpatialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Active_Optical">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses light to actively measure position or distance.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active Optical</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Active_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPowerRequirement"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">A sensor that requires an external power source to operate and emits its own signal which interacts with the environment and measures the return signal.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: Power requirement needs to be further defined</rdfs:comment>
+  <rdfs:label xml:lang="en">Active Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Position_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects the position of an object.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Position Sensor</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position_sensor</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Age">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TemporalProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Airplane">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalEntity">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCharacteristic"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entities that have some form of physical existence. Used to denote entities that possess some characteristics that everyday objects possess (e.g. weight, color, size, etc.).
+Despite the name, these entities can be virtual.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical Entity</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Altitude">
+  <rdfs:subClassOf rdf:resource="#Position"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Position">
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Altitude_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:someValuesFrom rdf:resource="#Altitude"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensory device that returns a measurement corresponding to the altitude the sensor is located at.
+
+TODO: need to add sensors that can measure altitude based on the orientation of the sensor (e.g. distance sensor)</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altitude Sensor</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">altimeter</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#ProprioceptorSensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+          <owl:allValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#Robot"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                  <owl:someValuesFrom rdf:resource="#ProprioceptorSensor"/>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:allValuesFrom>
+        </owl:Restriction>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A class of sensors that measure the internal state of the robot, or parts of the robot</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proprioceptor Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Angle">
+  <rdfs:subClassOf rdf:resource="#Orientation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AngularForce">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectProperty">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Angular_position">
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Apple">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Backpack">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Banana">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Barometric_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Baseball_bat">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Baseball_glove">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bear">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bed">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bench">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bicycle">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bird">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Boat">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Book">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bottle">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Bowl">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Brightness">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EnvironmentProperty">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Broccoli">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Brush_Encoder">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of encoder that uses brushes to make contact with a commutator to measure position. Used in older types of motors and machinery to provide position feedback on the motor</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brush Encoder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Motor_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sensors that monitor and measure various parameters of a motor's operation. Examples are encoders and tachometers used in industrial machinery to monitor motor speed and position.
+
+TODO: Add motor as observed entity, and as part_of Robot</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Motor Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Bumper">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A type of touch sensor that detects physical collisions or impacts, typically used in robotic applications to detect obstacles. Examples include bump sensors on robotic vacuum cleaners and collision detection bumpers on automated guided vehicles.</rdfs:comment>
+  <rdfs:label xml:lang="en">Bumper</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Touch_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMeasurementRange"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">A sensor that detects and measures physical contact or touch.
+When these sensors activate, the activation implies the location of an entity at the range of the sensor. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics.</rdfs:comment>
+  <rdfs:label xml:lang="en">Touch Sensor</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">touch_sensor</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Bus">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Cake">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An optical sensor that captures visual information in the form of images or video. Examples are digital cameras in smartphones and surveillance systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camera</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">camera</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Distance_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures the distance to an object.
+For example, laser rangefinders and ultrasonic distance sensors used in robotics and surveying.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ranging Sensor</rdfs:label>
+  <core:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distance Sensor</core:altLabel>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distance_sensor</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#IdentificationSensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sensors used to identify objects or individuals based on specific characteristics or signals. Examples are biometric scanners and RFID readers used in security and inventory management.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identification Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacitive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects changes in capacitance to measure distance or presence.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capacitive Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacity_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures the rotational position using changes in capacitance.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capacity Encoder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Car">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Carrot">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Cat">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Cell_phone">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Chair">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Clock">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Color">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VisualCharactersitic">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Compass">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that detects the Earth's magnetic field to determine the direction relative to the North. Examples are magnetic compasses used in handheld navigation devices and smartphones.</rdfs:comment>
+  <rdfs:label xml:lang="en">Compass</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compass</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Heading_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Orientation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">A sensor used to determine the orientation or direction of an object. Examples are gyroscopes and magnetic compasses used in navigation systems.</rdfs:comment>
+  <rdfs:label xml:lang="en">Heading Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ComplexStructure">
+  <rdfs:subClassOf rdf:resource="#Structure"/>
+  <owl:disjointWith rdf:resource="#SimpleStructure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Structure">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SimpleStructure">
+  <rdfs:subClassOf rdf:resource="#Structure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputerVisionAlgorithm">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#calculatesCharacteristic"/>
+      <owl:allValuesFrom rdf:resource="#ObjectType"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectType">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Contact_Array">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor composed of multiple contact points arranged in an array to detect touch or pressure across a surface. Examples include touch-sensitive surfaces in robotics and multitouch screens.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contact Array</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Couch">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Cow">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#CreationDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Cup">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#DataSet"/>
+
+<owl:Class rdf:about="#Density">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Depth">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SizeProperty">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DepthCamera">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depth Camera</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">range_finder</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#DestructionDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dining_table">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Dog">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Donut">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radar sensor that measures the frequency shift of returned signals to determine the speed of an object. Doppler radar is used in weather forecasting and traffic speed monitoring.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Doppler Radar</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Sound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses the Doppler effect to measure the speed of sound waves reflecting off moving objects.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Doppler Sound Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Elephant">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ExpirationDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FeatureDescriptor">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fire_hydrant">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Flexibility">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Force_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that measures the amount of force applied to an object. Examples include load cells used in weighing scales and force-sensitive resistors used in haptic devices.</rdfs:comment>
+  <rdfs:label xml:lang="en">Force Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fork">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Frisbee">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#GPS">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A satellite-based sensor system that provides location and time information anywhere on Earth. GPS receivers used in navigation devices and smartphones.
+
+TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gps</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#GPS_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GazeDetector">
+  <rdfs:subClassOf rdf:resource="#HumanPoseEstimationAlgorithm"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#trainedOnDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L2CSNET</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#HumanPoseEstimationAlgorithm">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GeometricProperty">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Giraffe">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Gyroscope">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#measuresUsingStandard"/>
+      <owl:allValuesFrom rdf:resource="#RadianPerSecond"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures the rate of rotation around a particular axis. Gyroscopes used in drones and smartphones to maintain orientation and stability.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gyroscope</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gyro</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#RadianPerSecond">
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#CompositeUnit"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasUnit"/>
+      <owl:someValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasUnit"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#DerivedUnit"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasUnit"/>
+              <owl:allValuesFrom rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Second"/>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasPower"/>
+              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-1</owl:hasValue>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#standardFor"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+              <owl:allValuesFrom rdf:resource="#Orientation"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Hair_drier">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Handbag">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Height">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Horse">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Hot_dog">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#HumanFace">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L2CSNET</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human Face</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Humidity">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ImageSegmentationAlgorithm">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Inclination">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The angle of tilt of an object relative to gravity.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inclination</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Inclinometer">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures the angle of tilt or inclination of an object relative to gravity. Inclinometers used in construction equipment and mobile devices to detect orientation.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inclinometer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Inductive_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures position by detecting changes in inductance. Used in harsh environments for industrial applications.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inductive Encoder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Inertial_Unit">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inertial Measurement Unit consists of an accelerometer and a gyroscope and optionally a magnetometer.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inertial Measurement Unit</rdfs:label>
+  <core:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMU</core:altLabel>
+  <core:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inertial Unit</core:altLabel>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inertial_unit</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Keyboard">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Kite">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Knife">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#L2CSNET_GazeDetector">
+  <rdfs:subClassOf rdf:resource="#GazeDetector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Laptop">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Latitude">
+  <rdfs:subClassOf rdf:resource="#Position"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Length">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Lidar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures distance by emitting a laser beam and calculating the time it takes for the beam to reflect back. Lidar sensors used in autonomous vehicles and mapping.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LiDAR</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lidar</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Light_Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Brightness"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sensors that observe the presence of light above a certain threshold.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Light Sensor</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">light_sensor</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#LinearForce">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocalisationProcedure">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#calculatesCharacteristic"/>
+      <owl:allValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#SpatialProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocobotWX250s">
+  <rdfs:subClassOf rdf:resource="#Robot"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: Needs to express the equivalentclass that proprioception requires</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses a magnetic field to determine position or rotation. Magnetic encoders used in motor control.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnetic Encoder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Sensor">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects magnetic fields to measure position or movement. Examples are Hall effect sensors used in motor control and proximity sensing.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnetic Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialName">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Microphone">
+  <rdfs:subClassOf rdf:resource="#Sound"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sound">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects and measures sound waves. Examplse are microphones that are used in audio recording and voice recognition systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sound Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Microwave">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Motorcycle">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Mouse">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectDetector">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Barrier">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that detects the interruption of a light beam to determine the presence or absence of an object. Examples include photoelectric sensors used in security systems and safety light curtains in industrial automation.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optical Barrier</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses light to measure position or rotational speed. Optical encoders used in printers and CNC machines.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optical Encoder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Orange">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDBpediaURI"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://dbpedia.org/resource/Orange_(fruit)</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasWikiDataURI"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.wikidata.org/wiki/Q13191</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Oven">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Parking_meter">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Pattern">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L2CSNET</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Photodiode">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+  <owl:disjointWith rdf:resource="#Phototransistor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Phototransistor">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pitch">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pizza">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Potentiometer">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Angular_position"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A variable resistor used to measure angular position.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potentiometer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Potted_plant">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Proximity_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
+  <rdfs:label xml:lang="en">Proximity Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#RF_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device that emits radio frequency signals used for positioning or navigation. Used in indoor positioning systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radio Frequency Beacon</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#RPLIDAR_A2">
+  <rdfs:subClassOf rdf:resource="#Lidar"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasAngularResolution"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.225</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMaxRange"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12000</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMinRange"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasScanningFrequency"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RPLiDAR A2</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses radio waves to detect objects and measure their distance and speed. Examples of radar systems are used in aviation.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radar</rdfs:label>
+  <hasWeBotsName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radar</hasWeBotsName>
+</owl:Class>
+
+<owl:Class rdf:about="#Radar_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Radio_Frequency_Identification">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A technology that uses electromagnetic fields to automatically identify and track tags attached to objects. RFID tags are used in inventory tracking and access control systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RFID</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Reflective_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses reflected signals to determine position or distance. Reflective beacons used in robotic navigation and tracking systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reflective Beacon</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Refrigerator">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Remote">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Resistive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications.</rdfs:comment>
+  <rdfs:label xml:lang="en">Resistive Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Resolver">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#Angular_position"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An electromechanical device that measures the angular position of a shaft. Resolvers used in aerospace and military applications for precise position measurement.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resolver</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Roll">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SIFT">
+  <rdfs:subClassOf rdf:resource="#FeatureDescriptor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sandwich">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Scissors">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Shape">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sheep">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Sink">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Skateboard">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Skis">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Slam">
+  <rdfs:subClassOf rdf:resource="#LocalisationProcedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Snowboard">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Sonar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses sound waves to detect objects and measure distances (mostly underwater).</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sonar</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Spoon">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Sports_ball">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Stop_sign">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Structures_Light">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+            <rdf:Description rdf:about="#Shape"/>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that projects a known pattern of light onto a surface and measures the deformation to determine shape or distance. Structured light sensors used in 3D scanning and gesture recognition.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structures Light</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Suitcase">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#SurfaceArea">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Surfboard">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Switch">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment xml:lang="en">Similar to Bumpers, a switch is a simple sensor that detects the opening or closing of an electrical circuit. Examples include mechanical switches used in keyboards and limit switches used in industrial machinery.</rdfs:comment>
+  <rdfs:label xml:lang="en">Switch</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#TV">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Teddy_bear">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Temperature">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+  <rdfs:subClassOf rdf:resource="#ThermalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ThermalProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tennis_racket">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Tie">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Toaster">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Toilet">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Toothbrush">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Torque_Sensor">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+      <owl:allValuesFrom rdf:resource="#AngularForce"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures the rotational force (torque) applied to an object. Examples include torque transducers used in motor control systems and torque sensors used in robotics to monitor joint movements.</rdfs:comment>
+  <rdfs:label xml:lang="en">Torque Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Traffic_light">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Train">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Truck">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#TurtleBot3Burger">
+  <rdfs:subClassOf rdf:resource="#Robot"/>
+  <rdfs:subClassOf>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+          <owl:onClass rdf:resource="#Accelerometer"/>
+          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+          <owl:onClass rdf:resource="#Gyroscope"/>
+          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+          <owl:onClass rdf:resource="#Lidar"/>
+          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+          <owl:onClass rdf:resource="#Brush_Encoder"/>
+          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses high-frequency sound waves to detect objects and measure distances. Examples of ultrasonic sensors are used in medical imaging and parking assistance systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ultrasound Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that uses ultrasonic waves to determine distance or position. Ultrasonic beacons used in indoor navigation and positioning systems.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ultrasound Beacon</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Umbrella">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Vase">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Volume">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Weight">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WheelDropSensor">
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wheel Drop Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Width">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Wine_glass">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLO">
+  <rdfs:subClassOf rdf:resource="#DeepLearningModel"/>
+  <rdfs:subClassOf rdf:resource="#ObjectDetector"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#trainedOnDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5l">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInferenceSpeedCPUb1"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">430</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5l6">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInferenceSpeedCPUb1"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1784</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInputSize"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5m">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5m6">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInputSize"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5n">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5n6">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInputSize"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5s">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5s6">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInferenceSpeedCPUb1"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.2</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInputSize"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasmAPval50-95"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.8</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5x">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+</owl:Class>
+
+<owl:Class rdf:about="#YOLOv5x6">
+  <rdfs:subClassOf rdf:resource="#YOLO"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasInputSize"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1280</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Yaw">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Zebra">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inDataSet"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSCOCO</owl:hasValue>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#dpt_hybrid_midas">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#detr_resnet_50_panoptic">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kosmos_2_patch14_224">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#timesformer_hr_finetuned_k600">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#material_detector">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#detr_resnet_50">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#yolos_tiny">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#segformer_b1">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#owl_v2">
+  <rdf:type rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:NamedIndividual>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasPrecision">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</rdf:Description>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc"/>
+
+<swrl:Variable rdf:about="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Touch_Sensor"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasLocation"/>
+              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+              <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                  <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                  <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+                      <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                      <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
+                          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                          <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+                              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                              <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Location"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasLocation"/>
+              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+              <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If a touch sensor is activated, it means there is an entity with characteristic Location same as the location of the sensor itself</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Touch Sensor Detection</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#inDataSet"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+          <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#trainedOnDataSet"/>
+              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+              <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+                  <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+                </swrl:ClassAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#canDetect"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg"/>
+          <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CanDetect</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#ProprioceptorSensor"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+                  <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                </swrl:ClassAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                      <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r"/>
+                      <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                          <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+                              <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+                              <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
+          <swrl:argument1 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o"/>
+          <swrl:argument2 rdf:resource="http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proprioception</rdfs:label>
+</swrl:Imp>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#YOLOv5l"/>
+    <rdf:Description rdf:about="#YOLOv5l6"/>
+    <rdf:Description rdf:about="#YOLOv5m"/>
+    <rdf:Description rdf:about="#YOLOv5m6"/>
+    <rdf:Description rdf:about="#YOLOv5n"/>
+    <rdf:Description rdf:about="#YOLOv5n6"/>
+    <rdf:Description rdf:about="#YOLOv5s"/>
+    <rdf:Description rdf:about="#YOLOv5s6"/>
+    <rdf:Description rdf:about="#YOLOv5x"/>
+    <rdf:Description rdf:about="#YOLOv5x6"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Shape"/>
+    <rdf:Description rdf:about="#SizeProperty"/>
+    <rdf:Description rdf:about="#Structure"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Pitch"/>
+    <rdf:Description rdf:about="#Roll"/>
+    <rdf:Description rdf:about="#Yaw"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#MaterialProperty"/>
+    <rdf:Description rdf:about="#SpatialProperty"/>
+    <rdf:Description rdf:about="#ThermalProperty"/>
+    <rdf:Description rdf:about="#VisualCharactersitic"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#MaterialProperty"/>
+    <rdf:Description rdf:about="#SpatialProperty"/>
+    <rdf:Description rdf:about="#TemporalProperty"/>
+    <rdf:Description rdf:about="#ThermalProperty"/>
+    <rdf:Description rdf:about="#VisualCharactersitic"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Depth"/>
+    <rdf:Description rdf:about="#Height"/>
+    <rdf:Description rdf:about="#Length"/>
+    <rdf:Description rdf:about="#SurfaceArea"/>
+    <rdf:Description rdf:about="#Volume"/>
+    <rdf:Description rdf:about="#Width"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Density"/>
+    <rdf:Description rdf:about="#Flexibility"/>
+    <rdf:Description rdf:about="#MaterialName"/>
+    <rdf:Description rdf:about="#Weight"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Color"/>
+    <rdf:Description rdf:about="#GeometricProperty"/>
+    <rdf:Description rdf:about="#Pattern"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Airplane"/>
+    <rdf:Description rdf:about="#Apple"/>
+    <rdf:Description rdf:about="#Backpack"/>
+    <rdf:Description rdf:about="#Banana"/>
+    <rdf:Description rdf:about="#Baseball_bat"/>
+    <rdf:Description rdf:about="#Baseball_glove"/>
+    <rdf:Description rdf:about="#Bear"/>
+    <rdf:Description rdf:about="#Bed"/>
+    <rdf:Description rdf:about="#Bench"/>
+    <rdf:Description rdf:about="#Bicycle"/>
+    <rdf:Description rdf:about="#Bird"/>
+    <rdf:Description rdf:about="#Boat"/>
+    <rdf:Description rdf:about="#Book"/>
+    <rdf:Description rdf:about="#Bottle"/>
+    <rdf:Description rdf:about="#Bowl"/>
+    <rdf:Description rdf:about="#Broccoli"/>
+    <rdf:Description rdf:about="#Bus"/>
+    <rdf:Description rdf:about="#Cake"/>
+    <rdf:Description rdf:about="#Car"/>
+    <rdf:Description rdf:about="#Carrot"/>
+    <rdf:Description rdf:about="#Cat"/>
+    <rdf:Description rdf:about="#Cell_phone"/>
+    <rdf:Description rdf:about="#Chair"/>
+    <rdf:Description rdf:about="#Clock"/>
+    <rdf:Description rdf:about="#Couch"/>
+    <rdf:Description rdf:about="#Cow"/>
+    <rdf:Description rdf:about="#Cup"/>
+    <rdf:Description rdf:about="#Dining_table"/>
+    <rdf:Description rdf:about="#Dog"/>
+    <rdf:Description rdf:about="#Donut"/>
+    <rdf:Description rdf:about="#Elephant"/>
+    <rdf:Description rdf:about="#Fire_hydrant"/>
+    <rdf:Description rdf:about="#Fork"/>
+    <rdf:Description rdf:about="#Frisbee"/>
+    <rdf:Description rdf:about="#Giraffe"/>
+    <rdf:Description rdf:about="#Hair_drier"/>
+    <rdf:Description rdf:about="#Handbag"/>
+    <rdf:Description rdf:about="#Horse"/>
+    <rdf:Description rdf:about="#Hot_dog"/>
+    <rdf:Description rdf:about="#Keyboard"/>
+    <rdf:Description rdf:about="#Kite"/>
+    <rdf:Description rdf:about="#Knife"/>
+    <rdf:Description rdf:about="#Laptop"/>
+    <rdf:Description rdf:about="#Microwave"/>
+    <rdf:Description rdf:about="#Motorcycle"/>
+    <rdf:Description rdf:about="#Mouse"/>
+    <rdf:Description rdf:about="#Orange"/>
+    <rdf:Description rdf:about="#Oven"/>
+    <rdf:Description rdf:about="#Parking_meter"/>
+    <rdf:Description rdf:about="#Person"/>
+    <rdf:Description rdf:about="#Pizza"/>
+    <rdf:Description rdf:about="#Potted_plant"/>
+    <rdf:Description rdf:about="#Refrigerator"/>
+    <rdf:Description rdf:about="#Remote"/>
+    <rdf:Description rdf:about="#Sandwich"/>
+    <rdf:Description rdf:about="#Scissors"/>
+    <rdf:Description rdf:about="#Sheep"/>
+    <rdf:Description rdf:about="#Sink"/>
+    <rdf:Description rdf:about="#Skateboard"/>
+    <rdf:Description rdf:about="#Skis"/>
+    <rdf:Description rdf:about="#Snowboard"/>
+    <rdf:Description rdf:about="#Spoon"/>
+    <rdf:Description rdf:about="#Sports_ball"/>
+    <rdf:Description rdf:about="#Stop_sign"/>
+    <rdf:Description rdf:about="#Suitcase"/>
+    <rdf:Description rdf:about="#Surfboard"/>
+    <rdf:Description rdf:about="#TV"/>
+    <rdf:Description rdf:about="#Teddy_bear"/>
+    <rdf:Description rdf:about="#Tennis_racket"/>
+    <rdf:Description rdf:about="#Tie"/>
+    <rdf:Description rdf:about="#Toaster"/>
+    <rdf:Description rdf:about="#Toilet"/>
+    <rdf:Description rdf:about="#Toothbrush"/>
+    <rdf:Description rdf:about="#Traffic_light"/>
+    <rdf:Description rdf:about="#Train"/>
+    <rdf:Description rdf:about="#Truck"/>
+    <rdf:Description rdf:about="#Umbrella"/>
+    <rdf:Description rdf:about="#Vase"/>
+    <rdf:Description rdf:about="#Wine_glass"/>
+    <rdf:Description rdf:about="#Zebra"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Age"/>
+    <rdf:Description rdf:about="#CreationDate"/>
+    <rdf:Description rdf:about="#DestructionDate"/>
+    <rdf:Description rdf:about="#ExpirationDate"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

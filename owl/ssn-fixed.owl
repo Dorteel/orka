@@ -21,10 +21,8 @@
         <dcterms:creator>
             <rdf:Description/>
         </dcterms:creator>
-        <dcterms:description xml:lang="en">This ontology describes sensors, actuators and observations, and related concepts. It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.</dcterms:description>
         <dcterms:license rdf:resource="http://www.opengeospatial.org/ogc/Software"/>
         <dcterms:license rdf:resource="http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"/>
-        <dcterms:rights>Copyright 2017 W3C/OGC.</dcterms:rights>
         <dcterms:title xml:lang="en">Semantic Sensor Network Ontology</dcterms:title>
         <vann:preferredNamespacePrefix>ssn</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://www.w3.org/ns/ssn/</vann:preferredNamespaceUri>
@@ -343,9 +341,9 @@
     
 
 
-    <!-- http://www.w3.org/ns/ssn/hasInput -->
+    <!-- http://www.w3.org/ns/ssn/hasInputType -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasInput">
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasInputType">
         <rdfs:comment xml:lang="en">Relation between a Procedure and an Input to it.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
         <rdfs:label xml:lang="en">has input</rdfs:label>
@@ -354,9 +352,9 @@
     
 
 
-    <!-- http://www.w3.org/ns/ssn/hasOutput -->
+    <!-- http://www.w3.org/ns/ssn/hasOutputType -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasOutput">
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasOutputType">
         <rdfs:comment xml:lang="en">Relation between a Procedure and an Output of it.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
         <rdfs:label xml:lang="en">has output</rdfs:label>
@@ -778,13 +776,13 @@
     <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasInputType"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Input"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasOutputType"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -994,7 +992,7 @@
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInputType"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
@@ -1004,7 +1002,7 @@
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInputType"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
@@ -1025,7 +1023,7 @@
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutputType"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
@@ -1035,7 +1033,7 @@
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutputType"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>

@@ -22,10 +22,8 @@
         <dcterms:creator>
             <rdf:Description/>
         </dcterms:creator>
-        <dcterms:description xml:lang="en">This ontology describes system capabilities, operating ranges, and survival ranges.</dcterms:description>
         <dcterms:license rdf:resource="http://www.opengeospatial.org/ogc/Software"/>
         <dcterms:license rdf:resource="http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"/>
-        <dcterms:title xml:lang="en">System capabilities, operating ranges, and survival ranges ontology</dcterms:title>
         <vann:preferredNamespacePrefix>ssn-system</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://www.w3.org/ns/ssn/systems/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">Please report any errors to the W3C Spatial Data on the Web Working Group via the SDW WG Public List public-sdw-wg@w3.org</rdfs:comment>

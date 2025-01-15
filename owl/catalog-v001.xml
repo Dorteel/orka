@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="file:///home/user/pel_ws/src/orvis/orka/owl/owl/ssn-systems-fixed.owl" uri="ssn-systems-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file:///home/user/pel_ws/src/orvis/orka/owl/owl/ssn-fixed.owl" uri="ssn-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file:///home/user/pel_ws/src/orvis/orka/owl/owl/sosa-fixed.owl" uri="sosa-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://owl/ssn-systems-fixed.owl/" uri="ssn-systems-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://owl/ssn-fixed.owl/" uri="ssn-fixed.owl"/>
     <uri id="User Entered Import Resolution" name="file://owl/sosa-fixed.owl/" uri="sosa-fixed.owl"/>
