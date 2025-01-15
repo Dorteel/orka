@@ -631,6 +631,12 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasProbability -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasProbability"/>
+    
+
+
     <!-- https://w3id.org/def/orka#hasScanningFrequency -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasScanningFrequency">
