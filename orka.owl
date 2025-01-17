@@ -651,6 +651,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasServiceName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasServiceName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasValue -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/def/orka#hasValue">
@@ -3781,91 +3789,6 @@ When these sensors activate, the activation implies the location of an entity at
             <rdf:Description rdf:about="https://w3id.org/def/orka#CreationDate"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#DestructionDate"/>
             <rdf:Description rdf:about="https://w3id.org/def/orka#ExpirationDate"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Airplane"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Apple"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Backpack"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Banana"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Baseball_bat"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Baseball_glove"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bear"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bed"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bench"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bicycle"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bird"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Boat"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Book"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bottle"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bowl"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Broccoli"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Bus"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Cake"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Car"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Carrot"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Cat"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Cell_phone"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Chair"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Clock"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Couch"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Cow"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Cup"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Dining_table"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Dog"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Donut"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Elephant"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Fire_hydrant"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Fork"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Frisbee"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Giraffe"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Hair_drier"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Handbag"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Horse"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Hot_dog"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Keyboard"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Kite"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Knife"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Laptop"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Microwave"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Motorcycle"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Mouse"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Orange"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Oven"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Parking_meter"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Person"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Pizza"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Potted_plant"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Refrigerator"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Remote"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Sandwich"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Scissors"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Sheep"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Sink"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Skateboard"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Skis"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Snowboard"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Spoon"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Sports_ball"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Stop_sign"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Suitcase"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Surfboard"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#TV"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Teddy_bear"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Tennis_racket"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Tie"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Toaster"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Toilet"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Toothbrush"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Traffic_light"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Train"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Truck"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Umbrella"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Vase"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Wine_glass"/>
-            <rdf:Description rdf:about="https://w3id.org/def/orka#Zebra"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
