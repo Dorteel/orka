@@ -980,6 +980,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#Agent -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Agent">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/def/orka#Airplane -->
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Airplane">
@@ -1645,12 +1653,6 @@ TODO: need to add sensors that can measure altitude based on the orientation of 
     <owl:Class rdf:about="https://w3id.org/def/orka#Distance_Sensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Exteroceptor_Sensor"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/def/orka#Location"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>A sensor that measures the distance to an object.
 For example, laser rangefinders and ultrasonic distance sensors used in robotics and surveying.</rdfs:comment>
         <rdfs:label>Ranging Sensor</rdfs:label>
@@ -1989,6 +1991,14 @@ TODO: Need to add frame of reference as coordinates (measurements)</rdfs:comment
                 <owl:hasValue>MSCOCO</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/orka#Human -->
+
+    <owl:Class rdf:about="https://w3id.org/def/orka#Human">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Agent"/>
     </owl:Class>
     
 
@@ -2907,6 +2917,7 @@ Despite the name, these entities can be virtual.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/def/orka#Robot">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/orka#Agent"/>
         <rdfs:comment>TODO: Needs to express the equivalentclass that proprioception requires</rdfs:comment>
     </owl:Class>
     
