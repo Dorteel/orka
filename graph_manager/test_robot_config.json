@@ -1,0 +1,15 @@
+{
+  "robot": {
+    "name": "robot_1"
+  },
+  "sensors": [
+    {
+      "name": "lidar_1",
+      "type": "Lidar"
+    },
+    {
+      "name": "camera_1",
+      "type": "Camera"
+    }
+  ]
+}

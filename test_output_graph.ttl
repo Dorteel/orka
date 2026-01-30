@@ -1,0 +1,1852 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oboe-core: <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix orka: <https://w3id.org/def/orka#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oboe-core:Protocol a owl:Class ;
+    owl:equivalentClass sosa:Procedure .
+
+oboe-core:hasPrecision rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+oboe-core:hasValue a owl:ObjectProperty ;
+    owl:equivalentProperty sosa:hasResult .
+
+oboe-core:usesProtocol a owl:ObjectProperty ;
+    owl:equivalentProperty sosa:usedProcedure .
+
+<http://example.org/orka/observation_graph/camera_1> a orka:Camera .
+
+<http://example.org/orka/observation_graph/lidar_1> a orka:Lidar .
+
+<http://example.org/orka/observation_graph/obs_f07d06> a orka:Observation ;
+    orka:generatedBy <http://example.org/orka/observation_graph/synthetic_procedure> ;
+    orka:hasCharacteristic <http://example.org/orka/observation_graph/distance> ;
+    orka:hasMeasurement <http://example.org/orka/observation_graph/meas_e88546> ;
+    orka:observedEntity <http://example.org/orka/observation_graph/synthetic_entity> .
+
+<http://example.org/orka/observation_graph/robot_1> a orka:Robot .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+swrla:isRuleEnabled a owl:AnnotationProperty .
+
+skos:altLabel a owl:AnnotationProperty .
+
+sosa:FeatureOfInterest a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+sosa:Result a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+sosa:hasFeatureOfInterest a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+ssn:hasInputType a owl:ObjectProperty ;
+    rdfs:comment "Describes the input types of e.g. algorithms." ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+ssn:hasOutputType a owl:ObjectProperty ;
+    rdfs:comment "Describes the output types of e.g. algorithms." ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+ssn:implementedBy a owl:ObjectProperty ;
+    owl:equivalentProperty orka:implementedOn .
+
+<http://www.w3.org/ns/ssn/systems/Condition> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/OperatingProperty> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/OperatingRange> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/SurvivalProperty> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/SurvivalRange> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/SystemCapability> a owl:Class .
+
+<http://www.w3.org/ns/ssn/systems/SystemProperty> a owl:Class .
+
+<https://w3id.org/def/orka> a owl:Ontology ;
+    dcterms:description "The Ontology for Robotic Knowledge Acqusition aims at providing a shared understanding and vocabulary for describing robotic perception pipelines including sensors, algorithms and the characteristics of the environment and the objects contained within. The ontology also concerns external sources of knowledge, such as knowledge repositories and The Semantic Web." ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    dcterms:title "Ontology for Robotic Knowledge Acqusition" ;
+    owl:imports <file://owl/sosa-fixed.owl/>,
+        <file://owl/ssn-fixed.owl/>,
+        <file://owl/ssn-systems-fixed.owl/>,
+        <http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl>,
+        <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl>,
+        <http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl> ;
+    owl:versionInfo 1.0 .
+
+orka:Active_Optical a owl:Class ;
+    rdfs:label "Active Optical" ;
+    rdfs:comment "A sensor that uses light to actively measure position or distance." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Position_Sensor .
+
+orka:Activity a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+orka:ActivityType a owl:Class ;
+    rdfs:subClassOf oboe-core:IdentifyingCharacteristic .
+
+orka:Airplane a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Apple a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Backpack a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Banana a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Barometric_Altimeter a owl:Class ;
+    rdfs:subClassOf orka:Altitude_Sensor .
+
+orka:Baseball_bat a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Baseball_glove a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bear a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bed a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bench a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bicycle a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bird a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Boat a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Book a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bottle a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bowl a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Broccoli a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Bumper a owl:Class ;
+    rdfs:label "Bumper"@en ;
+    rdfs:comment "A type of touch sensor that detects physical collisions or impacts, typically used in robotic applications to detect obstacles. Examples include bump sensors on robotic vacuum cleaners and collision detection bumpers on automated guided vehicles."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:Bus a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Cake a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Capacitive_Sensor a owl:Class ;
+    rdfs:label "Capacitive Sensor" ;
+    rdfs:comment "A sensor that detects changes in capacitance to measure distance or presence." ;
+    rdfs:subClassOf orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor .
+
+orka:Capacity_Encoder a owl:Class ;
+    rdfs:label "Capacity Encoder" ;
+    rdfs:comment "A sensor that measures the rotational position using changes in capacitance." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Motor_Sensor .
+
+orka:Car a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Carrot a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Cat a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Cell_phone a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Chair a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Clock a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Compass a owl:Class ;
+    rdfs:label "Compass"@en ;
+    rdfs:comment "A sensor that detects the Earth's magnetic field to determine the direction relative to the North. Examples are magnetic compasses used in handheld navigation devices and smartphones."@en ;
+    rdfs:subClassOf orka:Heading_Sensor,
+        orka:Passive_Sensor ;
+    orka:hasWeBotsName "compass" .
+
+orka:ComplexStructure a owl:Class ;
+    rdfs:subClassOf orka:Structure ;
+    owl:disjointWith orka:SimpleStructure .
+
+orka:Contact_Array a owl:Class ;
+    rdfs:label "Contact Array" ;
+    rdfs:comment "A sensor composed of multiple contact points arranged in an array to detect touch or pressure across a surface. Examples include touch-sensitive surfaces in robotics and multitouch screens."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:Couch a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Cow a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Cup a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:DataSet a owl:Class .
+
+orka:DepthCamera a owl:Class ;
+    rdfs:label "Depth Camera" ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor,
+        orka:Position_Sensor ;
+    orka:hasWeBotsName "range_finder" .
+
+orka:DepthEstimationAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:DetectableEntity a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+orka:Dining_table a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Dog a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Donut a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Doppler_Radar a owl:Class ;
+    rdfs:label "Doppler Radar" ;
+    rdfs:comment "A radar sensor that measures the frequency shift of returned signals to determine the speed of an object. Doppler radar is used in weather forecasting and traffic speed monitoring." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed> ;
+            owl:onProperty sosa:observes ],
+        orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Speed_Sensor .
+
+orka:Doppler_Sound a owl:Class ;
+    rdfs:label "Doppler Sound Sensor" ;
+    rdfs:comment "A sensor that uses the Doppler effect to measure the speed of sound waves reflecting off moving objects." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed> ;
+            owl:onProperty sosa:observes ],
+        orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Speed_Sensor .
+
+orka:Elephant a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Fire_hydrant a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Force_Sensor a owl:Class ;
+    rdfs:label "Force Sensor"@en ;
+    rdfs:comment "A sensor that measures the amount of force applied to an object. Examples include load cells used in weighing scales and force-sensitive resistors used in haptic devices."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:Fork a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Frisbee a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:GPS a owl:Class ;
+    rdfs:label "GPS" ;
+    rdfs:comment """A satellite-based sensor system that provides location and time information anywhere on Earth. GPS receivers used in navigation devices and smartphones.
+
+TODO: Need to add frame of reference as coordinates (measurements)""" ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Position_Sensor,
+        orka:ProprioceptorSensor ;
+    orka:hasWeBotsName "gps" .
+
+orka:GPS_Altimeter a owl:Class ;
+    rdfs:subClassOf orka:Altitude_Sensor .
+
+orka:Giraffe a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Hair_drier a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Handbag a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Horse a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Hot_dog a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Human a owl:Class ;
+    rdfs:subClassOf orka:Agent .
+
+orka:HumanFace a owl:Class ;
+    rdfs:label "Human Face" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "L2CSNET" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Humidity a owl:Class ;
+    rdfs:subClassOf orka:EnvironmentProperty .
+
+orka:ImageSegmentationAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:ImageToTextAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:Inclination a owl:Class ;
+    rdfs:label "Inclination" ;
+    rdfs:comment "The angle of tilt of an object relative to gravity." ;
+    rdfs:subClassOf orka:Angle .
+
+orka:Inclinometer a owl:Class ;
+    rdfs:label "Inclinometer" ;
+    rdfs:comment "A sensor that measures the angle of tilt or inclination of an object relative to gravity. Inclinometers used in construction equipment and mobile devices to detect orientation." ;
+    rdfs:subClassOf orka:Heading_Sensor,
+        orka:Passive_Sensor .
+
+orka:Inductive_Encoder a owl:Class ;
+    rdfs:label "Inductive Encoder" ;
+    rdfs:comment "A sensor that measures position by detecting changes in inductance. Used in harsh environments for industrial applications." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Motor_Sensor .
+
+orka:Inertial_Unit a owl:Class ;
+    rdfs:label "Inertial Measurement Unit" ;
+    rdfs:comment "Inertial Measurement Unit consists of an accelerometer and a gyroscope and optionally a magnetometer." ;
+    rdfs:subClassOf orka:Heading_Sensor,
+        orka:Speed_Sensor ;
+    skos:altLabel "IMU",
+        "Inertial Unit" ;
+    orka:hasWeBotsName "inertial_unit" .
+
+orka:Keyboard a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Kite a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Knife a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:L2CSNET_GazeDetector a owl:Class ;
+    rdfs:subClassOf orka:GazeDetector .
+
+orka:Laptop a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Latitude a owl:Class ;
+    rdfs:subClassOf orka:Position .
+
+orka:LinearForce a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:LocobotWX250s a owl:Class ;
+    rdfs:subClassOf orka:Robot .
+
+orka:Magnetic_Encoder a owl:Class ;
+    rdfs:label "Magnetic Encoder" ;
+    rdfs:comment "A sensor that uses a magnetic field to determine position or rotation. Magnetic encoders used in motor control." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Motor_Sensor .
+
+orka:Magnetic_Sensor a owl:Class ;
+    rdfs:label "Magnetic Sensor" ;
+    rdfs:comment "A sensor that detects magnetic fields to measure position or movement. Examples are Hall effect sensors used in motor control and proximity sensing." ;
+    rdfs:subClassOf orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor .
+
+orka:Microphone a owl:Class ;
+    rdfs:subClassOf orka:Sound .
+
+orka:Microwave a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Motorcycle a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Mouse a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:ObjectType a owl:Class ;
+    rdfs:subClassOf oboe-core:IdentifyingCharacteristic .
+
+orka:Optical_Barrier a owl:Class ;
+    rdfs:label "Optical Barrier" ;
+    rdfs:comment "A sensor that detects the interruption of a light beam to determine the presence or absence of an object. Examples include photoelectric sensors used in security systems and safety light curtains in industrial automation."@en ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Touch_Sensor .
+
+orka:Optical_Encoder a owl:Class ;
+    rdfs:label "Optical Encoder" ;
+    rdfs:comment "A sensor that uses light to measure position or rotational speed. Optical encoders used in printers and CNC machines." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Motor_Sensor .
+
+orka:Oven a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Parking_meter a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Person a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "L2CSNET" ;
+            owl:onProperty orka:inDataSet ],
+        [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Photodiode a owl:Class ;
+    rdfs:subClassOf orka:Light_Sensor ;
+    owl:disjointWith orka:Phototransistor .
+
+orka:Pizza a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Potentiometer a owl:Class ;
+    rdfs:label "Potentiometer" ;
+    rdfs:comment "A variable resistor used to measure angular position." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Angular_position ;
+            owl:onProperty sosa:observes ],
+        orka:Motor_Sensor,
+        orka:Passive_Sensor .
+
+orka:Potted_plant a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:PromptedObjectDetectionAlgorithm a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty orka:canDetect ;
+            owl:someValuesFrom orka:PhysicalEntity ],
+        orka:ComputerVisionAlgorithm .
+
+orka:Proximity_Sensor a owl:Class ;
+    rdfs:label "Proximity Sensor"@en ;
+    rdfs:comment "A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:RF_Beacon a owl:Class ;
+    rdfs:label "Radio Frequency Beacon" ;
+    rdfs:comment "A device that emits radio frequency signals used for positioning or navigation. Used in indoor positioning systems." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Position_Sensor .
+
+orka:RPLIDAR_A2 a owl:Class ;
+    rdfs:label "RPLiDAR A2" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 10 ;
+            owl:onProperty orka:hasScanningFrequency ],
+        [ a owl:Restriction ;
+            owl:hasValue 12000 ;
+            owl:onProperty orka:hasMaxRange ],
+        [ a owl:Restriction ;
+            owl:hasValue 0.225 ;
+            owl:onProperty orka:hasAngularResolution ],
+        [ a owl:Restriction ;
+            owl:hasValue 200 ;
+            owl:onProperty orka:hasMinRange ],
+        orka:Lidar .
+
+orka:Radar a owl:Class ;
+    rdfs:label "Radar" ;
+    rdfs:comment "A sensor that uses radio waves to detect objects and measure their distance and speed. Examples of radar systems are used in aviation." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor ;
+    orka:hasWeBotsName "radar" .
+
+orka:Radar_Altimeter a owl:Class ;
+    rdfs:subClassOf orka:Altitude_Sensor .
+
+orka:Radio_Frequency_Identification a owl:Class ;
+    rdfs:label "RFID" ;
+    rdfs:comment "A technology that uses electromagnetic fields to automatically identify and track tags attached to objects. RFID tags are used in inventory tracking and access control systems." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor .
+
+orka:Reflective_Beacon a owl:Class ;
+    rdfs:label "Reflective Beacon" ;
+    rdfs:comment "A sensor that uses reflected signals to determine position or distance. Reflective beacons used in robotic navigation and tracking systems." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Position_Sensor .
+
+orka:Refrigerator a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Remote a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Resistive_Sensor a owl:Class ;
+    rdfs:label "Resistive Sensor"@en ;
+    rdfs:comment "A sensor that measures changes in electrical resistance to detect touch or pressure. Examples include resistive touchscreens and pressure-sensitive resistors used in various applications."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:Resolver a owl:Class ;
+    rdfs:label "Resolver" ;
+    rdfs:comment "An electromechanical device that measures the angular position of a shaft. Resolvers used in aerospace and military applications for precise position measurement." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Angular_position ;
+            owl:onProperty sosa:observes ],
+        orka:Active_Sensor,
+        orka:Motor_Sensor .
+
+orka:SIFT a owl:Class ;
+    rdfs:subClassOf orka:FeatureDescriptor .
+
+orka:Sandwich a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Scissors a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Sheep a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Sink a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Skateboard a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Skis a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Slam a owl:Class ;
+    rdfs:subClassOf orka:LocalisationProcedure .
+
+orka:Snowboard a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Sonar a owl:Class ;
+    rdfs:label "Sonar" ;
+    rdfs:comment "A sensor that uses sound waves to detect objects and measure distances (mostly underwater)." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor .
+
+orka:Spoon a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Sports_ball a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Stop_sign a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Structures_Light a owl:Class ;
+    rdfs:label "Structures Light" ;
+    rdfs:comment "A sensor that projects a known pattern of light onto a surface and measures the deformation to determine shape or distance. Structured light sensors used in 3D scanning and gesture recognition." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( oboe-core:IdentifyingCharacteristic orka:Shape ) ] ;
+            owl:onProperty sosa:observes ],
+        orka:Distance_Sensor .
+
+orka:Suitcase a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Surfboard a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Switch a owl:Class ;
+    rdfs:label "Switch"@en ;
+    rdfs:comment "Similar to Bumpers, a switch is a simple sensor that detects the opening or closing of an electrical circuit. Examples include mechanical switches used in keyboards and limit switches used in industrial machinery."@en ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Touch_Sensor .
+
+orka:TV a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Teddy_bear a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Temperature a owl:Class ;
+    rdfs:subClassOf orka:EnvironmentProperty,
+        orka:ThermalProperty .
+
+orka:Tennis_racket a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Tie a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Toaster a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Toilet a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Toothbrush a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Torque_Sensor a owl:Class ;
+    rdfs:label "Torque Sensor"@en ;
+    rdfs:comment "A sensor that measures the rotational force (torque) applied to an object. Examples include torque transducers used in motor control systems and torque sensors used in robotics to monitor joint movements." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:AngularForce ;
+            owl:onProperty sosa:observes ],
+        orka:Motor_Sensor,
+        orka:Passive_Sensor .
+
+orka:Traffic_light a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Train a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Truck a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:TurtleBot3Burger a owl:Class ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass orka:Accelerometer ;
+                        owl:onProperty sosa:hosts ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass orka:Gyroscope ;
+                        owl:onProperty sosa:hosts ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass orka:Lidar ;
+                        owl:onProperty sosa:hosts ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass orka:Brush_Encoder ;
+                        owl:onProperty sosa:hosts ;
+                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ] ) ],
+        orka:Robot .
+
+orka:Ultrasound a owl:Class ;
+    rdfs:label "Ultrasound Sensor" ;
+    rdfs:comment "A sensor that uses high-frequency sound waves to detect objects and measure distances. Examples of ultrasonic sensors are used in medical imaging and parking assistance systems." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor .
+
+orka:Ultrasound_Beacon a owl:Class ;
+    rdfs:label "Ultrasound Beacon" ;
+    rdfs:comment "A sensor that uses ultrasonic waves to determine distance or position. Ultrasonic beacons used in indoor navigation and positioning systems." ;
+    rdfs:subClassOf orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:Position_Sensor .
+
+orka:Umbrella a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Vase a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:VideoClassificationAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:WheelDropSensor a owl:Class ;
+    rdfs:label "Wheel Drop Sensor" ;
+    rdfs:subClassOf orka:Touch_Sensor .
+
+orka:Wine_glass a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:Zebra a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        orka:PhysicalEntity .
+
+orka:canBeDetectedBy a owl:ObjectProperty ;
+    rdfs:label "can be detected by" ;
+    rdfs:comment "A relationship between an entity and an algorithm" ;
+    owl:inverseOf orka:canDetect .
+
+orka:hasAccuracy a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasColor a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasDensity a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasDetectionRange a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasDetectionThreshold a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+orka:hasEnergyConsumption a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasFLOPsat640 a owl:DatatypeProperty ;
+    rdfs:label "Floating Point Operations per Second at a model input size of 640 pixels" ;
+    rdfs:comment "Floating Point Operations per Second at a model input size of 640 pixels, measured in billions. This metric estimates the computational complexity of a single forward pass through the model. Higher FLOPs indicate a more computationally intensive model, which can impact inference speed and power consumption." ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+orka:hasInferenceSpeedV100b1 a owl:DatatypeProperty ;
+    rdfs:comment "The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 1), measured in milliseconds. This metric shows the model's performance on high-end GPU hardware, relevant for environments where fast processing times are critical." ;
+    rdfs:subPropertyOf orka:hasInferenceSpeed .
+
+orka:hasInferenceSpeedV100b32 a owl:DatatypeProperty ;
+    rdfs:comment "The inference speed on an NVIDIA V100 GPU (Graphics Processing Unit) for a single image (batch size = 32), measured in milliseconds. This metric shows the model's performance on high-end GPU hardware, relevant for environments where fast processing times are critical." ;
+    rdfs:subPropertyOf orka:hasInferenceSpeed .
+
+orka:hasNumberOfParameters a owl:DatatypeProperty ;
+    rdfs:label "number of parameters" ;
+    rdfs:comment "Indicates the number of trainable parameters of the mode, measured in millions. Gives an idea of the model's complexity and size." ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+orka:hasOrientation a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasProbability a owl:DatatypeProperty .
+
+orka:hasServiceName a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+orka:hasSize a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasValue a owl:DatatypeProperty ;
+    rdfs:domain ssn:Property .
+
+orka:hasWeBotsName a owl:AnnotationProperty ;
+    rdfs:comment "Representing the sensors available in the WeBots simulation environment, in a non-case-sensitve manner." .
+
+orka:hasWeight a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasWordNetSynset a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasExternalDescription .
+
+orka:inferrableProperty a owl:ObjectProperty ;
+    rdfs:label "inferrable property" ;
+    rdfs:comment "A property between a Characteristic and a Sensor, which is not the directly observed characteristic of the device." ;
+    rdfs:domain sosa:Sensor ;
+    rdfs:range oboe-core:Characteristic .
+
+orka:observesOther a owl:ObjectProperty ;
+    rdfs:subPropertyOf sosa:observes ;
+    owl:propertyDisjointWith orka:observesSelf .
+
+orka:sparqlEndpoint a owl:DatatypeProperty ;
+    rdfs:label "has sparql endpoint" ;
+    rdfs:comment "The SPARQL endpoint of a Semantic Web Knowledge Repository" ;
+    rdfs:domain orka:Knowledge_Repository ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+orka:test_orange a owl:NamedIndividual,
+        orka:Orange .
+
+orka:test_path a owl:NamedIndividual,
+        orka:Path .
+
+oboe-core:characteristicFor a owl:ObjectProperty .
+
+<http://example.org/orka/observation_graph/distance> a orka:Characteristic .
+
+<http://example.org/orka/observation_graph/meas_e88546> a orka:Measurement ;
+    orka:hasResult <http://example.org/orka/observation_graph/res_8407ea> .
+
+<http://example.org/orka/observation_graph/res_8407ea> a orka:Result .
+
+<http://example.org/orka/observation_graph/synthetic_entity> a orka:Entity .
+
+<http://example.org/orka/observation_graph/synthetic_procedure> a orka:Procedure .
+
+sosa:Observation a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:ObservableProperty ;
+            owl:onProperty sosa:observes ] .
+
+sosa:Platform a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+sosa:hasResult a owl:ObjectProperty .
+
+sosa:observedProperty a owl:ObjectProperty .
+
+sosa:usedProcedure a owl:ObjectProperty .
+
+ssn:Property a owl:Class .
+
+ssn:System a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+orka:Accelerometer a owl:Class ;
+    rdfs:label "Accelerometer" ;
+    rdfs:comment "A sensor that measures acceleration forces. Accelerometers used in smartphones and fitness trackers to detect movement and orientation." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty sosa:observes ;
+            owl:someValuesFrom orka:Orientation ],
+        orka:Exteroceptor_Sensor,
+        orka:Passive_Sensor,
+        orka:Speed_Sensor ;
+    orka:hasWeBotsName "accelerometer" .
+
+orka:Age a owl:Class ;
+    rdfs:subClassOf orka:TemporalProperty .
+
+orka:Altitude a owl:Class ;
+    rdfs:subClassOf orka:Position .
+
+orka:AngularForce a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:Brightness a owl:Class ;
+    rdfs:subClassOf orka:EnvironmentProperty .
+
+orka:Brush_Encoder a owl:Class ;
+    rdfs:label "Brush Encoder" ;
+    rdfs:comment "A type of encoder that uses brushes to make contact with a commutator to measure position. Used in older types of motors and machinery to provide position feedback on the motor" ;
+    rdfs:subClassOf orka:Motor_Sensor,
+        orka:Passive_Sensor .
+
+orka:Camera a owl:Class ;
+    rdfs:label "Camera" ;
+    rdfs:comment "An optical sensor that captures visual information in the form of images or video. Examples are digital cameras in smartphones and surveillance systems." ;
+    rdfs:subClassOf orka:Distance_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor,
+        orka:Passive_Sensor,
+        orka:Speed_Sensor ;
+    orka:hasWeBotsName "camera" .
+
+orka:Color a owl:Class ;
+    rdfs:subClassOf orka:VisualCharactersitic .
+
+orka:Context a owl:Class ;
+    rdfs:label "Context" ;
+    rdfs:comment "A placeholder representation for the context the robot is deployed in. It involves the required entity (as a representation of the task)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty orka:hasRequiredEntity ;
+            owl:someValuesFrom oboe-core:Entity ] .
+
+orka:CreationDate a owl:Class ;
+    rdfs:subClassOf orka:TemporalProperty .
+
+orka:Density a owl:Class ;
+    rdfs:subClassOf orka:MaterialProperty .
+
+orka:Depth a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:DestructionDate a owl:Class ;
+    rdfs:subClassOf orka:TemporalProperty .
+
+orka:ExpirationDate a owl:Class ;
+    rdfs:subClassOf orka:TemporalProperty .
+
+orka:FeatureDescriptor a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:Flexibility a owl:Class ;
+    rdfs:subClassOf orka:MaterialProperty .
+
+orka:GazeDetector a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "L2CSNET" ;
+            owl:onProperty orka:trainedOnDataSet ],
+        orka:HumanPoseEstimationAlgorithm .
+
+orka:Gyroscope a owl:Class ;
+    rdfs:label "Gyroscope" ;
+    rdfs:comment "A sensor that measures the rate of rotation around a particular axis. Gyroscopes used in drones and smartphones to maintain orientation and stability." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:RadianPerSecond ;
+            owl:onProperty orka:measuresUsingStandard ],
+        orka:Heading_Sensor,
+        orka:Passive_Sensor ;
+    orka:hasWeBotsName "gyro" .
+
+orka:Height a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:HumanPoseEstimationAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:Length a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:LocalisationProcedure a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty orka:calculatesCharacteristic ],
+        sosa:Procedure .
+
+orka:MaterialName a owl:Class ;
+    rdfs:subClassOf orka:MaterialProperty .
+
+orka:ObjectDetectionAlgorithm a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:Orange a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "https://www.wikidata.org/wiki/Q13191" ;
+            owl:onProperty orka:hasWikiDataURI ],
+        [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
+        [ a owl:Restriction ;
+            owl:hasValue "https://dbpedia.org/resource/Orange_(fruit)" ;
+            owl:onProperty orka:hasDBpediaURI ],
+        orka:PhysicalEntity .
+
+orka:Path a owl:Class ;
+    rdfs:subClassOf orka:PhysicalEntity .
+
+orka:Pattern a owl:Class ;
+    rdfs:subClassOf orka:VisualCharactersitic .
+
+orka:Phototransistor a owl:Class ;
+    rdfs:subClassOf orka:Light_Sensor .
+
+orka:Pitch a owl:Class ;
+    rdfs:subClassOf orka:Angle .
+
+orka:RadianPerSecond a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( oboe-core:Measurement [ a owl:Restriction ;
+                                owl:allValuesFrom orka:Orientation ;
+                                owl:onProperty oboe-core:ofCharacteristic ] ) ] ;
+            owl:onProperty oboe-core:standardFor ],
+        [ a owl:Restriction ;
+            owl:onProperty oboe-core:hasUnit ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( oboe-core:DerivedUnit [ a owl:Restriction ;
+                                owl:allValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Second> ;
+                                owl:onProperty oboe-core:hasUnit ] [ a owl:Restriction ;
+                                owl:hasValue -1 ;
+                                owl:onProperty oboe-core:hasPower ] ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty oboe-core:hasUnit ;
+            owl:someValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian> ],
+        oboe-core:CompositeUnit .
+
+orka:Roll a owl:Class ;
+    rdfs:subClassOf orka:Angle .
+
+orka:SimpleStructure a owl:Class ;
+    rdfs:subClassOf orka:Structure .
+
+orka:Sound a owl:Class ;
+    rdfs:label "Sound Sensor" ;
+    rdfs:comment "A sensor that detects and measures sound waves. Examplse are microphones that are used in audio recording and voice recognition systems." ;
+    rdfs:subClassOf orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor,
+        orka:Passive_Sensor .
+
+orka:SurfaceArea a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:Volume a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:Weight a owl:Class ;
+    rdfs:subClassOf orka:MaterialProperty .
+
+orka:Width a owl:Class ;
+    rdfs:subClassOf orka:SizeProperty .
+
+orka:YOLOv5l a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 430 ;
+            owl:onProperty orka:hasInferenceSpeedCPUb1 ],
+        orka:YOLO .
+
+orka:YOLOv5l6 a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
+        [ a owl:Restriction ;
+            owl:hasValue 1784 ;
+            owl:onProperty orka:hasInferenceSpeedCPUb1 ],
+        orka:YOLO .
+
+orka:YOLOv5m a owl:Class ;
+    rdfs:subClassOf orka:YOLO .
+
+orka:YOLOv5m6 a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
+        orka:YOLO .
+
+orka:YOLOv5n a owl:Class ;
+    rdfs:subClassOf orka:YOLO .
+
+orka:YOLOv5n6 a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
+        orka:YOLO .
+
+orka:YOLOv5s a owl:Class ;
+    rdfs:subClassOf orka:YOLO .
+
+orka:YOLOv5s6 a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 44.8 ;
+            owl:onProperty orka:hasmAPval50-95 ],
+        [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
+        [ a owl:Restriction ;
+            owl:hasValue 8.2 ;
+            owl:onProperty orka:hasInferenceSpeedCPUb1 ],
+        orka:YOLO .
+
+orka:YOLOv5x a owl:Class ;
+    rdfs:subClassOf orka:YOLO .
+
+orka:YOLOv5x6 a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
+        orka:YOLO .
+
+orka:Yaw a owl:Class ;
+    rdfs:subClassOf orka:Angle .
+
+orka:calculatesCharacteristic a owl:ObjectProperty ;
+    rdfs:label "calculates characteristic" ;
+    rdfs:comment "a relationship between a procedure/protocol and a characteristic" ;
+    rdfs:domain sosa:Procedure ;
+    rdfs:range oboe-core:Characteristic .
+
+orka:describedBy a owl:ObjectProperty ;
+    rdfs:label "described by" ;
+    rdfs:comment "Connects the entities to some external Knowledge Repository that describes the given entity." ;
+    rdfs:domain oboe-core:Entity ;
+    rdfs:range orka:Knowledge_Repository .
+
+orka:hasAlgorithmCharacteristic a owl:DatatypeProperty .
+
+orka:hasAngularResolution a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasDBpediaURI a owl:DatatypeProperty ;
+    rdfs:label "has DBpedia URI" ;
+    rdfs:subPropertyOf orka:hasExternalDescription .
+
+orka:hasMaxRange a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasMeasurementRange a owl:DatatypeProperty ;
+    rdfs:label "has measurement range" ;
+    rdfs:comment "The measurement range of the sensor device" ;
+    rdfs:domain sosa:Sensor ;
+    rdfs:range xsd:float .
+
+orka:hasMinRange a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasRequiredEntity a owl:ObjectProperty ;
+    rdfs:label "has required entity" ;
+    rdfs:comment "This property connects the context to the entities required by the context" ;
+    rdfs:domain orka:Context ;
+    rdfs:range oboe-core:Entity .
+
+orka:hasScanningFrequency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasSensorCharacteristic .
+
+orka:hasWikiDataURI a owl:DatatypeProperty ;
+    rdfs:label "has WikiData URI" ;
+    rdfs:subPropertyOf orka:hasExternalDescription .
+
+orka:hasmAPval50-95 a owl:DatatypeProperty ;
+    rdfs:comment "This is a metric that evaluates the accuracy of an object detector algorithm. The value defines the mean Average Percision for detections that have an overlap with the ground truth value (Intersection over Union) of 50% to 95% with 5% increments." ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+orka:implementedOn a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+orka:measuresUsingStandard a owl:ObjectProperty ;
+    rdfs:label "measures using standard" ;
+    rdfs:comment "A relationship between a sensor and a measurement standard" ;
+    rdfs:domain sosa:Sensor ;
+    rdfs:range oboe-core:Standard ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:propertyChainAxiom ( sosa:madeObservation oboe-core:usesStandard ) .
+
+orka:observesCharacteristic a owl:ObjectProperty .
+
+orka:observesSelf a owl:ObjectProperty ;
+    rdfs:subPropertyOf sosa:observes .
+
+oboe-core:Measurement a owl:Class ;
+    owl:equivalentClass sosa:Observation .
+
+oboe-core:Observation a owl:Class .
+
+oboe-core:ofEntity a owl:ObjectProperty ;
+    owl:inverseOf orka:observedIn .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c> a swrl:Variable .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> a swrl:Variable .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc> a swrl:Variable .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r> a swrl:Variable .
+
+sosa:madeBySensor a owl:ObjectProperty .
+
+sosa:madeObservation a owl:ObjectProperty .
+
+orka:Agent a owl:Class ;
+    rdfs:subClassOf oboe-core:Entity .
+
+orka:Angular_position a owl:Class ;
+    rdfs:subClassOf orka:Location .
+
+orka:DeepLearningModel a owl:Class ;
+    rdfs:subClassOf orka:ComputerVisionAlgorithm .
+
+orka:Light_Sensor a owl:Class ;
+    rdfs:label "Light Sensor" ;
+    rdfs:comment "Sensors that observe the presence of light above a certain threshold." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Brightness ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor,
+        orka:Exteroceptor_Sensor ;
+    orka:hasWeBotsName "light_sensor" .
+
+orka:Position a owl:Class ;
+    rdfs:subClassOf orka:Location .
+
+orka:Shape a owl:Class ;
+    rdfs:subClassOf orka:GeometricProperty .
+
+orka:hasLocation a owl:ObjectProperty ;
+    rdfs:domain oboe-core:Entity ;
+    rdfs:range orka:Location ;
+    rdfs:subPropertyOf orka:hasObservableCharacteristic .
+
+orka:hasPowerRequirement a owl:DatatypeProperty ;
+    rdfs:label "has power requirement" ;
+    rdfs:comment "Used to indicate the power requirement of the sensor devices" ;
+    rdfs:domain sosa:Sensor ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "high" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "low" ;
+                            rdf:rest () ] ] ] ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+orka:observedIn a owl:ObjectProperty ;
+    rdfs:label "observed in" ;
+    rdfs:comment "Relates an entity to an observation" ;
+    rdfs:domain oboe-core:Entity ;
+    rdfs:range oboe-core:Observation ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed> a owl:Class .
+
+oboe-core:hasMeasurement a owl:ObjectProperty .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> a swrl:Variable .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s> a swrl:Variable .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens> a swrl:Variable .
+
+orka:Altitude_Sensor a owl:Class ;
+    rdfs:label "Altitude Sensor" ;
+    rdfs:comment """A sensory device that returns a measurement corresponding to the altitude the sensor is located at.
+
+TODO: need to add sensors that can measure altitude based on the orientation of the sensor (e.g. distance sensor)""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty sosa:observes ;
+            owl:someValuesFrom orka:Altitude ],
+        sosa:Sensor,
+        orka:ProprioceptorSensor ;
+    orka:hasWeBotsName "altimeter" .
+
+orka:EnvironmentProperty a owl:Class ;
+    rdfs:subClassOf sosa:ObservableProperty .
+
+orka:Knowledge_Repository a owl:Class ;
+    rdfs:label "Knowledge Repository" ;
+    rdfs:comment "This class represents the external sources of knowledge ORKA can utilise such as WikiData and DBpedia." .
+
+orka:Lidar a owl:Class ;
+    rdfs:label "LiDAR" ;
+    rdfs:comment "A sensor that measures distance by emitting a laser beam and calculating the time it takes for the beam to reflect back. Lidar sensors used in autonomous vehicles and mapping." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty sosa:observes ],
+        orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor ;
+    orka:hasWeBotsName "lidar" .
+
+orka:Structure a owl:Class ;
+    rdfs:subClassOf orka:GeometricProperty .
+
+orka:ThermalProperty a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:canDetect a owl:ObjectProperty ;
+    rdfs:label "can detect" ;
+    rdfs:comment "Defines the relationship between an obejct detection algorithm and entities" ;
+    rdfs:domain sosa:Procedure ;
+    rdfs:range oboe-core:Entity .
+
+orka:hasCharacteristic a owl:ObjectProperty ;
+    rdfs:label "has characteristic" ;
+    rdfs:comment "Links entities to the characteristics possessed by the entity" ;
+    rdfs:domain oboe-core:Entity ;
+    rdfs:range oboe-core:Characteristic ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:propertyChainAxiom ( orka:observedIn oboe-core:hasMeasurement oboe-core:ofCharacteristic ) .
+
+orka:hasExternalDescription a owl:DatatypeProperty ;
+    rdfs:label "has external description" .
+
+orka:hasInferenceSpeed a owl:DatatypeProperty ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+orka:hasInferenceSpeedCPUb1 a owl:DatatypeProperty ;
+    rdfs:comment "The inference speed on a CPU (Central Processing Unit) for a single image (batch size = 1), measured in milliseconds. It indicates how fast the model can process images on a standard computer without GPU acceleration" ;
+    rdfs:subPropertyOf orka:hasInferenceSpeed .
+
+orka:trainedOnDataSet a owl:DatatypeProperty .
+
+oboe-core:Characteristic a owl:Class ;
+    owl:equivalentClass sosa:ObservableProperty .
+
+oboe-core:IdentifyingCharacteristic a owl:Class .
+
+oboe-core:ofCharacteristic a owl:ObjectProperty ;
+    owl:equivalentProperty sosa:observedProperty .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> a swrl:Variable .
+
+orka:Angle a owl:Class ;
+    rdfs:subClassOf orka:Orientation .
+
+orka:GeometricProperty a owl:Class ;
+    rdfs:subClassOf orka:VisualCharactersitic .
+
+orka:Heading_Sensor a owl:Class ;
+    rdfs:label "Heading Sensor"@en ;
+    rdfs:comment "A sensor used to determine the orientation or direction of an object. Examples are gyroscopes and magnetic compasses used in navigation systems."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Orientation ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor,
+        orka:Passive_Sensor,
+        orka:ProprioceptorSensor .
+
+orka:Robot a owl:Class ;
+    rdfs:comment "TODO: Needs to express the equivalentclass that proprioception requires" ;
+    rdfs:subClassOf sosa:Platform,
+        orka:Agent .
+
+orka:SpatialProperty a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> a swrl:Variable .
+
+sosa:ObservableProperty a owl:Class .
+
+orka:Orientation a owl:Class ;
+    rdfs:subClassOf orka:SpatialProperty .
+
+orka:Speed_Sensor a owl:Class ;
+    rdfs:label "Speed Sensor" ;
+    rdfs:comment "Sensors that measures the speed of an object, such as speedometers and tachometers used in vehicles and machinery." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty sosa:observes ;
+            owl:someValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Speed> ],
+        sosa:Sensor .
+
+orka:TemporalProperty a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:VisualCharactersitic a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:hasInputSize a owl:DatatypeProperty ;
+    rdfs:label "has input size" ;
+    rdfs:comment "Refers to the size of the image (in pixels) that is used as an input" ;
+    rdfs:subPropertyOf orka:hasDeepLearningModelCharacteristic .
+
+<http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> a swrl:Variable .
+
+sosa:Procedure a owl:Class .
+
+sosa:hosts a owl:ObjectProperty .
+
+orka:MaterialProperty a owl:Class ;
+    rdfs:subClassOf orka:ObjectProperty .
+
+orka:Position_Sensor a owl:Class ;
+    rdfs:label "Position Sensor" ;
+    rdfs:comment "A sensor that detects the position of an object." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor ;
+    orka:hasWeBotsName "position_sensor" .
+
+orka:ProprioceptorSensor a owl:Class ;
+    rdfs:label "Proprioceptor Sensor" ;
+    rdfs:comment "A class of sensors that measure the internal state of the robot, or parts of the robot" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:allValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( orka:Robot [ a owl:Restriction ;
+                                        owl:onProperty sosa:hosts ;
+                                        owl:someValuesFrom orka:ProprioceptorSensor ] ) ] ;
+                    owl:onProperty oboe-core:characteristicFor ] ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor .
+
+orka:hasDeepLearningModelCharacteristic a owl:DatatypeProperty ;
+    rdfs:domain orka:DeepLearningModel ;
+    rdfs:subPropertyOf orka:hasAlgorithmCharacteristic .
+
+orka:hasObservableCharacteristic a owl:ObjectProperty ;
+    rdfs:subPropertyOf orka:hasCharacteristic .
+
+orka:Distance_Sensor a owl:Class ;
+    rdfs:label "Ranging Sensor" ;
+    rdfs:comment """A sensor that measures the distance to an object.
+For example, laser rangefinders and ultrasonic distance sensors used in robotics and surveying.""" ;
+    rdfs:subClassOf sosa:Sensor,
+        orka:Exteroceptor_Sensor ;
+    skos:altLabel "Distance Sensor" ;
+    orka:hasWeBotsName "distance_sensor" .
+
+orka:IdentificationSensor a owl:Class ;
+    rdfs:label "Identification Sensor" ;
+    rdfs:comment "Sensors used to identify objects or individuals based on specific characteristics or signals. Examples are biometric scanners and RFID readers used in security and inventory management." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty sosa:observes ;
+            owl:someValuesFrom oboe-core:IdentifyingCharacteristic ],
+        sosa:Sensor .
+
+orka:ObjectProperty a owl:Class ;
+    rdfs:subClassOf sosa:ObservableProperty .
+
+orka:SizeProperty a owl:Class ;
+    rdfs:subClassOf orka:GeometricProperty .
+
+orka:Motor_Sensor a owl:Class ;
+    rdfs:label "Motor Sensor" ;
+    rdfs:comment """Sensors that monitor and measure various parameters of a motor's operation. Examples are encoders and tachometers used in industrial machinery to monitor motor speed and position.
+
+TODO: Add motor as observed entity, and as part_of Robot""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor,
+        orka:ProprioceptorSensor .
+
+orka:hasSensorCharacteristic a owl:DatatypeProperty .
+
+orka:ComputerVisionAlgorithm a owl:Class ;
+    rdfs:subClassOf sosa:Procedure .
+
+orka:Touch_Sensor a owl:Class ;
+    rdfs:label "Touch Sensor"@en ;
+    rdfs:comment """A sensor that detects and measures physical contact or touch.
+When these sensors activate, the activation implies the location of an entity at the range of the sensor. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "0.0"^^xsd:float ;
+            owl:onProperty orka:hasMeasurementRange ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor,
+        orka:Exteroceptor_Sensor ;
+    orka:hasWeBotsName "touch_sensor" .
+
+orka:Location a owl:Class ;
+    rdfs:subClassOf orka:SpatialProperty ;
+    owl:disjointWith orka:Orientation .
+
+orka:YOLO a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:trainedOnDataSet ],
+        orka:DeepLearningModel,
+        orka:ObjectDetectionAlgorithm .
+
+oboe-core:Entity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty orka:hasCharacteristic ;
+            owl:someValuesFrom oboe-core:Characteristic ],
+        [ a owl:Restriction ;
+            owl:onProperty orka:describedBy ;
+            owl:someValuesFrom orka:Knowledge_Repository ] .
+
+sosa:Sensor a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:ObservableProperty ;
+            owl:onProperty sosa:observes ],
+        ssn:System .
+
+orka:Passive_Sensor a owl:Class ;
+    rdfs:label "Passive Sensor"@en ;
+    rdfs:comment "TODO: Power requirement needs to be further defined",
+        "A sensor that does not require an external power source and relies on detecting energy emitted or reflected by objects."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "low" ;
+            owl:onProperty orka:hasPowerRequirement ],
+        sosa:Sensor .
+
+orka:Active_Sensor a owl:Class ;
+    rdfs:label "Active Sensor"@en ;
+    rdfs:comment "TODO: Power requirement needs to be further defined",
+        "A sensor that requires an external power source to operate and emits its own signal which interacts with the environment and measures the return signal."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue "high" ;
+            owl:onProperty orka:hasPowerRequirement ],
+        sosa:Sensor .
+
+sosa:observes a owl:ObjectProperty ;
+    owl:equivalentProperty orka:observesCharacteristic ;
+    owl:propertyChainAxiom ( sosa:madeObservation oboe-core:ofCharacteristic ) .
+
+orka:Exteroceptor_Sensor a owl:Class ;
+    rdfs:label "Exteroceptor Sensor"@en ;
+    rdfs:comment "A sensor that provides information about the external environment surrounding the device."@en ;
+    rdfs:subClassOf sosa:Sensor .
+
+orka:PhysicalEntity a owl:Class ;
+    rdfs:label "Physical Entity" ;
+    rdfs:comment """Entities that have some form of physical existence. Used to denote entities that possess some characteristics that everyday objects possess (e.g. weight, color, size, etc.).
+Despite the name, these entities can be virtual.""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty orka:hasCharacteristic ;
+            owl:someValuesFrom orka:Location ],
+        oboe-core:Entity .
+
+orka:inDataSet a owl:DatatypeProperty .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Depth orka:Height orka:Length orka:SurfaceArea orka:Volume orka:Width ) .
+
+[] a swrl:Imp ;
+    rdfs:label "CanDetect" ;
+    swrla:isRuleEnabled true ;
+    rdfs:comment "" ;
+    swrl:body [ a swrl:AtomList ;
+            rdf:first [ a swrl:DatavaluedPropertyAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
+                    swrl:propertyPredicate orka:inDataSet ] ;
+            rdf:rest [ a swrl:AtomList ;
+                    rdf:first [ a swrl:DatavaluedPropertyAtom ;
+                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
+                            swrl:propertyPredicate orka:trainedOnDataSet ] ;
+                    rdf:rest [ a swrl:AtomList ;
+                            rdf:first [ a swrl:ClassAtom ;
+                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                                    swrl:classPredicate sosa:Procedure ] ;
+                            rdf:rest () ] ] ] ;
+    swrl:head [ a swrl:AtomList ;
+            rdf:first [ a swrl:IndividualPropertyAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                    swrl:propertyPredicate orka:canDetect ] ;
+            rdf:rest () ] .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Color orka:GeometricProperty orka:Pattern ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:YOLOv5l orka:YOLOv5l6 orka:YOLOv5m orka:YOLOv5m6 orka:YOLOv5n orka:YOLOv5n6 orka:YOLOv5s orka:YOLOv5s6 orka:YOLOv5x orka:YOLOv5x6 ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:ThermalProperty orka:VisualCharactersitic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Age orka:CreationDate orka:DestructionDate orka:ExpirationDate ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Density orka:Flexibility orka:MaterialName orka:Weight ) .
+
+[] a swrl:Imp ;
+    rdfs:label "Touch Sensor Detection" ;
+    swrla:isRuleEnabled true ;
+    rdfs:comment "If a touch sensor is activated, it means there is an entity with characteristic Location same as the location of the sensor itself" ;
+    swrl:body [ a swrl:AtomList ;
+            rdf:first [ a swrl:ClassAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens> ;
+                    swrl:classPredicate orka:Touch_Sensor ] ;
+            rdf:rest [ a swrl:AtomList ;
+                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens> ;
+                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc> ;
+                            swrl:propertyPredicate orka:hasLocation ] ;
+                    rdf:rest [ a swrl:AtomList ;
+                            rdf:first [ a swrl:IndividualPropertyAtom ;
+                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/sens> ;
+                                    swrl:propertyPredicate sosa:madeBySensor ] ;
+                            rdf:rest [ a swrl:AtomList ;
+                                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> ;
+                                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                                            swrl:propertyPredicate oboe-core:hasMeasurement ] ;
+                                    rdf:rest [ a swrl:AtomList ;
+                                            rdf:first [ a swrl:IndividualPropertyAtom ;
+                                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> ;
+                                                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                                                    swrl:propertyPredicate oboe-core:ofEntity ] ;
+                                            rdf:rest [ a swrl:AtomList ;
+                                                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                                                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                                                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c> ;
+                                                            swrl:propertyPredicate oboe-core:ofCharacteristic ] ;
+                                                    rdf:rest () ] ] ] ] ] ] ;
+    swrl:head [ a swrl:AtomList ;
+            rdf:first [ a swrl:ClassAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c> ;
+                    swrl:classPredicate orka:Location ] ;
+            rdf:rest [ a swrl:AtomList ;
+                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/loc> ;
+                            swrl:propertyPredicate orka:hasLocation ] ;
+                    rdf:rest () ] ] .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Shape orka:SizeProperty orka:Structure ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:TemporalProperty orka:ThermalProperty orka:VisualCharactersitic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Pitch orka:Roll orka:Yaw ) .
+
+[] a swrl:Imp ;
+    rdfs:label "Proprioception" ;
+    swrla:isRuleEnabled true ;
+    rdfs:comment "" ;
+    swrl:body [ a swrl:AtomList ;
+            rdf:first [ a swrl:ClassAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s> ;
+                    swrl:classPredicate orka:ProprioceptorSensor ] ;
+            rdf:rest [ a swrl:AtomList ;
+                    rdf:first [ a swrl:ClassAtom ;
+                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                            swrl:classPredicate oboe-core:Measurement ] ;
+                    rdf:rest [ a swrl:AtomList ;
+                            rdf:first [ a swrl:ClassAtom ;
+                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> ;
+                                    swrl:classPredicate oboe-core:Observation ] ;
+                            rdf:rest [ a swrl:AtomList ;
+                                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r> ;
+                                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s> ;
+                                            swrl:propertyPredicate sosa:hosts ] ;
+                                    rdf:rest [ a swrl:AtomList ;
+                                            rdf:first [ a swrl:IndividualPropertyAtom ;
+                                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                                                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/s> ;
+                                                    swrl:propertyPredicate sosa:madeBySensor ] ;
+                                            rdf:rest [ a swrl:AtomList ;
+                                                    rdf:first [ a swrl:IndividualPropertyAtom ;
+                                                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> ;
+                                                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/m> ;
+                                                            swrl:propertyPredicate oboe-core:hasMeasurement ] ;
+                                                    rdf:rest () ] ] ] ] ] ] ;
+    swrl:head [ a swrl:AtomList ;
+            rdf:first [ a swrl:IndividualPropertyAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/o> ;
+                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r> ;
+                    swrl:propertyPredicate oboe-core:ofEntity ] ;
+            rdf:rest () ] .
+
