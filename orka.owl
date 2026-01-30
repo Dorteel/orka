@@ -119,6 +119,7 @@
 
     <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic">
         <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#ofCharacteristic"/>
     </owl:ObjectProperty>
     
 
@@ -126,6 +127,7 @@
     <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity -->
 
     <owl:ObjectProperty rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#ofEntity"/>
         <owl:inverseOf rdf:resource="https://w3id.org/def/orka#observedIn"/>
     </owl:ObjectProperty>
     
@@ -149,7 +151,9 @@
 
     <!-- http://www.w3.org/ns/sosa/hasResult -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#hasResult"/>
+    </owl:ObjectProperty>
     
 
 
@@ -161,7 +165,9 @@
 
     <!-- http://www.w3.org/ns/sosa/madeBySensor -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#madeBySensor"/>
+    </owl:ObjectProperty>
     
 
 
@@ -191,7 +197,9 @@
 
     <!-- http://www.w3.org/ns/sosa/usedProcedure -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/def/orka#usedProcedure"/>
+    </owl:ObjectProperty>
     
 
 
@@ -334,6 +342,14 @@
     
 
 
+    <!-- https://w3id.org/def/orka#hasResult -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasResult">
+        <rdfs:label>has Result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/orka#hasSize -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#hasSize">
@@ -365,6 +381,14 @@
         <rdfs:range rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
         <rdfs:comment>A property between a Characteristic and a Sensor, which is not the directly observed characteristic of the device.</rdfs:comment>
         <rdfs:label>inferrable property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#madeBySensor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#madeBySensor">
+        <rdfs:label>made by sensor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -416,6 +440,32 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#observesSelf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#ofCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#ofCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>of Characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#ofEntity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#ofEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>of entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/orka#usedProcedure -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/orka#usedProcedure">
+        <rdfs:label>used procedure</rdfs:label>
     </owl:ObjectProperty>
     
 

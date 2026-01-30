@@ -72,21 +72,22 @@ class GraphManager:
             self.add_procedure(procedure)
 
 
-    def update_graph_with_observation(self, observation_name, measurement_name, result, procedure_name=None, entity_name=None, characteristic_name=None):
+    def update_graph_with_observation(self, observation_name, measurement_name, sensor, result, procedure_name=None, entity_name=None, characteristic_name=None):
         observation = self.add_observation(observation_name)
         measurement = self.add_Measurement(measurement_name)
         result_uri = self.add_result(result)
         self.graph.add((observation, self.ORKA.hasMeasurement, measurement))
         self.graph.add((measurement, self.ORKA.hasResult, result_uri))
+        self.graph.add((measurement, self.ORKA.madeBySensor, sensor))
         if procedure_name:
             procedure = self.add_procedure(procedure_name)
-            self.graph.add((observation, self.ORKA.generatedBy, procedure))
+            self.graph.add((measurement, self.ORKA.usedProcedure, procedure))
         if entity_name:
             entity = self.add_entity(entity_name)
-            self.graph.add((observation, self.ORKA.observedEntity, entity))
+            self.graph.add((observation, self.ORKA.ofEntity, entity))
         if characteristic_name:
             characteristic = self.add_characteristic(characteristic_name)
-            self.graph.add((observation, self.ORKA.hasCharacteristic, characteristic))
+            self.graph.add((entity, self.ORKA.hasCharacteristic, characteristic))
         return self.graph
 
 
@@ -107,6 +108,7 @@ def generate_test_sensor_data(gm: GraphManager, sensor_name: str):
     gm.update_graph_with_observation(
         observation_name=obs_id,
         measurement_name=meas_id,
+        sensor=gm.obs_graph_base[sensor_name],
         result=res_id,
         procedure_name="synthetic_procedure",
         entity_name="synthetic_entity",

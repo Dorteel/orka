@@ -24,13 +24,9 @@ oboe-core:usesProtocol a owl:ObjectProperty ;
 
 <http://example.org/orka/observation_graph/camera_1> a orka:Camera .
 
-<http://example.org/orka/observation_graph/lidar_1> a orka:Lidar .
-
-<http://example.org/orka/observation_graph/obs_f07d06> a orka:Observation ;
-    orka:generatedBy <http://example.org/orka/observation_graph/synthetic_procedure> ;
-    orka:hasCharacteristic <http://example.org/orka/observation_graph/distance> ;
-    orka:hasMeasurement <http://example.org/orka/observation_graph/meas_e88546> ;
-    orka:observedEntity <http://example.org/orka/observation_graph/synthetic_entity> .
+<http://example.org/orka/observation_graph/obs_cab4f4> a orka:Observation ;
+    orka:hasMeasurement <http://example.org/orka/observation_graph/meas_7d5f33> ;
+    orka:ofEntity <http://example.org/orka/observation_graph/synthetic_entity> .
 
 <http://example.org/orka/observation_graph/robot_1> a orka:Robot .
 
@@ -639,11 +635,11 @@ orka:RPLIDAR_A2 a owl:Class ;
             owl:hasValue 12000 ;
             owl:onProperty orka:hasMaxRange ],
         [ a owl:Restriction ;
-            owl:hasValue 0.225 ;
-            owl:onProperty orka:hasAngularResolution ],
-        [ a owl:Restriction ;
             owl:hasValue 200 ;
             owl:onProperty orka:hasMinRange ],
+        [ a owl:Restriction ;
+            owl:hasValue 0.225 ;
+            owl:onProperty orka:hasAngularResolution ],
         orka:Lidar .
 
 orka:Radar a owl:Class ;
@@ -1028,12 +1024,17 @@ oboe-core:characteristicFor a owl:ObjectProperty .
 
 <http://example.org/orka/observation_graph/distance> a orka:Characteristic .
 
-<http://example.org/orka/observation_graph/meas_e88546> a orka:Measurement ;
-    orka:hasResult <http://example.org/orka/observation_graph/res_8407ea> .
+<http://example.org/orka/observation_graph/lidar_1> a orka:Lidar .
 
-<http://example.org/orka/observation_graph/res_8407ea> a orka:Result .
+<http://example.org/orka/observation_graph/meas_7d5f33> a orka:Measurement ;
+    orka:hasResult <http://example.org/orka/observation_graph/res_90f1bf> ;
+    orka:madeBySensor <http://example.org/orka/observation_graph/lidar_1> ;
+    orka:usedProcedure <http://example.org/orka/observation_graph/synthetic_procedure> .
 
-<http://example.org/orka/observation_graph/synthetic_entity> a orka:Entity .
+<http://example.org/orka/observation_graph/res_90f1bf> a orka:Result .
+
+<http://example.org/orka/observation_graph/synthetic_entity> a orka:Entity ;
+    orka:hasCharacteristic <http://example.org/orka/observation_graph/distance> .
 
 <http://example.org/orka/observation_graph/synthetic_procedure> a orka:Procedure .
 
@@ -1045,11 +1046,13 @@ sosa:Observation a owl:Class ;
 sosa:Platform a owl:Class ;
     rdfs:subClassOf oboe-core:Entity .
 
-sosa:hasResult a owl:ObjectProperty .
+sosa:hasResult a owl:ObjectProperty ;
+    owl:equivalentProperty orka:hasResult .
 
 sosa:observedProperty a owl:ObjectProperty .
 
-sosa:usedProcedure a owl:ObjectProperty .
+sosa:usedProcedure a owl:ObjectProperty ;
+    owl:equivalentProperty orka:usedProcedure .
 
 ssn:Property a owl:Class .
 
@@ -1189,11 +1192,8 @@ orka:Pitch a owl:Class ;
 
 orka:RadianPerSecond a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( oboe-core:Measurement [ a owl:Restriction ;
-                                owl:allValuesFrom orka:Orientation ;
-                                owl:onProperty oboe-core:ofCharacteristic ] ) ] ;
-            owl:onProperty oboe-core:standardFor ],
+            owl:onProperty oboe-core:hasUnit ;
+            owl:someValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian> ],
         [ a owl:Restriction ;
             owl:onProperty oboe-core:hasUnit ;
             owl:someValuesFrom [ a owl:Class ;
@@ -1203,8 +1203,11 @@ orka:RadianPerSecond a owl:Class ;
                                 owl:hasValue -1 ;
                                 owl:onProperty oboe-core:hasPower ] ) ] ],
         [ a owl:Restriction ;
-            owl:onProperty oboe-core:hasUnit ;
-            owl:someValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian> ],
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( oboe-core:Measurement [ a owl:Restriction ;
+                                owl:allValuesFrom orka:Orientation ;
+                                owl:onProperty oboe-core:ofCharacteristic ] ) ] ;
+            owl:onProperty oboe-core:standardFor ],
         oboe-core:CompositeUnit .
 
 orka:Roll a owl:Class ;
@@ -1240,11 +1243,11 @@ orka:YOLOv5l a owl:Class ;
 
 orka:YOLOv5l6 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue 1280 ;
-            owl:onProperty orka:hasInputSize ],
-        [ a owl:Restriction ;
             owl:hasValue 1784 ;
             owl:onProperty orka:hasInferenceSpeedCPUb1 ],
+        [ a owl:Restriction ;
+            owl:hasValue 1280 ;
+            owl:onProperty orka:hasInputSize ],
         orka:YOLO .
 
 orka:YOLOv5m a owl:Class ;
@@ -1270,14 +1273,14 @@ orka:YOLOv5s a owl:Class ;
 
 orka:YOLOv5s6 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue 44.8 ;
-            owl:onProperty orka:hasmAPval50-95 ],
+            owl:hasValue 8.2 ;
+            owl:onProperty orka:hasInferenceSpeedCPUb1 ],
         [ a owl:Restriction ;
             owl:hasValue 1280 ;
             owl:onProperty orka:hasInputSize ],
         [ a owl:Restriction ;
-            owl:hasValue 8.2 ;
-            owl:onProperty orka:hasInferenceSpeedCPUb1 ],
+            owl:hasValue 44.8 ;
+            owl:onProperty orka:hasmAPval50-95 ],
         orka:YOLO .
 
 orka:YOLOv5x a owl:Class ;
@@ -1331,6 +1334,9 @@ orka:hasRequiredEntity a owl:ObjectProperty ;
     rdfs:domain orka:Context ;
     rdfs:range oboe-core:Entity .
 
+orka:hasResult a owl:ObjectProperty ;
+    rdfs:label "has Result" .
+
 orka:hasScanningFrequency a owl:DatatypeProperty ;
     rdfs:subPropertyOf orka:hasSensorCharacteristic .
 
@@ -1345,6 +1351,9 @@ orka:hasmAPval50-95 a owl:DatatypeProperty ;
 orka:implementedOn a owl:ObjectProperty ;
     rdfs:subPropertyOf owl:topObjectProperty .
 
+orka:madeBySensor a owl:ObjectProperty ;
+    rdfs:label "made by sensor" .
+
 orka:measuresUsingStandard a owl:ObjectProperty ;
     rdfs:label "measures using standard" ;
     rdfs:comment "A relationship between a sensor and a measurement standard" ;
@@ -1358,12 +1367,24 @@ orka:observesCharacteristic a owl:ObjectProperty .
 orka:observesSelf a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:observes .
 
+orka:ofCharacteristic a owl:ObjectProperty ;
+    rdfs:label "of Characteristic" ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+orka:ofEntity a owl:ObjectProperty ;
+    rdfs:label "of entity" ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+orka:usedProcedure a owl:ObjectProperty ;
+    rdfs:label "used procedure" .
+
 oboe-core:Measurement a owl:Class ;
     owl:equivalentClass sosa:Observation .
 
 oboe-core:Observation a owl:Class .
 
 oboe-core:ofEntity a owl:ObjectProperty ;
+    owl:equivalentProperty orka:ofEntity ;
     owl:inverseOf orka:observedIn .
 
 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/c> a swrl:Variable .
@@ -1374,7 +1395,8 @@ oboe-core:ofEntity a owl:ObjectProperty ;
 
 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r> a swrl:Variable .
 
-sosa:madeBySensor a owl:ObjectProperty .
+sosa:madeBySensor a owl:ObjectProperty ;
+    owl:equivalentProperty orka:madeBySensor .
 
 sosa:madeObservation a owl:ObjectProperty .
 
@@ -1505,7 +1527,8 @@ oboe-core:Characteristic a owl:Class ;
 oboe-core:IdentifyingCharacteristic a owl:Class .
 
 oboe-core:ofCharacteristic a owl:ObjectProperty ;
-    owl:equivalentProperty sosa:observedProperty .
+    owl:equivalentProperty sosa:observedProperty,
+        orka:ofCharacteristic .
 
 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> a swrl:Variable .
 
@@ -1641,11 +1664,11 @@ orka:Touch_Sensor a owl:Class ;
     rdfs:comment """A sensor that detects and measures physical contact or touch.
 When these sensors activate, the activation implies the location of an entity at the range of the sensor. Examples include capacitive touchscreens, force-sensitive resistors, and tactile sensors used in robotics."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue "0.0"^^xsd:float ;
-            owl:onProperty orka:hasMeasurementRange ],
-        [ a owl:Restriction ;
             owl:allValuesFrom orka:Location ;
             owl:onProperty sosa:observes ],
+        [ a owl:Restriction ;
+            owl:hasValue "0.0"^^xsd:float ;
+            owl:onProperty orka:hasMeasurementRange ],
         sosa:Sensor,
         orka:Exteroceptor_Sensor ;
     orka:hasWeBotsName "touch_sensor" .
@@ -1663,11 +1686,11 @@ orka:YOLO a owl:Class ;
 
 oboe-core:Entity a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty orka:hasCharacteristic ;
-            owl:someValuesFrom oboe-core:Characteristic ],
-        [ a owl:Restriction ;
             owl:onProperty orka:describedBy ;
-            owl:someValuesFrom orka:Knowledge_Repository ] .
+            owl:someValuesFrom orka:Knowledge_Repository ],
+        [ a owl:Restriction ;
+            owl:onProperty orka:hasCharacteristic ;
+            owl:someValuesFrom oboe-core:Characteristic ] .
 
 sosa:Sensor a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -1712,50 +1735,6 @@ Despite the name, these entities can be virtual.""" ;
         oboe-core:Entity .
 
 orka:inDataSet a owl:DatatypeProperty .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:Depth orka:Height orka:Length orka:SurfaceArea orka:Volume orka:Width ) .
-
-[] a swrl:Imp ;
-    rdfs:label "CanDetect" ;
-    swrla:isRuleEnabled true ;
-    rdfs:comment "" ;
-    swrl:body [ a swrl:AtomList ;
-            rdf:first [ a swrl:DatavaluedPropertyAtom ;
-                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
-                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
-                    swrl:propertyPredicate orka:inDataSet ] ;
-            rdf:rest [ a swrl:AtomList ;
-                    rdf:first [ a swrl:DatavaluedPropertyAtom ;
-                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
-                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
-                            swrl:propertyPredicate orka:trainedOnDataSet ] ;
-                    rdf:rest [ a swrl:AtomList ;
-                            rdf:first [ a swrl:ClassAtom ;
-                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
-                                    swrl:classPredicate sosa:Procedure ] ;
-                            rdf:rest () ] ] ] ;
-    swrl:head [ a swrl:AtomList ;
-            rdf:first [ a swrl:IndividualPropertyAtom ;
-                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
-                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
-                    swrl:propertyPredicate orka:canDetect ] ;
-            rdf:rest () ] .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:Color orka:GeometricProperty orka:Pattern ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:YOLOv5l orka:YOLOv5l6 orka:YOLOv5m orka:YOLOv5m6 orka:YOLOv5n orka:YOLOv5n6 orka:YOLOv5s orka:YOLOv5s6 orka:YOLOv5x orka:YOLOv5x6 ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:ThermalProperty orka:VisualCharactersitic ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:Age orka:CreationDate orka:DestructionDate orka:ExpirationDate ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:Density orka:Flexibility orka:MaterialName orka:Weight ) .
 
 [] a swrl:Imp ;
     rdfs:label "Touch Sensor Detection" ;
@@ -1803,13 +1782,42 @@ orka:inDataSet a owl:DatatypeProperty .
                     rdf:rest () ] ] .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Shape orka:SizeProperty orka:Structure ) .
+    owl:members ( orka:Density orka:Flexibility orka:MaterialName orka:Weight ) .
+
+[] a swrl:Imp ;
+    rdfs:label "CanDetect" ;
+    swrla:isRuleEnabled true ;
+    rdfs:comment "" ;
+    swrl:body [ a swrl:AtomList ;
+            rdf:first [ a swrl:DatavaluedPropertyAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
+                    swrl:propertyPredicate orka:inDataSet ] ;
+            rdf:rest [ a swrl:AtomList ;
+                    rdf:first [ a swrl:DatavaluedPropertyAtom ;
+                            swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                            swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/dataset> ;
+                            swrl:propertyPredicate orka:trainedOnDataSet ] ;
+                    rdf:rest [ a swrl:AtomList ;
+                            rdf:first [ a swrl:ClassAtom ;
+                                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                                    swrl:classPredicate sosa:Procedure ] ;
+                            rdf:rest () ] ] ] ;
+    swrl:head [ a swrl:AtomList ;
+            rdf:first [ a swrl:IndividualPropertyAtom ;
+                    swrl:argument1 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/alg> ;
+                    swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/e> ;
+                    swrl:propertyPredicate orka:canDetect ] ;
+            rdf:rest () ] .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( orka:MaterialProperty orka:SpatialProperty orka:TemporalProperty orka:ThermalProperty orka:VisualCharactersitic ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Pitch orka:Roll orka:Yaw ) .
+    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:ThermalProperty orka:VisualCharactersitic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Shape orka:SizeProperty orka:Structure ) .
 
 [] a swrl:Imp ;
     rdfs:label "Proprioception" ;
@@ -1849,4 +1857,19 @@ orka:inDataSet a owl:DatatypeProperty .
                     swrl:argument2 <http://www.semanticweb.org/mark/ontologies/2024/5/untitled-ontology-8/r> ;
                     swrl:propertyPredicate oboe-core:ofEntity ] ;
             rdf:rest () ] .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Depth orka:Height orka:Length orka:SurfaceArea orka:Volume orka:Width ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Color orka:GeometricProperty orka:Pattern ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Pitch orka:Roll orka:Yaw ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Age orka:CreationDate orka:DestructionDate orka:ExpirationDate ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:YOLOv5l orka:YOLOv5l6 orka:YOLOv5m orka:YOLOv5m6 orka:YOLOv5n orka:YOLOv5n6 orka:YOLOv5s orka:YOLOv5s6 orka:YOLOv5x orka:YOLOv5x6 ) .
 
