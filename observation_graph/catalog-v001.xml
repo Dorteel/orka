@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="file://owl/ssn-systems-fixed.owl/" uri="file:/home/kai/Repositories/orka/owl/sosa-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file://owl/ssn-fixed.owl/" uri="file:/home/kai/Repositories/orka/owl/ssn-systems-fixed.owl"/>
+    <uri id="User Entered Import Resolution" name="file://owl/sosa-fixed.owl/" uri="file:/home/kai/Repositories/orka/owl/ssn-fixed.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

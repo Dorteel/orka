@@ -22,13 +22,9 @@ oboe-core:hasValue a owl:ObjectProperty ;
 oboe-core:usesProtocol a owl:ObjectProperty ;
     owl:equivalentProperty sosa:usedProcedure .
 
-<http://example.org/orka/observation_graph/camera_1> a orka:Camera .
-
-<http://example.org/orka/observation_graph/obs_ff90bc> a orka:Observation ;
-    orka:hasMeasurement <http://example.org/orka/observation_graph/meas_84c6b5> ;
-    orka:ofEntity <http://example.org/orka/observation_graph/synthetic_entity> .
-
-<http://example.org/orka/observation_graph/robot_1> a orka:Robot .
+<http://example.org/orka/observation_graph/obs_vision_1> a orka:Observation ;
+    orka:hasMeasurement <http://example.org/orka/observation_graph/meas_vision_1> ;
+    orka:hasRawObservation "observation_graph/vision_1.jpg" .
 
 dcterms:description a owl:AnnotationProperty .
 
@@ -574,10 +570,10 @@ orka:Parking_meter a owl:Class ;
 
 orka:Person a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue "MSCOCO" ;
+            owl:hasValue "L2CSNET" ;
             owl:onProperty orka:inDataSet ],
         [ a owl:Restriction ;
-            owl:hasValue "L2CSNET" ;
+            owl:hasValue "MSCOCO" ;
             owl:onProperty orka:inDataSet ],
         orka:PhysicalEntity .
 
@@ -629,17 +625,17 @@ orka:RF_Beacon a owl:Class ;
 orka:RPLIDAR_A2 a owl:Class ;
     rdfs:label "RPLiDAR A2" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue 200 ;
-            owl:onProperty orka:hasMinRange ],
-        [ a owl:Restriction ;
-            owl:hasValue 10 ;
-            owl:onProperty orka:hasScanningFrequency ],
-        [ a owl:Restriction ;
             owl:hasValue 0.225 ;
             owl:onProperty orka:hasAngularResolution ],
         [ a owl:Restriction ;
             owl:hasValue 12000 ;
             owl:onProperty orka:hasMaxRange ],
+        [ a owl:Restriction ;
+            owl:hasValue 200 ;
+            owl:onProperty orka:hasMinRange ],
+        [ a owl:Restriction ;
+            owl:hasValue 10 ;
+            owl:onProperty orka:hasScanningFrequency ],
         orka:Lidar .
 
 orka:Radar a owl:Class ;
@@ -1022,21 +1018,15 @@ orka:test_path a owl:NamedIndividual,
 
 oboe-core:characteristicFor a owl:ObjectProperty .
 
-<http://example.org/orka/observation_graph/distance> a orka:Characteristic .
+<http://example.org/orka/observation_graph/meas_vision_1> a orka:Measurement ;
+    orka:hasResult <http://example.org/orka/observation_graph/res_vision_1> ;
+    orka:madeBySensor <http://example.org/orka/observation_graph/vision_sensor> .
 
-<http://example.org/orka/observation_graph/lidar_1> a orka:Lidar .
+<http://example.org/orka/observation_graph/res_vision_1> a orka:Result ;
+    orka:hasValue "observation_graph/vision_1.jpg" .
 
-<http://example.org/orka/observation_graph/meas_84c6b5> a orka:Measurement ;
-    orka:hasResult <http://example.org/orka/observation_graph/res_38705a> ;
-    orka:madeBySensor <http://example.org/orka/observation_graph/lidar_1> ;
-    orka:usedProcedure <http://example.org/orka/observation_graph/synthetic_procedure> .
-
-<http://example.org/orka/observation_graph/res_38705a> a orka:Result .
-
-<http://example.org/orka/observation_graph/synthetic_entity> a orka:Entity ;
-    orka:hasCharacteristic <http://example.org/orka/observation_graph/distance> .
-
-<http://example.org/orka/observation_graph/synthetic_procedure> a orka:Procedure .
+<http://example.org/orka/observation_graph/vision_sensor> a orka:Camera ;
+    orka:hasTopic "/camera/image" .
 
 sosa:Observation a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -1168,14 +1158,14 @@ orka:ObjectDetectionAlgorithm a owl:Class ;
 
 orka:Orange a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:hasValue "MSCOCO" ;
-            owl:onProperty orka:inDataSet ],
-        [ a owl:Restriction ;
             owl:hasValue "https://www.wikidata.org/wiki/Q13191" ;
             owl:onProperty orka:hasWikiDataURI ],
         [ a owl:Restriction ;
             owl:hasValue "https://dbpedia.org/resource/Orange_(fruit)" ;
             owl:onProperty orka:hasDBpediaURI ],
+        [ a owl:Restriction ;
+            owl:hasValue "MSCOCO" ;
+            owl:onProperty orka:inDataSet ],
         orka:PhysicalEntity .
 
 orka:Path a owl:Class ;
@@ -1195,6 +1185,12 @@ orka:RadianPerSecond a owl:Class ;
             owl:onProperty oboe-core:hasUnit ;
             owl:someValuesFrom <http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( oboe-core:Measurement [ a owl:Restriction ;
+                                owl:allValuesFrom orka:Orientation ;
+                                owl:onProperty oboe-core:ofCharacteristic ] ) ] ;
+            owl:onProperty oboe-core:standardFor ],
+        [ a owl:Restriction ;
             owl:onProperty oboe-core:hasUnit ;
             owl:someValuesFrom [ a owl:Class ;
                     owl:intersectionOf ( oboe-core:DerivedUnit [ a owl:Restriction ;
@@ -1202,12 +1198,6 @@ orka:RadianPerSecond a owl:Class ;
                                 owl:onProperty oboe-core:hasUnit ] [ a owl:Restriction ;
                                 owl:hasValue -1 ;
                                 owl:onProperty oboe-core:hasPower ] ) ] ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( oboe-core:Measurement [ a owl:Restriction ;
-                                owl:allValuesFrom orka:Orientation ;
-                                owl:onProperty oboe-core:ofCharacteristic ] ) ] ;
-            owl:onProperty oboe-core:standardFor ],
         oboe-core:CompositeUnit .
 
 orka:Roll a owl:Class ;
@@ -1409,6 +1399,17 @@ orka:Angular_position a owl:Class ;
 orka:DeepLearningModel a owl:Class ;
     rdfs:subClassOf orka:ComputerVisionAlgorithm .
 
+orka:Lidar a owl:Class ;
+    rdfs:label "LiDAR" ;
+    rdfs:comment "A sensor that measures distance by emitting a laser beam and calculating the time it takes for the beam to reflect back. Lidar sensors used in autonomous vehicles and mapping." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom orka:Location ;
+            owl:onProperty sosa:observes ],
+        orka:Active_Sensor,
+        orka:Exteroceptor_Sensor,
+        orka:IdentificationSensor ;
+    orka:hasWeBotsName "lidar" .
+
 orka:Light_Sensor a owl:Class ;
     rdfs:label "Light Sensor" ;
     rdfs:comment "Sensors that observe the presence of light above a certain threshold." ;
@@ -1478,16 +1479,10 @@ orka:Knowledge_Repository a owl:Class ;
     rdfs:label "Knowledge Repository" ;
     rdfs:comment "This class represents the external sources of knowledge ORKA can utilise such as WikiData and DBpedia." .
 
-orka:Lidar a owl:Class ;
-    rdfs:label "LiDAR" ;
-    rdfs:comment "A sensor that measures distance by emitting a laser beam and calculating the time it takes for the beam to reflect back. Lidar sensors used in autonomous vehicles and mapping." ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom orka:Location ;
-            owl:onProperty sosa:observes ],
-        orka:Active_Sensor,
-        orka:Exteroceptor_Sensor,
-        orka:IdentificationSensor ;
-    orka:hasWeBotsName "lidar" .
+orka:Robot a owl:Class ;
+    rdfs:comment "TODO: Needs to express the equivalentclass that proprioception requires" ;
+    rdfs:subClassOf sosa:Platform,
+        orka:Agent .
 
 orka:Structure a owl:Class ;
     rdfs:subClassOf orka:GeometricProperty .
@@ -1547,11 +1542,6 @@ orka:Heading_Sensor a owl:Class ;
         sosa:Sensor,
         orka:Passive_Sensor,
         orka:ProprioceptorSensor .
-
-orka:Robot a owl:Class ;
-    rdfs:comment "TODO: Needs to express the equivalentclass that proprioception requires" ;
-    rdfs:subClassOf sosa:Platform,
-        orka:Agent .
 
 orka:SpatialProperty a owl:Class ;
     rdfs:subClassOf orka:ObjectProperty .
@@ -1782,7 +1772,7 @@ orka:inDataSet a owl:DatatypeProperty .
                     rdf:rest () ] ] .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Density orka:Flexibility orka:MaterialName orka:Weight ) .
+    owl:members ( orka:Depth orka:Height orka:Length orka:SurfaceArea orka:Volume orka:Width ) .
 
 [] a swrl:Imp ;
     rdfs:label "Proprioception" ;
@@ -1826,9 +1816,6 @@ orka:inDataSet a owl:DatatypeProperty .
 [] a owl:AllDisjointClasses ;
     owl:members ( orka:MaterialProperty orka:SpatialProperty orka:TemporalProperty orka:ThermalProperty orka:VisualCharactersitic ) .
 
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:ThermalProperty orka:VisualCharactersitic ) .
-
 [] a swrl:Imp ;
     rdfs:label "CanDetect" ;
     swrla:isRuleEnabled true ;
@@ -1856,10 +1843,16 @@ orka:inDataSet a owl:DatatypeProperty .
             rdf:rest () ] .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Pitch orka:Roll orka:Yaw ) .
+    owl:members ( orka:Density orka:Flexibility orka:MaterialName orka:Weight ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Depth orka:Height orka:Length orka:SurfaceArea orka:Volume orka:Width ) .
+    owl:members ( orka:MaterialProperty orka:SpatialProperty orka:ThermalProperty orka:VisualCharactersitic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Shape orka:SizeProperty orka:Structure ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( orka:Age orka:CreationDate orka:DestructionDate orka:ExpirationDate ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( orka:Color orka:GeometricProperty orka:Pattern ) .
@@ -1868,8 +1861,5 @@ orka:inDataSet a owl:DatatypeProperty .
     owl:members ( orka:YOLOv5l orka:YOLOv5l6 orka:YOLOv5m orka:YOLOv5m6 orka:YOLOv5n orka:YOLOv5n6 orka:YOLOv5s orka:YOLOv5s6 orka:YOLOv5x orka:YOLOv5x6 ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( orka:Shape orka:SizeProperty orka:Structure ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( orka:Age orka:CreationDate orka:DestructionDate orka:ExpirationDate ) .
+    owl:members ( orka:Pitch orka:Roll orka:Yaw ) .
 
