@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka/core"
+         xmlns="https://w3id.org/def/orka/core#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka/core"/>
+
+<owl:ObjectProperty rdf:about="#hasMeasurement">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofEntity">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Result"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeBySensor">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedProcedure">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesStandard">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#MeasurementStandard"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofCharacteristic">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacteristic">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characteristicFor">
+  <rdfs:domain rdf:resource="#Characteristic"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describedBy">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#KnowledgeRepository"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRequiredEntity">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observes">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedBy">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#System"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hostedBy">
+  <rdfs:domain rdf:resource="#System"/>
+  <rdfs:range rdf:resource="#Platform"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedOn">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#Robot"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Observation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Measurement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Result">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Procedure">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeasurementStandard">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Characteristic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KnowledgeRepository">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#System">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputerVisionAlgorithm">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocalisationProcedure">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PositionSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HeadingSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProprioceptorSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#tiago_10003_robot">
+  <rdf:type rdf:resource="#Robot"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tiago_10003_system">
+  <rdf:type rdf:resource="#System"/>
+  <hostedBy rdf:resource="#tiago_10003_robot"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tiago_10003_head_front_camera">
+  <rdf:type rdf:resource="#Sensor"/>
+  <implementedBy rdf:resource="#tiago_10003_system"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tiago_10003_thermal_camera">
+  <rdf:type rdf:resource="#Sensor"/>
+  <implementedBy rdf:resource="#tiago_10003_system"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
