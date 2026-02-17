@@ -6,7 +6,12 @@ import argparse
 import random
 from pathlib import Path
 
-from owlready2 import get_ontology
+from owlready2 import (
+    OwlReadyInconsistentOntologyError,
+    get_ontology,
+    sync_reasoner,
+    sync_reasoner_pellet,
+)
 from orka_builder import build_and_save_orka_core
 from utils.xacro_loader import parse_robot_spec, sanitize_iri_fragment
 
@@ -29,6 +34,63 @@ def save_graph(ontology, path: str | Path, fmt: str = "rdfxml") -> Path:
     target.parent.mkdir(parents=True, exist_ok=True)
     ontology.save(file=str(target), format=fmt)
     return target
+
+
+def reason_graph(
+    ontology,
+    reasoner: str = "hermit",
+    *,
+    infer_property_values: bool = True,
+    infer_data_property_values: bool = True,
+    debug: int = 0,
+    save_path: str | Path | None = None,
+    fmt: str = "rdfxml",
+) -> dict[str, object]:
+    """Run reasoning and optionally save a materialized graph.
+
+    Args:
+        ontology: Owlready2 ontology object to reason over.
+        reasoner: "hermit" (default) or "pellet".
+        infer_property_values: Materialize inferred object property assertions.
+        infer_data_property_values: Materialize inferred data assertions
+            (Pellet only).
+        debug: Owlready2 reasoner debug verbosity.
+        save_path: Optional file path to persist materialized ontology.
+        fmt: Owlready2 save format.
+    """
+    normalized_reasoner = reasoner.strip().lower()
+    if normalized_reasoner not in {"hermit", "pellet"}:
+        raise ValueError("Unsupported reasoner. Use 'hermit' or 'pellet'.")
+
+    try:
+        with ontology:
+            if normalized_reasoner == "pellet":
+                sync_reasoner_pellet(
+                    infer_property_values=infer_property_values,
+                    infer_data_property_values=infer_data_property_values,
+                    debug=debug,
+                )
+            else:
+                sync_reasoner(
+                    infer_property_values=infer_property_values,
+                    debug=debug,
+                )
+    except OwlReadyInconsistentOntologyError:
+        return {
+            "consistent": False,
+            "reasoner": normalized_reasoner,
+            "saved_to": None,
+        }
+
+    saved_to = None
+    if save_path is not None:
+        saved_to = save_graph(ontology=ontology, path=save_path, fmt=fmt)
+
+    return {
+        "consistent": True,
+        "reasoner": normalized_reasoner,
+        "saved_to": saved_to,
+    }
 
 
 def create_robot_graph(

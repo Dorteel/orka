@@ -1,0 +1,1835 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka"
+         xmlns="https://w3id.org/def/orka#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka">
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl"/>
+  <owl:imports rdf:resource="http://www.w3.org/ns/sosa"/>
+  <owl:imports rdf:resource="http://www.w3.org/ns/ssn"/>
+  <owl:imports rdf:resource="http://www.w3.org/ns/ssn/systems"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#hasMeasurement">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofEntity">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#observedIn"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observedIn">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Observation"/>
+  <owl:inverseOf rdf:resource="#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofCharacteristic">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Result"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasValue"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeBySensor">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedProcedure">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measuresUsingStandard">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#MeasurementStandard"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#usesStandard"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacteristic">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:inverseOf rdf:resource="#characteristicFor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characteristicFor">
+  <rdfs:domain rdf:resource="#Characteristic"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#hasCharacteristic"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#characteristicFor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describedBy">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Knowledge_Repository"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRequiredEntity">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesCharacteristic">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedOn">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#Robot"/>
+  <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/ssn/implementedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canDetect">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#DetectableEntity"/>
+  <owl:inverseOf rdf:resource="#canBeDetectedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canBeDetectedBy">
+  <rdfs:domain rdf:resource="#DetectableEntity"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+  <owl:inverseOf rdf:resource="#canDetect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#publishesTopic">
+  <rdfs:domain rdf:resource="#ROSNode"/>
+  <rdfs:range rdf:resource="#Topic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#subscribesToTopic">
+  <rdfs:domain rdf:resource="#ROSNode"/>
+  <rdfs:range rdf:resource="#Topic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#carriesMessage">
+  <rdfs:domain rdf:resource="#Topic"/>
+  <rdfs:range rdf:resource="#Message"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mountedOn">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Robot"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSensorCharacteristic"/>
+
+<owl:DatatypeProperty rdf:about="#hasAlgorithmCharacteristic"/>
+
+<owl:DatatypeProperty rdf:about="#hasExternalDescription"/>
+
+<owl:DatatypeProperty rdf:about="#hasDeepLearningModelCharacteristic">
+  <rdfs:subPropertyOf rdf:resource="#hasAlgorithmCharacteristic"/>
+  <rdfs:domain rdf:resource="#DeepLearningModel"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasAccuracy">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasAngularResolution">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDetectionRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEnergyConsumption">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMaxRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeasurementRange">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMinRange">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPowerRequirement">
+  <rdfs:domain rdf:resource="#Sensor"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasScanningFrequency">
+  <rdfs:subPropertyOf rdf:resource="#hasSensorCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDetectionThreshold">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFLOPsat640">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeed">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedCPUb1">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedV100b1">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInferenceSpeedV100b32">
+  <rdfs:subPropertyOf rdf:resource="#hasInferenceSpeed"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInputSize">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasNumberOfParameters">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasmAPval50-95">
+  <rdfs:subPropertyOf rdf:resource="#hasDeepLearningModelCharacteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasServiceName"/>
+
+<owl:DatatypeProperty rdf:about="#hasValue">
+  <rdfs:domain rdf:resource="#Characteristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDBpediaURI">
+  <rdfs:subPropertyOf rdf:resource="#hasExternalDescription"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasWikiDataURI">
+  <rdfs:subPropertyOf rdf:resource="#hasExternalDescription"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasWordNetSynset">
+  <rdfs:subPropertyOf rdf:resource="#hasExternalDescription"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#inDataSet"/>
+
+<owl:DatatypeProperty rdf:about="#trainedOnDataSet"/>
+
+<owl:DatatypeProperty rdf:about="#hasProbability"/>
+
+<owl:DatatypeProperty rdf:about="#sparqlEndpoint">
+  <rdfs:domain rdf:resource="#Knowledge_Repository"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Observation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Measurement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Characteristic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeasurementStandard">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Procedure">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Result">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Robot"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+</owl:Class>
+
+<owl:Class rdf:about="#System">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/ssn/System"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalEntity">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DetectableEntity">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Knowledge_Repository">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputerVisionAlgorithm">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocalisationProcedure">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Position_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Heading_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProprioceptorSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSNode">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Topic">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Message">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Publisher">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Subscriber">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSService">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Passive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Active_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Exteroceptor_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IdentificationSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Distance_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Light_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Touch_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Motor_Sensor">
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Speed_Sensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Altitude_Sensor">
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Accelerometer">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Active_Optical">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Barometric_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Brush_Encoder">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Bumper">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacitive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacity_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Compass">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Contact_Array">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DepthCamera">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Sound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Force_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GPS">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GPS_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Gyroscope">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Inclinometer">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Inductive_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Inertial_Unit">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Lidar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Sensor">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Barrier">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Photodiode">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Phototransistor">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Potentiometer">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Proximity_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RF_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Radar_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Radio_Frequency_Identification">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reflective_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Resistive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Resolver">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sonar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sound">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Structures_Light">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Switch">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Torque_Sensor">
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WheelDropSensor">
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IMU">
+  <rdfs:subClassOf rdf:resource="#Inertial_Unit"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectProperty">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+  <owl:equivalentClass rdf:resource="#EnvironmentProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EnvironmentProperty">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+  <owl:equivalentClass rdf:resource="#ObjectProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActivityType">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+  <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+  <owl:equivalentClass rdf:resource="#ObjectType"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectType">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic"/>
+  <owl:equivalentClass rdf:resource="#ActivityType"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VisualCharactersitic">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpatialProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TemporalProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ThermalProperty">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AngularForce">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LinearForce">
+  <rdfs:subClassOf rdf:resource="#ObjectProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="#SpatialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Orientation">
+  <rdfs:subClassOf rdf:resource="#SpatialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Position">
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Angular_position">
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Altitude">
+  <rdfs:subClassOf rdf:resource="#Position"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Latitude">
+  <rdfs:subClassOf rdf:resource="#Position"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Angle">
+  <rdfs:subClassOf rdf:resource="#Orientation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Inclination">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pitch">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Roll">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Yaw">
+  <rdfs:subClassOf rdf:resource="#Angle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GeometricProperty">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SizeProperty">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Structure">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Shape">
+  <rdfs:subClassOf rdf:resource="#GeometricProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Depth">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Height">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Length">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SurfaceArea">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Volume">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Width">
+  <rdfs:subClassOf rdf:resource="#SizeProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComplexStructure">
+  <rdfs:subClassOf rdf:resource="#Structure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SimpleStructure">
+  <rdfs:subClassOf rdf:resource="#Structure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Color">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pattern">
+  <rdfs:subClassOf rdf:resource="#VisualCharactersitic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialName">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Density">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Flexibility">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Weight">
+  <rdfs:subClassOf rdf:resource="#MaterialProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Temperature">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+  <rdfs:subClassOf rdf:resource="#ThermalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Brightness">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Humidity">
+  <rdfs:subClassOf rdf:resource="#EnvironmentProperty"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Age">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CreationDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DestructionDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ExpirationDate">
+  <rdfs:subClassOf rdf:resource="#TemporalProperty"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DataSet">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DeepLearningModel">
+  <rdfs:subClassOf rdf:resource="#ComputerVisionAlgorithm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RadianPerSecond">
+  <rdfs:subClassOf rdf:resource="#MeasurementStandard"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</owl:Class>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">
+  <owl:equivalentClass rdf:resource="#Characteristic"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
+  <owl:equivalentClass rdf:resource="#Entity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasurementType">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#UnitConversion">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Unit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#CompositeUnit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#DerivedUnit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#PrefixedUnit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#BaseUnit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#CategoricalStandard">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Index">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#IdentifyingCharacteristic">
+  <owl:equivalentClass rdf:resource="#ActivityType"/>
+  <owl:equivalentClass rdf:resource="#ObjectType"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Acre">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#AcreToMeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#AcreToSquareMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Ampere">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Angstrom">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#AngstromToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Meter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Are">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Dekameter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Bar">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#BarToKilopascal">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kilopascal">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Becquerel">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Second">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Bushel">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#BushelToLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Liter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Candela">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Celsius">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CelsiusToKelvin">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kelvin">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Centigram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentigramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Centimeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentimeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Milliliter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentimeterPerSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentimeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentimeterToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Centisecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#CentisecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Day">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Decibar">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DecibarToBar">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Decigram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DecigramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Decimeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DecimeterToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Decisecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DecisecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DegreToRadian">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Degree">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Radian">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Dekagram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DekagramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DekameterToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Dekasecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#DekasecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FahrenheitDegree">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FahrenheitDegreeToKelvin">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Fathom">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FathomToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Foot">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FootGoldCoast">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FootGoldCoastToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FootSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#FootToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Gallon">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GallonToLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Grad">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GradToRadian">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Gram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GramPerGram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GramPerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GramPerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#GramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hectare">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hectometer">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hectogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#HectogramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#HectometerToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hectopascal">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Millibar">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#HectopascalToPascal">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Pascal">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hectosecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#HectosecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hertz">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Hour">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#HourToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Inch">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#InchCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#InchToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilogramPerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilogramPerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilogramPerMeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilogramPerMeterSquaredPerDay">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kilohertz">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kilosecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kiloliter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Kilometer">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilometerSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilometerToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#KilosecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Knot">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NauticalMile">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#LinkClarke">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#LinkClarkeToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#LiterPerSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#LiterToMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Lumen">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Megagram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MegagramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Megahertz">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Megasecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Megameter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MegameterToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MegasecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MeterPerSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicroeinsteinsPerMeterSquaredPerSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Microgram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrogramPerGram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrogramPerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrogramPerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrogramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Microliter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Millimeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Micrometer">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrometerSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrometerToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicromolePerKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicromolePerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicromolePerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Micron">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicronToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Microsecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrosecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MicrosiemensPerMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Mile">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MileSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MileToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillibarToBar">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Milligram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilligramPerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilligramPerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilligramPerMeterCubedPerDay">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilligramPerMeterSquaredPerDay">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilligramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Millihertz">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Millisecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MilliliterPerLIter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillimeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillimeterToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillimolePerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillimolePerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillisecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MillisiemensPerMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Minute">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MinuteToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Mole">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MolePerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#MolePerMeterCubed">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Nanogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NanogramPerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NanogramToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Nanometer">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NanometerToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NanomolePerLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Nanosecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NanosecondToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NauticalMileToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Newton">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalDay">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalDayToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalHour">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalHourToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalLeapYear">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalLeapYearToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalMinute">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalMinuteToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalWeek">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalWeekToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalYear">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NominalYearToSecond">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Number">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#NumberPerMeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PartPerThousand">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Percent">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Pint">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PintToLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Pound">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PoundToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PracticalSalinityUnit">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Quart">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#QuartToLiter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#ReciprocalMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Siemens">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#SiemensPerMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Ton">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#TonToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Tonne">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#TonneToKilogram">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Volt">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#WattPerMeterSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#WattPerMeterSquaredPerSteradian">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#Yard">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#YardIndian">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#YardIndianToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#YardSquared">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#YardToMeter">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuation">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampling">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sample">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Result">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
+  <owl:equivalentClass rdf:resource="#Platform"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuator">
+  <rdfs:subClassOf rdf:resource="#Robot"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampler">
+  <rdfs:subClassOf rdf:resource="#Robot"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+  <owl:equivalentClass rdf:resource="#Sensor"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
+  <owl:equivalentClass rdf:resource="#EnvironmentProperty"/>
+  <owl:equivalentClass rdf:resource="#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
+  <owl:equivalentClass rdf:resource="#Procedure"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/ssn/System">
+  <owl:equivalentClass rdf:resource="#System"/>
+</rdf:Description>
+
+
+</rdf:RDF>

@@ -10,9 +10,6 @@ from owlready2 import ObjectProperty
 from builder.orka_core import DEFAULT_BASE_IRI, define_core_module, get_orka_ontology
 
 
-MODULE_NAME = "ros"
-
-
 def define_ros_module(onto) -> dict[str, type]:
     """Define ROS-specific classes and properties on the given ontology."""
     existing = {
@@ -39,13 +36,13 @@ def define_ros_module(onto) -> dict[str, type]:
         class Message(onto.Entity):
             """A data payload exchanged over ROS interfaces."""
 
-        class Publisher(onto.Process):
-            """A process that sends messages to a topic."""
+        class Publisher(onto.Procedure):
+            """A procedure that sends messages to a topic."""
 
-        class Subscriber(onto.Process):
-            """A process that receives messages from a topic."""
+        class Subscriber(onto.Procedure):
+            """A procedure that receives messages from a topic."""
 
-        class ROSService(onto.Process):
+        class ROSService(onto.Procedure):
             """A request-reply interaction in ROS."""
 
         class publishesTopic(ObjectProperty):
