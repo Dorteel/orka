@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka/core"
+         xmlns="https://w3id.org/def/orka/core#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka/core"/>
+
+<owl:ObjectProperty rdf:about="#hasPart">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#participatesIn">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Process"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#locatedIn">
+  <rdfs:domain rdf:resource="#SpatialThing"/>
+  <rdfs:range rdf:resource="#SpatialThing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#publishesTopic">
+  <rdfs:domain rdf:resource="#ROSNode"/>
+  <rdfs:range rdf:resource="#Topic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#subscribesToTopic">
+  <rdfs:domain rdf:resource="#ROSNode"/>
+  <rdfs:range rdf:resource="#Topic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#carriesMessage">
+  <rdfs:domain rdf:resource="#Topic"/>
+  <rdfs:range rdf:resource="#Message"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observes">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mountedOn">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Robot"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Process">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpatialThing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalObject">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+  <rdfs:subClassOf rdf:resource="#PhysicalObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSNode">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Topic">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Message">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Publisher">
+  <rdfs:subClassOf rdf:resource="#Process"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Subscriber">
+  <rdfs:subClassOf rdf:resource="#Process"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSService">
+  <rdfs:subClassOf rdf:resource="#Process"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="#PhysicalObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Lidar">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IMU">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+
+</rdf:RDF>
