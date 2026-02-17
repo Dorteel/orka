@@ -1,0 +1,1 @@
+This folder contains the mappings between ROS2 topics and sensory data

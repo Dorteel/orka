@@ -95,6 +95,8 @@ def _map_sensor_class(sensor_type: str) -> str:
     return mapping.get(normalized, "Sensor")
 
 
+
+
 def main() -> None:
     """Load a xacro file and optionally inject its robot graph into an ontology."""
     robot = "tiago"

@@ -1,0 +1,29 @@
+# Define the "Capabilities" of your hardware
+sensors:
+  astra_rgb:
+    namespace: "/TIAGO_PP/Astra_rgb"
+    orka_class: "orka:VisualSensor"
+    topics:
+      raw: "image_color"
+      info: "camera_info"
+    frame_id: "xtion_rgb_optical_frame"
+
+  hokuyo_lidar:
+    namespace: "/TIAGO_PP/Hokuyo_URG_04LX_UG01"
+    orka_class: "orka:LidarSensor"
+    topics:
+      scan: "point_cloud"
+    frame_id: "base_laser_link"
+
+  base_sonars:
+    pattern: "/TIAGO_PP/base_sonar_.*_link"  # Regex to catch all sonars
+    orka_class: "orka:RangeSensor"
+    type: "sonar"
+
+# Define the "Algorithms" (Software Nodes)
+algorithms:
+  webots_recognition:
+    topic: "/TIAGO_PP/Astra_rgb/webots_recognitions"
+    orka_class: "orka:PerceptionAlgorithm"
+    inputs: ["astra_rgb"]  # Links the algorithm to the sensor in the graph
+    output_type: "orka:ObjectDetection"
