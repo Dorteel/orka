@@ -31,6 +31,7 @@ You can compose ORKA from modules (`core`, `ros`, `sensors`, `characteristics`, 
 ├── graph_manager.py              # Graph IO, robot injection, reasoning helper
 ├── main.py                       # Example build entrypoint
 ├── module_test.py                # Consistency test over all modules
+├── swrl/                         # SWRL rule files (text format)
 ├── owl/                          # Generated OWL outputs
 └── legacy/                       # Legacy ORKA resources used for reference
 ```
@@ -91,6 +92,14 @@ builder.build_and_save(
     output_path="owl/orka-all-modules.owl",
     align_oboe=True,
     align_ssn=True,
+)
+
+# Optional: add SWRL rules from swrl/legacy_rules.swrl
+onto_with_rules = builder.build(
+    modules=["core", "ros", "sensors", "characteristics", "measurements"],
+    include_swrl=True,
+    swrl_rules_path="swrl/legacy_rules.swrl",
+    update_swrl_rules=True,
 )
 ```
 

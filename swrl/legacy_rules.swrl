@@ -1,0 +1,6 @@
+# ORKA legacy-derived SWRL rules (Owlready2 set_as_rule syntax)
+# Format: <Label>: <Rule>
+
+Proprioception: ProprioceptorSensor(?s), Measurement(?m), Observation(?o), mountedOn(?s, ?r), madeBySensor(?m, ?s), hasMeasurement(?o, ?m) -> ofEntity(?o, ?r)
+CanDetect: inDataSet(?e, ?dataset), trainedOnDataSet(?alg, ?dataset), Procedure(?alg) -> canDetect(?alg, ?e)
+TouchSensorDetection: Touch_Sensor(?sens), madeBySensor(?m, ?sens), hasMeasurement(?o, ?m), ofEntity(?o, ?e), ofCharacteristic(?m, ?c) -> Location(?c)

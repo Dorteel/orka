@@ -29,9 +29,8 @@ class OrkaBuilder:
         align_oboe: bool = False,
         align_ssn: bool = False,
         include_swrl: bool = False,
-        update_swrl_from_legacy: bool = False,
-        swrl_rules_path: str | Path = "swrl/orka_legacy_swrl.owl",
-        swrl_legacy_source_path: str | Path = "legacy/owl/orka.owl",
+        swrl_rules_path: str | Path = "swrl/legacy_rules.swrl",
+        update_swrl_rules: bool = False,
     ):
         """Build an ontology with selected modules and optional alignments."""
         normalized = {module.lower() for module in modules}
@@ -63,8 +62,7 @@ class OrkaBuilder:
             apply_swrl_rules(
                 onto=onto,
                 rules_path=swrl_rules_path,
-                update_from_legacy=update_swrl_from_legacy,
-                source_owl_path=swrl_legacy_source_path,
+                update_existing=update_swrl_rules,
             )
 
         return onto
@@ -78,9 +76,8 @@ class OrkaBuilder:
         align_oboe: bool = False,
         align_ssn: bool = False,
         include_swrl: bool = False,
-        update_swrl_from_legacy: bool = False,
-        swrl_rules_path: str | Path = "swrl/orka_legacy_swrl.owl",
-        swrl_legacy_source_path: str | Path = "legacy/owl/orka.owl",
+        swrl_rules_path: str | Path = "swrl/legacy_rules.swrl",
+        update_swrl_rules: bool = False,
     ) -> Path:
         """Build selected modules and save the ontology to disk."""
         onto = self.build(
@@ -88,9 +85,8 @@ class OrkaBuilder:
             align_oboe=align_oboe,
             align_ssn=align_ssn,
             include_swrl=include_swrl,
-            update_swrl_from_legacy=update_swrl_from_legacy,
             swrl_rules_path=swrl_rules_path,
-            swrl_legacy_source_path=swrl_legacy_source_path,
+            update_swrl_rules=update_swrl_rules,
         )
         output = Path(output_path)
         output.parent.mkdir(parents=True, exist_ok=True)
