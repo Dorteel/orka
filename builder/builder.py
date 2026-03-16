@@ -29,7 +29,7 @@ class OrkaBuilder:
         align_oboe: bool = False,
         align_ssn: bool = False,
         include_swrl: bool = False,
-        swrl_rules_path: str | Path = "swrl/legacy_rules.swrl",
+        swrl_rules_path: str | Path = "builder/swrl/legacy_rules.swrl",
         update_swrl_rules: bool = False,
     ):
         """Build an ontology with selected modules and optional alignments."""
@@ -76,7 +76,7 @@ class OrkaBuilder:
         align_oboe: bool = False,
         align_ssn: bool = False,
         include_swrl: bool = False,
-        swrl_rules_path: str | Path = "swrl/legacy_rules.swrl",
+        swrl_rules_path: str | Path = "builder/swrl/legacy_rules.swrl",
         update_swrl_rules: bool = False,
     ) -> Path:
         """Build selected modules and save the ontology to disk."""

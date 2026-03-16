@@ -12,7 +12,7 @@ from owlready2 import (
     sync_reasoner,
     sync_reasoner_pellet,
 )
-from orka_builder import build_and_save_orka_core
+from builder import OrkaBuilder
 from utils.xacro_loader import parse_robot_spec, sanitize_iri_fragment
 
 
@@ -93,7 +93,7 @@ def reason_graph(
     }
 
 
-def create_robot_graph(
+def initialize_graph(
     ontology,
     xacro_path: str | Path,
     robot_instance_name: str | None = None,
@@ -197,7 +197,7 @@ def main() -> None:
     if args.ontology:
         ensure_ontology_exists(args.ontology)
         ontology = load_graph(args.ontology)
-        created = create_robot_graph(
+        created = initialize_graph(
             ontology=ontology,
             xacro_path=source,
             robot_instance_name=args.robot if not args.xacro else None,
@@ -245,7 +245,7 @@ def ensure_ontology_exists(path: str | Path) -> Path:
     if ontology_path.exists():
         return ontology_path
 
-    build_and_save_orka_core(output_path=ontology_path)
+    OrkaBuilder().build_and_save(modules=["core"], output_path=ontology_path)
     print(f"Core ontology not found. Built new ontology at: {ontology_path}")
     return ontology_path
 

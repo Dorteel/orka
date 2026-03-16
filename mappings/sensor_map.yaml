@@ -2,7 +2,7 @@
 sensors:
   astra_rgb:
     namespace: "/TIAGO_PP/Astra_rgb"
-    orka_class: "orka:VisualSensor"
+    orka_class: "orka:Camera"
     topics:
       raw: "image_color"
       info: "camera_info"
@@ -10,20 +10,20 @@ sensors:
 
   hokuyo_lidar:
     namespace: "/TIAGO_PP/Hokuyo_URG_04LX_UG01"
-    orka_class: "orka:LidarSensor"
+    orka_class: "orka:Lidar"
     topics:
       scan: "point_cloud"
     frame_id: "base_laser_link"
 
   base_sonars:
     pattern: "/TIAGO_PP/base_sonar_.*_link"  # Regex to catch all sonars
-    orka_class: "orka:RangeSensor"
+    orka_class: "orka:Sonar"
     type: "sonar"
 
 # Define the "Algorithms" (Software Nodes)
 algorithms:
   webots_recognition:
     topic: "/TIAGO_PP/Astra_rgb/webots_recognitions"
-    orka_class: "orka:PerceptionAlgorithm"
+    orka_class: "orka:ComputerVisionAlgorithm"
     inputs: ["astra_rgb"]  # Links the algorithm to the sensor in the graph
     output_type: "orka:ObjectDetection"

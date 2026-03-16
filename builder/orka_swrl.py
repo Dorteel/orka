@@ -10,7 +10,7 @@ from pathlib import Path
 
 from owlready2 import Imp
 
-DEFAULT_SWRL_RULES_PATH = Path("swrl/legacy_rules.swrl")
+DEFAULT_SWRL_RULES_PATH = Path("builder/swrl/legacy_rules.swrl")
 
 
 def _parse_swrl_rules_file(rules_path: str | Path) -> list[tuple[str, str]]:

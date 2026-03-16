@@ -2,6 +2,12 @@
 
 This folder contains a ROS 2 workspace for ORKA runtime services.
 
+It builds on the top-level modular builder and `graph_manager.py`:
+
+- the builder defines the ontology vocabulary
+- `graph_manager` provides graph operations
+- `memory_manager` exposes selected runtime actions as ROS services
+
 ## Layout
 
 - `src/orkav2`: ORKA v2 repository (as subrepo/submodule)
@@ -11,7 +17,7 @@ This folder contains a ROS 2 workspace for ORKA runtime services.
 ## Memory Manager Services
 
 - `/memory_manager/initialize_memory_graph` (`InitializeMemoryGraph`)
-  - Builds ORKA graph and registers sensors/topics from a mapping file.
+  - Builds an ORKA graph and registers sensors/topics from a mapping file.
 - `/memory_manager/start_observe` (`StartObserve`)
   - Starts observing one sensor (subscribes to its topic).
 - `/memory_manager/stop_observe` (`StopObserve`)
@@ -19,9 +25,12 @@ This folder contains a ROS 2 workspace for ORKA runtime services.
 
 ## orkav2 subrepo
 
-Add ORKA v2 into this workspace as a subrepo/submodule at:
+Historically this workspace expected an `orkav2` checkout at:
 
 - `orka_ros/src/orkav2`
+
+The current node also has a fallback that imports the top-level repository
+directly when run from this checkout.
 
 Example (submodule):
 
@@ -53,6 +62,12 @@ ros2 service call /memory_manager/initialize_memory_graph \
   "{robot_name: tiago, mapping_file: /home/kai/Repositories/orka/mappings/sensor_map.yaml, output_owl_path: /home/kai/Repositories/orka/owl/orka-memory.owl, include_swrl: true}"
 ```
 
+Note:
+
+- `include_swrl: true` now expects rules under `builder/swrl/legacy_rules.swrl`
+- mapping class names should come from the ontology modules in `builder/`
+- some advanced mapping fields are still TODO in the runtime node
+
 Start observe:
 
 ```bash
@@ -68,4 +83,3 @@ ros2 service call /memory_manager/stop_observe \
   memory_manager_interfaces/srv/StopObserve \
   "{sensor_name: astra_rgb}"
 ```
-

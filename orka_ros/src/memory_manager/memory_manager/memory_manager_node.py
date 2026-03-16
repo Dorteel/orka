@@ -138,9 +138,12 @@ class MemoryManagerNode(Node):
                             if topic_individual not in current_topics:
                                 self._has_topic_prop[sensor_individual].append(topic_individual)
 
-                        self.sensor_topic_map[sensor_name] = SensorTopicBinding(
-                            sensor_name=sensor_name,
-                            topic_name=full_topic,
+                        self.sensor_topic_map.setdefault(
+                            sensor_name,
+                            SensorTopicBinding(
+                                sensor_name=sensor_name,
+                                topic_name=full_topic,
+                            ),
                         )
                         topic_count += 1
 
@@ -232,7 +235,14 @@ class MemoryManagerNode(Node):
         candidate = str(orka_class_value).split(":")[-1]
         class_name = _sanitize_fragment(candidate)
         resolved = self.ontology[class_name]
-        return resolved or self.ontology[fallback_name]
+        if resolved is not None:
+            return resolved
+
+        fallback = self.ontology[fallback_name]
+        self.get_logger().warning(
+            f"ORKA class '{orka_class_value}' not found, falling back to '{fallback_name}'."
+        )
+        return fallback
 
     def _resolve_sensor_class(self, orka_class_value: str):
         return self._resolve_class(orka_class_value, fallback_name="Sensor")
