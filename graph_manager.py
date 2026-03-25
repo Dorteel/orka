@@ -6,13 +6,17 @@ import argparse
 import random
 from pathlib import Path
 
+from rdflib import Literal, URIRef
+from rdflib.namespace import RDF, RDFS
 from owlready2 import (
     OwlReadyInconsistentOntologyError,
     get_ontology,
     sync_reasoner,
     sync_reasoner_pellet,
 )
-from builder import OrkaBuilder
+import yaml
+
+from builder import DEFAULT_BASE_IRI, OrkaBuilder
 from utils.xacro_loader import parse_robot_spec, sanitize_iri_fragment
 
 
@@ -32,8 +36,79 @@ def save_graph(ontology, path: str | Path, fmt: str = "rdfxml") -> Path:
     """Save an ontology graph to disk."""
     target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
-    ontology.save(file=str(target), format=fmt)
+
+    with target.open("wb") as output_file:
+        ontology.save(file=output_file, format=fmt)
+
     return target
+
+
+def update_graph(
+    ontology,
+    subject: str,
+    predicate: str,
+    object_value: str,
+    *,
+    object_is_literal: bool = True,
+) -> tuple[str, str, str]:
+    """Insert one triple into the ontology graph."""
+    subject_ref = URIRef(subject)
+    predicate_ref = URIRef(predicate)
+
+    if object_is_literal:
+        object_ref = Literal(object_value)
+    else:
+        object_ref = URIRef(object_value)
+
+    with ontology:
+        rdf_graph = ontology.world.as_rdflib_graph()
+        rdf_graph.add((subject_ref, predicate_ref, object_ref))
+
+    return (subject, predicate, object_value)
+
+
+def initialize_graph_from_mapping(
+    ontology,
+    mapping_path: str | Path,
+    *,
+    robot_name: str = "robot",
+    save_path: str | Path | None = None,
+    fmt: str = "rdfxml",
+) -> dict[str, object]:
+    """Build a base graph from one mapping file.
+
+    This creates the passive, structural part of the graph:
+    robot, sensors, recognition algorithms, and sensor topics.
+    """
+    graph_data = build_base_graph_triples(
+        mapping_path=mapping_path,
+        base_iri=_get_base_iri(ontology),
+        robot_name=robot_name,
+    )
+    triples_added = 0
+
+    for triple in graph_data["triples"]:
+        update_graph(
+            ontology,
+            subject=triple["subject"],
+            predicate=triple["predicate"],
+            object_value=triple["object_value"],
+            object_is_literal=triple["object_is_literal"],
+        )
+        triples_added += 1
+
+    saved_to = None
+    if save_path is not None:
+        saved_to = save_graph(ontology, save_path, fmt=fmt)
+
+    return {
+        "robot_uri": graph_data["robot_uri"],
+        "sensors_added": graph_data["sensors_added"],
+        "algorithms_added": graph_data["algorithms_added"],
+        "topics_added": graph_data["topics_added"],
+        "triples_added": triples_added,
+        "saved_to": saved_to,
+    }
 
 
 def reason_graph(
@@ -248,6 +323,244 @@ def ensure_ontology_exists(path: str | Path) -> Path:
     OrkaBuilder().build_and_save(modules=["core"], output_path=ontology_path)
     print(f"Core ontology not found. Built new ontology at: {ontology_path}")
     return ontology_path
+
+
+def default_base_graph_path() -> Path:
+    """Return the default base graph output path."""
+    output_directory = Path(__file__).resolve().parents[1] / "obs_graphs"
+    output_directory.mkdir(parents=True, exist_ok=True)
+    return output_directory / "base_graph.owl"
+
+
+def build_base_graph_triples(
+    mapping_path: str | Path,
+    *,
+    base_iri: str = DEFAULT_BASE_IRI,
+    robot_name: str = "robot",
+) -> dict[str, object]:
+    """Build the list of base-graph triples from one mapping file."""
+    mapping = _read_mapping(mapping_path)
+
+    robot_uri = _orka_uri(base_iri, robot_name)
+    triples: list[dict[str, object]] = []
+    sensor_topic_uris: dict[str, list[str]] = {}
+
+    triples.append(
+        _triple(robot_uri, str(RDF.type), _orka_uri(base_iri, "Robot"), False)
+    )
+    triples.append(
+        _triple(
+            _orka_uri(base_iri, "hasRawObservation"),
+            str(RDF.type),
+            "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            False,
+        )
+    )
+
+    sensor_count = 0
+    topic_count = 0
+    algorithm_count = 0
+
+    sensors = mapping.get("sensors", {})
+    for sensor_key, sensor_definition in sensors.items():
+        sensor_uri = _orka_uri(base_iri, sensor_key)
+        sensor_class_uri = _resolve_mapping_term(
+            sensor_definition.get("orka_class", "orka:Sensor"),
+            base_iri,
+        )
+
+        triples.append(
+            _triple(sensor_uri, str(RDF.type), _orka_uri(base_iri, "Sensor"), False)
+        )
+        triples.append(_triple(sensor_uri, str(RDF.type), sensor_class_uri, False))
+        triples.append(
+            _triple(sensor_uri, _orka_uri(base_iri, "mountedOn"), robot_uri, False)
+        )
+        sensor_count += 1
+
+        namespace = str(sensor_definition.get("namespace", "")).strip()
+        topics = sensor_definition.get("topics", {})
+        sensor_topic_uris[sensor_key] = []
+
+        if isinstance(topics, dict):
+            for _, topic_suffix in topics.items():
+                full_topic_name = _join_topic(namespace, str(topic_suffix))
+                topic_uri = _orka_uri(base_iri, full_topic_name)
+
+                triples.append(
+                    _triple(topic_uri, str(RDF.type), _orka_uri(base_iri, "Topic"), False)
+                )
+                triples.append(
+                    _triple(
+                        sensor_uri,
+                        _orka_uri(base_iri, "publishesTopic"),
+                        topic_uri,
+                        False,
+                    )
+                )
+                triples.append(_triple(topic_uri, str(RDFS.label), full_topic_name, True))
+
+                sensor_topic_uris[sensor_key].append(topic_uri)
+                topic_count += 1
+
+    algorithms = mapping.get("algorithms", {})
+    for algorithm_key, algorithm_definition in algorithms.items():
+        algorithm_uri = _orka_uri(base_iri, algorithm_key)
+        algorithm_class_uri = _resolve_mapping_term(
+            algorithm_definition.get("orka_class", "orka:Procedure"),
+            base_iri,
+        )
+
+        triples.append(
+            _triple(
+                algorithm_uri,
+                str(RDF.type),
+                _orka_uri(base_iri, "Procedure"),
+                False,
+            )
+        )
+        triples.append(
+            _triple(algorithm_uri, str(RDF.type), algorithm_class_uri, False)
+        )
+        algorithm_count += 1
+
+        topic_name = str(algorithm_definition.get("topic", "")).strip()
+        if topic_name:
+            topic_uri = _orka_uri(base_iri, topic_name)
+            triples.append(
+                _triple(topic_uri, str(RDF.type), _orka_uri(base_iri, "Topic"), False)
+            )
+            triples.append(
+                _triple(
+                    algorithm_uri,
+                    _orka_uri(base_iri, "publishesTopic"),
+                    topic_uri,
+                    False,
+                )
+            )
+            triples.append(_triple(topic_uri, str(RDFS.label), topic_name, True))
+            topic_count += 1
+
+        inputs = algorithm_definition.get("inputs", [])
+        if isinstance(inputs, list):
+            for sensor_key in inputs:
+                for sensor_topic_uri in sensor_topic_uris.get(sensor_key, []):
+                    triples.append(
+                        _triple(
+                            algorithm_uri,
+                            _orka_uri(base_iri, "subscribesToTopic"),
+                            sensor_topic_uri,
+                            False,
+                        )
+                    )
+
+    return {
+        "robot_uri": robot_uri,
+        "sensors_added": sensor_count,
+        "algorithms_added": algorithm_count,
+        "topics_added": topic_count,
+        "triples": triples,
+    }
+
+
+def _read_mapping(mapping_path: str | Path) -> dict:
+    """Load one mapping file."""
+    return yaml.safe_load(Path(mapping_path).read_text()) or {}
+
+
+def _get_base_iri(ontology) -> str:
+    """Return the ontology base IRI with a trailing separator."""
+    base_iri = str(getattr(ontology, "base_iri", "") or DEFAULT_BASE_IRI)
+    if base_iri.endswith(("#", "/")):
+        return base_iri
+    return f"{base_iri}#"
+
+
+def _orka_uri(base_iri: str, value: str) -> str:
+    """Turn one local name into a full ORKA URI."""
+    return f"{base_iri}{sanitize_iri_fragment(value)}"
+
+
+def _resolve_mapping_term(term: str, base_iri: str) -> str:
+    """Resolve one mapping term into a full URI."""
+    value = str(term).strip()
+    if not value:
+        raise ValueError("Mapping term cannot be empty.")
+
+    if value.startswith(("http://", "https://")):
+        return value
+    if value.startswith("orka:"):
+        return f"{base_iri}{value.split(':', 1)[1]}"
+
+    return f"{base_iri}{sanitize_iri_fragment(value)}"
+
+
+def _join_topic(namespace: str, topic_suffix: str) -> str:
+    """Join one namespace and one topic suffix into a ROS topic name."""
+    cleaned_namespace = namespace.strip().rstrip("/")
+    cleaned_suffix = topic_suffix.strip().lstrip("/")
+
+    if cleaned_namespace and cleaned_suffix:
+        return f"{cleaned_namespace}/{cleaned_suffix}"
+    if cleaned_namespace:
+        return cleaned_namespace
+    return cleaned_suffix
+
+
+def _add_type_triple(ontology, subject: str, class_uri: str) -> int:
+    """Insert one rdf:type triple."""
+    update_graph(
+        ontology,
+        subject=subject,
+        predicate=str(RDF.type),
+        object_value=class_uri,
+        object_is_literal=False,
+    )
+    return 1
+
+
+def _add_object_triple(ontology, subject: str, predicate: str, object_uri: str) -> int:
+    """Insert one object-property triple."""
+    update_graph(
+        ontology,
+        subject=subject,
+        predicate=predicate,
+        object_value=object_uri,
+        object_is_literal=False,
+    )
+    return 1
+
+
+def _add_literal_triple(
+    ontology,
+    subject: str,
+    predicate: str,
+    literal_value: str,
+) -> int:
+    """Insert one data-property triple."""
+    update_graph(
+        ontology,
+        subject=subject,
+        predicate=predicate,
+        object_value=literal_value,
+        object_is_literal=True,
+    )
+    return 1
+
+
+def _triple(
+    subject: str,
+    predicate: str,
+    object_value: str,
+    object_is_literal: bool,
+) -> dict[str, object]:
+    """Create one plain triple description."""
+    return {
+        "subject": subject,
+        "predicate": predicate,
+        "object_value": object_value,
+        "object_is_literal": object_is_literal,
+    }
 
 
 if __name__ == "__main__":
