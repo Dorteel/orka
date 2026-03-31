@@ -47,11 +47,15 @@ class OrkaROS(OrkaCore):
 
             # optional but handy from the start
             class publishesTo(ObjectProperty):
-                domain = [onto.System]
+                domain = [onto.Procedure]
                 range = [ROSTopic]
 
             class subscribesTo(ObjectProperty):
-                domain = [onto.System]
+                domain = [onto.Procedure]
+                range = [ROSTopic]
+
+            class hasBaseROSTopic(ObjectProperty):
+                domain = [onto.Sensor]
                 range = [ROSTopic]
 
             class callsService(ObjectProperty):
@@ -59,7 +63,7 @@ class OrkaROS(OrkaCore):
                 range = [ROSService]
 
             class providesService(ObjectProperty):
-                domain = [onto.System]
+                domain = [onto.Procedure]
                 range = [ROSService]
 
             # -----------------------------------------------------------------
