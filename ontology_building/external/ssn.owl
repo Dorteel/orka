@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b56">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b8">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b33">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeObservation"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasDeployment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has deployment</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a System and a Deployment, recording that the System is deployed in that Deployment.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a System and a Deployment, recording that the System is deployed in that Deployment.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/deployedSystem"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b84">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/isPropertyOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is property of</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Property and the entity it belongs to.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Property and the entity it belongs to.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Property">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Property</rdfs:label>
+    <skos:definition xml:lang="en">A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity.</skos:definition>
+    <rdfs:comment xml:lang="en">A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b5"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/deployedSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">deployed system</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Deployment and a deployed System.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Deployment and a deployed System.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b75">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b6"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b7"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b9"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b46"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b47"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b48"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b49"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b50"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b51"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b52"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b53"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b54"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b55"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b56"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b57"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b58"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b82">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isObservedBy"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b68">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/deployedOnPlatform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">deployed on platform</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Deployment and the Platform on which the Systems are deployed.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Deployment and the Platform on which the Systems are deployed.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/inDeployment"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/forProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">for property</rdfs:label>
+    <skos:definition xml:lang="en">A relation between some aspect of an entity and a Property.</skos:definition>
+    <rdfs:comment xml:lang="en">A relation between some aspect of an entity and a Property.</rdfs:comment>
+    <skos:example xml:lang="en">For example, from a Sensor to the properties it can observe; from an Actuator to the properties it can act on; from a Deployment to the properties it was installed to observe or act on; from a SystemCapability to the Property the capability is described for.</skos:example>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b40">
+    <rdf:first rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+    <rdf:rest rdf:nodeID="n373679a7255c49b88483250782ebe498b41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Output">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Output</rdfs:label>
+    <skos:definition xml:lang="en">Any information that is reported from a Procedure.</skos:definition>
+    <rdfs:comment xml:lang="en">Any information that is reported from a Procedure.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b27"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b29"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b35">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b78">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Stimulus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Stimulus</rdfs:label>
+    <skos:definition xml:lang="en">An event in the real world that 'triggers' the Sensor. The properties associated to the Stimulus may be different to the eventual observed ObservableProperty. It is the event, not the object, that triggers the Sensor.</skos:definition>
+    <rdfs:comment xml:lang="en">An event in the real world that 'triggers' the Sensor. The properties associated to the Stimulus may be different to the eventual observed ObservableProperty. It is the event, not the object, that triggers the Sensor.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b77"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b79"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b81"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampler">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b38"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b39"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/inDeployment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">in deployment</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Platform and a Deployment, meaning that the deployedSystems of the Deployment are hosted on the Platform.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Platform and a Deployment, meaning that the deployedSystems of the Deployment are hosted on the Platform.</rdfs:comment>
+    <skos:example xml:lang="en">For example, a relation between a buoy and a deployment of several Sensors.</skos:example>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/deployedOnPlatform"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b54">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b90">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/deployedOnPlatform"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Input">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Input</rdfs:label>
+    <skos:definition xml:lang="en">Any information that is provided to a Procedure for its use.</skos:definition>
+    <rdfs:comment xml:lang="en">Any information that is provided to a Procedure for its use.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b23"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b25"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b1">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <foaf:name xml:lang="en">W3C/OGC Spatial Data on the Web Working Group</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b55">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sample">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b12"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b13"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b14"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b15"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b81">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/isProxyFor"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has property</rdfs:label>
+    <skos:definition xml:lang="en">Relation between an entity and a Property of that entity.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between an entity and a Property of that entity.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/isPropertyOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b69"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b70"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b71"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b72"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b73"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b74"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b75"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b76"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasOutput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has output</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Procedure and an Output of it.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Procedure and an Output of it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b10"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b46">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b37">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeActuation"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/ActuatableProperty">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b11"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b31"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b32"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b33"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b34"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b80">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/detects"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b66">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b71">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b23">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b24"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isSampleOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b74">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b85">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b26"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b58">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Result">
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b82"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Deployment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Deployment</rdfs:label>
+    <skos:definition xml:lang="en">Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.</skos:definition>
+    <rdfs:comment xml:lang="en">Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.</rdfs:comment>
+    <skos:example xml:lang="en">For example, a temperature Sensor deployed on a wall, or a whole network of Sensors deployed for an Observation campaign.</skos:example>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b89"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b90"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b91"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/detects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">detects</rdfs:label>
+    <skos:definition xml:lang="en">A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty.</skos:definition>
+    <rdfs:comment xml:lang="en">A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b77">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b78"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b31">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasResult">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b47">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b64">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/actsOnProperty"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implementedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">implemented by</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way.</rdfs:comment>
+    <skos:example xml:lang="en">For example, the relationship between a scientific measuring Procedure and a sensor that senses via that Procedure.</skos:example>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/System">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">System</rdfs:label>
+    <skos:definition xml:lang="en">System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems.</skos:definition>
+    <rdfs:comment xml:lang="en">System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b83"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b84"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b85"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b86"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b88"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b60">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeByActuator"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuator"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b16">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isActedOnBy"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Actuation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasSubSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has subsystem</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a System and its component parts.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a System and its component parts.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has input</rdfs:label>
+    <skos:definition xml:lang="en">Relation between a Procedure and an Input to it.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between a Procedure and an Input to it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSample"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/wasOriginatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">was originated by</rdfs:label>
+    <skos:definition xml:lang="en">Relation between an Observation and the Stimulus that originated it.</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between an Observation and the Stimulus that originated it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b53">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b50">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b38">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b76">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasSample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b28"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b36">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ActuatableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b59"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b60"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b61"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b62"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b63"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b64"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b65"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b66"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b67"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b68"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b57">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b39">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeSampling"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Procedure">
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b20"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b21"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b22"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isHostedBy">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b49">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b43">
+    <rdf:first rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b86">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b87"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/implements">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">implements</rdfs:label>
+    <skos:definition xml:lang="en">Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).</skos:definition>
+    <rdfs:comment xml:lang="en">Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).</rdfs:comment>
+    <skos:example xml:lang="en">For example, the relationship between a sensor and the scientific measuring Procedure via which it senses.</skos:example>
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/implementedBy"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b44">
+    <rdf:first rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+    <rdf:rest rdf:nodeID="n373679a7255c49b88483250782ebe498b45"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b83">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b62">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isActedOnBy">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    <dcterms:title xml:lang="en">Semantic Sensor Network Ontology</dcterms:title>
+    <dcterms:description xml:lang="en">This ontology describes sensors, actuators and observations, and related concepts. It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.</dcterms:description>
+    <dcterms:creator rdf:nodeID="n373679a7255c49b88483250782ebe498b1"/>
+    <dcterms:rights>Copyright 2017 W3C/OGC.</dcterms:rights>
+    <dcterms:license rdf:resource="http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"/>
+    <dcterms:license rdf:resource="http://www.opengeospatial.org/ogc/Software"/>
+    <owl:versionInfo xml:lang="en">New modular version of the SSN ontology. 
+
+This ontology was originally developed in 2009-2011 by the W3C Semantic Sensor Networks Incubator Group (SSN-XG). For more information on the group's activities see: http://www.w3.org/2005/Incubator/ssn/. The ontology was revised and modularized in 2015-2017 by the W3C/OGC Spatial Data on the Web Working Group, see: https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology. 
+
+In particular, (a) the scope is extended to include actuation and sampling; (b) the core concepts and properties are factored out into the SOSA ontology. The SSN ontology imports SOSA and adds formal axiomatization consistent with the text definitions in SOSA, and adds classes and properties to accommodate the scope of the original SSN ontology. </owl:versionInfo>
+    <rdfs:comment xml:lang="en">Please report any errors to the W3C Spatial Data on the Web Working Group via the SDW WG Public List public-sdw-wg@w3.org</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-04-17</dcterms:created>
+    <vann:preferredNamespacePrefix>ssn</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://www.w3.org/ns/ssn/</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/usedProcedure">
+    <owl:propertyChainAxiom rdf:nodeID="n373679a7255c49b88483250782ebe498b40"/>
+    <owl:propertyChainAxiom rdf:nodeID="n373679a7255c49b88483250782ebe498b42"/>
+    <owl:propertyChainAxiom rdf:nodeID="n373679a7255c49b88483250782ebe498b44"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/isProxyFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is proxy for</rdfs:label>
+    <skos:definition xml:lang="en">A relation from a Stimulus to the Property that the Stimulus is serving as a proxy for.</skos:definition>
+    <rdfs:comment xml:lang="en">A relation from a Stimulus to the Property that the Stimulus is serving as a proxy for.</rdfs:comment>
+    <skos:example xml:lang="en">For example, the expansion of quicksilver is a stimulus that serves as a proxy for some temperature property. An increase or decrease in the velocity of spinning cups on a wind sensor is serving as a proxy for the wind speed.</skos:example>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b26">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b69">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b19">
+    <rdf:first rdf:resource="http://www.w3.org/ns/ssn/deployedSystem"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b22">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implementedBy"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Output"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuator">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b35"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b36"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b37"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b16"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b17"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b79">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b80"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b2"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b3"/>
+    <rdfs:subClassOf rdf:nodeID="n373679a7255c49b88483250782ebe498b4"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observes">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b45">
+    <rdf:first rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b48">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Input"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b70">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sampler"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b65">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/actsOnProperty"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ActuatableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b87">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b59">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeByActuator"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b63">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/inDeployment"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b89">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/deployedSystem"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b91">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isObservedBy">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeByActuator">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeActuation">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b67">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/isPropertyOf"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b8"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="n373679a7255c49b88483250782ebe498b30"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b72">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b34">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/detects"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b18">
+    <rdf:first rdf:resource="http://www.w3.org/ns/ssn/inDeployment"/>
+    <rdf:rest rdf:nodeID="n373679a7255c49b88483250782ebe498b19"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b42">
+    <rdf:first rdf:resource="http://www.w3.org/ns/sosa/madeByActuator"/>
+    <rdf:rest rdf:nodeID="n373679a7255c49b88483250782ebe498b43"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b28">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocommons/voaf#Vocabulary">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hosts">
+    <owl:propertyChainAxiom rdf:nodeID="n373679a7255c49b88483250782ebe498b18"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b88">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b41">
+    <rdf:first rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b24">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b32">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b73">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b10">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/isProxyFor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b52">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySampler">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observedProperty">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b61">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b51">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/actsOnProperty">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n373679a7255c49b88483250782ebe498b30">
+    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/resultTime">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/phenomenonTime">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeSampling">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+  </rdf:Description>
+</rdf:RDF>

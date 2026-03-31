@@ -1,9 +1,0 @@
-string robot_name
-string mapping_file
-string output_owl_path
-bool include_swrl
----
-bool success
-string message
-int32 sensors_registered
-int32 topics_registered

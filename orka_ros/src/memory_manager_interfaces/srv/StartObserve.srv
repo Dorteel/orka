@@ -1,6 +1,0 @@
-string sensor_name
-string topic_name
-string message_type
----
-bool success
-string message

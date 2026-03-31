@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka"
+         xmlns="https://w3id.org/def/orka#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka">
+  <owl:imports rdf:resource="http://www.w3.org/ns/ssn"/>
+  <owl:imports rdf:resource="http://www.w3.org/ns/sosa"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#hasMeasurement">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofEntity">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#observedIn"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observedIn">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Observation"/>
+  <owl:inverseOf rdf:resource="#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofCharacteristic">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Result"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeBySensor">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#madeMeasurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeMeasurement">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+  <owl:inverseOf rdf:resource="#madeBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measuresUsingStandard">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Standard"/>
+  <owl:inverseOf rdf:resource="#usedBySensor"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measuresUsingStandard"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedBySensor">
+  <rdfs:domain rdf:resource="#Standard"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#measuresUsingStandard"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedProcedure">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacteristic">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:inverseOf rdf:resource="#characteristicFor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characteristicFor">
+  <rdfs:domain rdf:resource="#Characteristic"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#hasCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describedBy">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#KnowledgeRepository"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRequiredEntity">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesCharacteristic">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedOn">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#Robot"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canDetect">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#DetectableEntity"/>
+  <owl:inverseOf rdf:resource="#canBeDetectedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canBeDetectedBy">
+  <rdfs:domain rdf:resource="#DetectableEntity"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+  <owl:inverseOf rdf:resource="#canDetect"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Observation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Measurement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Characteristic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Standard">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Procedure">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Result">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#System">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/ssn/System"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalEntity">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DetectableEntity">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KnowledgeRepository">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputerVisionAlgorithm">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocalisationProcedure">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PositionSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HeadingSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProprioceptorSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+
+</rdf:RDF>

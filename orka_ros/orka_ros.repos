@@ -1,5 +1,0 @@
-repositories:
-  orkav2:
-    type: git
-    url: <ORKAV2_REPO_URL>
-    version: main

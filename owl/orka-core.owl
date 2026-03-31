@@ -3,10 +3,10 @@
          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xml:base="https://w3id.org/def/orka/core"
-         xmlns="https://w3id.org/def/orka/core#">
+         xml:base="https://w3id.org/def/orka"
+         xmlns="https://w3id.org/def/orka#">
 
-<owl:Ontology rdf:about="https://w3id.org/def/orka/core"/>
+<owl:Ontology rdf:about="https://w3id.org/def/orka"/>
 
 <owl:ObjectProperty rdf:about="#hasMeasurement">
   <rdfs:domain rdf:resource="#Observation"/>
@@ -16,6 +16,18 @@
 <owl:ObjectProperty rdf:about="#ofEntity">
   <rdfs:domain rdf:resource="#Observation"/>
   <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#observedIn"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observedIn">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Observation"/>
+  <owl:inverseOf rdf:resource="#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofCharacteristic">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasResult">
@@ -26,6 +38,25 @@
 <owl:ObjectProperty rdf:about="#madeBySensor">
   <rdfs:domain rdf:resource="#Measurement"/>
   <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#madeMeasurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeMeasurement">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+  <owl:inverseOf rdf:resource="#madeBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measuresUsingStandard">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#MeasurementStandard"/>
+  <owl:inverseOf rdf:resource="#usedBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedBySensor">
+  <rdfs:domain rdf:resource="#MeasurementStandard"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#measuresUsingStandard"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#usedProcedure">
@@ -33,24 +64,16 @@
   <rdfs:range rdf:resource="#Procedure"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#usesStandard">
-  <rdfs:domain rdf:resource="#Measurement"/>
-  <rdfs:range rdf:resource="#MeasurementStandard"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#ofCharacteristic">
-  <rdfs:domain rdf:resource="#Measurement"/>
-  <rdfs:range rdf:resource="#Characteristic"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#hasCharacteristic">
   <rdfs:domain rdf:resource="#Entity"/>
   <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:inverseOf rdf:resource="#characteristicFor"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#characteristicFor">
   <rdfs:domain rdf:resource="#Characteristic"/>
   <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#hasCharacteristic"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#describedBy">
@@ -63,19 +86,9 @@
   <rdfs:range rdf:resource="#Entity"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#observes">
+<owl:ObjectProperty rdf:about="#observesCharacteristic">
   <rdfs:domain rdf:resource="#Sensor"/>
   <rdfs:range rdf:resource="#Characteristic"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#implementedBy">
-  <rdfs:domain rdf:resource="#Sensor"/>
-  <rdfs:range rdf:resource="#System"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hostedBy">
-  <rdfs:domain rdf:resource="#System"/>
-  <rdfs:range rdf:resource="#Platform"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#implementedOn">
@@ -83,15 +96,27 @@
   <rdfs:range rdf:resource="#Robot"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#canDetect">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#DetectableEntity"/>
+  <owl:inverseOf rdf:resource="#canBeDetectedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canBeDetectedBy">
+  <rdfs:domain rdf:resource="#DetectableEntity"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+  <owl:inverseOf rdf:resource="#canDetect"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Observation">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Measurement">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Entity">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -123,8 +148,29 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#PhysicalEntity">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DetectableEntity">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Robot">
   <rdfs:subClassOf rdf:resource="#Platform"/>
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KnowledgeRepository">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#ComputerVisionAlgorithm">
@@ -145,14 +191,6 @@
 
 <owl:Class rdf:about="#ProprioceptorSensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#KnowledgeRepository">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Context">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 

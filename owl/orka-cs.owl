@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://w3id.org/def/orka"
+         xmlns="https://w3id.org/def/orka#">
+
+<owl:Ontology rdf:about="https://w3id.org/def/orka"/>
+
+<owl:ObjectProperty rdf:about="#hasMeasurement">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofEntity">
+  <rdfs:domain rdf:resource="#Observation"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#observedIn"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observedIn">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Observation"/>
+  <owl:inverseOf rdf:resource="#ofEntity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ofCharacteristic">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Result"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeBySensor">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#madeMeasurement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeMeasurement">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Measurement"/>
+  <owl:inverseOf rdf:resource="#madeBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measuresUsingStandard">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Standard"/>
+  <owl:inverseOf rdf:resource="#usedBySensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedBySensor">
+  <rdfs:domain rdf:resource="#Standard"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <owl:inverseOf rdf:resource="#measuresUsingStandard"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedProcedure">
+  <rdfs:domain rdf:resource="#Measurement"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacteristic">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:inverseOf rdf:resource="#characteristicFor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characteristicFor">
+  <rdfs:domain rdf:resource="#Characteristic"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#hasCharacteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describedBy">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#KnowledgeRepository"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRequiredEntity">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#Entity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observesCharacteristic">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#Characteristic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementedOn">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#Robot"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canDetect">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#DetectableEntity"/>
+  <owl:inverseOf rdf:resource="#canBeDetectedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canBeDetectedBy">
+  <rdfs:domain rdf:resource="#DetectableEntity"/>
+  <rdfs:range rdf:resource="#Procedure"/>
+  <owl:inverseOf rdf:resource="#canDetect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasContext">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Context"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDomain">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Domain"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasConcept">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Concept"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasInstance">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Instance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasContrastClass">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#ContrastClass"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSimParam">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#SimilaritySensitivityParameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasQualityDimension">
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="#QualityDimension"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRegion">
+  <rdfs:domain rdf:resource="#Property"/>
+  <rdfs:range rdf:resource="#ConvexRegion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#correspondsTo">
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="#Property"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPrototypicalInstance">
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="#PrototypicalInstance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMeasurementSystem">
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="#MeasurementSystem"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#isCircular">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRangeMin">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRangeMax">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeasurementLevel">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Observation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Measurement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Characteristic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Standard">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Procedure">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Result">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#System">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalEntity">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DetectableEntity">
+  <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Platform"/>
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KnowledgeRepository">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Context">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComputerVisionAlgorithm">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LocalisationProcedure">
+  <rdfs:subClassOf rdf:resource="#Procedure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PositionSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HeadingSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProprioceptorSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConceptualSpace">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Domain">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Concept">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Instance">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ContrastClass">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#ConvexRegion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#QualityDimension">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConvexRegion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeasurementSystem">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PrototypicalInstance">
+  <rdfs:subClassOf rdf:resource="#Instance"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SimilaritySensitivityParameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+
+</rdf:RDF>

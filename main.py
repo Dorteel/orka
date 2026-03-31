@@ -1,35 +1,26 @@
-"""Build a full ORKA ontology (all modules, no alignments)."""
+from ontology_building.orka_alignments import OrkaFoundationalAlignments
+from ontology_building.orka_core import OrkaCore
+from ontology_building.orka_conceptualspaces import OrkaConceptualSpaces
+from ontology_building.orka_full import OrkaFull
 
-from __future__ import annotations
-
-import argparse
-
-from builder import DEFAULT_BASE_IRI, OrkaBuilder
-
-
-def main() -> None:
-    modules = ["core", "ros", "sensors", "characteristics", "measurements"]
-    default_output = f"owl/orka-{'-'.join(modules)}.owl"
-
-    parser = argparse.ArgumentParser(
-        description="Build full ORKA modules without external alignments."
-    )
-    parser.add_argument(
-        "--output",
-        default=default_output,
-        help="Output OWL file path.",
-    )
-    args = parser.parse_args()
-
-    builder = OrkaBuilder(base_iri=DEFAULT_BASE_IRI)
-    output_path = builder.build_and_save(
-        modules=modules,
-        output_path=args.output,
-        align_oboe=False,
-        align_ssn=False,
-    )
-    print(f"Saved ontology to: {output_path}")
+from ontology_building.orka_all import OrkaAll
 
 
-if __name__ == "__main__":
-    main()
+from ontology_manager.manager import OrkaManager
+
+# -----------------------------------------------------------------
+# Ontology Builder
+# -----------------------------------------------------------------
+ontology_path = "owl/orka-all.owl"
+builder = OrkaAll()
+onto = builder.build()
+builder.save(ontology_path)
+
+# -----------------------------------------------------------------
+# Observation Graph Builder
+# -----------------------------------------------------------------
+
+manager = OrkaManager()
+manager.load_graph(ontology_path)
+manager.build_robot_base_graph(sensors = ['camera', 'lidar'])
+manager.save_graph("owl/orka-test.owl")
