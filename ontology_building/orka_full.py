@@ -23,62 +23,216 @@ class OrkaFull(OrkaCore):
             # -----------------------------------------------------------------
             # Sensor Types
             # -----------------------------------------------------------------
-            class Active_Sensor(onto.Sensor):
-                pass
 
-            class Exteroceptor_Sensor(onto.Sensor):
-                pass
+            class Active_Sensor(onto.Sensor):
+                comment = ["A sensor that actively emits energy or signals to measure the environment."]
 
             class Passive_Sensor(onto.Sensor):
-                pass
+                comment = ["A sensor that observes naturally occurring signals without emitting energy."]
 
             class IdentificationSensor(onto.Sensor):
-                pass
+                comment = ["A sensor used for identifying entities, tags, or markers."]
 
-            class Light_Sensor(onto.Sensor, Exteroceptor_Sensor):
-                pass
+            class Exteroceptor_Sensor(onto.Sensor):
+                comment = ["A sensor that measures properties of the external environment."]
 
             class Distance_Sensor(onto.Sensor, Exteroceptor_Sensor):
-                pass
+                comment = ["A sensor that measures distance or range to external objects."]
 
-            class Touch_Sensor(onto.Sensor, Exteroceptor_Sensor):
-                pass
-
-            class Proximity_Sensor(Touch_Sensor, Passive_Sensor):
-                pass
-
-            class Resistive_Sensor(Touch_Sensor, Passive_Sensor):
-                pass
-
-            class Force_Sensor(Touch_Sensor, Exteroceptor_Sensor, Passive_Sensor):
-                pass
-
-            class Capacitive_Sensor(Distance_Sensor, Exteroceptor_Sensor, Passive_Sensor):
-                pass
-
-            class Magnetic_Sensor(Distance_Sensor, Exteroceptor_Sensor):
-                pass
-
-            class Position_Sensor(onto.PositionSensor):
-                pass
-
-            class Heading_Sensor(onto.HeadingSensor, Passive_Sensor):
-                pass
-
-            class Motor_Sensor(onto.ProprioceptorSensor):
-                pass
-
-            class Altitude_Sensor(onto.ProprioceptorSensor):
-                pass
+            class Light_Sensor(onto.Sensor, Exteroceptor_Sensor):
+                comment = ["A sensor that measures light or optical signals."]
 
             class Speed_Sensor(onto.Sensor):
-                pass
+                comment = ["A sensor that measures speed or velocity-related quantities."]
 
-            class Torque_Sensor(Motor_Sensor, Passive_Sensor):
-                pass
+            class Position_Sensor(onto.Sensor):
+                comment = ["A sensor that determines spatial position."]
+
+            class Heading_Sensor(onto.Sensor, Passive_Sensor, onto.ProprioceptorSensor):
+                comment = ["A sensor that measures heading or orientation."]
+
+            class Touch_Sensor(onto.Sensor, Exteroceptor_Sensor):
+                comment = ["A sensor that detects touch, contact, or impact."]
+
+            class Altitude_Sensor(onto.Sensor, onto.ProprioceptorSensor):
+                comment = ["A sensor that measures altitude relative to a reference level."]
+
+            class Motor_Sensor(onto.Sensor, onto.ProprioceptorSensor):
+                comment = ["A sensor that monitors motor or actuator state."]
+
+            # -----------------------------------------------------------------
+            # Vision, ranging, and identification
+            # -----------------------------------------------------------------
+
+            class Camera(Distance_Sensor, Exteroceptor_Sensor, IdentificationSensor, Passive_Sensor, Speed_Sensor):
+                comment = ["A passive visual sensor capturing image-based information."]
+
+            class DepthCamera(Active_Sensor, Exteroceptor_Sensor, IdentificationSensor, Position_Sensor):
+                comment = ["A camera-like sensor that actively acquires depth information."]
+
+            class LiDAR(Active_Sensor, Exteroceptor_Sensor, IdentificationSensor):
+                comment = ["A laser-based active sensor used for ranging and scene measurement."]
+
+            class RPLIDAR_A2(LiDAR):
+                comment = ["A specific LiDAR model represented as a subclass of LiDAR."]
+
+            class Radar(Active_Sensor, Distance_Sensor, Exteroceptor_Sensor, IdentificationSensor):
+                comment = ["A radio-based active sensor used for ranging and detection."]
+
+            class Sonar(Active_Sensor, Distance_Sensor, Exteroceptor_Sensor):
+                comment = ["A sound-based active sensor used for distance measurement."]
+
+            class Ultrasound(Active_Sensor, Distance_Sensor, Exteroceptor_Sensor, IdentificationSensor):
+                comment = ["An ultrasonic active sensor used for range or detection tasks."]
+
+            class Structures_Light(Distance_Sensor):
+                comment = ["A structured-light sensing device used for distance measurement."]
+
+            class Active_Optical(Active_Sensor, Exteroceptor_Sensor, Position_Sensor):
+                comment = ["An active optical positioning sensor."]
+
+            class RF_Beacon(Active_Sensor, Exteroceptor_Sensor, Position_Sensor):
+                comment = ["A radio-frequency beacon used for positioning or localization."]
+
+            class Reflective_Beacon(Active_Sensor, Exteroceptor_Sensor, Position_Sensor):
+                comment = ["A reflective beacon used for localization."]
+
+            class Ultrasound_Beacon(Active_Sensor, Exteroceptor_Sensor, Position_Sensor):
+                comment = ["An ultrasonic beacon used for localization."]
+
+            class Radio_Frequency_Identification(Active_Sensor, Exteroceptor_Sensor, IdentificationSensor):
+                comment = ["An RFID-based identification sensor."]
+
+            class Optical_Barrier(Active_Sensor, Exteroceptor_Sensor, Touch_Sensor):
+                comment = ["A sensor that detects interruption of a light beam."]
+
+            # -----------------------------------------------------------------
+            # Magnetic and light subtypes
+            # -----------------------------------------------------------------
+
+            class Magnetic_Sensor(Distance_Sensor, Exteroceptor_Sensor):
+                comment = ["A sensor that measures magnetic field or magnetic proximity."]
+
+            class Photodiode(Light_Sensor):
+                comment = ["A semiconductor light sensor converting light into electrical current."]
+
+            class Phototransistor(Light_Sensor):
+                comment = ["A transistor-based light sensor responding to incident light."]
+
+            # -----------------------------------------------------------------
+            # Touch-related subtypes
+            # -----------------------------------------------------------------
+
+            class Bumper(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["A contact sensor that detects collisions or impacts."]
+
+            class Contact_Array(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["An array of contact sensors detecting multiple touch points."]
+
+            class Proximity_Sensor(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["A sensor detecting nearby objects without direct contact."]
+
+            class Resistive_Sensor(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["A touch-related sensor based on resistive measurement."]
+
+            class Force_Sensor(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["A sensor that measures force applied through contact."]
+
+            class Switch(Exteroceptor_Sensor, Passive_Sensor, Touch_Sensor):
+                comment = ["A binary touch or contact sensor."]
 
             class WheelDropSensor(Touch_Sensor):
-                pass
+                comment = ["A sensor that detects when a wheel is no longer supported by the ground."]
+
+            # -----------------------------------------------------------------
+            # Motion and inertial sensing
+            # -----------------------------------------------------------------
+
+            class Accelerometer(Exteroceptor_Sensor, Passive_Sensor, Speed_Sensor):
+                comment = ["A sensor that measures linear acceleration."]
+
+            class Doppler_Radar(Active_Sensor, Exteroceptor_Sensor, Speed_Sensor):
+                comment = ["A radar sensor measuring motion via Doppler shift."]
+
+            class Doppler_Sound(Active_Sensor, Exteroceptor_Sensor, Speed_Sensor):
+                comment = ["A sound-based Doppler sensor measuring motion or speed."]
+
+            class Inertial_Unit(Heading_Sensor, Speed_Sensor):
+                comment = ["A sensor unit combining inertial measurements such as orientation and motion."]
+
+            # -----------------------------------------------------------------
+            # Position and altitude sensing
+            # -----------------------------------------------------------------
+
+            class GPS(Active_Sensor, Position_Sensor, onto.ProprioceptorSensor):
+                comment = ["A satellite-based positioning sensor."]
+
+            class Barometric_Altimeter(Altitude_Sensor):
+                comment = ["An altimeter estimating altitude from air pressure."]
+
+            class GPS_Altimeter(Altitude_Sensor):
+                comment = ["An altimeter estimating altitude from GPS signals."]
+
+            class Radar_Altimeter(Altitude_Sensor):
+                comment = ["An altimeter measuring altitude using radar reflection."]
+
+            # -----------------------------------------------------------------
+            # Heading sensing
+            # -----------------------------------------------------------------
+
+            class Compass(Heading_Sensor, Passive_Sensor):
+                comment = ["A heading sensor based on magnetic north."]
+
+            class Gyroscope(Heading_Sensor, Passive_Sensor):
+                comment = ["A sensor measuring angular velocity or rotation."]
+
+            class Inclinometer(Heading_Sensor, Passive_Sensor):
+                comment = ["A sensor measuring tilt relative to gravity."]
+
+            # -----------------------------------------------------------------
+            # Motor sensing
+            # -----------------------------------------------------------------
+
+            class Capacity_Encoder(Active_Sensor, Motor_Sensor):
+                comment = ["A motor encoder based on capacitive sensing principles."]
+
+            class Inductive_Encoder(Active_Sensor, Motor_Sensor):
+                comment = ["A motor encoder based on inductive sensing principles."]
+
+            class Magnetic_Encoder(Active_Sensor, Motor_Sensor):
+                comment = ["A motor encoder based on magnetic sensing principles."]
+
+            class Optical_Encoder(Active_Sensor, Motor_Sensor):
+                comment = ["A motor encoder based on optical sensing principles."]
+
+            class Resolver(Active_Sensor, Motor_Sensor):
+                comment = ["A rotary position sensor used for measuring motor shaft angle."]
+
+            class Brush_Encoder(Motor_Sensor, Passive_Sensor):
+                comment = ["A passive motor encoder using brush contact."]
+
+            class Potentiometer(Motor_Sensor, Passive_Sensor):
+                comment = ["A passive position sensor using variable resistance."]
+
+            class Torque_Sensor(Motor_Sensor, Passive_Sensor):
+                comment = ["A sensor measuring torque at a motor or actuator."]
+
+            # -----------------------------------------------------------------
+            # Acoustic sensing
+            # -----------------------------------------------------------------
+
+            class Sound(Exteroceptor_Sensor, IdentificationSensor, Passive_Sensor):
+                comment = ["A passive sensor class for sound-based perception."]
+
+            class Microphone(Sound):
+                comment = ["A sensor that captures sound waves as audio signals."]
+
+            # -----------------------------------------------------------------
+            # Distance subtype
+            # -----------------------------------------------------------------
+
+            class Capacitive_Sensor(Distance_Sensor, Exteroceptor_Sensor, Passive_Sensor):
+                comment = ["A passive capacitive sensor used for distance or proximity sensing."]
 
             # -----------------------------------------------------------------
             # Characteristics
