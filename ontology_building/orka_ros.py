@@ -144,73 +144,73 @@ class OrkaROS(OrkaCore):
                  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/CameraInfo") -> Camera(?s)'),
 
                 ("infer_pointcloud_sensor_from_pointcloud",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/PointCloud") -> PointCloudSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/PointCloud") -> DepthCamera(?s)'),
 
                 ("infer_pointcloud_sensor_from_pointcloud2",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/PointCloud2") -> PointCloudSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/PointCloud2") -> DepthCamera(?s)'),
 
                 ("infer_imu_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Imu") -> IMUSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Imu") -> Inertial_Unit(?s)'),
 
-                ("infer_time_reference_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/TimeReference") -> TimeReferenceSensor(?s)'),
+                # ("infer_time_reference_sensor",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/TimeReference") -> TimeReferenceSensor(?s)'),
 
                 ("infer_range_sensor",
                  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Range") -> Distance_Sensor(?s)'),
 
                 ("infer_illuminance_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Illuminance") -> IlluminanceSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Illuminance") -> Light_Sensor(?s)'),
 
-                ("infer_magnetic_field_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MagneticField") -> MagneticFieldSensor(?s)'),
+                # ("infer_magnetic_field_sensor",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MagneticField") -> MagneticFieldSensor(?s)'),
 
-                ("infer_joy_device_from_feedback_array",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JoyFeedbackArray") -> JoyInputDevice(?s)'),
+                # ("infer_joy_device_from_feedback_array",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JoyFeedbackArray") -> JoyInputDevice(?s)'),
 
-                ("infer_joy_device_from_feedback",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JoyFeedback") -> JoyInputDevice(?s)'),
+                # ("infer_joy_device_from_feedback",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JoyFeedback") -> JoyInputDevice(?s)'),
 
-                ("infer_gnss_sensor_from_fix",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/NavSatFix") -> GNSSSensor(?s)'),
+                # ("infer_gnss_sensor_from_fix",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/NavSatFix") -> GNSSSensor(?s)'),
 
-                ("infer_gnss_sensor_from_status",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/NavSatStatus") -> GNSSSensor(?s)'),
+                # ("infer_gnss_sensor_from_status",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/NavSatStatus") -> GNSSSensor(?s)'),
 
                 ("infer_pointcloud_sensor_from_channelfloat32",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/ChannelFloat32") -> PointCloudSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/ChannelFloat32") -> DepthCamera(?s)'),
 
                 ("infer_temperature_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Temperature") -> TemperatureSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Temperature") -> Temperature_Sensor(?s)'),
 
-                ("infer_joy_device_from_joy",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Joy") -> JoyInputDevice(?s)'),
+                # ("infer_joy_device_from_joy",
+                #  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/Joy") -> JoyInputDevice(?s)'),
 
                 ("infer_joint_encoder_from_multidofjointstate",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MultiDOFJointState") -> JointEncoder(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MultiDOFJointState") -> Motor_Sensor(?s)'),
 
                 ("infer_lidar_from_laserecho",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/LaserEcho") -> Lidar(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/LaserEcho") -> LiDAR(?s)'),
 
                 ("infer_humidity_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/RelativeHumidity") -> HumiditySensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/RelativeHumidity") -> Humidity_Sensor(?s)'),
 
                 ("infer_pressure_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/FluidPressure") -> PressureSensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/FluidPressure") -> Pressure_Sensor(?s)'),
 
                 ("infer_battery_sensor",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/BatteryState") -> BatterySensor(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/BatteryState") -> Battery_Sensor(?s)'),
 
                 ("infer_camera_from_roi",
                  'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/RegionOfInterest") -> Camera(?s)'),
 
                 ("infer_joint_encoder_from_jointstate",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JointState") -> JointEncoder(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/JointState") -> Motor_Sensor(?s)'),
 
                 ("infer_lidar_from_laserscan",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/LaserScan") -> Lidar(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/LaserScan") -> LiDAR(?s)'),
 
                 ("infer_lidar_from_multiecholaserscan",
-                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MultiEchoLaserScan") -> Lidar(?s)'),
+                 'Sensor(?s), hasBaseROSTopic(?s, ?t), hasMessageType(?t, ?m), hasROSName(?m, "sensor_msgs/msg/MultiEchoLaserScan") -> LiDAR(?s)'),
             ]
 
             for rule_name, rule_body in rules:

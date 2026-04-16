@@ -60,6 +60,15 @@ class OrkaFull(OrkaCore):
             class Motor_Sensor(onto.Sensor, onto.ProprioceptorSensor):
                 comment = ["A sensor that monitors motor or actuator state."]
 
+            class Temperature_Sensor(onto.Sensor, onto.ProprioceptorSensor):
+                comment = ["A sensor measuring the temperature."]
+
+            class Pressure_Sensor(onto.Sensor, onto.Exteroceptor_Sensor):
+                comment = ["A sensor measuring the temperature."]
+
+            class Humidity_Sensor(onto.Sensor, onto.Exteroceptor_Sensor):
+                comment = ["A sensor measuring the temperature."]
+
             # -----------------------------------------------------------------
             # Vision, ranging, and identification
             # -----------------------------------------------------------------
@@ -160,6 +169,9 @@ class OrkaFull(OrkaCore):
             class Inertial_Unit(Heading_Sensor, Speed_Sensor):
                 comment = ["A sensor unit combining inertial measurements such as orientation and motion."]
 
+            class Battery_Sensor(onto.ProprioceptorSensor):
+                comment = ["A sensor unit combining inertial measurements such as orientation and motion."]
+
             # -----------------------------------------------------------------
             # Position and altitude sensing
             # -----------------------------------------------------------------
@@ -218,6 +230,14 @@ class OrkaFull(OrkaCore):
                 comment = ["A sensor measuring torque at a motor or actuator."]
 
             # -----------------------------------------------------------------
+            # Thermal sensing
+            # -----------------------------------------------------------------
+            class Thermometer(Temperature_Sensor, Passive_Sensor):
+                comment = ["A sensor measuring the temperature of the environment."]
+
+            class Thermocamera(Temperature_Sensor, Passive_Sensor):
+                comment = ["A camera providing temperature estimates of the field of view."]
+            # -----------------------------------------------------------------
             # Acoustic sensing
             # -----------------------------------------------------------------
 
@@ -237,6 +257,15 @@ class OrkaFull(OrkaCore):
             # -----------------------------------------------------------------
             # Characteristics
             # -----------------------------------------------------------------
+
+            class IdentificationCharacteristic(onto.Characteristic):
+                pass
+
+            class Name(IdentificationCharacteristic):
+                pass
+
+            class ID(IdentificationCharacteristic):
+                pass
 
             class VisualCharactersitic(onto.Characteristic):
                 pass
@@ -287,6 +316,12 @@ class OrkaFull(OrkaCore):
                 pass
 
             class ObjectType(onto.Characteristic):
+                pass
+
+            class Position(onto.Characteristic):
+                pass
+
+            class Orientation(onto.Characteristic):
                 pass
 
             # -----------------------------------------------------------------

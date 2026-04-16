@@ -4,19 +4,26 @@
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
          xml:base="https://w3id.org/def/orka"
-         xmlns="https://w3id.org/def/orka#">
+         xmlns="https://w3id.org/def/orka#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
 
-<owl:Ontology rdf:about="https://w3id.org/def/orka"/>
+<owl:Ontology rdf:about="https://w3id.org/def/orka">
+  <owl:imports rdf:resource="http://www.w3.org/ns/ssn"/>
+  <owl:imports rdf:resource="http://www.w3.org/ns/sosa"/>
+  <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl"/>
+</owl:Ontology>
 
 <owl:ObjectProperty rdf:about="#hasMeasurement">
   <rdfs:domain rdf:resource="#Observation"/>
   <rdfs:range rdf:resource="#Measurement"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#hasMeasurement"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ofEntity">
   <rdfs:domain rdf:resource="#Observation"/>
   <rdfs:range rdf:resource="#Entity"/>
   <owl:inverseOf rdf:resource="#observedIn"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#observedIn">
@@ -28,6 +35,7 @@
 <owl:ObjectProperty rdf:about="#ofCharacteristic">
   <rdfs:domain rdf:resource="#Measurement"/>
   <rdfs:range rdf:resource="#Characteristic"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasResult">
@@ -51,6 +59,7 @@
   <rdfs:domain rdf:resource="#Sensor"/>
   <rdfs:range rdf:resource="#Standard"/>
   <owl:inverseOf rdf:resource="#usedBySensor"/>
+  <owl:equivalentProperty rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measuresUsingStandard"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#usedBySensor">
@@ -89,6 +98,7 @@
 <owl:ObjectProperty rdf:about="#observesCharacteristic">
   <rdfs:domain rdf:resource="#Sensor"/>
   <rdfs:range rdf:resource="#Characteristic"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observes"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#implementedOn">
@@ -118,44 +128,186 @@
   <rdfs:range rdf:resource="#Platform"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#hasContext">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Context"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDomain">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Domain"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasConcept">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Concept"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasInstance">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#Instance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasContrastClass">
+  <rdfs:domain rdf:resource="#ConceptualSpace"/>
+  <rdfs:range rdf:resource="#ContrastClass"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSimParam">
+  <rdfs:domain rdf:resource="#Context"/>
+  <rdfs:range rdf:resource="#SimilaritySensitivityParameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasQualityDimension">
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="#QualityDimension"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRegion">
+  <rdfs:domain rdf:resource="#Property"/>
+  <rdfs:range rdf:resource="#ConvexRegion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#correspondsTo">
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="#Property"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPrototypicalInstance">
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="#PrototypicalInstance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMeasurementSystem">
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="#MeasurementSystem"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesInterface">
+  <rdfs:domain rdf:resource="#System"/>
+  <rdfs:range rdf:resource="#ROSInterface"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMessageType">
+  <rdfs:domain rdf:resource="#ROSInterface"/>
+  <rdfs:range rdf:resource="#ROSMessageType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#publishesTo">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#ROSTopic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#subscribesTo">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#ROSTopic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasBaseROSTopic">
+  <rdfs:domain rdf:resource="#Sensor"/>
+  <rdfs:range rdf:resource="#ROSTopic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#callsService">
+  <rdfs:domain rdf:resource="#System"/>
+  <rdfs:range rdf:resource="#ROSService"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#providesService">
+  <rdfs:domain rdf:resource="#Procedure"/>
+  <rdfs:range rdf:resource="#ROSService"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#isCircular">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRangeMin">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRangeMax">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeasurementLevel">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#QualityDimension"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasROSName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ROSInterface"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasROSPackage">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ROSMessageType"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasROSTypeName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ROSMessageType"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
 <owl:Class rdf:about="#Entity">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Observation">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Measurement">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Characteristic">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Standard">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Procedure">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Result">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Result"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Sensor">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
 </owl:Class>
 
 <owl:Class rdf:about="#System">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/ssn/System"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Platform">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PhysicalEntity">
@@ -203,238 +355,459 @@
   <rdfs:subClassOf rdf:resource="#Sensor"/>
 </owl:Class>
 
+<owl:Class rdf:about="#ConceptualSpace">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Domain">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Concept">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Instance">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ContrastClass">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#ConvexRegion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#QualityDimension">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConvexRegion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeasurementSystem">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PrototypicalInstance">
+  <rdfs:subClassOf rdf:resource="#Instance"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SimilaritySensitivityParameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Active_Sensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that actively emits energy or signals to measure the environment.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Passive_Sensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that observes naturally occurring signals without emitting energy.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#IdentificationSensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor used for identifying entities, tags, or markers.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Exteroceptor_Sensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures properties of the external environment.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Distance_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures distance or range to external objects.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Light_Sensor">
-  <rdfs:subClassOf rdf:resource="#Sensor"/>
   <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures light or optical signals.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Speed_Sensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures speed or velocity-related quantities.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Position_Sensor">
   <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that determines spatial position.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Heading_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
   <rdfs:subClassOf rdf:resource="#Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Motor_Sensor">
-  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures heading or orientation.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Touch_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
   <rdfs:subClassOf rdf:resource="#Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Camera">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#DepthCamera">
-  <rdfs:subClassOf rdf:resource="#Camera"/>
-</owl:Class>
-
-<owl:Class rdf:about="#LiDAR">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#RPLIDAR_A2">
-  <rdfs:subClassOf rdf:resource="#LiDAR"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Radar">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Doppler_Radar">
-  <rdfs:subClassOf rdf:resource="#Radar"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Sonar">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Ultrasound">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Ultrasound_Beacon">
-  <rdfs:subClassOf rdf:resource="#Ultrasound"/>
-  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Structures_Light">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Magnetic_Sensor">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Optical_Barrier">
-  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Photodiode">
-  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Phototransistor">
-  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Bumper">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Contact_Array">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Proximity_Sensor">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Resistive_Sensor">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Force_Sensor">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Switch">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelDropSensor">
-  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#GPS">
-  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#RF_Beacon">
-  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Reflective_Beacon">
-  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Active_Optical">
-  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects touch, contact, or impact.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Altitude_Sensor">
   <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures altitude relative to a reference level.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Barometric_Altimeter">
-  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+<owl:Class rdf:about="#Motor_Sensor">
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that monitors motor or actuator state.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#GPS_Altimeter">
-  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+<owl:Class rdf:about="#Temperature_Sensor">
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring the temperature.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Radar_Altimeter">
-  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+<owl:Class rdf:about="#Pressure_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring the temperature.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Compass">
-  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+<owl:Class rdf:about="#Humidity_Sensor">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring the temperature.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Gyroscope">
-  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A passive visual sensor capturing image-based information.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Inclinometer">
-  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+<owl:Class rdf:about="#DepthCamera">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A camera-like sensor that actively acquires depth information.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LiDAR">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A laser-based active sensor used for ranging and scene measurement.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RPLIDAR_A2">
+  <rdfs:subClassOf rdf:resource="#LiDAR"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific LiDAR model represented as a subclass of LiDAR.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radio-based active sensor used for ranging and detection.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Sonar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sound-based active sensor used for distance measurement.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ultrasonic active sensor used for range or detection tasks.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Structures_Light">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structured-light sensing device used for distance measurement.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Active_Optical">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An active optical positioning sensor.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RF_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radio-frequency beacon used for positioning or localization.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Reflective_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reflective beacon used for localization.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Ultrasound_Beacon">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ultrasonic beacon used for localization.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Radio_Frequency_Identification">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An RFID-based identification sensor.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Barrier">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects interruption of a light beam.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Sensor">
+  <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures magnetic field or magnetic proximity.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Photodiode">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A semiconductor light sensor converting light into electrical current.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Phototransistor">
+  <rdfs:subClassOf rdf:resource="#Light_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transistor-based light sensor responding to incident light.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Bumper">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A contact sensor that detects collisions or impacts.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Contact_Array">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An array of contact sensors detecting multiple touch points.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Proximity_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor detecting nearby objects without direct contact.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Resistive_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A touch-related sensor based on resistive measurement.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Force_Sensor">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures force applied through contact.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Switch">
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A binary touch or contact sensor.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#WheelDropSensor">
+  <rdfs:subClassOf rdf:resource="#Touch_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that detects when a wheel is no longer supported by the ground.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Accelerometer">
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that measures linear acceleration.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Radar">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radar sensor measuring motion via Doppler shift.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Doppler_Sound">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sound-based Doppler sensor measuring motion or speed.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Inertial_Unit">
   <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Accelerometer">
   <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor unit combining inertial measurements such as orientation and motion.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Doppler_Sound">
-  <rdfs:subClassOf rdf:resource="#Speed_Sensor"/>
+<owl:Class rdf:about="#Battery_Sensor">
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor unit combining inertial measurements such as orientation and motion.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Torque_Sensor">
-  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+<owl:Class rdf:about="#GPS">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Position_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#ProprioceptorSensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A satellite-based positioning sensor.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Optical_Encoder">
-  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+<owl:Class rdf:about="#Barometric_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An altimeter estimating altitude from air pressure.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Magnetic_Encoder">
-  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+<owl:Class rdf:about="#GPS_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An altimeter estimating altitude from GPS signals.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Inductive_Encoder">
-  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+<owl:Class rdf:about="#Radar_Altimeter">
+  <rdfs:subClassOf rdf:resource="#Altitude_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An altimeter measuring altitude using radar reflection.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Compass">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A heading sensor based on magnetic north.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Gyroscope">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring angular velocity or rotation.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Inclinometer">
+  <rdfs:subClassOf rdf:resource="#Heading_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring tilt relative to gravity.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Capacity_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
   <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motor encoder based on capacitive sensing principles.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Inductive_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motor encoder based on inductive sensing principles.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnetic_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motor encoder based on magnetic sensing principles.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_Encoder">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motor encoder based on optical sensing principles.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Resolver">
+  <rdfs:subClassOf rdf:resource="#Active_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rotary position sensor used for measuring motor shaft angle.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Brush_Encoder">
   <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A passive motor encoder using brush contact.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Potentiometer">
   <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A passive position sensor using variable resistance.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Resolver">
+<owl:Class rdf:about="#Torque_Sensor">
   <rdfs:subClassOf rdf:resource="#Motor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring torque at a motor or actuator.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Thermometer">
+  <rdfs:subClassOf rdf:resource="#Temperature_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor measuring the temperature of the environment.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Thermocamera">
+  <rdfs:subClassOf rdf:resource="#Temperature_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A camera providing temperature estimates of the field of view.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Sound">
   <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A passive sensor class for sound-based perception.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Microphone">
   <rdfs:subClassOf rdf:resource="#Sound"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensor that captures sound waves as audio signals.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Capacitive_Sensor">
   <rdfs:subClassOf rdf:resource="#Distance_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Passive_Sensor"/>
+  <rdfs:subClassOf rdf:resource="#Exteroceptor_Sensor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A passive capacitive sensor used for distance or proximity sensing.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#Radio_Frequency_Identification">
-  <rdfs:subClassOf rdf:resource="#IdentificationSensor"/>
+<owl:Class rdf:about="#IdentificationCharacteristic">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Name">
+  <rdfs:subClassOf rdf:resource="#IdentificationCharacteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ID">
+  <rdfs:subClassOf rdf:resource="#IdentificationCharacteristic"/>
 </owl:Class>
 
 <owl:Class rdf:about="#VisualCharactersitic">
@@ -503,6 +876,30 @@
 
 <owl:Class rdf:about="#ObjectType">
   <rdfs:subClassOf rdf:resource="#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Position">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Orientation">
+  <rdfs:subClassOf rdf:resource="#Characteristic"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSInterface">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSTopic">
+  <rdfs:subClassOf rdf:resource="#ROSInterface"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSService">
+  <rdfs:subClassOf rdf:resource="#ROSInterface"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ROSMessageType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:NamedIndividual rdf:about="#Acre">
@@ -1316,6 +1713,1347 @@
 <owl:NamedIndividual rdf:about="#YardToMeter">
   <rdf:type rdf:resource="#Standard"/>
 </owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_PointCloud">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/PointCloud</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PointCloud</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legacy point cloud representation using geometry_msgs/Point32.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_PointCloud2">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/PointCloud2</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PointCloud2</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard structured point cloud message used by most depth sensors.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Imu">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Imu</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imu</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inertial measurement unit data including orientation, angular velocity, and acceleration.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_CompressedImage">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/CompressedImage</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompressedImage</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compressed image transport format used for efficient image streaming.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_TimeReference">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/TimeReference</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TimeReference</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time reference from an external source such as GPS.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Range">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Range</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Range</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single range reading from distance sensors such as sonar or IR.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Illuminance">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Illuminance</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illuminance</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ambient light intensity measurement.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_PointField">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/PointField</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PointField</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Definition of a field within a PointCloud2 message.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_MagneticField">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/MagneticField</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MagneticField</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnetometer measurement of magnetic field strength.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_CameraInfo">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/CameraInfo</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CameraInfo</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camera calibration parameters and intrinsic matrix.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_JoyFeedbackArray">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/JoyFeedbackArray</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JoyFeedbackArray</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Array of feedback commands for joystick devices.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_JoyFeedback">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/JoyFeedback</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JoyFeedback</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single feedback command for a joystick device.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_NavSatFix">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/NavSatFix</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NavSatFix</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Global navigation satellite system fix including latitude, longitude, and altitude.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_ChannelFloat32">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/ChannelFloat32</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChannelFloat32</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Channel of float32 values used in older point cloud messages.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Temperature">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Temperature</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature measurement from a sensor.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Joy">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Joy</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joy</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joystick input including axes and button states.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_MultiDOFJointState">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/MultiDOFJointState</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultiDOFJointState</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">State of joints with multiple degrees of freedom.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_LaserEcho">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/LaserEcho</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LaserEcho</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Echo measurements from a laser scanner.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_RelativeHumidity">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/RelativeHumidity</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RelativeHumidity</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative humidity measurement.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_NavSatStatus">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/NavSatStatus</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NavSatStatus</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status information for GNSS navigation messages.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_FluidPressure">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/FluidPressure</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FluidPressure</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fluid pressure measurement such as barometric pressure.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_BatteryState">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/BatteryState</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BatteryState</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery status including voltage, current, and charge.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_RegionOfInterest">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/RegionOfInterest</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RegionOfInterest</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subregion definition within an image.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_JointState">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/JointState</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JointState</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joint position, velocity, and effort states.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_LaserScan">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/LaserScan</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LaserScan</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2D laser range scan from a lidar sensor.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_Image">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Image</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raw uncompressed image message.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sensor_msgs_msg_MultiEchoLaserScan">
+  <rdf:type rdf:resource="#ROSMessageType"/>
+  <hasROSName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/MultiEchoLaserScan</hasROSName>
+  <hasROSPackage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs</hasROSPackage>
+  <hasROSTypeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultiEchoLaserScan</hasROSTypeName>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laser scan containing multiple echoes per beam.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_camera_from_image">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Image</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Camera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_camera_from_compressed_image">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/CompressedImage</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Camera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_camera_from_camera_info">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/CameraInfo</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Camera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_pointcloud_sensor_from_pointcloud">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/PointCloud</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#DepthCamera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_pointcloud_sensor_from_pointcloud2">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/PointCloud2</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#DepthCamera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_imu_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Imu</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Inertial_Unit"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_range_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Range</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Distance_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_illuminance_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Illuminance</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Light_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_pointcloud_sensor_from_channelfloat32">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/ChannelFloat32</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#DepthCamera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_temperature_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/Temperature</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Temperature_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_joint_encoder_from_multidofjointstate">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/MultiDOFJointState</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Motor_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_lidar_from_laserecho">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/LaserEcho</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#LiDAR"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_humidity_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/RelativeHumidity</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Humidity_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_pressure_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/FluidPressure</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Pressure_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_battery_sensor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/BatteryState</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Battery_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_camera_from_roi">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/RegionOfInterest</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Camera"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_joint_encoder_from_jointstate">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/JointState</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Motor_Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_lidar_from_laserscan">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/LaserScan</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#LiDAR"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#infer_lidar_from_multiecholaserscan">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Sensor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasBaseROSTopic"/>
+              <swrl:argument1 rdf:resource="urn:swrl#s"/>
+              <swrl:argument2 rdf:resource="urn:swrl#t"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasMessageType"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#m"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#hasROSName"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                      <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor_msgs/msg/MultiEchoLaserScan</swrl:argument2>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#LiDAR"/>
+          <swrl:argument1 rdf:resource="urn:swrl#s"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#s"/>
+
+<swrl:Variable rdf:about="urn:swrl#t"/>
 
 
 </rdf:RDF>

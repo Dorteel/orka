@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-alignments.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-base-graph.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-cs.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-full.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-test.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1775050228328" name="duplicate:https://w3id.org/def/orka" uri="orka-all.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-alignments.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-base-graph.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-cs.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-full.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-reasoner.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1776360958963" name="duplicate:https://w3id.org/def/orka" uri="orka-all.owl"/>
     </group>
 </catalog>
