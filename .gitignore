@@ -1,1 +1,44 @@
+# Colcon build outputs
+build/
+install/
+log/
+COLCON_IGNORE
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+**/.venv/
 */.venv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Generated ontology files (keep base definitions, ignore generated ones)
+owl/orka-reasoner.owl
+owl/orka-test.owl
+owl/orka-all.owl
+
+# Misc
+.pytest_cache/
+.coverage
+htmlcov/
+*.log

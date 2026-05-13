@@ -11,6 +11,11 @@ from owlready2 import (
 )
 
 
+# =======================
+# GENERAL GRAPH MANAGER
+# -----------------------
+
+
 class GraphManager:
     def __init__(self, graph_path: str | Path | None = None):
         self.graph_path = Path(graph_path) if graph_path else None
@@ -108,6 +113,10 @@ class GraphManager:
         else:
             setattr(subject, property_name, value)
 
+# =======================
+# ORKA GRAPH MANAGER
+# -----------------------
+
 class OrkaManager(GraphManager):
     def __init__(self, ontology_path: str | Path | None = None, **kwargs):
         super().__init__(**kwargs)
@@ -169,6 +178,7 @@ class OrkaManager(GraphManager):
         with onto:
             observation = onto.Observation(self.uid(f"observation_{suffix}"))
             measurement = onto.Measurement(self.uid(f"measurement_{suffix}"))
+            
             result = onto.Result(self.uid(f"result_{suffix}"))
             procedure = procedure or onto.Procedure(self.uid(f"observe_{suffix}"))
 
@@ -216,8 +226,18 @@ class OrkaManager(GraphManager):
                 self.add_property_value(interface, "hasMessageType", message_type)
 
             for item in mapped_items:
+                item_observation = onto.Observation(self.uid(f"observation_{suffix}_item"))
+                item_measurement = onto.Measurement(self.uid(f"measurement_{suffix}_item"))
+                item_result = onto.Result(self.uid(f"result_{suffix}_item"))
                 entity = onto.DetectableEntity(self.uid("detected_entity"))
-                self.add_property_value(observation, "ofEntity", entity)
+
+                self.add_property_value(item_observation, "hasMeasurement", item_measurement)
+                self.add_property_value(item_observation, "ofEntity", entity)
+                self.add_property_value(item_measurement, "usedProcedure", procedure)
+                self.add_property_value(item_measurement, "hasResult", item_result)
+
+                if sensor is not None:
+                    self.add_property_value(item_measurement, "madeBySensor", sensor)
 
                 for class_name, value in self._recognition_characteristics(item):
                     characteristic = getattr(onto, class_name)(self.uid(class_name.lower()))
