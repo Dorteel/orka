@@ -42,3 +42,6 @@ owl/orka-all.owl
 .coverage
 htmlcov/
 *.log
+# WordNet ontology exports
+owl/wordnet.owl
+owl/wordnet_full.owl
